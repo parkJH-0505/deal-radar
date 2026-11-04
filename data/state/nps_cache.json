@@ -2863,5 +2863,649 @@
  },
  "dart:01956326": {
   "_asof": "2026-11-05"
+ },
+ "dart:01914728": {
+  "match": {
+   "seq": 4047026,
+   "name": "(주)진약사몰",
+   "bizno6": "294860",
+   "ym": "202604",
+   "match_score": 1.3
+  },
+  "headcount": 9,
+  "monthly_bill": 3461860,
+  "industry": "전자상거래 소매업",
+  "adopted": "20240710",
+  "addr": "경기도 안산시 단원구 광덕4로",
+  "series": [
+   {
+    "ym": "202604",
+    "headcount": 9
+   },
+   {
+    "ym": "202603",
+    "headcount": 9,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 384651,
+  "_asof": "2026-11-05"
+ },
+ "dart:01915125": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01917187": {
+  "match": {
+   "seq": 2867816,
+   "name": "주식회사 삼화에프앤디",
+   "bizno6": "297860",
+   "ym": "202602",
+   "match_score": 1.3
+  },
+  "headcount": 11,
+  "monthly_bill": 3357020,
+  "industry": "경영 컨설팅업",
+  "adopted": "20240401",
+  "addr": "대구광역시 달서구 성서로",
+  "series": [
+   {
+    "ym": "202602",
+    "headcount": 11
+   },
+   {
+    "ym": "202601",
+    "headcount": 11,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 305184,
+  "_asof": "2026-11-05"
+ },
+ "dart:01948318": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01920668": {
+  "match": {
+   "seq": 6387081,
+   "name": "주식회사 쓰리에스제이",
+   "bizno6": "787810",
+   "ym": "202608",
+   "match_score": 1.3
+  },
+  "headcount": 312,
+  "monthly_bill": 98808560,
+  "industry": "건축물 일반 청소업",
+  "adopted": "20240301",
+  "addr": "경기도 평택시 고덕여염로",
+  "series": [
+   {
+    "ym": "202608",
+    "headcount": 312
+   },
+   {
+    "ym": "202607",
+    "headcount": 624,
+    "acq": 0,
+    "lost": 312
+   }
+  ],
+  "bill_per_head": 316694,
+  "_asof": "2026-11-05"
+ },
+ "dart:01922505": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01908310": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01911110": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01912289": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01913446": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01919750": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01928217": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01928378": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01930452": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01931123": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01954328": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01897421": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01897874": {
+  "match": {
+   "seq": 6987341,
+   "name": "티케이에이치인터내셔널 주식회사",
+   "bizno6": "869880",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 2233500,
+  "industry": "상품 종합 도매업",
+  "adopted": "20240617",
+  "addr": "부산광역시 부산진구 신천대로50번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 558375,
+  "_asof": "2026-11-05"
+ },
+ "dart:01910838": {
+  "match": {
+   "seq": 5814151,
+   "name": "주식회사 타이거메탈",
+   "bizno6": "357810",
+   "ym": "202607",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "시계 및 귀금속 제품 도매업",
+  "adopted": "20240802",
+  "addr": "서울특별시 종로구 종로",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01949830": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01909513": {
+  "match": {
+   "seq": 6887508,
+   "name": "주식회사 넷폼(NETFORM Corp.)",
+   "bizno6": "403818",
+   "ym": "202609",
+   "match_score": 0.9
+  },
+  "headcount": 55,
+  "monthly_bill": 18612900,
+  "industry": "기타 공학 연구개발업",
+  "adopted": "20210323",
+  "addr": "경기도 오산시 서동로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 55
+   },
+   {
+    "ym": "202608",
+    "headcount": 58,
+    "acq": 1,
+    "lost": 4
+   }
+  ],
+  "bill_per_head": 338416,
+  "_asof": "2026-11-05"
+ },
+ "dart:01954072": {
+  "match": {
+   "seq": 6735551,
+   "name": "주식회사 신대운여객",
+   "bizno6": "220886",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 68,
+  "monthly_bill": 22725900,
+  "industry": "비주거용 부동산 관리업",
+  "adopted": "20140901",
+  "addr": "경기도 파주시 월롱면 도감로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 68
+   },
+   {
+    "ym": "202608",
+    "headcount": 60,
+    "acq": 8,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 334204,
+  "_asof": "2026-11-05"
+ },
+ "dart:01823213": {
+  "match": {
+   "seq": 5810230,
+   "name": "웨스트사이드로지스틱스 주식회사",
+   "bizno6": "370810",
+   "ym": "202607",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "비주거용 건물 임대업",
+  "adopted": "20240603",
+  "addr": "전북특별자치도 군산시 임해로",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01879470": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01893498": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01896060": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01898165": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01906659": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01911183": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01911369": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01912599": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01912669": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01913808": {
+  "match": {
+   "seq": 6928265,
+   "name": "주식회사뉴롭진(NeurobgynCo,.Ltd.)",
+   "bizno6": "842810",
+   "ym": "202609",
+   "match_score": 1.2
+  },
+  "headcount": 3,
+  "monthly_bill": 940280,
+  "industry": "경영 컨설팅업",
+  "adopted": "20220801",
+  "addr": "경상남도 김해시 장유로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 313427,
+  "_asof": "2026-11-05"
+ },
+ "dart:01925487": {
+  "match": {
+   "seq": 6938107,
+   "name": "에스에프 주식회사",
+   "bizno6": "217815",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 710780,
+  "industry": "플라스틱 필름 제조업",
+  "adopted": "20221101",
+  "addr": "경기도 부천시 오정구 석천로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 236927,
+  "_asof": "2026-11-05"
+ },
+ "dart:01925991": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01927917": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01931132": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01948576": {
+  "match": {
+   "seq": 6374787,
+   "name": "주식회사 예주머쉬너리",
+   "bizno6": "813860",
+   "ym": "202608",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1543460,
+  "industry": "건설장비 운영업",
+  "adopted": "20230901",
+  "addr": "경기도 용인시 기흥구 신수로",
+  "series": [
+   {
+    "ym": "202608",
+    "headcount": 3
+   },
+   {
+    "ym": "202607",
+    "headcount": 6,
+    "acq": 0,
+    "lost": 3
+   }
+  ],
+  "bill_per_head": 514487,
+  "_asof": "2026-11-05"
+ },
+ "dart:01948752": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01953240": {
+  "match": {
+   "seq": 2017108,
+   "name": "(주)피에이치와이에비뉴",
+   "bizno6": "872870",
+   "ym": "202601",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 504420,
+  "industry": "경영 컨설팅업",
+  "adopted": "20240101",
+  "addr": "서울특별시 서초구 서운로",
+  "series": [
+   {
+    "ym": "202601",
+    "headcount": 3
+   },
+   {
+    "ym": "202512",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 168140,
+  "_asof": "2026-11-05"
+ },
+ "dart:01954249": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01900035": {
+  "match": {
+   "seq": 6976901,
+   "name": "비앤브이코리아 유한회사",
+   "bizno6": "168810",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 2504160,
+  "industry": "기타 엔지니어링 서비스업",
+  "adopted": "20240301",
+  "addr": "부산광역시 부산진구 서전로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 626040,
+  "_asof": "2026-11-05"
+ },
+ "dart:01904943": {
+  "match": {
+   "seq": 6922556,
+   "name": "(주)탑메탈",
+   "bizno6": "355880",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 1948320,
+  "industry": "1차 금속제품 도매업",
+  "adopted": "20220302",
+  "addr": "경기도 광명시 새빛공원로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 487080,
+  "_asof": "2026-11-05"
+ },
+ "dart:01914117": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01930744": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01948682": {
+  "match": {
+   "seq": 6931671,
+   "name": "(주)골드바이브",
+   "bizno6": "524880",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1701900,
+  "industry": "전자상거래 소매업",
+  "adopted": "20220927",
+  "addr": "서울특별시 종로구 돈화문로10길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 567300,
+  "_asof": "2026-11-05"
+ },
+ "dart:01957626": {
+  "match": {
+   "seq": 6951667,
+   "name": "엘지엠지머쉬너리코리아주식회사(LGMGMachineryKoreaCo.,Ltd)",
+   "bizno6": "554880",
+   "ym": "202609",
+   "match_score": 1.2
+  },
+  "headcount": 4,
+  "monthly_bill": 1919620,
+  "industry": "그 외 기타 기계 및 장비 도매업",
+  "adopted": "20230403",
+  "addr": "경기도 화성시 만세구 남양읍 매바위로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 5,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 479905,
+  "_asof": "2026-11-05"
+ },
+ "dart:01961902": {
+  "match": {
+   "seq": 6931280,
+   "name": "정하에스테이트주식회사",
+   "bizno6": "744870",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 1381760,
+  "industry": "그 외 기타 건축 마무리 공사업",
+  "adopted": "20220901",
+  "addr": "전남광주통합특별시 장흥군 장흥읍 장흥로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 345440,
+  "_asof": "2026-11-05"
+ },
+ "dart:01596328": {
+  "match": {
+   "seq": 3946264,
+   "name": "트리플라주식회사",
+   "bizno6": "862810",
+   "ym": "202604",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "모바일 게임 소프트웨어 개발 및 공급업",
+  "adopted": "20210601",
+  "addr": "서울특별시 강남구 테헤란로107길",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01895645": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01909300": {
+  "match": {
+   "seq": 5094973,
+   "name": "(주)우수기업",
+   "bizno6": "294870",
+   "ym": "202606",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1328440,
+  "industry": "선박 구성 부분품 제조업",
+  "adopted": "20240601",
+  "addr": "경상남도 거제시 거제대로",
+  "series": [
+   {
+    "ym": "202606",
+    "headcount": 3
+   },
+   {
+    "ym": "202605",
+    "headcount": 5,
+    "acq": 0,
+    "lost": 2
+   }
+  ],
+  "bill_per_head": 442813,
+  "_asof": "2026-11-05"
+ },
+ "dart:01913172": {
+  "match": {
+   "seq": 6694056,
+   "name": "주식회사비오피",
+   "bizno6": "126865",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 16,
+  "monthly_bill": 7105520,
+  "industry": "해당없음",
+  "adopted": "20120701",
+  "addr": "경기도 광주시 초월읍 산수로210번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 16
+   },
+   {
+    "ym": "202608",
+    "headcount": 15,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 444095,
+  "_asof": "2026-11-05"
+ },
+ "dart:01923045": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01924220": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01831337": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01894460": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01901496": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01929535": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01943234": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01963399": {
+  "_asof": "2026-11-05"
  }
 }
