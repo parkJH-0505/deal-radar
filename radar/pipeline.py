@@ -9,6 +9,7 @@ Outputs (committed by the GitHub Action):
 from __future__ import annotations
 
 import datetime as dt
+import re
 import os
 import time
 from pathlib import Path
@@ -363,17 +364,25 @@ def daily(today: dt.date | None = None) -> dict:
     # watchlist bookkeeping: new vs changed
     wl_path = DATA / "watchlist.json"
     wl = read_json(wl_path, {})
+    def kinds(reasons):  # "고용 12개월 +55% (+20)" -> "고용 개월 % ()": numbers drift daily
+        return {re.sub(r"[\d,.+\-]+", "", r) for r in reasons}
+
     for c in picked:
         prev = wl.get(c["key"])
-        if prev is None:
+        # baseline = last score recorded BEFORE today, so same-day re-runs don't
+        # swallow today's new candidates
+        before = [h for h in (prev or {}).get("score_history", []) if h["date"] < today.isoformat()]
+        if prev is None or prev.get("first_seen") == today.isoformat() or not before:
             c["change"] = "new"
-        elif c["score"] - prev["score_history"][-1]["score"] >= 10 or \
-                set(c["reasons"]) - set(prev.get("reasons", [])):
+        elif c["score"] - before[-1]["score"] >= 10 or \
+                kinds(c["reasons"]) - kinds(prev.get("reasons_before", prev.get("reasons", []))):
             c["change"] = "changed"
         else:
             c["change"] = "same"
         rec = prev or {"name": c["name"], "first_seen": today.isoformat(),
                        "score_history": [], "user_status": None}
+        if rec.get("last_seen") and rec["last_seen"] < today.isoformat():
+            rec["reasons_before"] = rec.get("reasons", [])
         rec.update(name=c["name"], last_seen=today.isoformat(), reasons=c["reasons"])
         if not rec["score_history"] or rec["score_history"][-1]["date"] != today.isoformat():
             rec["score_history"].append({"date": today.isoformat(), "score": c["score"]})

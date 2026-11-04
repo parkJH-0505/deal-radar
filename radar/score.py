@@ -58,7 +58,9 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
     op = fin.get("op_income")
     if rev and op is not None and rev > 0:
         m = op / rev
-        if m >= 0.10:
+        if m >= 0.60:  # 영업회사로 보기 어려운 이익률 (투자·임대·지분법 수익 위주)
+            why.append(f"영업이익률 {m:.0%} (비정상적으로 높음, 점수 제외)")
+        elif m >= 0.10:
             add("op_margin_ge_10pct", f"영업이익률 {m:.0%}")
         elif m < 0:
             add("op_margin_negative", f"영업적자 {m:.0%}")
