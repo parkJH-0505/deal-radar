@@ -390,8 +390,26 @@ def daily(today: dt.date | None = None) -> dict:
     write_json(wl_path, wl)
 
     # judgment queue: new/changed first, capped
-    queue = [c for c in picked if c["change"] in ("new", "changed")]
-    queue = queue[: g["max_candidates_per_day"]]
+    fresh = [c for c in picked if c["change"] in ("new", "changed")]
+    # 소스별 최소 자리 보장: DART 첫 외감 후보가 점수 구조상 상위를 독식하므로
+    # 국민연금 단독·인허가 단독 발견도 매일 판단 단계에 오르게 한다.
+    cap = g["max_candidates_per_day"]
+    quota = g.get("queue_quota", {})
+    def lane(c):
+        src = set(c.get("sources", []))
+        if "dart" in src:
+            return "dart"
+        return "localdata" if "localdata" in src else "nps"
+    queue, used = [], set()
+    for ln, n in quota.items():
+        for c in [c for c in fresh if lane(c) == ln][:n]:
+            queue.append(c); used.add(c["key"])
+    for c in fresh:
+        if len(queue) >= cap:
+            break
+        if c["key"] not in used:
+            queue.append(c); used.add(c["key"])
+    queue = sorted(queue[:cap], key=lambda c: -c["score"])
     payload = {
         "date": today.isoformat(),
         "generated_at": dt.datetime.now(KST).isoformat(timespec="seconds"),
