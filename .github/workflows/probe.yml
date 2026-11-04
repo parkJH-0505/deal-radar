@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: repo-writer
+  group: probe   # 일일 수집과 별도로 즉시 실행
   cancel-in-progress: false
 
 jobs:
