@@ -15,11 +15,12 @@ from pathlib import Path
 
 import yaml
 
-from .entity import name_similarity, norm_name
+from .entity import bizno6, name_similarity, norm_name
 from .http import HttpError, log
 from .score import age_years, excluded, score
 from .sources import dart as D
 from .sources import localdata as L
+from .sources import nps_monthly as NM
 from .sources.nps import Nps
 from .store import DATA, ROOT, STATE, JsonlCache, read_json, write_json
 
@@ -196,6 +197,89 @@ def merge(dart_cands: list[dict], loc_sigs: list[dict], cfg: dict, today: dt.dat
     return out
 
 
+# ================================================================ NPS MONTHLY
+
+def run_nps_monthly(cfg: dict, today: dt.date, notes: list[str]):
+    nm = cfg["sources"]["nps_monthly"]
+    months_dir = DATA / "nps" / "months"
+    adopt_after = (today - dt.timedelta(days=int(nm["store_max_age_years"] * 365.25))).strftime("%Y%m%d")
+    notes += NM.update_archive(months_dir, want_months=nm["want_months"],
+                               max_downloads=nm["max_downloads_per_run"], adopt_after=adopt_after,
+                               min_headcount=nm["store_min_headcount"],
+                               exclude=cfg["global"]["exclude_name_patterns"])
+    yms, data = NM.build_panel(months_dir)
+    if not yms:
+        return yms, data, []
+    sc = nm["scan"]
+    found = NM.scan(yms, data, today=today, max_age_years=cfg["global"]["max_company_age_years"],
+                    min_headcount=sc["min_headcount"], min_growth_12m=sc["min_growth_12m"],
+                    min_growth_6m=sc["min_growth_6m"])
+    notes.append(f"국민연금 패널 {yms[0]}~{yms[-1]} ({len(yms)}개월), 고용 급성장 후보 {len(found)}곳")
+    return yms, data, found
+
+
+class PanelIndex:
+    """Find a company's panel row from (bizno, name)."""
+
+    def __init__(self, yms, data):
+        self.yms, self.data = yms, data
+        self.by_b6: dict[str, list[str]] = {}
+        self.by_norm: dict[str, list[str]] = {}
+        if yms:
+            for key in data[yms[-1]]:
+                b6, nn = key.split("|", 1)
+                self.by_b6.setdefault(b6, []).append(key)
+                self.by_norm.setdefault(nn, []).append(key)
+
+    def lookup(self, name: str, bizno: str | None = None) -> str | None:
+        b6 = bizno6(bizno)
+        if b6:
+            best = max(((name_similarity(name, k.split("|", 1)[1]), k) for k in self.by_b6.get(b6, [])),
+                       default=(0, None))
+            if best[0] >= 0.85:
+                return best[1]
+        keys = self.by_norm.get(norm_name(name), [])
+        return keys[0] if len(keys) == 1 else None  # ambiguous names: no guess
+
+    def metrics(self, key: str) -> dict | None:
+        return NM.metrics_for(key, self.yms, self.data)
+
+
+def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
+              today: dt.date) -> list[dict]:
+    # 1) attach panel metrics to DART / 인허가 candidates
+    claimed = set()
+    for c in cands:
+        k = pidx.lookup(c["name"], c.get("bizno"))
+        if k:
+            m = pidx.metrics(k)
+            if m:
+                c["nps"] = m
+                c["nps_key"] = k
+                claimed.add(f"nps:{k}")
+    # 2) add NPS-only growth candidates (or mark existing ones as multi-source)
+    by_key = {c.get("nps_key"): c for c in cands if c.get("nps_key")}
+    pats = cfg["global"]["exclude_name_patterns"]
+    for f in found:
+        k = f["key"][4:]
+        if k in by_key:
+            if "nps" not in by_key[k]["sources"]:
+                by_key[k]["sources"].append("nps")
+            continue
+        if excluded(f["name"], pats):
+            continue
+        adopt = f["nps"].get("adopt")
+        cands.append({
+            "key": f["key"], "name": f["name"], "name_norm": norm_name(f["name"]),
+            "sources": ["nps"], "bizno6": f["bizno6"],
+            "age_years": age_years(adopt, today), "age_basis": "국민연금 적용일(대리지표)",
+            "addr": f["addr"], "industry": f["induty_name"], "induty_code": f["induty_code"],
+            "nps": f["nps"], "nps_key": k,
+            "financials": {},
+        })
+    return cands
+
+
 # ======================================================================= MAIN
 
 def daily(today: dt.date | None = None) -> dict:
@@ -224,17 +308,26 @@ def daily(today: dt.date | None = None) -> dict:
         notes.append("DATA_GO_KR_KEY 미설정 → 인허가·국민연금 건너뜀")
 
     cands = merge(dart_c, loc, cfg, today)
+
+    # 국민연금 월간 패널: discovery (고용 급성장) + head-count series for everyone
+    if cfg["sources"]["nps_monthly"]["enabled"]:
+        try:
+            yms, pdata, found = run_nps_monthly(cfg, today, notes)
+            cands = merge_nps(cands, found, PanelIndex(yms, pdata), cfg, today)
+        except Exception as e:  # noqa: BLE001 - a portal change must not kill the run
+            notes.append(f"국민연금 월간 단계 오류: {type(e).__name__}: {e}")
+
     for c in cands:
         c["score"], c["reasons"] = score(c, cfg, today)
 
-    # NPS enrichment for the most promising ones (budgeted)
+    # NPS API fallback (current head-count only) for candidates not in the panel
     nc = cfg["sources"]["nps"]
-    if nc["enabled"] and gkey and cands:
+    if nc["enabled"] and gkey and any("nps" not in c for c in cands):
         nps = Nps(gkey)
         nps.style = meta.get("nps_style") or nps.detect_style()
         meta["nps_style"] = nps.style
         cache = read_json(STATE / "nps_cache.json", {})
-        ranked = sorted(cands, key=lambda c: -c["score"])
+        ranked = sorted([c for c in cands if "nps" not in c], key=lambda c: -c["score"])
         looked = 0
         for c in ranked:
             ck = c["key"]

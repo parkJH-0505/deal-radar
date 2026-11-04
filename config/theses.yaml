@@ -32,10 +32,20 @@ sources:
       - slug: food_manufacturing_processors
         label: 식품제조가공업
         thesis: food_mfg
-  nps:
+  nps_monthly:                     # 국민연금 월간 전체 CSV → 젊은 법인 고용 패널 (주력 소스)
     enabled: true
-    months: 12                     # 고용 시계열 역산 기간
-    max_lookups_per_run: 150
+    want_months: 13                # 최근 13개월 보유 → 12개월 성장 계산
+    max_downloads_per_run: 13      # 첫 실행에 과거 12개월 일괄 백필 (115MB/월)
+    store_max_age_years: 6.5       # 저장 대상: 국민연금 적용일 6.5년 이내 법인
+    store_min_headcount: 5
+    scan:
+      min_headcount: 30            # 현재 가입자 30명 이상
+      min_growth_12m: 0.5          # 12개월 +50% 이상
+      min_growth_6m: 0.3           # 또는 6개월 +30% 이상
+  nps:                             # API는 최신 월만 제공 → 패널에 없는 후보의 현재 인원 보강용
+    enabled: true
+    months: 1
+    max_lookups_per_run: 60
 
 theses:
   food_mfg:
@@ -58,9 +68,11 @@ weights:
   localdata_expansion: 30         # 기존 사업자의 공장급(200㎡+) 신규 인허가 = 증설
   localdata_chain_rollout: 22     # 같은 브랜드 신규 매장 3곳+ = 체인 확장 (프랜차이즈형)
   localdata_multi_new: 15
+  headcount_growth_12m_ge_100pct: 30   # 1년 새 고용 2배 이상: 숨은 알짜의 전형
   headcount_growth_12m_ge_50pct: 20
   headcount_growth_12m_ge_25pct: 10
   headcount_ge_30: 5
-  bill_per_head_rising: 0         # 시계열이 쌓이면 활성화
+  headcount_new_scaleup: 15       # 12개월 전엔 미가입(또는 5명 미만) → 지금 60명+
+  bill_per_head_rising: 6         # 1인당 고지금액 12개월 +10% 이상 (보수 수준 상승)
   thesis_industry_match: 8
   multi_source_bonus: 10          # 서로 다른 소스 2개 이상에서 동시에 잡힘

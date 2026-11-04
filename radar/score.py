@@ -74,12 +74,19 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
     nps = c.get("nps") or {}
     g12 = nps.get("growth_12m")
     if g12 is not None:
-        if g12 >= 0.5:
+        if g12 >= 1.0:
+            add("headcount_growth_12m_ge_100pct", f"고용 12개월 {g12:+.0%}")
+        elif g12 >= 0.5:
             add("headcount_growth_12m_ge_50pct", f"고용 12개월 {g12:+.0%}")
         elif g12 >= 0.25:
             add("headcount_growth_12m_ge_25pct", f"고용 12개월 {g12:+.0%}")
+    elif nps.get("growth_12m_from_zero") and (nps.get("headcount") or 0) >= 60:
+        add("headcount_new_scaleup", f"12개월 전 미가입 → 현재 {nps['headcount']}명")
     if (nps.get("headcount") or 0) >= 30:
         add("headcount_ge_30", f"국민연금 가입자 {nps['headcount']}명")
+    bpc = nps.get("bill_per_head_change_12m")
+    if bpc is not None and bpc >= 0.10:
+        add("bill_per_head_rising", f"1인당 고지금액 12개월 {bpc:+.0%}")
 
     induty = str(c.get("induty_code") or "")
     for th in cfg.get("theses", {}).values():
@@ -87,7 +94,7 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
             add("thesis_industry_match", f"테제 업종: {th['label']}")
             break
 
-    if len(src) >= 2:  # discovery sources only (dart, localdata); nps is enrichment
+    if len(src) >= 2:  # discovery sources: dart, localdata, nps (panel scan)
         add("multi_source_bonus", "복수 소스 동시 포착: " + ", ".join(sorted(src)))
 
     return pts, why

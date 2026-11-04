@@ -11,6 +11,8 @@ from radar import pipeline as P
 from radar.sources import dart as D
 from radar.sources import localdata as L
 from radar.sources import nps as N
+from radar.sources import nps_monthly as NM
+from tests.test_nps_monthly import csv_bytes, row
 
 
 class FakeResp:
@@ -115,6 +117,17 @@ def sandbox(tmp_path, monkeypatch):
     monkeypatch.setattr(P, "STATE", tmp_path / "state")
     monkeypatch.setenv("DATA_GO_KR_KEY", "k")
     monkeypatch.setenv("DART_KEY", "k")
+    # 국민연금 monthly panel: 3 synthetic months, no network
+    monkeypatch.setattr(NM, "update_archive", lambda *a, **k: [])
+    months = tmp_path / "nps" / "months"
+    for ym, hc in (("202509", 40), ("202603", 60), ("202609", 90)):
+        rows = [row(f"{ym[:4]}-{ym[4:]}", "(주)해담식품", "123456", hc, hc * 400_000),
+                # NPS-only discovery: a young corp doubling head-count
+                row(f"{ym[:4]}-{ym[4:]}", "(주)조용한성장", "998877",
+                    {"202509": 30, "202603": 45, "202609": 70}[ym], 1, adopt="2023-02-01",
+                    icode="901009")]
+        _, agg = NM.aggregate(csv_bytes(rows), adopt_after="20200101", min_headcount=5, exclude=[])
+        NM.save_month(months / f"{ym}.tsv.gz", agg)
     return tmp_path
 
 
@@ -123,7 +136,7 @@ def test_daily_end_to_end(sandbox):
     names = {c["name"]: c for c in out["queue"]}
     assert "(주)해담식품" in names, out
     h = names["(주)해담식품"]
-    assert h["sources"] == ["dart", "localdata"]           # merged across sources
+    assert h["sources"] == ["dart", "localdata", "nps"]    # all three sources agree
     assert h["financials"]["revenue"] == 31_250_000_000
     assert h["nps"]["headcount"] == 90 and h["nps"]["growth_12m"] > 0.5
     assert h["change"] == "new"
@@ -131,7 +144,9 @@ def test_daily_end_to_end(sandbox):
     assert not any("유동화" in n for n in names)            # SPC excluded
     assert "새싹푸드" in names                               # HQ name, not "새싹푸드 2공장"
     assert names["새싹푸드"]["sources"] == ["localdata"]
-    assert len(out["queue"]) == 2, [c["name"] for c in out["queue"]]
+    q = names["(주)조용한성장"]                              # found by the NPS panel scan alone
+    assert q["sources"] == ["nps"] and q["nps"]["growth_12m"] > 1
+    assert len(out["queue"]) == 3, [c["name"] for c in out["queue"]]
     # second run: nothing new, everything cached
     out2 = P.daily(dt.date(2026, 11, 6))
     assert all(c["change"] != "new" for c in out2["queue"])
