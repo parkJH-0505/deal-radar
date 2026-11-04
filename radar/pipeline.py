@@ -144,22 +144,28 @@ def run_dart(key: str, cfg: dict, today: dt.date, meta: dict, notes: list[str]) 
 
 # ================================================================== LOCALDATA
 
-def run_localdata(key: str, cfg: dict, today: dt.date, notes: list[str]) -> list[dict]:
+def run_localdata(key: str, cfg: dict, today: dt.date, notes: list[str],
+                  meta: dict | None = None) -> list[dict]:
     lc = cfg["sources"]["localdata"]
+    meta = meta if meta is not None else {}
+    synced = meta.setdefault("localdata_synced", {})
     sigs = []
     for ind in lc["industries"]:
+        slug = ind["slug"]
+        last = synced.get(slug)
+        since = str(dt.date.fromisoformat(last) - dt.timedelta(days=3)) if last else None
         try:
-            raw = L.fetch_all(key, ind["slug"])
+            rows, mode = L.sync(key, slug, STATE / f"localdata_{slug}.jsonl.gz", since)
         except (HttpError, RuntimeError) as e:
             notes.append(f"인허가 {ind['label']} 수집 실패: {e}")
             continue
-        rows = [L.normalize(r) for r in raw]
+        synced[slug] = today.isoformat()
         s = L.expansion_signals(rows, today=today, window_days=lc["window_days"],
                                 industry_label=ind["label"])
         for x in s:
             x["thesis"] = ind.get("thesis")
         sigs.extend(s)
-        notes.append(f"인허가 {ind['label']}: {len(rows):,}건 수집, 증설·다거점 신호 {len(s)}건")
+        notes.append(f"인허가 {ind['label']}: {mode} → 보유 {len(rows):,}건, 증설·다거점 신호 {len(s)}건")
     return sigs
 
 
@@ -307,7 +313,7 @@ def daily(today: dt.date | None = None) -> dict:
 
     loc: list[dict] = []
     if cfg["sources"]["localdata"]["enabled"] and gkey:
-        loc = run_localdata(gkey, cfg, today, notes)
+        loc = run_localdata(gkey, cfg, today, notes, meta)
     elif not gkey:
         notes.append("DATA_GO_KR_KEY 미설정 → 인허가·국민연금 건너뜀")
 

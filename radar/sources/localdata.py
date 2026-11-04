@@ -65,6 +65,48 @@ def fetch_all(key: str, slug: str, *, page_size: int = 1000, max_pages: int = 40
     return out
 
 
+def _row_key(r: dict) -> str:
+    return str(r.get("mng_no") or f"{r['name']}|{r['permit_date']}|{r['addr']}")
+
+
+def load_store(path) -> dict[str, dict]:
+    import gzip
+    import json
+    if not path.exists():
+        return {}
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        return {_row_key(r): r for r in map(json.loads, f) if r}
+
+
+def save_store(path, store: dict[str, dict]) -> None:
+    import gzip
+    import json
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", mtime=0) as gz:
+        for k in sorted(store):
+            gz.write((json.dumps(store[k], ensure_ascii=False) + "\n").encode())
+
+
+def sync(key: str, slug: str, path, since: str | None) -> tuple[list[dict], str]:
+    """Keep a local copy of one 인허가 업종. The API caps a page at 100 rows, so the
+    first run pulls everything (~1k pages) and later runs only rows updated since
+    `since` (YYYY-MM-DD, via DAT_UPDT_PNT)."""
+    store = load_store(path)
+    if store and since:
+        raw = fetch_all(key, slug, page_size=100, max_pages=2000,
+                        extra={"cond[DAT_UPDT_PNT::GTE]": since})
+        mode = f"증분({since}~) {len(raw):,}건"
+    else:
+        raw = fetch_all(key, slug, page_size=100, max_pages=2000)
+        store = {}
+        mode = f"전체 {len(raw):,}건"
+    for r in raw:
+        n = normalize(r)
+        store[_row_key(n)] = n
+    save_store(path, store)
+    return list(store.values()), mode
+
+
 def _raise_on_error(body) -> None:
     code = find_key(body, "resultCode", "result_code")
     if code not in (None, "00", "0", "000", "INFO-000", 0):

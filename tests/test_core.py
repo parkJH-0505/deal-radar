@@ -137,3 +137,17 @@ def test_extract_financials_real_dart_layout():
     assert f["revenue"] == 100_956_649_254 and f["revenue_prev"] == 67_495_465_546
     assert f["op_income"] == -1_250_000_000            # parenthesised = loss
     assert "매출액" in D.income_excerpt(text)
+
+
+def test_partial_year_and_spinoff_guards():
+    import yaml
+    from radar.score import score
+    cfg = yaml.safe_load(open("config/theses.yaml", encoding="utf-8"))
+    base = {"sources": ["dart"], "dart_first_audit": "20260331", "age_years": 2.2}
+    p1, w1 = score({**base, "financials": {"revenue": 25_700_000_000,
+                                           "revenue_prev": 600_000_000}}, cfg, TODAY)
+    assert any("부분연도" in r for r in w1) and not any(r.startswith("매출 성장") and r.endswith(")") and "(+" in r for r in w1)
+    p2, w2 = score({**base, "financials": {"revenue": 375_900_000_000}}, cfg, TODAY)
+    assert any("분할" in r for r in w2)
+    p3, w3 = score({**base, "nps": {"growth_12m_from_zero": True, "headcount": 409}}, cfg, TODAY)
+    assert any("분할" in r for r in w3)

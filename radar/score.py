@@ -49,7 +49,9 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
         add("revenue_ge_100b_krw", f"매출 {rev / 1e8:,.0f}억(추정)")
     if rev and prev and prev > 0:
         g = (rev - prev) / prev
-        if g >= 0.5:
+        if g >= 10:  # 10배+ 는 대개 전기가 설립 첫 부분연도 → 성장률로 쓰지 않는다
+            why.append(f"매출 성장 {g:.0%} (전기 부분연도 추정, 점수 제외)")
+        elif g >= 0.5:
             add("revenue_growth_ge_50pct", f"매출 성장 {g:.0%}")
         elif g >= 0.25:
             add("revenue_growth_ge_25pct", f"매출 성장 {g:.0%}")
@@ -87,6 +89,13 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
     bpc = nps.get("bill_per_head_change_12m")
     if bpc is not None and bpc >= 0.10:
         add("bill_per_head_rising", f"1인당 고지금액 12개월 {bpc:+.0%}")
+
+    # 설립 3년 이내인데 처음부터 큰 회사 = 대기업 분할·합작·사업양수 법인일 공산이 크다.
+    if age is not None and age <= 3:
+        big_rev = rev and rev >= 150_000_000_000
+        transplanted = nps.get("growth_12m_from_zero") and (nps.get("headcount") or 0) >= 150
+        if big_rev or transplanted:
+            add("likely_spinoff", "설립 직후부터 대형(매출 1,500억+ 또는 0→150명+): 분할·합작 의심")
 
     induty = str(c.get("induty_code") or "")
     for th in cfg.get("theses", {}).values():
