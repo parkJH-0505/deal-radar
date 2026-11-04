@@ -1,222 +1,44 @@
-probe at 2026-11-05T00:04:48+09:00
-keys present: {'DATA_GO_KR_KEY': True, 'DART_KEY': True}
+probe at 2026-11-05T00:07:27+09:00
+key present: True
+===== A. NPS past months =====
+search ym=None: code=00 total=63 items=5 dataCrtYm=['202609'] seqs=[7094326, 6884221, 6813324, 6764511, 6717876]
+search ym=202608: code=00 total=63 items=5 dataCrtYm=['202609'] seqs=[7094326, 6884221, 6813324, 6764511, 6717876]
+search ym=202601: code=00 total=63 items=5 dataCrtYm=['202609'] seqs=[7094326, 6884221, 6813324, 6764511, 6717876]
+search ym=202509: code=00 total=63 items=5 dataCrtYm=['202609'] seqs=[7094326, 6884221, 6813324, 6764511, 6717876]
+seq 7094326
+detail ym=None: code=00 total=1 -> [(4, '790840')]
+period ym=None: code=00 total=1 -> [{'lssJnngpCnt': 0, 'nwAcqzrCnt': 4}]
+detail ym=202609: code=00 total=1 -> [(4, '790840')]
+period ym=202609: code=00 total=1 -> [{'lssJnngpCnt': 0, 'nwAcqzrCnt': 4}]
+detail ym=202608: code=00 total=1 -> [(4, '790840')]
+period ym=202608: code=00 total=0 -> []
+detail ym=202601: code=00 total=1 -> [(4, '790840')]
+period ym=202601: code=00 total=0 -> []
+period data_crt_ym=202608: code=00 total=1 -> [{'lssJnngpCnt': 0, 'nwAcqzrCnt': 4}]
+period crtYm=202608: code=00 total=1 -> [{'lssJnngpCnt': 0, 'nwAcqzrCnt': 4}]
+period ym=202608: code=00 total=1 -> [{'lssJnngpCnt': 0, 'nwAcqzrCnt': 4}]
+period dataCrtYmd=202608: code=00 total=1 -> [{'lssJnngpCnt': 0, 'nwAcqzrCnt': 4}]
+오뚜기: code=00 total=441 [{"wkplNm": "(주)조은석재/일용/안양 오뚜기 기념관 증축 및 팩토리 신축공사 중 석공사(팩토리)", "seq": 7094050, "dataCrtYm": "202609", "bzowrRgstNo": "123817****"}, {"wkplNm": "（주）성일기전/일용/오뚜기 팩토리 1차 전원공급 공사", "seq": 7088709, "dataCrtYm": "202609", "bzowrRgstNo": "107813****"}, {"wkplNm": "(주)하나테크/상용/오뚜기물류서비스 백암 물류센터 신축공사 중 판넬공사", "seq": 7082173, "dataCrtYm": "202609", "bzowrRgstNo": "312864****"}, {"wkplNm": "（주）테크월/일용/안양 오뚜기 기념관 증축 및 팩토리 신축공사 중 압출성형시멘트패널공사", "seq": 7073959, "dataCrtYm": "202609", "bzowrRgstNo": "502818****"}, {"wkplNm": "(주)성일기전/일용/오뚜기물류서비스 백암물류센터 신축공사 중 전기설비공사", "seq": 7066440, "dataCrtYm": "202609", "bzowrRgstNo": "107813****"}, {"wkplNm": "태양이엔씨(주)/일용/오뚜기물류서비스 백암 물류센터 신축공사 중 철근콘크리트공사", "seq": 7056506, "dataCrtYm": "202609", "bzowrRgstNo": "610819****"}, {"wkplNm": "(주)비에스이엔씨/일용/오뚜기물류서비스 백암 물류센터 신축공사 중 철골공사", "seq": 7055359, "dataCrtYm": "202609", "bzowrRgstNo": "794870****"}, {"wkplNm": "(주)대양이앤에이/일용/안양오뚜기기념관 증축 및 팩토리 신축공사 단열 및 뿜칠공사(기념관)", "seq": 7045444, "dataCrtYm": "202609", "bzowrRgstNo": "207812****"}]
 
-===== localdata 식품제조가공업 /info (3 rows) =====
-HTTP 200  content-type=application/json;charset=utf-8
-resultCode: 0 | msg: 정상 | total: 95906
-items: 3
-first item fields:
-{
- "BIZPLC_SURRND_SE_NM": "",
- "BLDG_PSN_SE_NM": "임대",
- "BPLC_NM": "누룩터 보람점",
- "BZSTAT_SE_NM": "기타 식품제조가공업",
- "CLSBIZ_YMD": "",
- "CRD_INFO_X": "226029.572705606",
- "CRD_INFO_Y": "330619.724118604",
- "DAT_UPDT_PNT": "2026-11-03 21:15:42",
- "DAT_UPDT_SE": "I",
- "DTL_SALS_STTS_CD": "01",
- "DTL_SALS_STTS_NM": "영업",
- "FCLT_TOTAL_SCL": "6.98",
- "FCTRY_OFJB_EMP_CNT": "None",
- "FCTRY_PRODWK_EMP_CNT": "None",
- "FCTRY_SLSPOS_EMP_CNT": "None",
- "FML_PRCTR_CNT": "None",
- "GRD_SE_NM": "",
- "GRNAMT": "None",
- "HDOFC_EMP_CNT": "None",
- "HPG": "",
- "LAST_MDFCN_PNT": "2026-11-02 19:52:02",
- "LCPMT_YMD": "2026-11-03",
- "LCTN_AREA": "69.62",
- "LCTN_ZIP": "339-008",
- "LOTNO_ADDR": "세종특별자치시 보람동 783 호려울마을5단지",
- "MLT_UTZTN_BSNSSP_YN": "N",
- "ML_PRCTR_CNT": "None",
- "MNG_NO": "5690000-106-2026-00009",
- "MRNT_AMOUNT": "None",
- "OPN_ATMY_GRP_CD": "5690000",
- "ROAD_NM_ADDR": "세종특별자치시 남세종로 441, 상가2동 1층 113호 (보람동, ...",
- "ROAD_NM_ZIP": "30150",
- "SALS_STTS_CD": "01",
- "SALS_STTS_NM": "영업/정상",
- "SNTTN_BZSTAT_NM": "기타 식품제조가공업",
- "TELNO": "044-864-4555",
- "TRDTN_BSNSSP_DSGN_NO": "",
- "TRDTN_BSNSSP_PRINC_FD": "",
- "WTRSPPL_FCLT_SE_NM": "상수도전용"
-}
+===== B. data.go.kr monthly CSV download wiring =====
+scripts: ['/common/js/component/ui-script.js', '/common/js/jquery-3.7.1.min.js', '/common/js/plugin/slick.min.js', '/common/js/plugin/swiper-bundle.min.js', '/common/portal/js/custom.js', '/js/app/script_favorites.js', '/js/app/script_shortcut.js', '/js/biz/cmm/cmm/checkbox-util.js', '/js/biz/cmm/cmm/file-category-util.js', '/js/biz/cmm/cmm/loading.js', '/js/biz/cmm/cmm/script_cmmFunction.js', '/js/biz/cmm/cmm/script_cmmPopup.js', '/js/biz/cmm/cmm/script_codeSetting.js', '/js/biz/cmm/cmm/script_formUtil.js', '/js/biz/cmm/cmm/script_numberUtil.js', '/js/biz/cmm/cmm/script_openSourceSetting.js', '/js/biz/cmm/cmm/script_sessionExtend.js', '/js/biz/cmm/cmm/script_stringUtil.js', '/js/biz/cmm/cmm/script_voiceCaptcha.js', '/js/biz/datset/script_fileDetail.js', '/js/biz/dss/script_dataOfferReqst.js', '/js/biz/dss/script_errorReport.js', '/js/biz/sch/marked/marked.min.js', '/js/handlebars/handlebars-helper.js', '/js/handlebars/handlebars-v4.5.3.min.js', '/js/swagger-v4/swagger-ui-bundle.js', '/js/swagger-v4/swagger-ui-standalone-preset.js', 'https://www.googletagmanager.com/gtag/js?id=G-7TYF9K5TBJ']
 
-===== localdata /info with cond[LCPMT_YMD::GTE]=20260901 =====
-HTTP 200  content-type=application/json;charset=utf-8
-resultCode: 0 | msg: 정상 | total: 330
-items: 2
-first item fields:
-{
- "BIZPLC_SURRND_SE_NM": "",
- "BLDG_PSN_SE_NM": "임대",
- "BPLC_NM": "누룩터 보람점",
- "BZSTAT_SE_NM": "기타 식품제조가공업",
- "CLSBIZ_YMD": "",
- "CRD_INFO_X": "226029.572705606",
- "CRD_INFO_Y": "330619.724118604",
- "DAT_UPDT_PNT": "2026-11-03 21:15:42",
- "DAT_UPDT_SE": "I",
- "DTL_SALS_STTS_CD": "01",
- "DTL_SALS_STTS_NM": "영업",
- "FCLT_TOTAL_SCL": "6.98",
- "FCTRY_OFJB_EMP_CNT": "None",
- "FCTRY_PRODWK_EMP_CNT": "None",
- "FCTRY_SLSPOS_EMP_CNT": "None",
- "FML_PRCTR_CNT": "None",
- "GRD_SE_NM": "",
- "GRNAMT": "None",
- "HDOFC_EMP_CNT": "None",
- "HPG": "",
- "LAST_MDFCN_PNT": "2026-11-02 19:52:02",
- "LCPMT_YMD": "2026-11-03",
- "LCTN_AREA": "69.62",
- "LCTN_ZIP": "339-008",
- "LOTNO_ADDR": "세종특별자치시 보람동 783 호려울마을5단지",
- "MLT_UTZTN_BSNSSP_YN": "N",
- "ML_PRCTR_CNT": "None",
- "MNG_NO": "5690000-106-2026-00009",
- "MRNT_AMOUNT": "None",
- "OPN_ATMY_GRP_CD": "5690000",
- "ROAD_NM_ADDR": "세종특별자치시 남세종로 441, 상가2동 1층 113호 (보람동, ...",
- "ROAD_NM_ZIP": "30150",
- "SALS_STTS_CD": "01",
- "SALS_STTS_NM": "영업/정상",
- "SNTTN_BZSTAT_NM": "기타 식품제조가공업",
- "TELNO": "044-864-4555",
- "TRDTN_BSNSSP_DSGN_NO": "",
- "TRDTN_BSNSSP_PRINC_FD": "",
- "WTRSPPL_FCLT_SE_NM": "상수도전용"
-}
+JS /js/biz/cmm/cmm/script_cmmFunction.js contains fileDataDown:
+      }                      });     };       /**      * 파일데이터 데이터명으로 파일명 변경 후 다운로드      * @param atchFileId      * @param fileDetailSn      * @param dataNm      * @param atchFileExtsn      */     fn_fileDataDownload = function (atchFileId, fileDetailSn, dataNm) {          if (atchFileId == "" || fileDetailSn == "" || dataNm == "") {             alert("파일 다운로드에 필요한 데이터가 부족합니다.");             return;         }         $.ajax({             url: '/cmm/cmm/check-limit.json',             type: 'POST',             dataType: 'json',             data: {                 atchFileId: atchFileId,                 fileDetailSn: fileDetailSn             },             success: function(res) {                 if (res.needCaptcha) {                     showLimitCaptcha(atchFileId, fileDetailSn);                 } else {                 // window.open("/cmm/cmm/fileDownload.do?atchFileId="+atchFileId+"&fileDetailSn="+fileDetailSn + "&dataNm=" + encodeURI(dataNm));                 download_file("/cmm/cmm/fileDownload.do?atchFileId=" + atchFileId + "&fileDetailSn=" + fileDetailSn + "&dataNm=" + encodeURI(dataNm)); //call function                 }             },             error: function(xhr) {                 if (xhr.status === 403) {                     showLimitCaptcha(atchFileId, fileDetailSn);                 }             }                      });     };      /**      * 엑셀 다운로드      * param : url - 엑셀다운로드를 위해 데이터 조회를 할 url (list 형태)      * param : searchParamList - 데이터 조회시 필요한 검색조건      * */     fn_excelDown = function (url, searchParamList, excelFileNm, excelSheetNm) {          if (excelFileNm == "") {             var titleTag = $(document).find("title").text();             excelFileNm = titleTag;         }          if (excelSheetNm == "") {             var titleTag = $(document).find("title").text();             excelSheetNm = titleTag;         }          var $excelform = $('<form></form>');          for (var i = 0; i < searchParamList.length; i++) {             var param = 
 
-===== localdata /history param cond[BASE_DATE::EQ]=20260101 =====
-HTTP 200  content-type=application/json;charset=utf-8
-resultCode: -11 | msg: 필수 파라미터가 입력되지 않았습니다. | total: None
-items: 0
-envelope: {"response": {"header": {"resultCode": "-11", "resultMsg": "필수 파라미터가 입력되지 않았습니다."}}}
+JS /js/biz/datset/script_fileDetail.js contains fileDataDown:
+Info.do'         }, fileDetailObj.fn_fileDataDetailCb)     },      fn_fileDataDetailCb: function(data) {         $("#layer_data_infomation").append(data)     },      /**      * 파일 다운로드      */     fn_fileDataDown: function(publicDataPk, publicDataDetailPk, atchFileId, fileDetailSn, publicDataHistSn) {         if(publicDataHistSn > 1) {             fileDetailObj.fn_checkUpdtDt();         } else {             fileDetailObj.fn_checkRegistFile();         }          fileDetailObj.fn_cmmnAjax({             publicDataDetailPk: publicDataDetailPk,             publicDataPk: publicDataPk,             atchFileId: atchFileId,             fileDetailSn: fileDetailSn,             publicDataTyCode: 'PR0051',             url: '/tcs/dss/selectFileDataDownload.do'         }, fileDetailObj.fn_fileDataDownCb);          $(".recommend-after-download").slideDown();     },      fn_fileDataDownCb: function(data) {         let jsonObj = JSON.parse(data);          if (jsonObj.status === true) {             var dataType = jsonObj.dataSetFileDetailInfo.publicDataTyDetailCode;             if (dataType == 'DATY05') { 		        fn_fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.publicDataSj);             } else { 		        fn_fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.dataNm);             }         } else {             if (jsonObj.error) {                 alert(jsonObj.error);             } else {                 alert("파일 다운로드에 실패했습니다.");             }         }     },      /**      * 샘플 파일      */     fn_sampleFileDown: function(publicDataPk) {          fileDetailObj.fn_cmmnAjax({             publicDataPk: publicDataPk,             url: '/tcs/dss/selectSampleFileDownload.do'         }, fileDetailObj.fn_fileDataDownCb)          $(".recommend-after-download").slideDown();     },      fn_parseDateTime: function (value) {         if (!value) {             return null;         }          let matched = String(value).
+selectFileDataHistory[^\"'<> ]{0,120} -> []
+이전[^<]{0,40}데이터 -> []
+historyList[^\"'<> ]{0,80} -> []
+fileDetailSn[^\"'<>]{0,60} -> ['fileDetailSn: $(']
+uddi:[0-9a-f\-]{36} -> ['uddi:4f8f48cf-344b-471f-b7f2-c2aa98c210a7']
 
-===== localdata /history param baseDate=20260101 =====
-HTTP 200  content-type=application/json;charset=utf-8
-resultCode: -11 | msg: 필수 파라미터가 입력되지 않았습니다. | total: None
-items: 0
-envelope: {"response": {"header": {"resultCode": "-11", "resultMsg": "필수 파라미터가 입력되지 않았습니다."}}}
+TRY https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=&fileDetailSn=1 -> 404 text/html;charset=UTF-8 2682 None final: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=&fileDetailSn=1
+   first bytes: b'\n\n\n\n\n\n\n <!doctype html>\n<html lang="ko">\n\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge" />\n    <meta name="viewport" content="width=device-width, initial-s'
 
-===== localdata /history param dataStdrDe=20260101 =====
-HTTP 200  content-type=application/json;charset=utf-8
-resultCode: -11 | msg: 필수 파라미터가 입력되지 않았습니다. | total: None
-items: 0
-envelope: {"response": {"header": {"resultCode": "-11", "resultMsg": "필수 파라미터가 입력되지 않았습니다."}}}
+TRY https://www.data.go.kr/tcs/dss/selectFileDataDownload.do?publicDataPk=15083277&fileDetailSn=1 -> 200 text/html;charset=UTF-8 None None final: https://www.data.go.kr/tcs/dss/selectFileDataDownload.do?publicDataPk=15083277&fileDetailSn=1
+   first bytes: b'{"dataSetFileDetailInfo":{"rn":"","searchCondition1":"","searchCondition2":"","searchCondition3":"","searchCondition1Array":null,"searchCondition2Array":null,"searchCondition3Array":null,"searchKeywor'
 
-===== localdata /history param cond[DATA_STDR_DE::EQ]=20260101 =====
-HTTP 200  content-type=application/json;charset=utf-8
-resultCode: -11 | msg: 필수 파라미터가 입력되지 않았습니다. | total: None
-items: 0
-envelope: {"response": {"header": {"resultCode": "-11", "resultMsg": "필수 파라미터가 입력되지 않았습니다."}}}
-
-===== NPS getBassInfoSearchV2 style=camel name=삼성전자 =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 00 | msg: NORMAL_CODE | total: 1739
-items: 3
-first item fields:
-{
- "bzowrRgstNo": "206870****",
- "dataCrtYm": "202609",
- "ldongAddrMgplDgCd": "41",
- "ldongAddrMgplSgguCd": "595",
- "ldongAddrMgplSgguEmdCd": "105",
- "seq": "7094326",
- "wkplJnngStcd": "1",
- "wkplNm": "주식회사이수이앤씨/일용/삼성전자 기흥화성 경영계획 대응공사 중 비계공사",
- "wkplRoadNmDtlAddr": "경기도 화성시 병점구 삼성전자로",
- "wkplStylDvcd": "1"
-}
-
-===== NPS getBassInfoSearchV2 style=snake name=삼성전자 =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 00 | msg: NORMAL_CODE | total: 0
-items: 0
-envelope: {"response": {"header": {"resultCode": "00", "resultMsg": "NORMAL_CODE"}, "body": {"items": {}, "pageNo": "1", "numOfRows": "3", "totalCount": "0"}}}
-
-===== NPS getBassInfoSearchV2 no filter =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 00 | msg: NORMAL_CODE | total: 0
-items: 0
-envelope: {"response": {"header": {"resultCode": "00", "resultMsg": "NORMAL_CODE"}, "body": {"items": {}, "pageNo": "1", "numOfRows": "2", "totalCount": "0"}}}
-
-seq for detail/period: 7094326 dataCrtYm: 202609
-
-===== NPS getDetailInfoSearchV2 =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 00 | msg: NORMAL_CODE | total: 1
-items: 1
-first item fields:
-{
- "adptDt": "20260414",
- "bzowrRgstNo": "206870****",
- "crrmmNtcAmt": "790840",
- "jnngpCnt": "4",
- "ldongAddrMgplDgCd": "41",
- "ldongAddrMgplSgguCd": "595",
- "ldongAddrMgplSgguEmdCd": "105",
- "scsnDt": "00010101",
- "vldtVlKrnNm": "비계 및 형틀 공사업",
- "wkplIntpCd": "452120",
- "wkplJnngStcd": "1",
- "wkplNm": "주식회사이수이앤씨/일용/삼성전자 기흥화성 경영계획 대응공사 중 비계공사",
- "wkplRoadNmDtlAddr": "경기도 화성시 병점구 삼성전자로",
- "wkplStylDvcd": "1"
-}
-
-===== NPS getPdAcctoSttusInfoSearchV2 (no ym) =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 00 | msg: NORMAL_CODE | total: 1
-items: 1
-first item fields:
-{
- "lssJnngpCnt": "0",
- "nwAcqzrCnt": "4"
-}
-
-===== NPS getPdAcctoSttusInfoSearchV2 ym=202606 =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 00 | msg: NORMAL_CODE | total: 0
-items: 0
-envelope: {"response": {"header": {"resultCode": "00", "resultMsg": "NORMAL_CODE"}, "body": {"items": {}, "pageNo": "1", "numOfRows": "10", "totalCount": "0"}}}
-
-===== NPS monthly file page (download wiring) =====
-fileDownload[^\"'<>]{0,200} -> []
-atchFileId[^\"'<>]{0,120} -> ['atchFileId: $(']
-uddi:[0-9a-f\-]{20,} -> ['uddi:4f8f48cf-344b-471f-b7f2-c2aa98c210a7']
-fn_fileData[A-Za-z]*\([^)]{0,200}\) -> ["fn_fileDataDown('15083277', 'uddi:4f8f48cf-344b-471f-b7f2-c2aa98c210a7', '','1', '1')"]
-publicDataDetailPk[^\"'<>]{0,80} -> ['publicDataDetailPk']
-/tcs/dss/[A-Za-z/\.]+ -> ['/tcs/dss/aiAssistant.do', '/tcs/dss/getOrCreateQuickSummary.do', '/tcs/dss/hybridSearch.do', '/tcs/dss/redirectDevAcountRequestForm.do', '/tcs/dss/selectApiDataDetailView.do', '/tcs/dss/selectDataSetList.do']
-
-===== DART list.json F/E 2026-03-31 =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 000 | msg: 정상 | total: 3330
-items: 3
-first item fields:
-{
- "corp_code": "00528065",
- "corp_name": "마창대교",
- "stock_code": "",
- "corp_cls": "E",
- "report_nm": "감사보고서 (2025.12)",
- "rcept_no": "20260331004913",
- "flr_nm": "삼일회계법인",
- "rcept_dt": "20260331",
- "rm": ""
-}
-list total_count: 3330 total_page: 3330
-
-===== DART company.json =====
-HTTP 200  content-type=application/json;charset=UTF-8
-resultCode: 000 | msg: 정상 | total: None
-items: 0
-envelope: {"status": "000", "message": "정상", "corp_code": "00528065", "corp_name": "주식회사 마창대교", "corp_name_eng": "MCB Co.,Ltd.", "stock_name": "마창대교", "stock_code": "", "ceo_nm": "김성환", "corp_cls": "E", "jurir_no": "1901110051570", "bizr_no": "6088152747", "adres": "경상남도 창원시 성산구 남해안대로 6687 (귀산동)", "hm_url": "www.machang-bridge.com", "ir_url": "", "phn_no": "055-710-2000", "fax_no": "055-710-2020", "induty_code": "74100", "est_dt": "20030624", "acc_mt": "12"}
+TRY https://www.data.go.kr/tcs/dss/selectFileDataDownload.do?publicDataPk=15083277&fileDetailSn=1&dataNm= -> 200 text/html;charset=UTF-8 None None final: https://www.data.go.kr/tcs/dss/selectFileDataDownload.do?publicDataPk=15083277&fileDetailSn=1&dataNm=
+   first bytes: b'{"dataSetFileDetailInfo":{"rn":"","searchCondition1":"","searchCondition2":"","searchCondition3":"","searchCondition1Array":null,"searchCondition2Array":null,"searchCondition3Array":null,"searchKeywor'
