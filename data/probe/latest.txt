@@ -1,9 +1,713 @@
-probe at 2026-11-05T00:18:51+09:00
-row ctx around 2025-10-31:
- ass="openFileDetailPopup open-modal" data-public-pk="uddi:74d9aa39-bc2c-4124-9cff-ec389dbf51e3" data-public-detail-sn="1"> 국민연금공단_국민연금 가입 사업장 내역_20260223 </a> </td> <td>2026-02-23</td> </tr> <tr> <td> <a href="#layer_data_infomation" class="openFileDetailPopup open-modal" data-public-pk="uddi:10a6e7bd-a2ee-4ee1-967c-bb9a6aea89a9" data-public-detail-sn="1"> 국민연금공단_국민연금 가입 사업장 내역_20260123 </a> </td> <td>2026-01-23</td> </tr> <tr> <td> <a href="#layer_data_infomation" class="openFileDetailPopup open-modal" data-public-pk="uddi:06b329ca-54a4-47f8-8c8f-8268d61c7d7c" data-public-detail-sn="1"> 국민연금공단_국민연금 가입 사업장 내역_20251223 </a> </td> <td>2025-12-23</td> </tr> <tr> <td> <a href="#layer_data_infomation" class="openFileDetailPopup open-modal" data-public-pk="uddi:f9787983-d48a-4c94-b7b6-c805a5be3cca" data-public-detail-sn="1"> 국민연금공단_국민연금 가입 사업장 내역_20251124 </a> </td> <td>2025-11-24</td> </tr> <tr> <td> <a href="#layer_data_infomation" class="openFileDetailPopup open-modal" data-public-pk="uddi:466a4aef-5a2d-4b2b-a3d9-8a6c11b81d23" data-public-detail-sn="1"> 국민연금공단_국민연금 가입 사업장 내역_20251024 </a> </td> <td>2025-10-31</td> </tr> <tr> <td> <a href="#layer_data_infomation" class="openFileDetailPopup open-modal" data-public-pk="uddi:14c0beb5-b153-4b03-892b-8d30a7600de1" data-public-detail-sn="1"> 국민연금공단_국민연금 가입 사업장 내역_20250923 </a> </td> <td>2025-09-23</td> </tr> <tr> <td> <a href="#layer_data_infomation" class="openFileDetailPopup open-modal" data-public-pk="uddi:20ddf65d-51d8-421f-8ee5-b64f05554151" data-public-detail-sn="1"> 국민연금공단_국민연금 가입 사업장 내역_2025082
+probe at 2026-11-05T02:07:42+09:00
 
-distinct onclick/href (first 15):
-   #layer_data_infomation
+######## 20260324000188
+files: [('20260324000188_00760.xml', 216338)]
+--- RAW around first 매출 ( 18380 )
+RIGHT" WIDTH="116" HEIGHT="23" ACODE="11200000040000" ADELIM="1">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11200000040000" ADELIM="2">2,617,958,240 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11200000040000" ADELIM="3">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11200000040000" ADELIM="4">2,330,003,737 </TE>
+</TR>
 
-uddi in hist: ['uddi:8e0d590f-768e-4cbd-9560-c7168c8d13b6', 'uddi:b5ac0771-a9e3-4ce0-9505-ad0439d97b79', 'uddi:365580a5-5619-4e14-b61f-b38e7abeba27', 'uddi:b2243a59-a261-4dc6-a4f3-cfcbc478d231', 'uddi:c9f9e0f9-0e4a-47b9-a2cb-e7502959eaa0', 'uddi:210fa01d-23ea-4599-9a93-98a23ac53a18', 'uddi:7e1553a3-6b4a-4de0-81bf-86b37ee4d61a', 'uddi:74d9aa39-bc2c-4124-9cff-ec389dbf51e3', 'uddi:10a6e7bd-a2ee-4ee1-967c-bb9a6aea89a9', 'uddi:06b329ca-54a4-47f8-8c8f-8268d61c7d7c']
-numbers near fn_: []
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE WIDTH="264" HEIGHT="23" ACODE="11130000030000" ADELIM="0" ALEVEL="1" USERMARK="P16">(1)당좌자산</TE>
+<TE ALIGN="RIGHT" WIDTH="116" HEIGHT="23" ACODE="11130000030000" ADELIM="1">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11130000030000" ADELIM="2">942,396,104 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11130000030000" ADELIM="3">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11130000030000" ADELIM="4">1,165,403,644 </TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE WIDTH="264" HEIGHT="23" ACODE="11110000040000" ADELIM="0" ALEVEL="2" USERMARK="P32"> 1.현금및현금성자산(주석2,14)</TE>
+<TE ALIGN="RIGHT" WIDTH="116" HEIGHT="23" ACODE="11110000040000" ADELIM="1">232,961,316 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11110000040000" ADELIM="2">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11110000040000" ADELIM="3">500,951,381 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11110000040000" ADELIM="4">　</TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE WIDTH="264" HEIGHT="23" ACODE="11115000010000" ADELIM="0" ALEVEL="2" USERMARK="P32"> 2.매출채권 </TE>
+<TE ALIGN="RIGHT" WIDTH="116" HEIGHT="23" ACODE="11115000010000" ADELIM="1">688,111,055 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11115000010000" ADELIM="2">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11115000010000" ADELIM="3">618,591,956 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11115000010000" ADELIM="4">　</TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE WIDTH="264" HEIGHT="23" ACODE="11117000010000" ADELIM="0" ALEVEL="2" USERMARK="P32"> 3.단기대여금</TE>
+<TE ALIGN="RIGHT" WIDTH="116" HEIGHT="23" ACODE="11117000010000" ADELIM="1">- </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11117000010000" ADELIM="2">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11117000010000" ADELIM="3">23,868,190 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11117000010000" ADELIM="4">　</TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE WIDTH="264" HEIGHT="23" ACODE="11119000010000" ADELIM="0" ALEVEL="2" USERMARK="P32"> 4.미수수익</TE>
+<TE ALIGN="RIGHT" WIDTH="116" HEIGHT="23" ACODE="11119000010000" ADELIM="1">- </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11119000010000" ADELIM="2">　</TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11119000010000" ADELIM="3">598,004 </TE>
+<TE ALIGN="RIGHT" WIDTH="115" HEIGHT="23" ACODE="11119000010000" ADELIM="4">　</TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE WIDTH="264" HEIGHT="23" ACODE="11141000010000" ADELIM="0" ALEVEL="2" USERMARK="P32"> 5.선급금 </TE>
+<TE ALIGN=
+--- TEXT len 37777 손익계산서 at [857, 1652, 2082, 9203]
+--- TEXT around 매출 @ 9491
+
+
+
+ 
+
+
+ 
+ 
+ 손 익 계 산 서 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+
+
+
+ | 제 3 기 2025년 1월 1일부터 2025년 12월 31일까지 
+
+
+
+
+
+ | 제 2 기 2024년 1월 1일부터 2024년 12월 31일까지(감사받지 아니한 재무제표) 
+
+
+
+
+
+ | 주식회사 삼정푸드 
+ | (단위 : 원) 
+
+
+ 
+ 
+
+ 
+
+ 
+  
+  
+  
+  
+  
+ 
+
+ | 
+
+
+
+ | 과                        목 
+ | 제 3(당) 기 
+ | 제 2(전) 기(감사받지 아니한 재무제표) 
+
+
+ 
+
+ 
+
+
+
+ |  I.매출액(주석2) 
+ | 　 
+ | 100,956,649,254  
+ | 　 
+ | 67,495,465,546  
+
+
+
+
+
+ | 1.상품매출 
+ | 2,128,858,000  
+ | 　 
+ | 3,244,356,950  
+ | 　 
+
+
+
+
+
+ | 2.제품매출 
+ | 98,827,791,254  
+ | 　 
+ | 64,251,108,596  
+ | 　 
+
+
+
+
+
+ |  II.매출원가 
+ | 　 
+ | 98,509,938,298  
+ | 　 
+ | 65,737,083,544  
+
+
+
+
+
+ | 1.상품매출원가 
+ | 2,040,233,059  
+ | 　 
+ | 3,100,178,041  
+ | 　 
+
+
+
+
+
+ | (1)기초상품재고액 
+ | -  
+ | 　 
+ | -  
+ | 　 
+
+
+
+
+
+ | (2)당기상품매입액 
+ | 2,040,233,059  
+ | 　 
+ | 3,100,178,041  
+ | 　 
+
+
+
+
+
+ | (3)기말상품재고액 
+ | -  
+ | 　 
+ | -  
+ | 　 
+
+
+
+
+
+ | 2.제품매출원가 
+ | 96,469,705,239  
+ | 　 
+ | 62,636,905,503  
+ | 　 
+
+
+
+
+
+ | (1)기초제품재고액 
+ | 956,461,686  
+ | 　 
+ | -  
+ | 　 
+
+
+
+
+
+ | (2)당기제품제조원가 
+ | 96,298,878,851  
+ | 　 
+ | 63,593,367,189  
+ | 　 
+
+
+
+
+
+--- extract: {}
+
+######## 20260410002513
+files: [('20260410002513_00760.xml', 198823)]
+--- RAW around first 매출 ( 20010 )
+) 당좌자산</TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="1" WIDTH="134" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="2" WIDTH="134" HEIGHT="23">9,493,645,220</TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="3" WIDTH="133" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="4" WIDTH="133" HEIGHT="23">6,904,483,308</TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11110000040000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="245" HEIGHT="23">현금및현금성자산</TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="1" WIDTH="134" HEIGHT="23">3,323,417,850</TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="2" WIDTH="134" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="3" WIDTH="133" HEIGHT="23">2,187,555,939</TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="4" WIDTH="133" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11122000010000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="245" HEIGHT="23">단기금융상품</TE>
+<TE ALIGN="RIGHT" ACODE="11122000010000" ADELIM="1" WIDTH="134" HEIGHT="23">2,282,912,083</TE>
+<TE ALIGN="RIGHT" ACODE="11122000010000" ADELIM="2" WIDTH="134" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11122000010000" ADELIM="3" WIDTH="133" HEIGHT="23">625,835,730</TE>
+<TE ALIGN="RIGHT" ACODE="11122000010000" ADELIM="4" WIDTH="133" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11115000010000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="245" HEIGHT="23">매출채권(주석 13)</TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="1" WIDTH="134" HEIGHT="23">3,870,533,219</TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="2" WIDTH="134" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="3" WIDTH="133" HEIGHT="23">3,905,018,534</TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="4" WIDTH="133" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11115900020001" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="245" HEIGHT="23">대손충당금</TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="1" WIDTH="134" HEIGHT="23">(38,705,332)</TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="2" WIDTH="134" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="3" WIDTH="133" HEIGHT="23">(39,132,496)</TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="4" WIDTH="133" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11118000010000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="245" HEIGHT="23">미수금</TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="1" WIDTH="134" HEIGHT="23">1,331,840</TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="2" WIDTH="134" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="3" WIDTH="133" HEIGHT="23">-</TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="4" WIDTH="133" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11119000010000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="245" HEIGHT="23">미수수익</TE>
+<TE ALI
+--- TEXT len 31270 손익계산서 at [889, 1626, 1704, 2055, 8725]
+--- TEXT around 매출 @ 9012
+
+
+
+
+ 
+
+
+ 
+ 
+ 손 익 계 산 서  
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+
+
+
+ | 제 2(당) 기 2025년 01월 01일부터 2025년 12월 31일까지 
+
+
+
+
+
+ | 제 1(전) 기 2024년 11월 01일부터 2024년 12월 31일까지 
+
+
+
+
+
+ | 회사명 : 미도식품 유한회사 
+ | (단위 : 원) 
+
+
+ 
+ 
+
+ 
+
+ 
+  
+  
+  
+  
+  
+ 
+
+ | 
+
+
+
+ | 과                        목 
+ | 제2(당) 기 
+ | 제1(전) 기(감사받지 않은 재무제표) 
+
+
+ 
+
+ 
+
+
+
+ | Ⅰ. 매출액 
+ |  
+ | 35,143,544,215 
+ |  
+ | 8,309,296,297 
+
+
+
+
+
+ | 제품매출(주석 13) 
+ | 35,143,544,215 
+ |  
+ | 8,309,296,297 
+ |  
+
+
+
+
+
+ | Ⅱ. 매출원가 
+ |  
+ | 25,784,013,827 
+ |  
+ | 6,622,073,223 
+
+
+
+
+
+ | 제품매출원가 
+ | 25,784,013,827 
+ |  
+ | 6,622,073,223 
+ |  
+
+
+
+
+
+ | 기초제품재고액 
+ | - 
+ |  
+ | - 
+ |  
+
+
+
+
+
+ | 당기제품제조원가(주석 13) 
+ | 25,784,013,827 
+ |  
+ | 6,622,073,223 
+ |  
+
+
+
+
+
+ | 기말제품재고액 
+ | - 
+ |  
+ | - 
+ |  
+
+
+
+
+
+ | Ⅲ. 매출총이익 
+ |  
+ | 9,359,530,388 
+ |  
+ | 1,687,223,074 
+
+
+
+
+
+ | Ⅳ. 판매비와관리비 
+ |  
+ | 2,665,615,619 
+ |  
+ | 446,283,201 
+
+
+
+
+
+ | 급여(주석 10) 
+ | 922,929,019 
+ |  
+ | 45,900,000 
+ |  
+
+
+
+
+
+ | 퇴직급여(주석 7,10) 
+ | 1,715,228 
+ |  
+ | - 
+ |  
+
+
+
+
+
+ | 복리후생비(주석 10) 
+ | 6,906,200 
+ |  
+ | 678,300 
+ |  
+
+
+
+
+
+--- extract: {}
+
+######## 20261012000359
+files: [('20261012000359_00760.xml', 218650)]
+--- RAW around first 매출 ( 16757 )
+GN="RIGHT" ACODE="11200000040000" ADELIM="1" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11200000040000" ADELIM="2" WIDTH="110" HEIGHT="23">14,145,536,613</TE>
+<TE ALIGN="RIGHT" ACODE="11200000040000" ADELIM="3" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11200000040000" ADELIM="4" WIDTH="110" HEIGHT="23">14,980,374,368</TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11130000030000" ADELIM="0" ALEVEL="1" USERMARK="P16" WIDTH="286" HEIGHT="23">(1) 당좌자산</TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="1" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="2" WIDTH="110" HEIGHT="23">9,287,891,996</TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="3" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11130000030000" ADELIM="4" WIDTH="110" HEIGHT="23">11,191,160,531</TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11110000040000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="286" HEIGHT="23">1. 현금및현금성자산(주석 7)</TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="1" WIDTH="110" HEIGHT="23">4,696,935,666</TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="2" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="3" WIDTH="110" HEIGHT="23">7,697,950,142</TE>
+<TE ALIGN="RIGHT" ACODE="11110000040000" ADELIM="4" WIDTH="110" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11115000010000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="286" HEIGHT="23">2. 매출채권</TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="1" WIDTH="110" HEIGHT="23">1,202,190,739</TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="2" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="3" WIDTH="110" HEIGHT="23">1,751,005,330</TE>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="4" WIDTH="110" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11115900020001" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="286" HEIGHT="23">대손충당금</TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="1" WIDTH="110" HEIGHT="23">(5,200,545)</TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="2" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="3" WIDTH="110" HEIGHT="23">(8,895,872)</TE>
+<TE ALIGN="RIGHT" ACODE="11115900020001" ADELIM="4" WIDTH="110" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11118000010000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="286" HEIGHT="23">3. 미수금(주석 7)</TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="1" WIDTH="110" HEIGHT="23">2,798,624,196</TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="2" WIDTH="110" HEIGHT="23"></TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="3" WIDTH="110" HEIGHT="23">1,437,121,355</TE>
+<TE ALIGN="RIGHT" ACODE="11118000010000" ADELIM="4" WIDTH="110" HEIGHT="23"></TE>
+</TR>
+
+<TR ACOPY="Y" ADELETE="Y" HEIGHT="30">
+<TE ACODE="11141000010000" ADELIM="0" ALEVEL="2" USERMARK="P32" WIDTH="286" HEIGHT="23">4
+--- TEXT len 36461 손익계산서 at [791, 1293, 7934, 34005]
+--- TEXT around 매출 @ 8190
+첨 주석은 본 재무제표의 일부입니다." 
+
+
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+ 
+ 
+ 손 익 계 산 서 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+
+
+
+ | 제5(당)기 2025년 7월 1일부터 2026년 6월 30일까지 
+
+
+
+
+
+ | 제4(전)기 2024년 7월 1일부터 2025년 6월 30일까지 
+
+
+
+
+
+ | 브레빌코리아 유한회사 
+ | (단위 : 원) 
+
+
+ 
+ 
+
+ 
+
+ 
+  
+  
+  
+  
+  
+ 
+
+ | 
+
+
+
+ | 과                        목 
+ | 제5(당)기 
+ | 제4(전)기 
+
+
+ 
+
+ 
+
+
+
+ | I. 매출액 
+ | 　 
+ | 29,178,102,735 
+ | 　 
+ | 22,171,272,436 
+
+
+
+
+
+ | 1. 상품매출 
+ | 28,706,725,096 
+ | 　 
+ | 21,889,781,526 
+ | 　 
+
+
+
+
+
+ | 2. 수리매출 
+ | 289,578,093 
+ | 　 
+ | 234,299,092 
+ | 　 
+
+
+
+
+
+ | 3. 기타매출 
+ | 181,799,546 
+ | 　 
+ | 47,191,818 
+ | 　 
+
+
+
+
+
+ | II. 매출원가 
+ | 　 
+ | 8,930,647,308 
+ |  
+ | 5,775,931,131 
+
+
+
+
+
+ | 1. 상품매출원가 
+ | 8,388,600,764 
+ |  
+ | 5,519,599,023 
+ |  
+
+
+
+
+
+ | 기초상품재고액 
+ | 3,964,053,572 
+ |  
+ | 3,537,740,730 
+ |  
+
+
+
+
+
+ | 당기상품매입액 
+ | 9,156,710,563 
+ |  
+ | 6,454,717,761 
+ |  
+
+
+
+
+
+ | 재고자산평가손실(환입) 
+ | (1,062,684) 
+ |  
+ | (154,019,657) 
+ |  
+
+
+
+
+
+ | 타계정으로 대체액 
+ | (39,342,175) 
+ |  
+ | (354,786,239) 
+ |  
+
+
+
+
+
+ | 기말상품재고액 
+ | (4,691,758,512) 
+ |  
+ | (3,964,053,572) 
+ |  
+
+
+
+
+
+--- extract: {}
