@@ -34,6 +34,8 @@ jobs:
       DART_KEY: ${{ secrets.DART_KEY }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # 대기열에서 늦게 시작해도 직전 실행이 커밋한 최신 데이터 위에서 돈다
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -58,6 +60,10 @@ jobs:
             echo "no changes"
           else
             git commit -m "radar: $(date +%F) run"
-            git pull --rebase --autostash origin main
-            git push origin HEAD:main
+            # data/는 생성물이다. 충돌하면 이번 실행 결과가 이긴다 (rebase에서 -X theirs = 재적용되는 이 커밋).
+            for i in 1 2 3; do
+              git pull --rebase -X theirs origin main && git push origin HEAD:main && break
+              git rebase --abort 2>/dev/null || true
+              sleep $((i * 10))
+            done
           fi
