@@ -48,6 +48,14 @@ def test_localdata_expansion():
     sig = L.expansion_signals([L.normalize(r) for r in rows], today=TODAY,
                               window_days=180, industry_label="식품제조가공업")
     assert len(sig) == 1 and sig[0]["kind"] == "expansion"
+    # small new site of an old operator is NOT a factory expansion
+    small = [L.normalize({"BPLC_NM": "작은빵", "LCPMT_YMD": "2021-01-01", "LCTN_AREA": "60"}),
+             L.normalize({"BPLC_NM": "작은빵 2호점", "LCPMT_YMD": "2026-10-01", "LCTN_AREA": "55"})]
+    assert L.expansion_signals(small, today=TODAY, window_days=180, industry_label="x") == []
+    chain = [L.normalize({"BPLC_NM": f"누룩터 {n}점", "LCPMT_YMD": d, "LCTN_AREA": "70"})
+             for n, d in [("보람", "2026-11-03"), ("도담", "2026-09-10"), ("나성", "2026-07-01")]]
+    cs = L.expansion_signals(chain, today=TODAY, window_days=180, industry_label="x")
+    assert len(cs) == 1 and cs[0]["kind"] == "chain_rollout" and cs[0]["name_norm"] == "누룩터"
     assert sig[0]["name_norm"] == "해담식품" and sig[0]["sido"] == ["경기", "충북"]
 
 

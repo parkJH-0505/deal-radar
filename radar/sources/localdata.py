@@ -3,11 +3,16 @@
 Each industry is its own service (slug) and needs its own 활용신청 on
 data.go.kr; the same personal key works for all of them once approved.
 
-Signals we derive (per normalised company name):
-- expansion: an established operator (permit older than the window) obtained
-  a NEW manufacturing permit inside the window  -> 공장 증설
-- multi_new: two or more new permits inside the window
+Signals we derive (per normalised company/brand name):
+- expansion:     an established operator (permit older than the window) obtained
+                 a NEW factory-scale permit (>= FACTORY_M2) inside the window -> 공장 증설
+- chain_rollout: >= 3 new sites of the same brand inside the window, any size
+                 -> 소형 제조매장 체인 확장 (프랜차이즈형 성장 신호)
+- multi_new:     two new factory-scale permits inside the window, no older site
 Single first permits (brand-new entrants) are too noisy to report alone.
+
+The national table (~96k rows for 식품제조가공업) mixes real factories with
+69㎡ bakery-cafes, so site area (LCTN_AREA / FCLT_TOTAL_SCL) gates "factory".
 """
 from __future__ import annotations
 
@@ -20,6 +25,20 @@ from ..http import digits, find_items, find_key, get, log, parse_body, pick, to_
 BASE = "https://apis.data.go.kr/1741000/{slug}/{op}"
 
 CLOSED_WORDS = ("폐업", "취소", "말소", "휴업")
+FACTORY_M2 = 200.0
+CHAIN_MIN_NEW = 3
+
+
+def _area(rec: dict) -> float | None:
+    vals = []
+    for k in ("LCTN_AREA", "FCLT_TOTAL_SCL"):
+        v = pick(rec, k)
+        try:
+            if v not in (None, "", "None"):
+                vals.append(float(v))
+        except (TypeError, ValueError):
+            pass
+    return max(vals) if vals else None
 
 
 def fetch_all(key: str, slug: str, *, page_size: int = 1000, max_pages: int = 400,
@@ -71,8 +90,14 @@ def normalize(rec: dict) -> dict:
         "addr": addr,
         "sido": sido(addr),
         "items": pick(rec, "FBCTN_HNDL_ITEM_CN", default=""),
+        "area_m2": _area(rec),
         "updated": pick(rec, "DAT_UPDT_PNT", "LAST_MDFCN_PNT", "UPDATE_DT"),
     }
+
+
+def _factory(site: dict) -> bool:
+    a = site.get("area_m2")
+    return a is None or a >= FACTORY_M2
 
 
 def expansion_signals(rows: list[dict], *, today: dt.date, window_days: int,
@@ -90,10 +115,13 @@ def expansion_signals(rows: list[dict], *, today: dt.date, window_days: int,
         old = [s for s in sites if s["permit_date"] and s["permit_date"] < cutoff]
         if not new:
             continue
+        new_factory = [s for s in new if _factory(s)]
         kind = None
-        if old and new:
+        if len(new) >= CHAIN_MIN_NEW:
+            kind = "chain_rollout"
+        elif old and new_factory:
             kind = "expansion"
-        elif len(new) >= 2:
+        elif len(new_factory) >= 2:
             kind = "multi_new"
         if not kind:
             continue
@@ -110,7 +138,8 @@ def expansion_signals(rows: list[dict], *, today: dt.date, window_days: int,
             "new_sites": len(new),
             "first_permit": first,
             "new_permits": [{"date": s["permit_date"], "addr": s["addr"],
-                             "items": (s["items"] or "")[:120]} for s in new][:5],
+                             "area_m2": s["area_m2"], "name": s["name"]} for s in new][:8],
+            "max_new_area_m2": max((s["area_m2"] or 0) for s in new),
             "sido": sorted({s["sido"] for s in active if s["sido"]}),
         })
     log(f"[localdata] {industry_label}: {len(signals)} expansion-type signals")

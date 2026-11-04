@@ -55,8 +55,9 @@ weights:
   revenue_growth_ge_25pct: 8
   op_margin_ge_10pct: 12          # 이익 체력
   op_margin_negative: -10
-  localdata_expansion: 30         # 기존 사업자의 신규 제조 인허가 = 증설
-  localdata_multi_new: 18
+  localdata_expansion: 30         # 기존 사업자의 공장급(200㎡+) 신규 인허가 = 증설
+  localdata_chain_rollout: 22     # 같은 브랜드 신규 매장 3곳+ = 체인 확장 (프랜차이즈형)
+  localdata_multi_new: 15
   headcount_growth_12m_ge_50pct: 20
   headcount_growth_12m_ge_25pct: 10
   headcount_ge_30: 5

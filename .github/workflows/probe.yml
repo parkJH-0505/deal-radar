@@ -22,6 +22,7 @@ jobs:
     env:
       TZ: Asia/Seoul
       PYTHONUNBUFFERED: "1"
+      PROBE_MODULE: radar.probe2   # 바꿔서 다른 실측 실행
       DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       DART_KEY: ${{ secrets.DART_KEY }}
     steps:
@@ -34,7 +35,7 @@ jobs:
       - name: Probe APIs
         run: |
           mkdir -p data/probe
-          { echo "probe at $(date -Iseconds)"; python -m radar probe; } > data/probe/latest.txt 2>&1 || true
+          { echo "probe at $(date -Iseconds)"; python -m ${PROBE_MODULE:-radar.probe}; } > data/probe/latest.txt 2>&1 || true
           # defensive: never commit anything that looks like a key
           if [ -n "$DATA_GO_KR_KEY" ]; then sed -i "s/$DATA_GO_KR_KEY/***/g" data/probe/latest.txt; fi
           if [ -n "$DART_KEY" ]; then sed -i "s/$DART_KEY/***/g" data/probe/latest.txt; fi

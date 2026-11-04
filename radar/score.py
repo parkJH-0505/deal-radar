@@ -65,8 +65,11 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
         if sig["kind"] == "expansion":
             add("localdata_expansion",
                 f"{sig['industry']} 신규 인허가 {sig['new_sites']}건 (기존 사업장 보유, 증설)")
+        elif sig["kind"] == "chain_rollout":
+            add("localdata_chain_rollout",
+                f"{sig['industry']} 같은 브랜드 신규 매장 {sig['new_sites']}곳 (체인 확장)")
         elif sig["kind"] == "multi_new":
-            add("localdata_multi_new", f"{sig['industry']} 신규 인허가 {sig['new_sites']}건")
+            add("localdata_multi_new", f"{sig['industry']} 신규 공장급 인허가 {sig['new_sites']}건")
 
     nps = c.get("nps") or {}
     g12 = nps.get("growth_12m")

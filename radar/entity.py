@@ -21,7 +21,7 @@ _PAREN_FORMS = re.compile(r"[\(（]\s*(주|유|합|사|재|농|영)\s*[\)）]|�
 # brand: "해담식품 제2공장" / "해담식품 음성공장" / "해담식품지점" -> "해담식품",
 # but "맛있는공장" (a brand) stays intact.
 _BRANCH_NUMBERED = re.compile(r"\s*(제\s*)?\d+\s*(공장|지점|사업장|센터)\s*$")
-_BRANCH_SPACED = re.compile(r"\s+\S{0,6}(공장|지점|사업장|센터|본점|본사|물류센터)\s*$")
+_BRANCH_SPACED = re.compile(r"\s+\S{0,6}(공장|지점|사업장|센터|본점|본사|물류센터|점)\s*$")
 _BRANCH_ALWAYS = re.compile(r"(지점|본점|사업장)\s*$")
 _NONWORD = re.compile(r"[^0-9a-z가-힣]")
 
