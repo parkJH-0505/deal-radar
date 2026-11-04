@@ -22,7 +22,8 @@ jobs:
     env:
       TZ: Asia/Seoul
       PYTHONUNBUFFERED: "1"
-      PROBE_MODULE: radar.probe   # 바꿔서 다른 실측 실행
+      PROBE_MODULE: radar.probe_fin   # 바꿔서 다른 실측 실행
+      PROBE_ARGS: "20260324000188 20260410002513 20261012000359"
       DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       DART_KEY: ${{ secrets.DART_KEY }}
     steps:
