@@ -1,0 +1,25 @@
+name: probe
+# 각 API를 소량 호출해 실제 응답 구조(필드명)를 로그로 남긴다. 키는 마스킹된다.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TZ: Asia/Seoul
+      PYTHONUNBUFFERED: "1"
+      DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      DART_KEY: ${{ secrets.DART_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m radar probe

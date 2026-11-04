@@ -1,0 +1,310 @@
+"""Daily pipeline: collect -> resolve -> score -> write candidates.
+
+Outputs (committed by the GitHub Action):
+  data/candidates/YYYY-MM-DD.json   today's ranked candidates (with reasons)
+  data/candidates/latest.json       same, stable path for the judgment step
+  data/watchlist.json               every company ever surfaced + score history
+  data/runs/YYYY-MM-DD.md           human-readable run log
+"""
+from __future__ import annotations
+
+import datetime as dt
+import os
+import time
+from pathlib import Path
+
+import yaml
+
+from .entity import name_similarity, norm_name
+from .http import HttpError, log
+from .score import age_years, excluded, score
+from .sources import dart as D
+from .sources import localdata as L
+from .sources.nps import Nps
+from .store import DATA, ROOT, STATE, JsonlCache, read_json, write_json
+
+KST = dt.timezone(dt.timedelta(hours=9))
+
+
+def load_cfg() -> dict:
+    return yaml.safe_load((ROOT / "config" / "theses.yaml").read_text(encoding="utf-8"))
+
+
+def today_kst() -> dt.date:
+    return dt.datetime.now(KST).date()
+
+
+# ======================================================================= DART
+
+def run_dart(key: str, cfg: dict, today: dt.date, meta: dict, notes: list[str]) -> list[dict]:
+    dc = cfg["sources"]["dart"]
+    index = D.SeenIndex(STATE / "dart_audit_seen.tsv")
+    start = dt.date.fromisoformat(dc["backfill_start"])
+    yesterday = today - dt.timedelta(days=1)
+
+    if len(index) == 0:
+        log("[dart] empty index -> full backfill")
+        n = D.backfill(key, index, start, yesterday)
+        notes.append(f"DART 감사보고서 이력 백필: {start}~{yesterday}, {n:,}건 / 회사 {len(index):,}곳")
+    else:
+        since = dt.date.fromisoformat(meta.get("dart_last_day", str(yesterday - dt.timedelta(days=7))))
+        since = min(since, yesterday) - dt.timedelta(days=3)  # late-filing overlap
+        n = D.backfill(key, index, since, yesterday)
+        notes.append(f"DART 증분: {since}~{yesterday}, 감사보고서 {n:,}건")
+    index.save()
+    meta["dart_last_day"] = str(yesterday)
+
+    reliable_from = (start + dt.timedelta(days=365)).strftime("%Y%m%d")
+    horizon = (today - dt.timedelta(days=dc["first_audit_horizon_days"])).strftime("%Y%m%d")
+    floor = max(reliable_from, horizon)
+    first_timers = [c for c, d in index.first.items() if d >= floor]
+    log(f"[dart] first-time auditees since {floor}: {len(first_timers)}")
+
+    companies = JsonlCache(STATE / "dart_companies.jsonl", "corp_code")
+    budget = dc["max_company_lookups_per_run"]
+    pending = [c for c in first_timers if c not in companies]
+    for code in pending[:budget]:
+        try:
+            info = D.company(key, code)
+        except D.DartError as e:
+            log(f"[dart] stop company lookups: {e}")
+            break
+        except HttpError as e:
+            log(f"[dart] company {code} failed: {e}")
+            continue
+        keep = {k: (info or {}).get(k) for k in
+                ("corp_code", "corp_name", "est_dt", "induty_code", "bizr_no", "jurir_no",
+                 "adres", "hm_url", "ceo_nm", "acc_mt", "corp_cls")}
+        keep["corp_code"] = code
+        companies.put(keep)
+        if len(companies._new) % 200 == 0:
+            companies.flush()
+    companies.flush()
+    left = max(0, len(pending) - budget)
+    if left:
+        notes.append(f"DART 회사정보 조회 남은 {left:,}곳은 다음 실행으로 이월")
+
+    pats = cfg["global"]["exclude_name_patterns"]
+    max_age = cfg["global"]["max_company_age_years"]
+    fins = JsonlCache(STATE / "dart_financials.jsonl", "rcept_no")
+    out, docs = [], 0
+    for code in first_timers:
+        info = companies.get(code)
+        if not info:
+            continue
+        name = info.get("corp_name") or index.names.get(code, "")
+        age = age_years(info.get("est_dt"), today)
+        if age is None or age > max_age:
+            continue
+        if excluded(name, pats) or excluded(index.names.get(code, ""), pats):
+            continue
+        last_dt, last_no = index.last.get(code, ("", ""))
+        fin = None
+        if last_no:
+            cached = fins.get(last_no)
+            if cached is not None:
+                fin = cached.get("fin")
+            elif docs < dc["max_documents_per_run"]:
+                fin = D.extract_financials(D.audit_text(key, last_no))
+                fins.put({"rcept_no": last_no, "corp_code": code, "fin": fin})
+                docs += 1
+                if docs % 50 == 0:
+                    fins.flush()
+        out.append({
+            "key": f"dart:{code}",
+            "name": name,
+            "name_norm": norm_name(name),
+            "sources": ["dart"],
+            "corp_code": code,
+            "bizno": info.get("bizr_no"),
+            "est_dt": info.get("est_dt"),
+            "age_years": age,
+            "age_basis": "설립일(DART)",
+            "induty_code": info.get("induty_code"),
+            "ceo": info.get("ceo_nm"),
+            "addr": info.get("adres"),
+            "homepage": info.get("hm_url"),
+            "dart_first_audit": index.first[code],
+            "latest_audit": {"rcept_dt": last_dt, "rcept_no": last_no,
+                             "url": D.VIEW.format(rcept_no=last_no) if last_no else None},
+            "financials": fin or {},
+        })
+    fins.flush()
+    notes.append(f"DART 후보(설립 {max_age}년 이하·첫 외감): {len(out)}곳, 감사보고서 신규 파싱 {docs}건")
+    return out
+
+
+# ================================================================== LOCALDATA
+
+def run_localdata(key: str, cfg: dict, today: dt.date, notes: list[str]) -> list[dict]:
+    lc = cfg["sources"]["localdata"]
+    sigs = []
+    for ind in lc["industries"]:
+        try:
+            raw = L.fetch_all(key, ind["slug"])
+        except (HttpError, RuntimeError) as e:
+            notes.append(f"인허가 {ind['label']} 수집 실패: {e}")
+            continue
+        rows = [L.normalize(r) for r in raw]
+        s = L.expansion_signals(rows, today=today, window_days=lc["window_days"],
+                                industry_label=ind["label"])
+        for x in s:
+            x["thesis"] = ind.get("thesis")
+        sigs.extend(s)
+        notes.append(f"인허가 {ind['label']}: {len(rows):,}건 수집, 증설·다거점 신호 {len(s)}건")
+    return sigs
+
+
+# ====================================================================== MERGE
+
+def merge(dart_cands: list[dict], loc_sigs: list[dict], cfg: dict, today: dt.date) -> list[dict]:
+    by_norm = {c["name_norm"]: c for c in dart_cands if c["name_norm"]}
+    out = list(dart_cands)
+    max_age = cfg["global"]["max_company_age_years"]
+    pats = cfg["global"]["exclude_name_patterns"]
+    for s in loc_sigs:
+        hit = by_norm.get(s["name_norm"])
+        if not hit:
+            for c in dart_cands:
+                if name_similarity(c["name"], s["name"]) >= 0.92:
+                    hit = c
+                    break
+        if hit:
+            hit.setdefault("localdata", []).append(s)
+            if "localdata" not in hit["sources"]:
+                hit["sources"].append("localdata")
+            continue
+        if excluded(s["name"], pats):
+            continue
+        age = age_years(s.get("first_permit"), today)
+        if age is not None and age > max_age:
+            continue  # established operator expanding: not our target profile
+        out.append({
+            "key": f"loc:{s['name_norm']}",
+            "name": s["name"],
+            "name_norm": s["name_norm"],
+            "sources": ["localdata"],
+            "age_years": age,
+            "age_basis": "첫 인허가일(대리지표)",
+            "addr": (s.get("new_permits") or [{}])[0].get("addr"),
+            "localdata": [s],
+            "financials": {},
+        })
+    return out
+
+
+# ======================================================================= MAIN
+
+def daily(today: dt.date | None = None) -> dict:
+    t0 = time.time()
+    today = today or today_kst()
+    cfg = load_cfg()
+    meta_path = STATE / "meta.json"
+    meta = read_json(meta_path, {})
+    notes: list[str] = []
+    gkey = os.environ.get("DATA_GO_KR_KEY", "").strip()
+    dkey = os.environ.get("DART_KEY", "").strip()
+
+    dart_c: list[dict] = []
+    if cfg["sources"]["dart"]["enabled"] and dkey:
+        try:
+            dart_c = run_dart(dkey, cfg, today, meta, notes)
+        except (D.DartError, HttpError) as e:
+            notes.append(f"DART 단계 중단: {e}")
+    elif not dkey:
+        notes.append("DART_KEY 미설정 → DART 단계 건너뜀")
+
+    loc: list[dict] = []
+    if cfg["sources"]["localdata"]["enabled"] and gkey:
+        loc = run_localdata(gkey, cfg, today, notes)
+    elif not gkey:
+        notes.append("DATA_GO_KR_KEY 미설정 → 인허가·국민연금 건너뜀")
+
+    cands = merge(dart_c, loc, cfg, today)
+    for c in cands:
+        c["score"], c["reasons"] = score(c, cfg, today)
+
+    # NPS enrichment for the most promising ones (budgeted)
+    nc = cfg["sources"]["nps"]
+    if nc["enabled"] and gkey and cands:
+        nps = Nps(gkey)
+        nps.style = meta.get("nps_style") or nps.detect_style()
+        meta["nps_style"] = nps.style
+        cache = read_json(STATE / "nps_cache.json", {})
+        ranked = sorted(cands, key=lambda c: -c["score"])
+        looked = 0
+        for c in ranked:
+            ck = c["key"]
+            hit = cache.get(ck)
+            fresh = hit and hit.get("_asof", "")[:7] == today.strftime("%Y-%m")
+            if not fresh:
+                if looked >= nc["max_lookups_per_run"]:
+                    continue
+                e = nps.enrich(c["name"], c.get("bizno"), nc["months"])
+                looked += 1
+                cache[ck] = {**(e or {}), "_asof": today.isoformat()}
+                hit = cache[ck]
+            if hit and hit.get("headcount") is not None:
+                c["nps"] = {k: v for k, v in hit.items() if k != "_asof"}
+                c["score"], c["reasons"] = score(c, cfg, today)
+        write_json(STATE / "nps_cache.json", cache)
+        notes.append(f"국민연금 조회 {looked}곳 (파라미터 방식: {nps.style})")
+
+    g = cfg["global"]
+    picked = sorted([c for c in cands if c["score"] >= g["min_score_to_report"]],
+                    key=lambda c: -c["score"])
+
+    # watchlist bookkeeping: new vs changed
+    wl_path = DATA / "watchlist.json"
+    wl = read_json(wl_path, {})
+    for c in picked:
+        prev = wl.get(c["key"])
+        if prev is None:
+            c["change"] = "new"
+        elif c["score"] - prev["score_history"][-1]["score"] >= 10 or \
+                set(c["reasons"]) - set(prev.get("reasons", [])):
+            c["change"] = "changed"
+        else:
+            c["change"] = "same"
+        rec = prev or {"name": c["name"], "first_seen": today.isoformat(),
+                       "score_history": [], "user_status": None}
+        rec.update(name=c["name"], last_seen=today.isoformat(), reasons=c["reasons"])
+        if not rec["score_history"] or rec["score_history"][-1]["date"] != today.isoformat():
+            rec["score_history"].append({"date": today.isoformat(), "score": c["score"]})
+        wl[c["key"]] = rec
+    write_json(wl_path, wl)
+
+    # judgment queue: new/changed first, capped
+    queue = [c for c in picked if c["change"] in ("new", "changed")]
+    queue = queue[: g["max_candidates_per_day"]]
+    payload = {
+        "date": today.isoformat(),
+        "generated_at": dt.datetime.now(KST).isoformat(timespec="seconds"),
+        "counts": {"dart": len(dart_c), "localdata_signals": len(loc),
+                   "scored": len(cands), "above_threshold": len(picked),
+                   "queue": len(queue)},
+        "notes": notes,
+        "queue": queue,
+        "above_threshold": [{"key": c["key"], "name": c["name"], "score": c["score"],
+                             "change": c["change"]} for c in picked],
+    }
+    write_json(DATA / "candidates" / f"{today.isoformat()}.json", payload)
+    write_json(DATA / "candidates" / "latest.json", payload)
+    meta["last_run"] = today.isoformat()
+    write_json(meta_path, meta)
+    write_run_log(payload, time.time() - t0)
+    log(f"[done] queue={len(queue)} above={len(picked)} in {time.time() - t0:.0f}s")
+    return payload
+
+
+def write_run_log(p: dict, secs: float) -> None:
+    lines = [f"# 실행 로그 {p['date']}", "",
+             f"- 소요: {secs / 60:.1f}분",
+             f"- 집계: {p['counts']}", "", "## 메모"]
+    lines += [f"- {n}" for n in p["notes"]]
+    lines += ["", "## 판단 대기열"]
+    for c in p["queue"]:
+        lines.append(f"- **{c['name']}** {c['score']}점 [{c['change']}] — " + "; ".join(c["reasons"]))
+    path = DATA / "runs" / f"{p['date']}.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")

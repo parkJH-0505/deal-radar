@@ -1,0 +1,65 @@
+# deal-radar 테제 파일
+# "잘 크는 숨은 알짜"를 무엇으로 판별할지 정의한다. Claude가 사용자 피드백을 보고 이 파일을 수정·커밋한다.
+
+global:
+  max_company_age_years: 6        # 설립 6년 이하 (5년차 미만 + 여유 1년)
+  min_score_to_report: 45         # 이 점수 이상만 후보 파일에 오른다
+  max_candidates_per_day: 20      # 판단 단계로 넘기는 최대 후보 수
+  exclude_name_patterns:          # 정규식. 공공·비영리·계열사성 이름 제외
+    - "공사$"
+    - "공단"
+    - "재단"
+    - "협회"
+    - "조합$"
+    - "학교"
+    - "병원"
+    - "의료법인"
+    - "교회"
+    - "리츠|위탁관리부동산투자회사|투자회사$|PFV|피에프브이|자산관리"
+    - "에스피씨|SPC|유동화|제\\d+호"
+
+sources:
+  dart:
+    enabled: true
+    backfill_start: "2024-01-01"   # 이 날짜 이후 감사보고서 이력으로 '첫 외감' 판별
+    first_audit_horizon_days: 400  # 최근 N일 안에 처음 감사보고서를 낸 회사만 후보
+    max_company_lookups_per_run: 6000
+    max_documents_per_run: 400
+  localdata:
+    enabled: true
+    window_days: 180               # 이 기간 안의 신규 인허가를 '신규'로 본다
+    industries:                    # 업종별로 data.go.kr 활용신청이 각각 필요
+      - slug: food_manufacturing_processors
+        label: 식품제조가공업
+        thesis: food_mfg
+  nps:
+    enabled: true
+    months: 12                     # 고용 시계열 역산 기간
+    max_lookups_per_run: 150
+
+theses:
+  food_mfg:
+    label: 식품 제조 (다품종 소량 OEM 포함)
+    dart_industry_prefixes: ["10", "11"]   # 표준산업분류: 10 식료품, 11 음료
+  franchise_service:
+    label: 프랜차이즈형 서비스 (방탈출 등)
+    dart_industry_prefixes: ["90", "91", "56"]
+    note: 가맹 정보공개서 API(페어데이터) 연동 전까지는 DART·국민연금 신호로만 잡힌다
+
+weights:
+  dart_first_audit: 30            # 최근 처음 외감 대상 → 100억 고개를 넘었을 가능성
+  age_le_3y: 15
+  age_le_6y: 8
+  revenue_ge_100b_krw: 10         # 매출 100억 이상 (best-effort 추출)
+  revenue_growth_ge_50pct: 15
+  revenue_growth_ge_25pct: 8
+  op_margin_ge_10pct: 12          # 이익 체력
+  op_margin_negative: -10
+  localdata_expansion: 30         # 기존 사업자의 신규 제조 인허가 = 증설
+  localdata_multi_new: 18
+  headcount_growth_12m_ge_50pct: 20
+  headcount_growth_12m_ge_25pct: 10
+  headcount_ge_30: 5
+  bill_per_head_rising: 0         # 시계열이 쌓이면 활성화
+  thesis_industry_match: 8
+  multi_source_bonus: 10          # 서로 다른 소스 2개 이상에서 동시에 잡힘
