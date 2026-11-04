@@ -105,7 +105,10 @@ def run_dart(key: str, cfg: dict, today: dt.date, meta: dict, notes: list[str]) 
             if cached is not None:
                 fin = cached.get("fin")
             elif docs < dc["max_documents_per_run"]:
-                fin = D.extract_financials(D.audit_text(key, last_no))
+                text = D.audit_text(key, last_no)
+                fin = D.extract_financials(text)
+                if fin is not None:
+                    fin["excerpt"] = D.income_excerpt(text)
                 fins.put({"rcept_no": last_no, "corp_code": code, "fin": fin})
                 docs += 1
                 if docs % 50 == 0:

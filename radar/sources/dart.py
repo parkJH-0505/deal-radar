@@ -173,6 +173,18 @@ def _num(s: str) -> int:
     return -v if neg else v
 
 
+def income_excerpt(text: str, n: int = 1500) -> str:
+    """Raw 손익계산서 snippet kept next to the parsed numbers for re-checking."""
+    if not text:
+        return ""
+    m = re.search(r"\s*".join("손익계산서"), text)
+    if not m:
+        return ""
+    seg = re.sub(r"[ \t　]+", " ", text[m.start():m.start() + n * 3])
+    seg = re.sub(r"\n\s*\n+", "\n", seg)
+    return seg[:n].strip()
+
+
 def extract_financials(text: str) -> dict:
     """Best-effort pull of 당기/전기 매출·영업이익 from the 손익계산서.
 
