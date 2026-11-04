@@ -101,3 +101,39 @@ def test_growth_and_score():
     pts, why = score(c, CFG, TODAY)
     assert pts >= 100, (pts, why)
     assert any("처음 감사보고서" in w for w in why)
+
+
+REAL_FORMAT_XML = """<TITLE>감사보고서</TITLE>
+<P>2. 손익계산서·························· 5</P>
+<TABLE><TR>
+<TE ALIGN="RIGHT" ACODE="11115000010000" ADELIM="0">매출채권(주석 13)</TE>
+<TE ALIGN="RIGHT" ADELIM="1">3,870,533,219</TE>
+</TR></TABLE>
+<P> 손 익 계 산 서 </P>
+<TABLE><TR><TE>주식회사 삼정푸드</TE></TR><TR><TE>(단위 : 원)</TE></TR></TABLE>
+<TABLE>
+<TR ACOPY="Y" HEIGHT="30">
+<TE WIDTH="264" ADELIM="0"> I.매출액(주석2) </TE>
+<TE ALIGN="RIGHT" ADELIM="1">　</TE>
+<TE ALIGN="RIGHT" ADELIM="2">100,956,649,254 </TE>
+<TE ALIGN="RIGHT" ADELIM="3">　</TE>
+<TE ALIGN="RIGHT" ADELIM="4">67,495,465,546 </TE>
+</TR>
+<TR>
+<TE ADELIM="0"> II.매출원가</TE>
+<TE ADELIM="1">　</TE><TE ADELIM="2">98,509,938,298</TE><TE>　</TE><TE>65,737,083,544</TE>
+</TR>
+<TR>
+<TE ADELIM="0">Ⅴ. 영업이익(손실)</TE>
+<TE>　</TE><TE>(1,250,000,000)</TE><TE>　</TE><TE>640,000,000</TE>
+</TR>
+</TABLE>"""
+
+
+def test_extract_financials_real_dart_layout():
+    from radar.sources import dart as D
+    text = D.xml_to_text(REAL_FORMAT_XML)
+    f = D.extract_financials(text)
+    assert f["revenue"] == 100_956_649_254 and f["revenue_prev"] == 67_495_465_546
+    assert f["op_income"] == -1_250_000_000            # parenthesised = loss
+    assert "매출액" in D.income_excerpt(text)

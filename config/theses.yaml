@@ -5,6 +5,9 @@ global:
   max_company_age_years: 6        # 설립 6년 이하 (5년차 미만 + 여유 1년)
   min_score_to_report: 45         # 이 점수 이상만 후보 파일에 오른다
   max_candidates_per_day: 20      # 판단 단계로 넘기는 최대 후보 수
+  # 표준산업분류 앞자리. 젊은 첫 외감사의 1/3이 부동산(68)이고, 금융·발전·골프장·지주사는
+  # 대부분 SPC나 대기업 분할법인이라 '조용히 잘 크는 회사'와 구조적으로 무관하다.
+  exclude_industry_prefixes: ["68", "64", "65", "66", "35", "9112", "7151"]
   exclude_name_patterns:          # 정규식. 공공·비영리·계열사성 이름 제외
     - "공사$"
     - "공단"
@@ -24,7 +27,7 @@ sources:
     backfill_start: "2024-01-01"   # 이 날짜 이후 감사보고서 이력으로 '첫 외감' 판별
     first_audit_horizon_days: 400  # 최근 N일 안에 처음 감사보고서를 낸 회사만 후보
     max_company_lookups_per_run: 6000
-    max_documents_per_run: 400
+    max_documents_per_run: 1500
   localdata:
     enabled: true
     window_days: 180               # 이 기간 안의 신규 인허가를 '신규'로 본다
@@ -53,7 +56,9 @@ theses:
     dart_industry_prefixes: ["10", "11"]   # 표준산업분류: 10 식료품, 11 음료
   franchise_service:
     label: 프랜차이즈형 서비스 (방탈출 등)
-    dart_industry_prefixes: ["90", "91", "56"]
+    # 9113 체력단련·실내스포츠시설, 9119 기타 스포츠, 912 오락장(방탈출 91229 등),
+    # 561 음식점, 562 주점·카페, 9611/9612 미용·피부관리. 골프장·스키장(9112)은 제외.
+    dart_industry_prefixes: ["9113", "9119", "912", "561", "562", "9611", "9612"]
     note: 가맹 정보공개서 API(페어데이터) 연동 전까지는 DART·국민연금 신호로만 잡힌다
 
 weights:

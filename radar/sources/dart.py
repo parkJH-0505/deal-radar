@@ -151,10 +151,19 @@ def audit_text(key: str, rcept_no: str) -> str:
                 break
             except UnicodeDecodeError:
                 continue
-    xml = "\n".join(texts)
+    return xml_to_text("\n".join(texts))
+
+
+def xml_to_text(xml: str) -> str:
+    """DART document XML -> text where one table row is one line, cells split by '|'."""
+    # Real filings put every <TE>/<TD> cell on its own source line. Collapse that
+    # formatting whitespace first so one table row == one text line.
+    xml = re.sub(r"\s*\n\s*", " ", xml)
     xml = re.sub(r"<(TD|TE|TU|TH)[^>]*>", " | ", xml, flags=re.I)
-    xml = re.sub(r"</?(TR|P|BR)[^>]*>", "\n", xml, flags=re.I)
-    return re.sub(r"<[^>]+>", " ", xml)
+    xml = re.sub(r"</?(TR|P|BR|TITLE|TABLE)[^>]*>", "\n", xml, flags=re.I)
+    text = re.sub(r"<[^>]+>", " ", xml)
+    text = re.sub(r"[ \t\u3000]+", " ", text)
+    return re.sub(r"\n\s*\n+", "\n", text)
 
 
 _NUM = r"\(?-?[\d]{1,3}(?:,\d{3})+\)?|\(?-?\d{5,}\)?"
@@ -173,51 +182,79 @@ def _num(s: str) -> int:
     return -v if neg else v
 
 
+FIN_PARSER_VERSION = 2
+
+
+def _cells(line: str) -> list[str]:
+    return [c.strip() for c in line.split("|") if c.strip()]
+
+
+def _row_values(line: str) -> list[int]:
+    """Numbers in the value cells of one table row (label cell and 주석 refs skipped)."""
+    vals = []
+    for c in _cells(line)[1:]:
+        m = re.fullmatch(_NUM, c.replace(" ", ""))
+        if m:
+            vals.append(_num(m.group(0)))
+    return vals
+
+
+def _label(line: str) -> str:
+    cells = _cells(line)
+    return cells[0] if cells else ""
+
+
+def _find_statement(lines: list[str]) -> int | None:
+    """Index of the 매출액/영업수익 row of the income statement (first row with values)."""
+    for i, ln in enumerate(lines):
+        if _ROWS["revenue"].search(_label(ln)) and "원가" not in _label(ln) \
+                and "채권" not in _label(ln) and _row_values(ln):
+            return i
+    return None
+
+
 def income_excerpt(text: str, n: int = 1500) -> str:
-    """Raw 손익계산서 snippet kept next to the parsed numbers for re-checking."""
+    """Raw 손익계산서 rows kept next to the parsed numbers for re-checking."""
     if not text:
         return ""
-    m = re.search(r"\s*".join("손익계산서"), text)
-    if not m:
+    lines = text.split("\n")
+    i = _find_statement(lines)
+    if i is None:
         return ""
-    seg = re.sub(r"[ \t　]+", " ", text[m.start():m.start() + n * 3])
-    seg = re.sub(r"\n\s*\n+", "\n", seg)
+    seg = "\n".join(lines[max(0, i - 6):i + 60])
     return seg[:n].strip()
 
 
 def extract_financials(text: str) -> dict:
-    """Best-effort pull of 당기/전기 매출·영업이익 from the 손익계산서.
+    """Best-effort pull of 당기/전기 매출·영업이익·당기순이익 from the 손익계산서.
 
     Confidence is 'low' by design: the judgment step re-reads the filing.
     """
     if not text:
         return {}
-    start = None
-    for kw in ("포괄손익계산서", "손익계산서"):
-        m = re.search(r"\s*".join(kw), text)
-        if m:
-            start = m.start()
-            break
-    if start is None:
+    lines = text.split("\n")
+    i = _find_statement(lines)
+    if i is None:
         return {}
-    seg = text[start:start + 30000]
-    um = _UNIT.search(text[max(0, start - 500):start + 3000])
+    head = "\n".join(lines[max(0, i - 30):i])
+    um = _UNIT.search(head)
     unit = um.group(1) if um else "원"
     mult = _MULT[unit]
     out: dict = {"unit": unit, "confidence": "low"}
     for field, rx in _ROWS.items():
-        m = rx.search(seg)
-        if not m:
-            continue
-        tail = seg[m.end():m.end() + 400]
-        tail = tail.split("\n")[0] if "\n" in tail[:200] else tail
-        nums = re.findall(_NUM, tail)
-        if not nums:
-            continue
-        vals = [_num(n) * mult for n in nums[:2]]
-        if field == "op_income" and "손" in m.group(1) and "익" not in m.group(1):
-            vals = [-abs(v) for v in vals]
-        out[field] = vals[0]
-        if len(vals) > 1:
-            out[f"{field}_prev"] = vals[1]
+        for ln in lines[i:i + 120]:
+            lab = _label(ln)
+            m = rx.search(lab)
+            if not m:
+                continue
+            vals = _row_values(ln)
+            if not vals:
+                continue
+            vals = [v * mult for v in vals[:2]]
+            if field != "revenue" and "손" in m.group(1) and "익" not in m.group(1):
+                vals = [-abs(v) for v in vals]
+            out[field] = vals[0]
+            if len(vals) > 1:
+                out[f"{field}_prev"] = vals[1]
+            break
     return out if "revenue" in out else {}

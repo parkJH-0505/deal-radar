@@ -87,6 +87,7 @@ def run_dart(key: str, cfg: dict, today: dt.date, meta: dict, notes: list[str]) 
 
     pats = cfg["global"]["exclude_name_patterns"]
     max_age = cfg["global"]["max_company_age_years"]
+    ind_x = tuple(cfg["global"].get("exclude_industry_prefixes", []))
     fins = JsonlCache(STATE / "dart_financials.jsonl", "rcept_no")
     out, docs = [], 0
     for code in first_timers:
@@ -99,18 +100,21 @@ def run_dart(key: str, cfg: dict, today: dt.date, meta: dict, notes: list[str]) 
             continue
         if excluded(name, pats) or excluded(index.names.get(code, ""), pats):
             continue
+        if str(info.get("induty_code") or "").startswith(ind_x):
+            continue
         last_dt, last_no = index.last.get(code, ("", ""))
         fin = None
         if last_no:
             cached = fins.get(last_no)
-            if cached is not None:
+            if cached is not None and cached.get("v") == D.FIN_PARSER_VERSION:
                 fin = cached.get("fin")
             elif docs < dc["max_documents_per_run"]:
                 text = D.audit_text(key, last_no)
                 fin = D.extract_financials(text)
                 if fin is not None:
                     fin["excerpt"] = D.income_excerpt(text)
-                fins.put({"rcept_no": last_no, "corp_code": code, "fin": fin})
+                fins.put({"rcept_no": last_no, "corp_code": code, "fin": fin,
+                          "v": D.FIN_PARSER_VERSION})
                 docs += 1
                 if docs % 50 == 0:
                     fins.flush()

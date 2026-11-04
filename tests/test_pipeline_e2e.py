@@ -125,7 +125,7 @@ def sandbox(tmp_path, monkeypatch):
                 # NPS-only discovery: a young corp doubling head-count
                 row(f"{ym[:4]}-{ym[4:]}", "(주)조용한성장", "998877",
                     {"202509": 30, "202603": 45, "202609": 70}[ym], 1, adopt="2023-02-01",
-                    icode="901009")]
+                    icode="912290")]
         _, agg = NM.aggregate(csv_bytes(rows), adopt_after="20200101", min_headcount=5, exclude=[])
         NM.save_month(months / f"{ym}.tsv.gz", agg)
     return tmp_path
