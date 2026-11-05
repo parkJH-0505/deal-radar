@@ -65,13 +65,26 @@ def recent_reports(key: str, since: dt.date, today: dt.date) -> tuple[list[dict]
             d += dt.timedelta(days=1)
     else:
         mode = "이후 일괄"
-    return [r for r in rows if (r.get("PRMS_DT") or "") >= s], mode
+    t = today.strftime("%Y%m%d")  # a few rows carry typo dates like 21030618
+    return [r for r in rows if s <= (r.get("PRMS_DT") or "") <= t], mode
 
 
-def recent_haccp(key: str, since: dt.date) -> list[dict]:  # key = FOODSAFETY_KEY_HACCP
-    rows = fetch(key, "I0580", flt=f"HACCP_APPN_DT={since:%Y%m%d}")
+def recent_haccp(key: str, since: dt.date, max_pages: int = 40) -> list[dict]:
+    """I0580 has no date filter (only LCNS_NO, HACCP_APPN_NO, CHNG_DT). Unfiltered rows come
+    newest designation first, so page until a whole page is older than `since`."""
     s = since.strftime("%Y%m%d")
-    return [r for r in rows if (r.get("HACCP_APPN_DT") or "") >= s]
+    out: list[dict] = []
+    for p in range(max_pages):
+        start = p * PAGE + 1
+        body = get(f"{BASE}/{key}/I0580/json/{start}/{start + PAGE - 1}", None, timeout=120, pause=0.2).json()
+        _, rows = _rows(body, "I0580")
+        if not rows:
+            break
+        out += [r for r in rows if (r.get("HACCP_APPN_DT") or "") >= s]
+        if max((r.get("HACCP_APPN_DT") or "") for r in rows) < s:
+            break
+    log(f"[foodsafety] I0580 since {s}: {len(out):,} designations")
+    return out
 
 
 def client_brands(product_names: list[str], own_name: str) -> list[str]:
