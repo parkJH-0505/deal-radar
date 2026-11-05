@@ -28,7 +28,7 @@ from pathlib import Path
 
 from .store import DATA
 
-SHEET_ID_DEFAULT = "1v2k_PA-vQU3eeT-dddTeE7KIWMZcEE2GnEywLrNVOfk"
+SHEET_ID_DEFAULT = "1vPTO0HS4ugVo04y2yQRmXMdxof8tx00qClo0ZB-UXGk"
 
 CAND_TAB, LENS_TAB, LOG_TAB = "후보", "관점", "판단 로그"
 KEY = "레이더 키"

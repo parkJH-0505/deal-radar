@@ -17,7 +17,7 @@
    - `data/sheet/last_sync.txt`에 "GOOGLE_SA_JSON 미설정"이 있으면 시트 연동 없이 진행하고 다이제스트 끝에 한 줄로 알린다.
 
 ## 1. 사용자 관점·피드백 흡수 (후보를 보기 전에)
-사용자의 작업 공간은 **구글시트 「딜 레이더」**(https://docs.google.com/spreadsheets/d/1v2k_PA-vQU3eeT-dddTeE7KIWMZcEE2GnEywLrNVOfk/edit)다. 시트를 직접 건드리지 않는다. 읽기는 0-3의 스냅샷, 쓰기는 4의 outbox로만 한다.
+사용자의 작업 공간은 **구글시트 「딜 레이더」**(https://docs.google.com/spreadsheets/d/1vPTO0HS4ugVo04y2yQRmXMdxof8tx00qClo0ZB-UXGk/edit)다. 시트를 직접 건드리지 않는다. 읽기는 0-3의 스냅샷, 쓰기는 4의 outbox로만 한다.
 
 **A. 관점 탭** → `data/feedback/lens.md`
 - '직접'으로 시작하는 줄(직접 관점, 참고 사례)은 사용자가 쓴 것이다. 오늘 판단의 **최우선 기준**이며 고치지 않는다.
@@ -81,7 +81,7 @@
    남은 의문: 매출 중 1개 고객사 비중 미확인
 2. ...
 
-전체 목록: https://docs.google.com/spreadsheets/d/1v2k_PA-vQU3eeT-dddTeE7KIWMZcEE2GnEywLrNVOfk/edit
+전체 목록: https://docs.google.com/spreadsheets/d/1vPTO0HS4ugVo04y2yQRmXMdxof8tx00qClo0ZB-UXGk/edit
 ```
 - 3건을 넘으면 점수순 3건만, 나머지는 "외 n건은 시트에" 한 줄.
 - 월요일에는 끝에 "지난주 관찰 중 회사 변화" 섹션을 덧붙인다 (watchlist 점수 이력에서 +10 이상 오른 곳).
