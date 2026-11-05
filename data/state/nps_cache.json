@@ -6573,5 +6573,667 @@
   ],
   "bill_per_head": 354154,
   "_asof": "2026-11-05"
+ },
+ "food:20240178078": {
+  "match": {
+   "seq": 6990309,
+   "name": "온타임",
+   "bizno6": "601311",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 10,
+  "monthly_bill": 2252900,
+  "industry": "빵류 제조업",
+  "adopted": "20240701",
+  "addr": "부산광역시 부산진구 당감로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 10
+   },
+   {
+    "ym": "202608",
+    "headcount": 10,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 225290,
+  "_asof": "2026-11-06"
+ },
+ "food:20240365166": {
+  "_asof": "2026-11-06"
+ },
+ "food:20240635028": {
+  "match": {
+   "seq": 6977645,
+   "name": "주식회사 제이와이에프(JYF Co., Ltd)",
+   "bizno6": "775870",
+   "ym": "202609",
+   "match_score": 0.9
+  },
+  "headcount": 13,
+  "monthly_bill": 2892400,
+  "industry": "기타 식품 첨가물 제조업",
+  "adopted": "20240206",
+  "addr": "충청북도 청주시 흥덕구 가포산로76번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 13
+   },
+   {
+    "ym": "202608",
+    "headcount": 13,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 222492,
+  "_asof": "2026-11-06"
+ },
+ "food:20240482455": {
+  "match": {
+   "seq": 7021039,
+   "name": "미담누리에프엔비 주식회사",
+   "bizno6": "894880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 4,
+  "monthly_bill": 953680,
+  "industry": "빵류 제조업",
+  "adopted": "20250522",
+  "addr": "경기도 고양시 일산동구 고일로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 238420,
+  "_asof": "2026-11-06"
+ },
+ "food:20240862341": {
+  "match": {
+   "seq": 7003747,
+   "name": "주식회사 뉴밀",
+   "bizno6": "280850",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 1189940,
+  "industry": "건강 기능식품 제조업",
+  "adopted": "20241216",
+  "addr": "경상북도 경산시 와촌면 지식산업7로6길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 396647,
+  "_asof": "2026-11-06"
+ },
+ "food:20240945048": {
+  "_asof": "2026-11-06"
+ },
+ "food:20240911005": {
+  "match": {
+   "seq": 6746430,
+   "name": "(주)나루아토",
+   "bizno6": "864810",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 20,
+  "monthly_bill": 4564240,
+  "industry": "기타 곡물 가공품 제조업",
+  "adopted": "20150501",
+  "addr": "경상남도 진주시 문산읍 월아산로950번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 20
+   },
+   {
+    "ym": "202608",
+    "headcount": 16,
+    "acq": 4,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 228212,
+  "_asof": "2026-11-06"
+ },
+ "food:20240530203": {
+  "_asof": "2026-11-06"
+ },
+ "food:20240670149": {
+  "match": {
+   "seq": 6993779,
+   "name": "주식회사 시엔",
+   "bizno6": "306870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 6,
+  "monthly_bill": 1215280,
+  "industry": "일반 교과학원",
+  "adopted": "20240901",
+  "addr": "경기도 시흥시 배곧4로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 6
+   },
+   {
+    "ym": "202608",
+    "headcount": 6,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 202547,
+  "_asof": "2026-11-06"
+ },
+ "food:20240920763": {
+  "match": {
+   "seq": 6883601,
+   "name": "주식회사희성푸드",
+   "bizno6": "773870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 4,
+  "monthly_bill": 837700,
+  "industry": "기타 과실ㆍ채소 가공 및 저장 처리업",
+  "adopted": "20210201",
+  "addr": "경상남도 김해시 진례면 서부로396번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 209425,
+  "_asof": "2026-11-06"
+ },
+ "food:20240722337": {
+  "_asof": "2026-11-06"
+ },
+ "food:20240470901": {
+  "_asof": "2026-11-06"
+ },
+ "food:20250569535": {
+  "match": {
+   "seq": 6695653,
+   "name": "(주)스위트코리아",
+   "bizno6": "126865",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 17,
+  "monthly_bill": 5190380,
+  "industry": "그 외 기타 식료품 제조업",
+  "adopted": "20120929",
+  "addr": "경기도 광주시 곤지암읍 내선길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 17
+   },
+   {
+    "ym": "202608",
+    "headcount": 14,
+    "acq": 3,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 305316,
+  "_asof": "2026-11-06"
+ },
+ "food:20220241032": {
+  "match": {
+   "seq": 6849473,
+   "name": "주식회사 씨엔비",
+   "bizno6": "234880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 5,
+  "monthly_bill": 1753680,
+  "industry": "일반 창고업",
+  "adopted": "20190901",
+  "addr": "대구광역시 달성군 옥포읍 시저로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 5
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 350736,
+  "_asof": "2026-11-06"
+ },
+ "food:20220241038": {
+  "match": {
+   "seq": 1098022,
+   "name": "주식회사 푸코스클린팩토리",
+   "bizno6": "470870",
+   "ym": "202511",
+   "match_score": 1.0
+  },
+  "headcount": 19,
+  "monthly_bill": 4933360,
+  "industry": "육류 기타 가공 및 저장 처리업(가금류 제외)",
+  "adopted": "20211209",
+  "addr": "대구광역시 달성군 논공읍 금강로1길",
+  "series": [
+   {
+    "ym": "202511",
+    "headcount": 19
+   },
+   {
+    "ym": "202510",
+    "headcount": 16,
+    "acq": 5,
+    "lost": 2
+   }
+  ],
+  "bill_per_head": 259651,
+  "_asof": "2026-11-06"
+ },
+ "food:20220497053": {
+  "match": {
+   "seq": 6853057,
+   "name": "주식회사에프디팜(FDFarmCo.,Ltd)",
+   "bizno6": "817860",
+   "ym": "202609",
+   "match_score": 0.9
+  },
+  "headcount": 26,
+  "monthly_bill": 7931340,
+  "industry": "기타 가공식품 도매업",
+  "adopted": "20200101",
+  "addr": "경기도 이천시 신둔면 원적로512번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 26
+   },
+   {
+    "ym": "202608",
+    "headcount": 24,
+    "acq": 2,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 305052,
+  "_asof": "2026-11-06"
+ },
+ "food:20220098201": {
+  "_asof": "2026-11-06"
+ },
+ "food:20220514163": {
+  "match": {
+   "seq": 1557919,
+   "name": "어업회사법인 유한회사 블루바이오",
+   "bizno6": "124875",
+   "ym": "202512",
+   "match_score": 1.0
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "신선, 냉동 및 기타 수산물 도매업",
+  "adopted": "20240501",
+  "addr": "전북특별자치도 남원시 광석길",
+  "series": [],
+  "_asof": "2026-11-06"
+ },
+ "food:20220497104": {
+  "match": {
+   "seq": 6743669,
+   "name": "(주)영진베이커리",
+   "bizno6": "698810",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 84,
+  "monthly_bill": 23670720,
+  "industry": "BIZ_NO미존재사업장",
+  "adopted": "20150504",
+  "addr": "경기도 이천시 백사면 원적로970번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 84
+   },
+   {
+    "ym": "202608",
+    "headcount": 87,
+    "acq": 1,
+    "lost": 4
+   }
+  ],
+  "bill_per_head": 281794,
+  "_asof": "2026-11-06"
+ },
+ "food:20220803290": {
+  "_asof": "2026-11-06"
+ },
+ "food:20220520237": {
+  "match": {
+   "seq": 6776657,
+   "name": "주식회사신영허브",
+   "bizno6": "480810",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 13,
+  "monthly_bill": 4059180,
+  "industry": "채소, 과실 및 뿌리작물 소매업",
+  "adopted": "20170101",
+  "addr": "서울특별시 동대문구 약령동길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 13
+   },
+   {
+    "ym": "202608",
+    "headcount": 13,
+    "acq": 1,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 312245,
+  "_asof": "2026-11-06"
+ },
+ "food:20220520255": {
+  "match": {
+   "seq": 6948539,
+   "name": "주식회사아인팜",
+   "bizno6": "445880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 1537540,
+  "industry": "섬유, 의복, 신발 및 가죽제품 중개업 / 목재 및 건축",
+  "adopted": "20230401",
+  "addr": "전남광주통합특별시 북구 중가로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 512513,
+  "_asof": "2026-11-06"
+ },
+ "food:20220397234": {
+  "_asof": "2026-11-06"
+ },
+ "food:20220299544": {
+  "_asof": "2026-11-06"
+ },
+ "food:20220619309": {
+  "match": {
+   "seq": 6835553,
+   "name": "농업회사법인조흥주식회사",
+   "bizno6": "373880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 7,
+  "monthly_bill": 2273280,
+  "industry": "육류 도매업",
+  "adopted": "20190401",
+  "addr": "경기도 광주시 도척면 도척윗로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 7
+   },
+   {
+    "ym": "202608",
+    "headcount": 6,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 324754,
+  "_asof": "2026-11-06"
+ },
+ "food:20220207797": {
+  "_asof": "2026-11-06"
+ },
+ "food:20220720511": {
+  "match": {
+   "seq": 6360694,
+   "name": "키친109",
+   "bizno6": "471090",
+   "ym": "202608",
+   "match_score": 1.0
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "조리 반찬류 소매업",
+  "adopted": "20230201",
+  "addr": "전남광주통합특별시 순천시 해룡면 율산길",
+  "series": [],
+  "_asof": "2026-11-06"
+ },
+ "food:20220795165": {
+  "match": {
+   "seq": 7075767,
+   "name": "한울",
+   "bizno6": "508632",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "건물 및 구축물 해체 공사업",
+  "adopted": "20260101",
+  "addr": "제주특별자치도 제주시 구좌읍 김녕로18길",
+  "series": [],
+  "_asof": "2026-11-06"
+ },
+ "food:20220683551": {
+  "_asof": "2026-11-06"
+ },
+ "food:20220273857": {
+  "match": {
+   "seq": 6819128,
+   "name": "네이처코퍼레이션(주)",
+   "bizno6": "580810",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 9,
+  "monthly_bill": 4065660,
+  "industry": "액체 연료 및 관련제품 도매업",
+  "adopted": "20180701",
+  "addr": "부산광역시 영도구 남항서로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 9
+   },
+   {
+    "ym": "202608",
+    "headcount": 9,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 451740,
+  "_asof": "2026-11-06"
+ },
+ "food:20220495001": {
+  "_asof": "2026-11-06"
+ },
+ "food:20220512139": {
+  "match": {
+   "seq": 6894622,
+   "name": "주식회사에이치에스식품(HSFoodCo.,Ltd.)",
+   "bizno6": "596880",
+   "ym": "202609",
+   "match_score": 0.9
+  },
+  "headcount": 6,
+  "monthly_bill": 1864140,
+  "industry": "가금류 가공 및 저장 처리업",
+  "adopted": "20210401",
+  "addr": "경기도 화성시 효행구 봉담읍 전원길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 6
+   },
+   {
+    "ym": "202608",
+    "headcount": 6,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 310690,
+  "_asof": "2026-11-06"
+ },
+ "food:20220274644": {
+  "match": {
+   "seq": 6728587,
+   "name": "(주)육십오도씨",
+   "bizno6": "130869",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 15,
+  "monthly_bill": 3403500,
+  "industry": "부동산 중개 및 대리업",
+  "adopted": "20140702",
+  "addr": "인천광역시 서해구 파랑로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 15
+   },
+   {
+    "ym": "202608",
+    "headcount": 14,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 226900,
+  "_asof": "2026-11-06"
+ },
+ "food:20230528060": {
+  "_asof": "2026-11-06"
+ },
+ "food:20230627153": {
+  "match": {
+   "seq": 6744967,
+   "name": "주식회사 코지맘바이오",
+   "bizno6": "515870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 55,
+  "monthly_bill": 15635360,
+  "industry": "기타 가공식품 도매업",
+  "adopted": "20150605",
+  "addr": "충청북도 음성군 대소읍 성본산단2로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 55
+   },
+   {
+    "ym": "202608",
+    "headcount": 55,
+    "acq": 4,
+    "lost": 4
+   }
+  ],
+  "bill_per_head": 284279,
+  "_asof": "2026-11-06"
+ },
+ "food:20230281157": {
+  "_asof": "2026-11-06"
+ },
+ "food:20230549550": {
+  "_asof": "2026-11-06"
+ },
+ "food:20230870958": {
+  "_asof": "2026-11-06"
+ },
+ "food:20230767106": {
+  "_asof": "2026-11-06"
+ },
+ "food:20230431870": {
+  "_asof": "2026-11-06"
+ },
+ "food:20230609874": {
+  "match": {
+   "seq": 6973594,
+   "name": "주식회사 뉴트리션바이오",
+   "bizno6": "346860",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 4,
+  "monthly_bill": 1501540,
+  "industry": "채소, 과실 및 뿌리작물 소매업",
+  "adopted": "20240101",
+  "addr": "충청북도 충주시 풍동동막길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 375385,
+  "_asof": "2026-11-06"
  }
 }
