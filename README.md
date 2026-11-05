@@ -14,8 +14,7 @@
 
 ```
 02:17 KST  GitHub Actions (daily.yml)   수집 → 회사 묶기 → 규칙 점수 → data/ 커밋
-07:30 KST  Claude 예약 작업               data/candidates/latest.json 판단·반박 검증
-08:30 KST  전달                           Notion 딜 레이더 DB + 아침 다이제스트
+07:23 KST  Claude 예약 작업               시트 피드백 가져오기 → 후보 판단·반박 검증 → 시트 반영 + 아침 다이제스트
 ```
 
 ## 구조
@@ -41,6 +40,9 @@ Repository → Settings → Secrets and variables → Actions
 
 - `DATA_GO_KR_KEY` 공공데이터포털 일반 인증키 (국민연금, 식품제조가공업 활용신청 필요)
 - `DART_KEY` OpenDART 인증키
+- `GOOGLE_SA_JSON` 구글 서비스 계정 키(JSON 전체). 시트를 이 계정 이메일에 편집자로 공유해야 한다
+
+작업 공간은 구글시트 「딜 레이더」: `후보`(상태·이유 태그·내 코멘트는 사용자 열, 동기화가 덮어쓰지 않음), `관점`, `판단 로그` 탭.
 
 ## 실행
 

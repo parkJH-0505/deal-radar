@@ -1,0 +1,65 @@
+name: sheets
+# 구글시트 동기화: 시트 → data/feedback (사용자 상태·태그·코멘트·관점), data/sheet/outbox → 시트.
+# 실행: 아침 판단이 outbox를 커밋하거나 .github/triggers/sheets를 수정해 push할 때, 또는 수동.
+on:
+  workflow_dispatch:
+    inputs:
+      init:
+        description: "탭·헤더·드롭다운 초기화"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - ".github/triggers/sheets"
+      - "data/sheet/outbox/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writer
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TZ: Asia/Seoul
+      PYTHONUNBUFFERED: "1"
+      GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Sync
+        run: |
+          mkdir -p data/sheet data/runs
+          {
+            if [ -z "$GOOGLE_SA_JSON" ]; then echo "GOOGLE_SA_JSON 미설정 → 건너뜀"; exit 0; fi
+            # init은 멱등: 탭이 없을 때만 만든다. 첫 동기화에서 자동으로 한 번 돈다.
+            python -m radar.sheets init
+            python -m radar.sheets push
+            python -m radar.sheets pull
+          } 2>&1 | tee data/sheet/last_sync.txt
+          exit ${PIPESTATUS[0]}
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "deal-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "sheets: sync $(date +%F_%H%M)"
+            for i in 1 2 3; do
+              git pull --rebase -X theirs origin main && git push origin HEAD:main && break
+              git rebase --abort 2>/dev/null || true
+              sleep $((i * 10))
+            done
+          fi
