@@ -5705,5 +5705,80 @@
  },
  "dart:01960000": {
   "_asof": "2026-11-05"
+ },
+ "loc:천해": {
+  "match": {
+   "seq": 7004035,
+   "name": "(주)천해 중구지점",
+   "bizno6": "566810",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 35,
+  "monthly_bill": 3950460,
+  "industry": "기타 식사용 가공처리 조리식품 제조업",
+  "adopted": "20241202",
+  "addr": "울산광역시 중구 성안14길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 35
+   },
+   {
+    "ym": "202608",
+    "headcount": 35,
+    "acq": 1,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 112870,
+  "_asof": "2026-11-05"
+ },
+ "dart:01845419": {
+  "match": {
+   "seq": 6387325,
+   "name": "주식회사 버튼스",
+   "bizno6": "807860",
+   "ym": "202608",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "모바일 게임 소프트웨어 개발 및 공급업",
+  "adopted": "20240301",
+  "addr": "서울특별시 강남구 테헤란로98길",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01931512": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01962910": {
+  "match": {
+   "seq": 2875485,
+   "name": "비티티솔루션즈코리아 주식회사",
+   "bizno6": "333810",
+   "ym": "202602",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1724800,
+  "industry": "전기용 기계ㆍ장비 및 관련 기자재 도매업",
+  "adopted": "20240501",
+  "addr": "부산광역시 기장군 장안읍 장안산단9로",
+  "series": [
+   {
+    "ym": "202602",
+    "headcount": 3
+   },
+   {
+    "ym": "202601",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 574933,
+  "_asof": "2026-11-05"
  }
 }
