@@ -164,6 +164,10 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
             add("thesis_industry_match", f"테제 업종: {th['label']}")
             break
 
+    # HACCP alone is a common event (thousands per half-year), not an independent discovery:
+    # 'food' counts as a source only when it carries a 다품종 or OEM signal.
+    if fd and not (fd.get("sku_burst") or len(fd.get("client_brands") or []) >= 3):
+        src.discard("food")
     if len(src) >= 2:  # discovery sources: dart, localdata, nps (panel scan), food
         add("multi_source_bonus", "복수 소스 동시 포착: " + ", ".join(sorted(src)))
 
