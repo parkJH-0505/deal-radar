@@ -59,6 +59,11 @@ sources:
     months: 1
     max_lookups_per_run: 60
 
+conversion:                       # 개인사업자 → 법인 전환 (radar/conversion.py)
+  lookback_months: 24             # 최근 24개월 안에 생긴 법인만
+  min_headcount: 10               # 전환 단독 후보: 현재 10명 이상
+  min_combined_growth_12m: 0.3    # 개인+법인 합산 12개월 고용 +30% 이상 (또는 비교 불가)
+
 momentum:                         # 업종 모멘텀 (radar/momentum.py)
   min_firms: 40                   # 젊은 법인 40곳 이상 업종만 비교
   top_n: 15                       # 상위 15개 업종을 '모멘텀 업종'으로
@@ -101,6 +106,7 @@ weights:
   thesis_industry_match: 8
   industry_momentum: 8            # 젊은 법인 신설·고용이 동시에 빨라지는 상위 업종 (외부 모멘텀, 가점 전용)
   foreign_subsidiary_hint: -15    # 'OO코리아 유한회사' 등 외국계 한국법인 의심
-  transplant_first_year: -20      # 설립 첫해(부분연도) 매출 30억+ = 기존 사업 이전 의심
+  transplant_first_year: -20      # 설립 첫해 매출 연환산 200억+ = 대형 기존 사업 이전 의심
+  converted_from_sole: 12         # 개인사업 → 법인 전환 (검증된 사업이 막 스케일 준비, 가점 전용)
   likely_spinoff: -25             # 설립 3년 내 매출 1,500억+ 또는 고용 0→150명+
   multi_source_bonus: 10          # 서로 다른 소스 2개 이상에서 동시에 잡힘

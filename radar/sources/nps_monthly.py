@@ -100,8 +100,16 @@ def _col(header: list[str], *needles: str) -> int:
     raise KeyError(needles)
 
 
-def aggregate(raw: bytes, *, adopt_after: str, min_headcount: int, exclude: list[str]) -> tuple[str, list[dict]]:
-    """CSV bytes -> (YYYYMM, company-level rows for young corporations)."""
+INDIV_MIN_HEADCOUNT = 3  # 개인사업장은 법인 전환 매칭용으로만 저장 (나이 제한 없음: 실질 업력이 목적)
+
+
+def aggregate(raw: bytes, *, adopt_after: str, min_headcount: int, exclude: list[str],
+              indiv_out: list | None = None) -> tuple[str, list[dict]]:
+    """CSV bytes -> (YYYYMM, company-level rows for young corporations).
+
+    If `indiv_out` is a list, 개인사업장 (form 2) rows with ≥ INDIV_MIN_HEADCOUNT are
+    appended to it, any age, so a later 법인 can be traced back to the 개인사업 it came from.
+    """
     text = raw.decode("cp949", errors="replace")
     rd = csv.reader(io.StringIO(text))
     header = next(rd)
@@ -116,15 +124,19 @@ def aggregate(raw: bytes, *, adopt_after: str, min_headcount: int, exclude: list
     }
     excl = [re.compile(p) for p in exclude]
     agg: dict[str, dict] = {}
+    ind_agg: dict[str, dict] = {}
     ym = ""
     for row in rd:
         if len(row) < len(header) - 2:
             continue
         ym = ym or re.sub(r"\D", "", row[c["ym"]])[:6]
-        if row[c["state"]].strip() != "1" or row[c["form"]].strip() != "1":
-            continue  # registered corporations only
+        form = row[c["form"]].strip()
+        if row[c["state"]].strip() != "1" or form not in ("1", "2"):
+            continue
+        if form == "2" and indiv_out is None:
+            continue
         adopt = re.sub(r"\D", "", row[c["adopt"]])[:8]
-        if not adopt or adopt < adopt_after:
+        if not adopt or (form == "1" and adopt < adopt_after):
             continue
         name = row[c["name"]].strip()
         if TEMP_SITE.search(name) or any(x.search(name) for x in excl):
@@ -135,9 +147,10 @@ def aggregate(raw: bytes, *, adopt_after: str, min_headcount: int, exclude: list
             continue
         key = f"{b6}|{nn}"
         hc = _int(row[c["hc"]])
-        a = agg.get(key)
+        target = agg if form == "1" else ind_agg
+        a = target.get(key)
         if a is None:
-            agg[key] = {"key": key, "name": name, "bizno6": b6, "adopt": adopt,
+            target[key] = {"key": key, "name": name, "bizno6": b6, "adopt": adopt,
                         "induty_code": row[c["icode"]].strip(), "induty_name": row[c["iname"]].strip(),
                         "sido": row[c["sido"]].strip(), "addr": row[c["road"]].strip(),
                         "headcount": hc, "bill": _int(row[c["bill"]]), "acq": _int(row[c["acq"]]),
@@ -150,6 +163,8 @@ def aggregate(raw: bytes, *, adopt_after: str, min_headcount: int, exclude: list
             a["sites"] += 1
             a["adopt"] = min(a["adopt"], adopt)
     rows = [a for a in agg.values() if a["headcount"] >= min_headcount]
+    if indiv_out is not None:
+        indiv_out.extend(a for a in ind_agg.values() if a["headcount"] >= INDIV_MIN_HEADCOUNT)
     return ym, rows
 
 
@@ -193,7 +208,9 @@ def update_archive(months_dir: Path, *, want_months: int, max_downloads: int,
         versions = list_versions(s)
     except Exception as e:  # noqa: BLE001
         return [f"국민연금 월간 파일 목록 조회 실패: {e}"]
-    have = {p.name[:6] for p in months_dir.glob("*.tsv.gz")}
+    indiv_dir = months_dir.parent / "indiv"
+    have = {p.name[:6] for p in months_dir.glob("*.tsv.gz")} & \
+        {p.name[:6] for p in indiv_dir.glob("*.tsv.gz")}
     # data month is the month BEFORE the publish label (20261022 -> 202609)
     for v in versions:
         y, m = int(v["label"][:4]), int(v["label"][4:6])
@@ -213,14 +230,17 @@ def update_archive(months_dir: Path, *, want_months: int, max_downloads: int,
         except Exception as e:  # noqa: BLE001
             notes.append(f"국민연금 {v['label']} 다운로드 실패: {e}")
             continue
+        indiv: list[dict] = []
         ym, rows = aggregate(raw, adopt_after=adopt_after, min_headcount=min_headcount,
-                             exclude=exclude)
+                             exclude=exclude, indiv_out=indiv)
+        save_month(indiv_dir / f"{ym}.tsv.gz", indiv)
         if ym != v["ym"]:
             log(f"[nps-monthly] note: label {v['label']} holds data month {ym} (expected {v['ym']})")
         save_month(months_dir / f"{ym}.tsv.gz", rows)
         have.add(ym)
         done += 1
-        log(f"[nps-monthly] {v['label']} -> {ym}: {len(rows):,} young corps ({time.time() - t0:.0f}s)")
+        log(f"[nps-monthly] {v['label']} -> {ym}: {len(rows):,} young corps, "
+            f"{len(indiv):,} 개인사업장 ({time.time() - t0:.0f}s)")
         time.sleep(pause_s)
     if done:
         notes.append(f"국민연금 월간 파일 {done}개월 신규 반영 (보유 {len(have)}개월)")
@@ -303,3 +323,8 @@ def scan(yms: list[str], data: dict, *, today: dt.date, max_age_years: float,
                         "induty_name": r["induty_name"], "induty_code": r["induty_code"]})
     log(f"[nps-monthly] scan {last}: {len(out)} growth candidates")
     return out
+
+
+def build_indiv(indiv_dir: Path) -> dict[str, dict[str, dict]]:
+    yms = sorted(p.name[:6] for p in indiv_dir.glob("*.tsv.gz"))
+    return {ym: load_month(indiv_dir / f"{ym}.tsv.gz") for ym in yms}

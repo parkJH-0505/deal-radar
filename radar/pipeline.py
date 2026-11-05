@@ -18,6 +18,7 @@ import yaml
 
 from .entity import bizno6, name_similarity, norm_name
 from .http import HttpError, log
+from . import conversion as CV
 from . import momentum as MO
 from .score import age_years, excluded, score
 from .sources import dart as D
@@ -295,6 +296,61 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
     return cands
 
 
+# ================================================================= CONVERSION
+
+def attach_conversions(cands, yms, pdata, cfg, today, notes) -> list[dict]:
+    """개인사업자 → 법인 전환: real start date + growth on the combined head-count."""
+    if not yms:
+        return cands
+    indiv = NM.build_indiv(DATA / "nps" / "indiv")
+    if not indiv:
+        notes.append("법인 전환 감지: 개인사업장 이력 없음 (다음 국민연금 백필 후 활성)")
+        return cands
+    cc = cfg.get("conversion", {})
+    conv = CV.detect(yms, pdata, indiv, lookback_months=cc.get("lookback_months", 24))
+    last = yms[-1]
+
+    def apply(c: dict, ck: str) -> None:
+        info = conv[ck]
+        n = c.setdefault("nps", NM.metrics_for(ck, yms, pdata) or {})
+        corp = {p["ym"]: p["headcount"] for p in n.get("series", [])}
+        g = CV.combined_growth(corp, info["indiv_series"], last)
+        for k in ("growth_6m", "growth_12m"):
+            if k in g:
+                n[k] = g[k]
+        for k in ("growth_12m_from_zero", "growth_6m_from_zero", "max_jump_share"):
+            n.pop(k, None)  # the jump is the transfer from the 개인 site, not hiring
+        n["combined_headcount_12m_ago"] = g["combined_headcount_12m_ago"]
+        c["conversion"] = {k: v for k, v in info.items() if k != "indiv_series"}
+        c["age_years"] = age_years(info["indiv_adopt"], today)
+        c["age_basis"] = "개인사업 시작(국민연금 적용일)"
+
+    by_key = {c.get("nps_key"): c for c in cands if c.get("nps_key")}
+    pats = cfg["global"]["exclude_name_patterns"]
+    added = 0
+    for ck in conv:
+        if ck in by_key:
+            apply(by_key[ck], ck)
+            continue
+        r = pdata[last][ck]
+        if excluded(r["name"], pats) or str(r.get("induty_code")) == "999999" \
+                or NM.CYCLICAL_INDUSTRY.search(r.get("induty_name") or ""):
+            continue
+        c = {"key": "nps:" + ck.replace("|", ":"), "name": r["name"], "name_norm": norm_name(r["name"]),
+             "sources": ["nps"], "bizno6": r["bizno6"], "addr": r["addr"],
+             "industry": r["induty_name"], "induty_code": r["induty_code"],
+             "nps_key": ck, "financials": {}}
+        apply(c, ck)
+        g12 = c["nps"].get("growth_12m")
+        if (c["nps"].get("headcount") or 0) >= cc.get("min_headcount", 10) and \
+                (g12 is None or g12 >= cc.get("min_combined_growth_12m", 0.3)):
+            cands.append(c)
+            added += 1
+    notes.append(f"법인 전환 감지: 최근 {cc.get('lookback_months', 24)}개월 전환 {len(conv)}곳, "
+                 f"신규 후보 {added}곳")
+    return cands
+
+
 # =================================================================== MOMENTUM
 
 def attach_momentum(cands, yms, pdata, cfg, today, notes) -> None:
@@ -380,6 +436,10 @@ def daily(today: dt.date | None = None) -> dict:
         except Exception as e:  # noqa: BLE001 - a portal change must not kill the run
             notes.append(f"국민연금 월간 단계 오류: {type(e).__name__}: {e}")
         else:
+            try:
+                cands = attach_conversions(cands, yms, pdata, cfg, today, notes)
+            except Exception as e:  # noqa: BLE001 - bonus signal only
+                notes.append(f"법인 전환 감지 오류: {type(e).__name__}: {e}")
             try:
                 attach_momentum(cands, yms, pdata, cfg, today, notes)
             except Exception as e:  # noqa: BLE001 - bonus signal only

@@ -50,3 +50,15 @@ def test_panel_metrics_and_scan(tmp_path):
     found = NM.scan(yms, data, today=dt.date(2026, 11, 5), max_age_years=6, min_headcount=30,
                     min_growth_12m=0.5, min_growth_6m=0.3)
     assert [f["name"] for f in found] == ["(주)해담식품"]
+
+
+def test_aggregate_keeps_sole_proprietors_separately_any_age():
+    raw = csv_bytes([
+        row("2026-09", "(주)해담식품", "123456", 60, 30_000_000),
+        row("2026-09", "개인상점", "333333", 50, 1, form="2", adopt="2009-05-01"),   # old 개인: kept
+        row("2026-09", "아주작은가게", "444444", 2, 1, form="2"),                     # < 3명: dropped
+    ])
+    indiv = []
+    ym, rows = NM.aggregate(raw, adopt_after="20200101", min_headcount=5, exclude=[], indiv_out=indiv)
+    assert [r["name"] for r in rows] == ["(주)해담식품"]
+    assert [r["name"] for r in indiv] == ["개인상점"] and indiv[0]["adopt"] == "20090501"

@@ -112,10 +112,15 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
 
     # 설립 첫 회계연도(부분연도)부터 매출 30억+ = 기존 사업을 새 법인으로 옮긴 경우가 대부분
     # (2026-11-05 판단: 유로윈스피아·아진일렉트론·미도식품 모두 이 패턴으로 탈락)
+    # 다만 개인사업이 법인으로 전환한 작은 사업은 오히려 찾는 대상이므로, 첫해 매출을
+    # 연환산해 200억 이상일 때만 '대형 기존 사업 이전'으로 본다 (미도식품: 2개월 83억 → 연 498억).
     est, fa = str(c.get("est_dt") or ""), str(c.get("dart_first_audit") or "")
-    if prev and prev >= 3_000_000_000 and est[:4].isdigit() and fa[:4].isdigit() \
-            and int(est[:4]) == int(fa[:4]) - 2:
-        add("transplant_first_year", f"설립 첫해 매출 {prev / 1e8:,.0f}억: 기존 사업 이전 의심")
+    if prev and est[:6].isdigit() and fa[:4].isdigit() and int(est[:4]) == int(fa[:4]) - 2:
+        months = 13 - int(est[4:6])
+        annual = prev * 12 / max(months, 1)
+        if annual >= 20_000_000_000:
+            add("transplant_first_year", f"설립 첫해 매출 {prev / 1e8:,.0f}억({months}개월, "
+                f"연환산 {annual / 1e8:,.0f}억): 대형 기존 사업 이전 의심")
 
     # 설립 3년 이내인데 처음부터 큰 회사 = 대기업 분할·합작·사업양수 법인일 공산이 크다.
     if age is not None and age <= 3:
@@ -135,6 +140,12 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
         add("industry_momentum", f"업종 모멘텀 {im['rank']}위: {im['industry']} "
             f"(젊은 법인 신설 {im['formation_yoy']:+.0%}, 고용 {cg:+.0%})" if cg is not None
             else f"업종 모멘텀 {im['rank']}위: {im['industry']}")
+
+    cv = c.get("conversion")
+    if cv:
+        a = cv.get("indiv_adopt", "")
+        add("converted_from_sole", f"개인사업({a[:4]}.{a[4:6]}~, 최대 {cv.get('indiv_peak_headcount')}명) → "
+            f"법인 전환 {cv.get('months_since_conversion')}개월 전")
 
     induty = str(c.get("induty_code") or "")
     for th in cfg.get("theses", {}).values():
