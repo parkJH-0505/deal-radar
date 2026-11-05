@@ -2,7 +2,7 @@ name: daily
 # 매일 05:07 KST 수집 → 점수 → data/ 커밋. 07:30 KST에 Claude가 data/candidates/latest.json을 읽고 판단한다.
 on:
   schedule:
-    - cron: "7 20 * * *"   # 20:07 UTC = 05:07 KST
+    - cron: "17 17 * * *"   # 02:17 KST. GitHub 예약 실행은 수십 분~수 시간 밀릴 수 있어 07:23 판단 전에 여유를 둔다
   push:
     branches: [main]
     paths:

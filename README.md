@@ -13,7 +13,7 @@
 ## 하루 흐름
 
 ```
-05:07 KST  GitHub Actions (daily.yml)   수집 → 회사 묶기 → 규칙 점수 → data/ 커밋
+02:17 KST  GitHub Actions (daily.yml)   수집 → 회사 묶기 → 규칙 점수 → data/ 커밋
 07:30 KST  Claude 예약 작업               data/candidates/latest.json 판단·반박 검증
 08:30 KST  전달                           Notion 딜 레이더 DB + 아침 다이제스트
 ```

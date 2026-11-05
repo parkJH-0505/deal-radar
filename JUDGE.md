@@ -1,12 +1,16 @@
 # 아침 판단 플레이북 (Claude 예약 작업이 매일 07:23 KST에 따른다)
 
-수집·점수는 GitHub Actions가 05:07에 끝내 둔다. 이 단계의 일은 **숫자가 고른 후보를 사람처럼 의심하고, 살아남은 것만 올리는 것**이다.
+수집·점수는 GitHub Actions가 02:17에 끝내 둔다. 이 단계의 일은 **숫자가 고른 후보를 사람처럼 의심하고, 살아남은 것만 올리는 것**이다.
 기준: 하루 최대 3건. 근거 링크 없는 주장 금지. 없으면 "오늘 없음" 한 줄.
 
 ## 0. 준비
 1. `add_repo`로 `parkJH-0505/deal-radar`(push) 연결 → `/home/claude/deal-radar`에 `git clone --depth 1`.
 2. `data/candidates/latest.json`을 읽는다.
-   - `date`가 오늘(KST)이 아니면 수집이 실패한 것이다. `data/runs/last_stdout.txt` 마지막 부분을 읽고 원인을 한두 줄로 사용자에게 보고한 뒤 종료한다.
+   - `date`가 오늘(KST)이 아니면 예약 수집이 안 돌았거나 실패한 것이다.
+     1. `gh api repos/parkJH-0505/deal-radar/actions/runs?per_page=5`로 진행 중인 daily 실행이 있는지 본다.
+     2. 없으면 `.github/triggers/daily`에 현재 시각을 써서 커밋·푸시해 수집을 직접 시작한다 (커밋 메시지 끝에 세션 attribution).
+     3. 실행이 끝날 때까지 최대 70분 기다린 뒤(`until` 루프, 60초 간격) `git pull`하고 계속한다.
+     4. 그래도 오늘 날짜가 아니면 `data/runs/last_stdout.txt` 마지막 부분과 실행 결론을 읽고 원인을 한두 줄로 보고한 뒤 종료한다.
    - `notes`에 키 미설정·한도 초과·이월이 있으면 다이제스트 끝에 한 줄로 알린다.
 
 ## 1. 사용자 피드백 반영
