@@ -1,1 +1,3 @@
-GOOGLE_SA_JSON 미설정 → 건너뜀
+init ok: ['시트1', '후보', '관점', '판단 로그']
+push ok: 2 candidates, 0 lens, 20 log rows
+pull ok: 2 rows, 6 lens lines
