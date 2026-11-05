@@ -26,6 +26,8 @@ jobs:
       PROBE_ARGS: "I1250 C002 I2829 I0580 I0490"
       DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       DART_KEY: ${{ secrets.DART_KEY }}
+      FOODSAFETY_KEY: ${{ secrets.FOODSAFETY_KEY }}
+      FOODSAFETY_KEY_HACCP: ${{ secrets.FOODSAFETY_KEY_HACCP }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,6 +42,7 @@ jobs:
           # defensive: never commit anything that looks like a key
           if [ -n "$DATA_GO_KR_KEY" ]; then sed -i "s/$DATA_GO_KR_KEY/***/g" data/probe/latest.txt; fi
           if [ -n "$DART_KEY" ]; then sed -i "s/$DART_KEY/***/g" data/probe/latest.txt; fi
+          for k in "$FOODSAFETY_KEY" "$FOODSAFETY_KEY_HACCP"; do [ -n "$k" ] && sed -i "s/$k/***/g" data/probe/latest.txt; done
           tail -50 data/probe/latest.txt
       - name: Commit probe output
         run: |

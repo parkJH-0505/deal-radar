@@ -300,7 +300,7 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
 # ======================================================================= FOOD
 
 def merge_food(cands, key, fc, cfg, today, notes) -> list[dict]:
-    sig, note = FS.run(key, today=today, window_days=fc.get("window_days", 180),
+    sig, note = FS.run(key, haccp_key=os.environ.get("FOODSAFETY_KEY_HACCP", "").strip(), today=today, window_days=fc.get("window_days", 180),
                        min_new_items=fc.get("min_new_items", 15), min_types=fc.get("min_types", 3))
     notes.append(note)
     by_norm = {}

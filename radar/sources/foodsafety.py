@@ -7,7 +7,7 @@ Why: the 식품 OEM thesis ('다품종 소량') is directly measurable here.
   - LCNS_NO starts with the license year → business age proxy
 
 Endpoint: http://openapi.foodsafetykorea.go.kr/api/{KEY}/{SVC}/json/{start}/{end}[/FIELD=value]
-Max 1,000 rows per call. Key: FOODSAFETY_KEY (식품안전나라 회원 → 인증키 신청).
+Max 1,000 rows per call. Keys are issued per service: FOODSAFETY_KEY (I1250), FOODSAFETY_KEY_HACCP (I0580).
 """
 from __future__ import annotations
 
@@ -68,7 +68,7 @@ def recent_reports(key: str, since: dt.date, today: dt.date) -> tuple[list[dict]
     return [r for r in rows if (r.get("PRMS_DT") or "") >= s], mode
 
 
-def recent_haccp(key: str, since: dt.date) -> list[dict]:
+def recent_haccp(key: str, since: dt.date) -> list[dict]:  # key = FOODSAFETY_KEY_HACCP
     rows = fetch(key, "I0580", flt=f"HACCP_APPN_DT={since:%Y%m%d}")
     s = since.strftime("%Y%m%d")
     return [r for r in rows if (r.get("HACCP_APPN_DT") or "") >= s]
@@ -123,13 +123,20 @@ def site_signals(reports: list[dict], haccp: list[dict], *, today: dt.date,
     return out
 
 
-def run(key: str, *, today: dt.date, window_days: int, min_new_items: int, min_types: int) -> tuple[list[dict], str]:
+def run(key: str, *, haccp_key: str = "", today: dt.date, window_days: int, min_new_items: int,
+        min_types: int) -> tuple[list[dict], str]:
+    """식품안전나라는 서비스마다 인증키가 따로 나온다: I1250은 key, I0580은 haccp_key."""
     since = today - dt.timedelta(days=window_days)
     try:
         reports, mode = recent_reports(key, since, today)
-        haccp = recent_haccp(key, since)
     except (HttpError, RuntimeError, ValueError) as e:
-        return [], f"식품안전나라 수집 실패: {e}"
+        return [], f"식품안전나라 품목제조보고 수집 실패: {e}"
+    haccp: list[dict] = []
+    if haccp_key:
+        try:
+            haccp = recent_haccp(haccp_key, since)
+        except (HttpError, RuntimeError, ValueError) as e:
+            log(f"[foodsafety] HACCP 수집 실패: {e}")
     sig = site_signals(reports, haccp, today=today, min_new_items=min_new_items, min_types=min_types)
     note = (f"식품안전나라: 최근 {window_days}일 품목제조보고 {len(reports):,}건({mode}), HACCP 신규 {len(haccp):,}곳 "
             f"→ 다품종·OEM·HACCP 신호 {len(sig):,}곳")
