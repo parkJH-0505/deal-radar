@@ -371,6 +371,7 @@ def attach_conversions(cands, yms, pdata, cfg, today, notes) -> list[dict]:
             continue
         r = pdata[last][ck]
         if excluded(r["name"], pats) or str(r.get("induty_code")) == "999999" \
+                or (r.get("induty_name") or "") in ("해당없음", "") \
                 or NM.CYCLICAL_INDUSTRY.search(r.get("induty_name") or ""):
             continue
         c = {"key": "nps:" + ck.replace("|", ":"), "name": r["name"], "name_norm": norm_name(r["name"]),
@@ -578,6 +579,8 @@ def daily(today: dt.date | None = None) -> dict:
     quota = g.get("queue_quota", {})
     def lane(c):
         src = set(c.get("sources", []))
+        if c.get("conversion"):
+            return "conversion"
         if "dart" in src:
             return "dart"
         if "localdata" in src:
