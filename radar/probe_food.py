@@ -1,41 +1,59 @@
-"""Probe 식품안전나라 with the real per-service keys (masked in output)."""
+"""Diagnose 식품안전나라 signal quality on real data (keys masked in output).
+
+Prints: SKU-burst / OEM-brand / HACCP counts, the most frequent 'client brands'
+(to spot false positives), sample product names with parentheses, and how many
+HACCP designations in the window are a site's FIRST ever vs an added item.
+"""
 from __future__ import annotations
 
 import collections
 import datetime as dt
 import os
 
-import requests
+from .sources import foodsafety as FS
 
-BASE = "http://openapi.foodsafetykorea.go.kr/api"
 K1 = os.environ.get("FOODSAFETY_KEY", "")
 K2 = os.environ.get("FOODSAFETY_KEY_HACCP", "")
 
 
-def call(key, svc, a, b, flt=""):
-    url = f"{BASE}/{key}/{svc}/json/{a}/{b}" + (f"/{flt}" if flt else "")
-    r = requests.get(url, timeout=120)
-    j = r.json()
-    blk = j.get(svc) or {}
-    return r.status_code, blk.get("RESULT"), int(blk.get("total_count") or 0), blk.get("row") or [], j
-
-
 def main() -> None:
-    print("keys set:", bool(K1), bool(K2))
-    since = (dt.date.today() - dt.timedelta(days=180)).strftime("%Y%m%d")
-    one = (dt.date.today() - dt.timedelta(days=30)).strftime("%Y%m%d")
-    for svc, key, fld in (("I1250", K1, "PRMS_DT"), ("I0580", K2, "HACCP_APPN_DT")):
-        print(f"\n===== {svc}")
-        st, res, tot, rows, j = call(key, svc, 1, 5)
-        print("no filter:", st, res, "total", tot, "fields", sorted(rows[0]) if rows else str(j)[:300])
-        for f in (since, one):
-            st, res, tot, rows, j = call(key, svc, 1, 1000, f"{fld}={f}")
-            ds = collections.Counter((r.get(fld) or "")[:6] for r in rows)
-            print(f"{fld}={f}:", st, res, "total", tot, "got", len(rows),
-                  "min", min((r.get(fld) for r in rows), default=None),
-                  "max", max((r.get(fld) for r in rows), default=None), "months", dict(sorted(ds.items())[-8:]))
-        st, res, tot, rows, j = call(key, svc, 1, 1001)
-        print("1001 rows request:", st, res, len(rows))
+    today = dt.date.today()
+    since = today - dt.timedelta(days=180)
+    reports, mode = FS.recent_reports(K1, since, today)
+    print("reports", len(reports), mode)
+    print("INDUTY", collections.Counter(r.get("INDUTY_CD_NM") for r in reports).most_common(8))
+
+    # full HACCP history to tell first designation from an added item
+    allh = FS.fetch(K2, "I0580", max_rows=400_000)
+    print("I0580 total rows", len(allh), "fields", sorted(allh[0]) if allh else None)
+    first: dict[str, str] = {}
+    for h in allh:
+        lc, d = h.get("LCNS_NO"), h.get("HACCP_APPN_DT") or ""
+        if lc and d and (lc not in first or d < first[lc]):
+            first[lc] = d
+    s = since.strftime("%Y%m%d")
+    win = [h for h in allh if (h.get("HACCP_APPN_DT") or "") >= s]
+    lcw = {h["LCNS_NO"] for h in win if h.get("LCNS_NO")}
+    firsts = {lc for lc in lcw if first.get(lc, "") >= s}
+    print(f"HACCP in window: rows {len(win)}, sites {len(lcw)}, FIRST-ever sites {len(firsts)}")
+    print("window INDUTY", collections.Counter(h.get("INDUTY_CD_NM") for h in win).most_common(6))
+
+    sig = FS.site_signals(reports, win, today=today, min_new_items=15, min_types=3)
+    print("signal sites", len(sig), "sku_burst", sum(x["sku_burst"] for x in sig),
+          "brands>=3", sum(len(x["client_brands"]) >= 3 for x in sig),
+          "brands>=1", sum(bool(x["client_brands"]) for x in sig),
+          "haccp", sum(bool(x["haccp_new"]) for x in sig))
+    bc = collections.Counter(b for x in sig for b in x["client_brands"])
+    print("\nTOP 'brands' by #sites:", bc.most_common(80))
+    print("\nnew_items distribution:", collections.Counter(min(x["new_items"] // 10 * 10, 200) for x in sig))
+    print("\nsample burst sites:")
+    for x in sorted(sig, key=lambda x: -x["new_items"])[:25]:
+        print(" ", x["license_year"], x["name"], x["new_items"], x["item_types"], x["client_brands"][:6])
+    print("\nsample brand sites (>=3):")
+    for x in [x for x in sig if len(x["client_brands"]) >= 3][:40]:
+        print(" ", x["license_year"], x["name"], x["new_items"], x["client_brands"][:8])
+    paren = [r["PRDLST_NM"] for r in reports if "(" in (r.get("PRDLST_NM") or "")]
+    print("\nparen product names", len(paren), "sample:", paren[:: max(1, len(paren) // 60)][:60])
 
 
 if __name__ == "__main__":
