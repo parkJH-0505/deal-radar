@@ -317,7 +317,7 @@ def merge_food(cands, key, fc, cfg, today, notes) -> list[dict]:
             if "food" not in hit["sources"]:
                 hit["sources"].append("food")
             continue
-        if not (s["sku_burst"] or len(s["client_brands"]) >= 3 or s["haccp_new"]):
+        if not (s["sku_burst"] or s["haccp_new"]):
             continue
         if excluded(s["name"], pats):
             continue

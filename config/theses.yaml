@@ -119,7 +119,7 @@ weights:
   transplant_first_year: -20      # 설립 첫해 매출 연환산 200억+ = 대형 기존 사업 이전 의심
   converted_from_sole: 12
   food_sku_burst: 12              # 최근 6개월 신규 품목 15개+·유형 3종+ (다품종 소량, 가점 전용)
-  food_oem_clients: 8             # 품목명 괄호 속 고객 브랜드 3곳+ (OEM 고객 다변화)
-  food_haccp_new: 6               # 최근 6개월 HACCP 신규 지정 (대형 채널 입점 선행)         # 개인사업 → 법인 전환 (검증된 사업이 막 스케일 준비, 가점 전용)
+  food_oem_clients: 0             # 품목명 괄호 표기는 실측상 대부분 맛·규격 표기라 점수에서 뺌 (판단 단계 참고용으로만 전달)
+  food_haccp_new: 6               # 최근 6개월 사업장 첫 HACCP 지정 (품목 추가 지정은 제외, 대형 채널 입점 선행)         # 개인사업 → 법인 전환 (검증된 사업이 막 스케일 준비, 가점 전용)
   likely_spinoff: -25             # 설립 3년 내 매출 1,500억+ 또는 고용 0→150명+
   multi_source_bonus: 10          # 서로 다른 소스 2개 이상에서 동시에 잡힘

@@ -2,8 +2,10 @@
 
 Why: the 식품 OEM thesis ('다품종 소량') is directly measurable here.
   - new 품목 reports per business site in the last N days  → SKU velocity (다품종)
-  - client brands in product names, e.g. '유자오리엔탈드레싱(CJ푸드빌)' → OEM customer breadth
-  - fresh HACCP designation → usually precedes large-channel entry (쿠팡·컬리·대형마트)
+  - parenthesised tags in product names, e.g. '유자오리엔탈드레싱(CJ푸드빌)'. On real data
+    (2026-11 probe) these are mostly flavours/variants ('실온', '초코', '오리지널'), so they are
+    passed to the judge as raw hints only, never scored
+  - FIRST-ever HACCP designation of a site → usually precedes large-channel entry (쿠팡·컬리·대형마트)
   - LCNS_NO starts with the license year → business age proxy
 
 Endpoint: http://openapi.foodsafetykorea.go.kr/api/{KEY}/{SVC}/json/{start}/{end}[/FIELD=value]
@@ -69,21 +71,27 @@ def recent_reports(key: str, since: dt.date, today: dt.date) -> tuple[list[dict]
     return [r for r in rows if s <= (r.get("PRMS_DT") or "") <= t], mode
 
 
-def recent_haccp(key: str, since: dt.date, max_pages: int = 40) -> list[dict]:
-    """I0580 has no date filter (only LCNS_NO, HACCP_APPN_NO, CHNG_DT). Unfiltered rows come
-    newest designation first, so page until a whole page is older than `since`."""
-    s = since.strftime("%Y%m%d")
-    out: list[dict] = []
-    for p in range(max_pages):
-        start = p * PAGE + 1
-        body = get(f"{BASE}/{key}/I0580/json/{start}/{start + PAGE - 1}", None, timeout=120, pause=0.2).json()
-        _, rows = _rows(body, "I0580")
-        if not rows:
-            break
-        out += [r for r in rows if (r.get("HACCP_APPN_DT") or "") >= s]
-        if max((r.get("HACCP_APPN_DT") or "") for r in rows) < s:
-            break
-    log(f"[foodsafety] I0580 since {s}: {len(out):,} designations")
+def first_haccp(rows: list[dict], since: str) -> list[dict]:
+    """Sites whose FIRST-ever HACCP designation is on/after `since` (an added item at an
+    already-certified site is routine), excluding cancelled designations and closed sites.
+    Returns one row per site: the earliest designation."""
+    first: dict[str, dict] = {}
+    for h in rows:
+        lc, d = h.get("LCNS_NO"), h.get("HACCP_APPN_DT") or ""
+        if not lc or not d:
+            continue
+        if lc not in first or d < first[lc]["HACCP_APPN_DT"]:
+            first[lc] = h
+    return [h for h in first.values()
+            if h["HACCP_APPN_DT"] >= since and not h.get("ASGN_CANCL_DT") and not h.get("CLSBIZ_DT")]
+
+
+def recent_haccp(key: str, since: dt.date) -> list[dict]:
+    """I0580 has no date filter, and a site gets one row per designated item, so read the
+    whole register (~40k rows) and keep sites newly entering HACCP."""
+    rows = fetch(key, "I0580", max_rows=400_000)
+    out = first_haccp(rows, since.strftime("%Y%m%d"))
+    log(f"[foodsafety] I0580 {len(rows):,} rows → first-ever HACCP since {since:%Y%m%d}: {len(out):,} sites")
     return out
 
 
@@ -111,7 +119,7 @@ def site_signals(reports: list[dict], haccp: list[dict], *, today: dt.date,
     for lcns, rs in by.items():
         types = {r.get("PRDLST_DCNM") for r in rs if r.get("PRDLST_DCNM")}
         brands = client_brands([r.get("PRDLST_NM", "") for r in rs], rs[0].get("BSSH_NM", ""))
-        if len(rs) < min_new_items and len(brands) < 3 and lcns not in hac:
+        if len(rs) < min_new_items and lcns not in hac:
             continue
         name = rs[0].get("BSSH_NM", "")
         year = lcns[:4] if lcns[:4].isdigit() else ""
@@ -151,6 +159,6 @@ def run(key: str, *, haccp_key: str = "", today: dt.date, window_days: int, min_
         except (HttpError, RuntimeError, ValueError) as e:
             log(f"[foodsafety] HACCP 수집 실패: {e}")
     sig = site_signals(reports, haccp, today=today, min_new_items=min_new_items, min_types=min_types)
-    note = (f"식품안전나라: 최근 {window_days}일 품목제조보고 {len(reports):,}건({mode}), HACCP 신규 {len(haccp):,}곳 "
-            f"→ 다품종·OEM·HACCP 신호 {len(sig):,}곳")
+    note = (f"식품안전나라: 최근 {window_days}일 품목제조보고 {len(reports):,}건({mode}), HACCP 첫 지정 {len(haccp):,}곳 "
+            f"→ 다품종·HACCP 신호 {len(sig):,}곳")
     return sig, note

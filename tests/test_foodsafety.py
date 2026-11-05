@@ -27,3 +27,12 @@ def test_site_signals_sku_burst_and_haccp_only():
     assert set(d["client_brands"]) == {"본죽", "맘스터치", "CJ푸드빌"} and d["license_year"] == "2022"
     assert "한가지만" not in sig
     assert sig["(주)새공장"]["haccp_new"] == "20261020"
+
+
+def test_first_haccp_ignores_added_items_cancelled_and_closed():
+    rows = [{"LCNS_NO": "A", "HACCP_APPN_DT": "20200101"}, {"LCNS_NO": "A", "HACCP_APPN_DT": "20261001"},
+            {"LCNS_NO": "B", "HACCP_APPN_DT": "20260901"}, {"LCNS_NO": "B", "HACCP_APPN_DT": "20261002"},
+            {"LCNS_NO": "C", "HACCP_APPN_DT": "20260801", "ASGN_CANCL_DT": "20261001"},
+            {"LCNS_NO": "D", "HACCP_APPN_DT": "20260801", "CLSBIZ_DT": "20261001"}]
+    out = FS.first_haccp(rows, "20260509")
+    assert [(h["LCNS_NO"], h["HACCP_APPN_DT"]) for h in out] == [("B", "20260901")]
