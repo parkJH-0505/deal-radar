@@ -1,3 +1,3 @@
-init ok: ['시트1', '후보', '관점', '판단 로그']
-push ok: 2 candidates, 0 lens, 20 log rows
-pull ok: 2 rows, 6 lens lines
+init ok: ['후보', '관점', '판단 로그']
+push ok: 0 candidates, 6 lens, 0 log rows
+pull ok: 2 rows, 12 lens lines
