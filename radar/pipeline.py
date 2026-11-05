@@ -19,6 +19,7 @@ import yaml
 from .entity import bizno6, name_similarity, norm_name
 from .http import HttpError, log
 from . import conversion as CV
+from .sources import foodsafety as FS
 from . import momentum as MO
 from .score import age_years, excluded, score
 from .sources import dart as D
@@ -296,6 +297,42 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
     return cands
 
 
+# ======================================================================= FOOD
+
+def merge_food(cands, key, fc, cfg, today, notes) -> list[dict]:
+    sig, note = FS.run(key, today=today, window_days=fc.get("window_days", 180),
+                       min_new_items=fc.get("min_new_items", 15), min_types=fc.get("min_types", 3))
+    notes.append(note)
+    by_norm = {}
+    for c in cands:
+        if c.get("name_norm"):
+            by_norm.setdefault(c["name_norm"], c)
+    pats = cfg["global"]["exclude_name_patterns"]
+    max_age = cfg["global"]["max_company_age_years"]
+    added = 0
+    for s in sig:
+        hit = by_norm.get(s["name_norm"])
+        if hit:
+            hit["food"] = s
+            if "food" not in hit["sources"]:
+                hit["sources"].append("food")
+            continue
+        if not (s["sku_burst"] or len(s["client_brands"]) >= 3 or s["haccp_new"]):
+            continue
+        if excluded(s["name"], pats):
+            continue
+        age = age_years(f"{s['license_year']}0701", today) if s["license_year"] else None
+        if age is not None and age > max_age:
+            continue
+        cands.append({"key": f"food:{s['lcns_no']}", "name": s["name"], "name_norm": s["name_norm"],
+                      "sources": ["food"], "age_years": age, "age_basis": "식품 인허가 연도(대리지표)",
+                      "industry": "식품제조가공업", "induty_code": "10", "food": s, "financials": {}})
+        by_norm[s["name_norm"]] = cands[-1]
+        added += 1
+    notes.append(f"식품안전나라 단독 후보 {added}곳")
+    return cands
+
+
 # ================================================================= CONVERSION
 
 def attach_conversions(cands, yms, pdata, cfg, today, notes) -> list[dict]:
@@ -428,6 +465,14 @@ def daily(today: dt.date | None = None) -> dict:
 
     cands = merge(dart_c, loc, cfg, today)
 
+    # 식품안전나라: 다품종(신규 품목 속도), OEM 고객 브랜드, HACCP 신규 지정
+    fkey = os.environ.get("FOODSAFETY_KEY", "").strip()
+    fc = cfg["sources"].get("foodsafety", {})
+    if fc.get("enabled") and fkey:
+        cands = merge_food(cands, fkey, fc, cfg, today, notes)
+    elif fc.get("enabled"):
+        notes.append("FOODSAFETY_KEY 미설정 → 식품안전나라(품목제조보고·HACCP) 건너뜀")
+
     # 국민연금 월간 패널: discovery (고용 급성장) + head-count series for everyone
     if cfg["sources"]["nps_monthly"]["enabled"]:
         try:
@@ -535,7 +580,9 @@ def daily(today: dt.date | None = None) -> dict:
         src = set(c.get("sources", []))
         if "dart" in src:
             return "dart"
-        return "localdata" if "localdata" in src else "nps"
+        if "localdata" in src:
+            return "localdata"
+        return "food" if "food" in src else "nps"
     queue, used = [], set()
     for ln, n in quota.items():
         for c in [c for c in fresh if lane(c) == ln][:n]:

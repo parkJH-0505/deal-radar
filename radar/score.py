@@ -141,6 +141,17 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
             f"(젊은 법인 신설 {im['formation_yoy']:+.0%}, 고용 {cg:+.0%})" if cg is not None
             else f"업종 모멘텀 {im['rank']}위: {im['industry']}")
 
+    fd = c.get("food")
+    if fd:
+        if fd.get("sku_burst"):
+            add("food_sku_burst", f"최근 6개월 신규 품목 {fd['new_items']}개·유형 {fd['item_types']}종 (다품종)")
+        if len(fd.get("client_brands") or []) >= 3:
+            add("food_oem_clients", f"OEM 고객 브랜드 {len(fd['client_brands'])}곳: "
+                + ", ".join(fd["client_brands"][:4]))
+        if fd.get("haccp_new"):
+            h = fd["haccp_new"]
+            add("food_haccp_new", f"HACCP 신규 지정 {h[:4]}.{h[4:6]} ({fd.get('haccp_item') or '-'}): 대형 채널 입점 선행")
+
     cv = c.get("conversion")
     if cv:
         a = cv.get("indiv_adopt", "")
@@ -153,7 +164,7 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
             add("thesis_industry_match", f"테제 업종: {th['label']}")
             break
 
-    if len(src) >= 2:  # discovery sources: dart, localdata, nps (panel scan)
+    if len(src) >= 2:  # discovery sources: dart, localdata, nps (panel scan), food
         add("multi_source_bonus", "복수 소스 동시 포착: " + ", ".join(sorted(src)))
 
     return pts, why

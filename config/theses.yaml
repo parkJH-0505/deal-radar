@@ -8,6 +8,7 @@ global:
   queue_quota:                    # 소스별 최소 자리 (나머지는 점수순)
     nps: 10                       # 국민연금 단독 발견 (공시 없는 소규모 팀의 고용 급성장) = 주력
     localdata: 4                  # 인허가 단독 발견 (공장 증설·체인 확장)
+    food: 3                       # 식품안전나라 단독 발견 (다품종·OEM·HACCP)
   # 표준산업분류 앞자리. 젊은 첫 외감사의 1/3이 부동산(68)이고, 금융·발전·골프장·지주사는
   # 대부분 SPC나 대기업 분할법인이라 '조용히 잘 크는 회사'와 구조적으로 무관하다.
   exclude_industry_prefixes: ["68", "64", "65", "66", "35", "9112", "7151", "411"]  # 411 건물 건설(분양 시행 법인)
@@ -44,6 +45,11 @@ sources:
       - slug: food_manufacturing_processors
         label: 식품제조가공업
         thesis: food_mfg
+  foodsafety:                      # 식품안전나라 품목제조보고(I1250)·HACCP(I0580). 키: FOODSAFETY_KEY
+    enabled: true
+    window_days: 180
+    min_new_items: 15              # 6개월 신규 품목 15개+ 그리고
+    min_types: 3                   # 식품유형 3종+ = 다품종 신호
   nps_monthly:                     # 국민연금 월간 전체 CSV → 젊은 법인 고용 패널 (주력 소스)
     enabled: true
     want_months: 13                # 최근 13개월 보유 → 12개월 성장 계산
@@ -107,6 +113,9 @@ weights:
   industry_momentum: 8            # 젊은 법인 신설·고용이 동시에 빨라지는 상위 업종 (외부 모멘텀, 가점 전용)
   foreign_subsidiary_hint: -15    # 'OO코리아 유한회사' 등 외국계 한국법인 의심
   transplant_first_year: -20      # 설립 첫해 매출 연환산 200억+ = 대형 기존 사업 이전 의심
-  converted_from_sole: 12         # 개인사업 → 법인 전환 (검증된 사업이 막 스케일 준비, 가점 전용)
+  converted_from_sole: 12
+  food_sku_burst: 12              # 최근 6개월 신규 품목 15개+·유형 3종+ (다품종 소량, 가점 전용)
+  food_oem_clients: 8             # 품목명 괄호 속 고객 브랜드 3곳+ (OEM 고객 다변화)
+  food_haccp_new: 6               # 최근 6개월 HACCP 신규 지정 (대형 채널 입점 선행)         # 개인사업 → 법인 전환 (검증된 사업이 막 스케일 준비, 가점 전용)
   likely_spinoff: -25             # 설립 3년 내 매출 1,500억+ 또는 고용 0→150명+
   multi_source_bonus: 10          # 서로 다른 소스 2개 이상에서 동시에 잡힘

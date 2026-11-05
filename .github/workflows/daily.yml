@@ -32,6 +32,7 @@ jobs:
       PYTHONUNBUFFERED: "1"
       DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       DART_KEY: ${{ secrets.DART_KEY }}
+      FOODSAFETY_KEY: ${{ secrets.FOODSAFETY_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
