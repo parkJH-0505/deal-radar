@@ -1,0 +1,1 @@
+GOOGLE_SA_JSON 미설정 → 건너뜀
