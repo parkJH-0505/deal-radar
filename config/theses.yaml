@@ -5,6 +5,7 @@ global:
   max_company_age_years: 5        # 얼리 스테이지: 업력 5년 이하 (2026-11-05 사용자 피드백)
   min_score_to_report: 45         # 이 점수 이상만 후보 파일에 오른다
   max_candidates_per_day: 20      # 판단 단계로 넘기는 최대 후보 수
+  grade_resurface: {C: 8, D: 15, E: 25}   # 판단 등급별 재상정 기준(판단 당시 대비 점수 상승). F는 재상정 없음, A·B는 신호 추가·10점↑
   queue_quota:                    # 소스별 최소 자리 (나머지는 점수순)
     nps: 10                       # 국민연금 단독 발견 (공시 없는 소규모 팀의 고용 급성장) = 주력
     localdata: 4                  # 인허가 단독 발견 (공장 증설·체인 확장)

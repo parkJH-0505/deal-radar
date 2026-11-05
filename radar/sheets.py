@@ -7,11 +7,11 @@ snapshot this module exports into the repo and writes an outbox file that
 this module applies.
 
 Tabs
-  후보      one row per company the judgment kept. User-owned columns
+  후보      one row per company the judgment graded A or B. User-owned columns
             (상태 / 이유 태그 / 내 코멘트) are never overwritten.
   관점      the user's investment lens. '직접' rows are the user's,
             'Claude' rows are appended by the judgment with evidence.
-  판단 로그  every judged company (kept and rejected) with the reason.
+  판단 로그  every judged company with its grade A–F and the reason.
 
 Commands
   python -m radar.sheets pull   sheet -> data/feedback/sheet_snapshot.json, data/feedback/lens.md
@@ -33,11 +33,12 @@ SHEET_ID_DEFAULT = "1vPTO0HS4ugVo04y2yQRmXMdxof8tx00qClo0ZB-UXGk"
 CAND_TAB, LENS_TAB, LOG_TAB = "후보", "관점", "판단 로그"
 KEY = "레이더 키"
 USER_COLS = ["상태", "이유 태그", "내 코멘트"]
-CAND_COLS = [KEY, "회사명", *USER_COLS, "점수", "소스", "업력(년)", "고용(명)",
+CAND_COLS = [KEY, "회사명", "등급", *USER_COLS, "점수", "소스", "업력(년)", "고용(명)",
              "고용 12개월(%)", "매출(억, 추정)", "영업이익률(%)", "외부투자", "왜 지금",
              "반박 검증", "점수 사유", "근거 링크", "홈페이지", "첫 포착", "최근 포착"]
 LENS_COLS = ["날짜", "누가", "관점", "근거", "적용"]
-LOG_COLS = ["날짜", KEY, "회사명", "판정", "이유", "근거"]
+LOG_COLS = ["날짜", KEY, "회사명", "등급", "판정", "이유", "근거"]
+GRADES = ["A", "B", "C", "D", "E", "F"]
 STATUS = ["신규", "관찰", "관심", "컨택", "패스"]
 TAGS = ["+수익구조", "+시장", "+창업자·팀", "+해자", "+타이밍",
         "-이미 큼", "-투자받음", "-계열·이전", "-테제 밖", "-사업모델", "-인력 의존", "-데이터 오류"]
@@ -57,11 +58,15 @@ def merge_candidates(existing: list[list[str]], upserts: list[dict]) -> list[lis
     상태 '신규'. Unknown extra columns the user added are preserved in place.
     """
     header = list(existing[0]) if existing else list(CAND_COLS)
-    for col in CAND_COLS:  # tolerate a user re-ordering or adding columns
-        if col not in header:
-            header.append(col)
-    idx = {c: i for i, c in enumerate(header)}
     rows = [list(r) + [""] * (len(header) - len(r)) for r in existing[1:]]
+    for i, col in enumerate(CAND_COLS):  # tolerate a user re-ordering or adding columns
+        if col not in header:
+            # a new system column goes right after its predecessor so the layout stays readable
+            prev = next((header.index(p) for p in reversed(CAND_COLS[:i]) if p in header), -1)
+            header.insert(prev + 1, col)
+            for r in rows:
+                r.insert(prev + 1, "")
+    idx = {c: i for i, c in enumerate(header)}
     by_key = {r[idx[KEY]]: r for r in rows if r[idx[KEY]]}
     for u in upserts:
         k = str(u.get(KEY) or "").strip()
@@ -101,6 +106,27 @@ def snapshot(cand_grid: list[list[str]], lens_grid: list[list[str]]) -> dict:
             if any(v.strip() for v in rec.values()):
                 out["lens"].append(rec)
     return out
+
+
+def only_listable(existing: list[list[str]], upserts: list[dict]) -> list[dict]:
+    """New rows only for grade A/B (no grade = legacy = B); rows already in the sheet are
+    always updated, so a company that drops to C or below shows its new grade."""
+    have = set()
+    if existing:
+        k = existing[0].index(KEY) if KEY in existing[0] else 0
+        have = {r[k] for r in existing[1:] if len(r) > k and r[k]}
+    return [u for u in upserts
+            if str(u.get(KEY) or "").strip() in have or str(u.get("등급") or "B").strip()[:1] in ("A", "B")]
+
+
+def align_rows(header: list[str], records: list[dict]) -> tuple[list[str], list[list[str]]]:
+    """Rows ordered by the sheet's actual header; columns the sheet lacks are appended to it."""
+    header = list(header)
+    for r in records:
+        for c in r:
+            if c not in header:
+                header.append(c)
+    return header, [["" if r.get(c) is None else str(r.get(c)) for c in header] for r in records]
 
 
 def lens_markdown(snap: dict) -> str:
@@ -147,6 +173,13 @@ def init() -> None:
     # dropdown for 상태; 이유 태그 is free text (comma-separated) listed in the note
     h = cand.row_values(1)
     col = h.index("상태") + 1
+    sh.batch_update({"requests": [{  # columns may have shifted (e.g. 등급 inserted): clear old dropdowns
+        "setDataValidation": {"range": {"sheetId": cand.id, "startRowIndex": 1,
+                                        "startColumnIndex": 0, "endColumnIndex": len(h)}}}]})
+    try:
+        cand.clear_notes([f"A1:{chr(64 + min(len(h), 26))}1"])
+    except Exception:  # older gspread
+        pass
     sh.batch_update({"requests": [{
         "setDataValidation": {
             "range": {"sheetId": cand.id, "startRowIndex": 1, "startColumnIndex": col - 1,
@@ -197,15 +230,21 @@ def push() -> None:
         box = json.loads(f.read_text(encoding="utf-8"))
         upserts += box.get("candidates", [])
         lens_add += [[r.get(c, "") for c in LENS_COLS] for r in box.get("lens", [])]
-        log_add += [[r.get(c, "") for c in LOG_COLS] for r in box.get("log", [])]
+        log_add += box.get("log", [])
     if upserts:
-        grid = merge_candidates(cand_ws.get_all_values(), upserts)
+        existing = cand_ws.get_all_values()
+        grid = merge_candidates(existing, only_listable(existing, upserts))
         cand_ws.resize(rows=max(len(grid) + 50, cand_ws.row_count), cols=max(len(grid[0]), cand_ws.col_count))
         cand_ws.update(grid, "A1", value_input_option="USER_ENTERED")
     if lens_add:
         lens_ws.append_rows(lens_add, value_input_option="RAW")
     if log_add:
-        log_ws.append_rows(log_add, value_input_option="RAW")
+        old = log_ws.row_values(1) or LOG_COLS
+        header, rows = align_rows(old, log_add)
+        if header != old:
+            log_ws.resize(cols=max(len(header), log_ws.col_count))
+            log_ws.update([header], "A1")
+        log_ws.append_rows(rows, value_input_option="RAW")
     done = OUTBOX.parent / "sent"
     done.mkdir(parents=True, exist_ok=True)
     for f in files:

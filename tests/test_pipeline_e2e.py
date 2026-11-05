@@ -164,3 +164,20 @@ def test_daily_end_to_end(sandbox):
     assert not any(c["name"] != "(주)해담식품" for c in out2["queue"])
     assert (sandbox / "watchlist.json").exists()
     assert (sandbox / "runs" / "2026-11-05.md").exists()
+
+
+def test_load_judgments_reads_grades(tmp_path):
+    from radar.pipeline import load_judgments
+    (tmp_path / "2026-11-05.md").write_text(
+        "## 생존\n| 키 | 회사 |\n|---|---|\n| dart:1 | 옛생존 |\n"
+        "## 탈락\n| 키 | 회사 |\n|---|---|\n| dart:2 | 옛탈락 |\n", encoding="utf-8")
+    (tmp_path / "2026-11-06.md").write_text(
+        "## 판정\n| 키 | 등급 | 회사 | 이유 |\n|---|---|---|---|\n"
+        "| nps:9:가 | A | 가 | 좋음 |\n| food:2019001 | F | 나 | VC 투자 |\n| dart:1 | C | 옛생존 | 재판단 |\n"
+        "## E급 · 결격 의심\n| 키 | 회사 |\n|---|---|\n| loc:다 | 다 |\n", encoding="utf-8")
+    j = load_judgments(tmp_path)
+    assert j["dart:2"]["grade"] == "D" and j["dart:2"]["verdict"] == "reject"   # legacy 탈락
+    assert j["nps:9:가"] == {"date": "2026-11-06", "grade": "A", "verdict": "keep"}
+    assert j["food:2019001"]["grade"] == "F"                                   # food keys are parsed
+    assert j["dart:1"]["grade"] == "C" and j["dart:1"]["verdict"] == "reject"  # latest file wins
+    assert j["loc:다"]["grade"] == "E"                                         # grade from heading

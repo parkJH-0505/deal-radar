@@ -415,12 +415,29 @@ def attach_momentum(cands, yms, pdata, cfg, today, notes) -> None:
 
 # ================================================================= JUDGMENTS
 
-_KEY = re.compile(r"\|\s*((?:dart|nps|loc):[^\s|]+)\s*\|")
+_KEY = re.compile(r"\|\s*((?:dart|nps|loc|food):[^\s|]+)\s*\|")
+_GRADE_CELL = re.compile(r"^\s*([A-F])\s*(?:급)?\s*$")
+_GRADE_HEAD = re.compile(r"^([A-F])\s*급?(?:\s|$|[·(:-])")
+GRADES = "ABCDEF"
+CANDIDATE_GRADES = "AB"  # 시트 '후보'에 올라가는 등급
+
+
+def _grade_of(line: str, section: str) -> str:
+    """Grade from a '등급' cell (A–F) in the row, else from an 'A급…' heading;
+    legacy files: '생존' → B, '탈락' → D."""
+    for cell in line.strip().strip("|").split("|")[1:]:
+        m = _GRADE_CELL.match(cell)
+        if m:
+            return m.group(1)
+    m = _GRADE_HEAD.match(section)
+    if m:
+        return m.group(1)
+    return "D" if "탈락" in section else "B"
 
 
 def load_judgments(folder) -> dict[str, dict]:
     """Keys the morning judgment already reviewed, from data/judgments/YYYY-MM-DD.md.
-    Rows under a '## 탈락' heading are rejects; any other table row is a survivor."""
+    Each row carries a grade A–F (A·B = 후보, C–F = 보류·탈락); the latest file wins."""
     out: dict[str, dict] = {}
     if not folder.exists():
         return out
@@ -432,8 +449,9 @@ def load_judgments(folder) -> dict[str, dict]:
                 continue
             m = _KEY.match(line.strip())
             if m:
-                out[m.group(1)] = {"date": date,
-                                   "verdict": "reject" if "탈락" in section else "keep"}
+                g = _grade_of(line, section)
+                out[m.group(1)] = {"date": date, "grade": g,
+                                   "verdict": "keep" if g in CANDIDATE_GRADES else "reject"}
     return out
 
 
@@ -532,6 +550,7 @@ def daily(today: dt.date | None = None) -> dict:
     wl_path = DATA / "watchlist.json"
     wl = read_json(wl_path, {})
     reviewed = load_judgments(DATA / "judgments")
+    resurface = {"C": 8, "D": 15, "E": 25, "F": None, **(g.get("grade_resurface") or {})}
 
     def kinds(reasons):  # "고용 12개월 +55% (+20)" -> "고용 개월 % ()": numbers drift daily
         return {re.sub(r"[\d,.+\-]+", "", r) for r in reasons}
@@ -543,16 +562,21 @@ def daily(today: dt.date | None = None) -> dict:
         before = [h for h in (prev or {}).get("score_history", []) if h["date"] < today.isoformat()]
         # 판단 이력(data/judgments)이 진실의 원천이다.
         #  - 아직 판단받지 않은 회사 = new (임계점 넘은 대기 후보는 점수순으로 매일 소진)
-        #  - 탈락한 회사 = 점수가 판단 당시보다 15점 이상 오를 때만 changed로 재상정
-        #  - 생존한 회사 = 신호가 새로 생기거나 10점 이상 오르면 changed
+        #  - C~E 등급 = 점수가 판단 당시보다 등급별 기준(C 8 · D 15 · E 25) 이상 오를 때만 재상정
+        #  - F 등급 = 결격 확정, 다시 올리지 않음
+        #  - A·B 등급 = 신호가 새로 생기거나 10점 이상 오르면 changed
         verdict = reviewed.get(c["key"])
         base = before[-1]["score"] if before else c["score"]
+        if verdict:
+            c["prev_grade"] = verdict["grade"]
+            c["prev_judged"] = verdict["date"]
         if verdict is None:
             c["change"] = "new"
         elif verdict["verdict"] == "reject":
+            need = resurface.get(verdict["grade"])
             jscore = next((h["score"] for h in reversed((prev or {}).get("score_history", []))
                            if h["date"] <= verdict["date"]), base)
-            c["change"] = "changed" if c["score"] - jscore >= 15 and \
+            c["change"] = "changed" if need is not None and c["score"] - jscore >= need and \
                 verdict["date"] < today.isoformat() else "rejected"
         elif not before:
             c["change"] = "same"
