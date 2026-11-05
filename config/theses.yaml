@@ -59,6 +59,10 @@ sources:
     months: 1
     max_lookups_per_run: 60
 
+momentum:                         # 업종 모멘텀 (radar/momentum.py)
+  min_firms: 40                   # 젊은 법인 40곳 이상 업종만 비교
+  top_n: 15                       # 상위 15개 업종을 '모멘텀 업종'으로
+
 theses:
   food_mfg:
     label: 식품 제조 (다품종 소량 OEM 포함)
@@ -95,6 +99,7 @@ weights:
   bill_per_head_high: 6           # 1인당 고지금액 40만원+ (≈월급 440만원+, 상위 15%)
   bill_per_head_rising: 6         # 1인당 고지금액 12개월 +10% 이상
   thesis_industry_match: 8
+  industry_momentum: 8            # 젊은 법인 신설·고용이 동시에 빨라지는 상위 업종 (외부 모멘텀, 가점 전용)
   foreign_subsidiary_hint: -15    # 'OO코리아 유한회사' 등 외국계 한국법인 의심
   transplant_first_year: -20      # 설립 첫해(부분연도) 매출 30억+ = 기존 사업 이전 의심
   likely_spinoff: -25             # 설립 3년 내 매출 1,500억+ 또는 고용 0→150명+

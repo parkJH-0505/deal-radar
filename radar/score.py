@@ -129,6 +129,13 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
                  (c.get("name") or "").strip()):
         add("foreign_subsidiary_hint", "상호가 'OO코리아' 형태: 외국계 한국법인 의심")
 
+    im = c.get("industry_momentum")
+    if im:
+        cg = im.get("cohort_growth_12m")
+        add("industry_momentum", f"업종 모멘텀 {im['rank']}위: {im['industry']} "
+            f"(젊은 법인 신설 {im['formation_yoy']:+.0%}, 고용 {cg:+.0%})" if cg is not None
+            else f"업종 모멘텀 {im['rank']}위: {im['industry']}")
+
     induty = str(c.get("induty_code") or "")
     for th in cfg.get("theses", {}).values():
         if any(induty.startswith(p) for p in th.get("dart_industry_prefixes", [])):

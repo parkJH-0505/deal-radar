@@ -18,6 +18,7 @@ import yaml
 
 from .entity import bizno6, name_similarity, norm_name
 from .http import HttpError, log
+from . import momentum as MO
 from .score import age_years, excluded, score
 from .sources import dart as D
 from .sources import localdata as L
@@ -294,6 +295,30 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
     return cands
 
 
+# =================================================================== MOMENTUM
+
+def attach_momentum(cands, yms, pdata, cfg, today, notes) -> None:
+    mc = cfg.get("momentum", {})
+    rows = MO.industry_momentum(yms, pdata, today=today,
+                                max_age_years=cfg["global"]["max_company_age_years"],
+                                min_firms=mc.get("min_firms", 40), top_n=mc.get("top_n", 15))
+    out = DATA / "momentum"
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "latest.md").write_text(MO.report_md(rows, yms[-1]), encoding="utf-8")
+    write_json(out / "latest.json", {"ym": yms[-1], "rows": rows})
+    hot = {r["industry"]: r for r in rows if r["hot"]}
+    n = 0
+    for c in cands:
+        ind = c.get("industry") or (c.get("nps") or {}).get("industry")
+        if ind in hot:
+            r = hot[ind]
+            c["industry_momentum"] = {k: r[k] for k in ("industry", "rank", "formation_yoy",
+                                                        "cohort_growth_12m", "young_firms")}
+            n += 1
+    notes.append(f"업종 모멘텀 {yms[-1]}: 상위 {len(hot)}개 업종, 해당 후보 {n}곳 "
+                 f"(1위 {rows[0]['industry'] if rows else '-'})")
+
+
 # ================================================================= JUDGMENTS
 
 _KEY = re.compile(r"\|\s*((?:dart|nps|loc):[^\s|]+)\s*\|")
@@ -354,6 +379,11 @@ def daily(today: dt.date | None = None) -> dict:
             cands = merge_nps(cands, found, PanelIndex(yms, pdata), cfg, today)
         except Exception as e:  # noqa: BLE001 - a portal change must not kill the run
             notes.append(f"국민연금 월간 단계 오류: {type(e).__name__}: {e}")
+        else:
+            try:
+                attach_momentum(cands, yms, pdata, cfg, today, notes)
+            except Exception as e:  # noqa: BLE001 - bonus signal only
+                notes.append(f"업종 모멘텀 계산 오류: {type(e).__name__}: {e}")
 
     for c in cands:
         c["score"], c["reasons"] = score(c, cfg, today)
