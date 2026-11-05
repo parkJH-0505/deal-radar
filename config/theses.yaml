@@ -96,5 +96,6 @@ weights:
   bill_per_head_rising: 6         # 1인당 고지금액 12개월 +10% 이상
   thesis_industry_match: 8
   foreign_subsidiary_hint: -15    # 'OO코리아 유한회사' 등 외국계 한국법인 의심
+  transplant_first_year: -20      # 설립 첫해(부분연도) 매출 30억+ = 기존 사업 이전 의심
   likely_spinoff: -25             # 설립 3년 내 매출 1,500억+ 또는 고용 0→150명+
   multi_source_bonus: 10          # 서로 다른 소스 2개 이상에서 동시에 잡힘

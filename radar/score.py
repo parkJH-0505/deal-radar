@@ -110,6 +110,13 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
     if bpc is not None and bpc >= 0.10:
         add("bill_per_head_rising", f"1인당 고지금액 12개월 {bpc:+.0%}")
 
+    # 설립 첫 회계연도(부분연도)부터 매출 30억+ = 기존 사업을 새 법인으로 옮긴 경우가 대부분
+    # (2026-11-05 판단: 유로윈스피아·아진일렉트론·미도식품 모두 이 패턴으로 탈락)
+    est, fa = str(c.get("est_dt") or ""), str(c.get("dart_first_audit") or "")
+    if prev and prev >= 3_000_000_000 and est[:4].isdigit() and fa[:4].isdigit() \
+            and int(est[:4]) == int(fa[:4]) - 2:
+        add("transplant_first_year", f"설립 첫해 매출 {prev / 1e8:,.0f}억: 기존 사업 이전 의심")
+
     # 설립 3년 이내인데 처음부터 큰 회사 = 대기업 분할·합작·사업양수 법인일 공산이 크다.
     if age is not None and age <= 3:
         big_rev = rev and rev >= 150_000_000_000

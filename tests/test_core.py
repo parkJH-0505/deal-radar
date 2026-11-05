@@ -171,3 +171,14 @@ def test_early_stage_growth_shape():
     pb, wb = score({"sources": ["dart"], "age_years": 2.5, "age_basis": "설립일(DART)",
                     "financials": {"revenue": 60_000_000_000}}, cfg, TODAY)
     assert any("이미 큰 회사" in r for r in wb)
+
+
+def test_transplanted_business_penalised():
+    import yaml
+    from radar.score import score
+    cfg = yaml.safe_load(open("config/theses.yaml", encoding="utf-8"))
+    c = {"sources": ["dart"], "est_dt": "20241101", "dart_first_audit": "20260410",
+         "age_years": 2.0, "age_basis": "설립일(DART)",
+         "financials": {"revenue": 35_100_000_000, "revenue_prev": 8_300_000_000}}
+    _, why = score(c, cfg, TODAY)
+    assert any("기존 사업 이전" in r for r in why)
