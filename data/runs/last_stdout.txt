@@ -3,18 +3,7 @@
 [localdata:food_manufacturing_processors] totalCount=60644
 [localdata:food_manufacturing_processors] fetched 60644 rows in 607 page(s)
 [localdata] 식품제조가공업: 96 expansion-type signals
-[nps-monthly] 20261022 -> 202609: 77,387 young corps, 32,611 개인사업장 (121s)
-[nps-monthly] 20260923 -> 202608: 76,592 young corps, 32,581 개인사업장 (129s)
-[nps-monthly] 20260825 -> 202607: 76,305 young corps, 32,690 개인사업장 (125s)
-[nps-monthly] 20260723 -> 202606: 75,864 young corps, 32,814 개인사업장 (133s)
-[nps-monthly] 20260623 -> 202605: 75,048 young corps, 32,714 개인사업장 (122s)
-[nps-monthly] 20260521 -> 202604: 74,470 young corps, 32,814 개인사업장 (130s)
-[nps-monthly] 20260423 -> 202603: 72,802 young corps, 32,345 개인사업장 (124s)
-[nps-monthly] 20260323 -> 202602: 72,150 young corps, 32,944 개인사업장 (128s)
-[nps-monthly] 20260223 -> 202601: 70,068 young corps, 32,587 개인사업장 (127s)
-[nps-monthly] 20260123 -> 202512: 70,288 young corps, 33,276 개인사업장 (130s)
-[nps-monthly] 20251223 -> 202511: 69,784 young corps, 32,888 개인사업장 (121s)
-[nps-monthly] 20251124 -> 202510: 69,373 young corps, 33,062 개인사업장 (125s)
-[nps-monthly] 20251024 -> 202509: 69,012 young corps, 32,961 개인사업장 (122s)
+[foodsafety] I1250 PRMS_DT=20260509: 70,866 / 70,780 rows
+[foodsafety] I0580 since 20260509: 5,426 designations
 [nps-monthly] scan 202609: 3097 growth candidates
-[done] queue=20 above=2016 in 5200s
+[done] queue=20 above=2047 in 4539s

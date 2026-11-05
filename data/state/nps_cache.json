@@ -5780,5 +5780,798 @@
   ],
   "bill_per_head": 574933,
   "_asof": "2026-11-05"
+ },
+ "food:20250482273": {
+  "match": {
+   "seq": 6776969,
+   "name": "주식회사 디어푸드",
+   "bizno6": "483880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 15,
+  "monthly_bill": 4485800,
+  "industry": "빵류, 과자류, 당류, 초콜릿 도매업",
+  "adopted": "20161201",
+  "addr": "경기도 고양시 덕양구 통일로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 15
+   },
+   {
+    "ym": "202608",
+    "headcount": 15,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 299053,
+  "_asof": "2026-11-05"
+ },
+ "food:20260378005": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260870080": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250666001": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250203108": {
+  "match": {
+   "seq": 7020141,
+   "name": "주식회사 지니바이오",
+   "bizno6": "575880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 689980,
+  "industry": "그 외 기타 식료품 제조업",
+  "adopted": "20250401",
+  "addr": "부산광역시 강서구 대저로171번나길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 229993,
+  "_asof": "2026-11-05"
+ },
+ "food:20250694341": {
+  "match": {
+   "seq": 7027544,
+   "name": "주식회사 대현에벤에셀 당진지점",
+   "bizno6": "211857",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 18,
+  "monthly_bill": 5981040,
+  "industry": "전자상거래 소매업",
+  "adopted": "20250701",
+  "addr": "충청남도 당진시 합덕읍 합덕산단3로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 18
+   },
+   {
+    "ym": "202608",
+    "headcount": 18,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 332280,
+  "_asof": "2026-11-05"
+ },
+ "food:20260836002": {
+  "match": {
+   "seq": 782489,
+   "name": "농업회사법인 크레이지피넛(주)",
+   "bizno6": "192880",
+   "ym": "202511",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 508660,
+  "industry": "식용 정제유 및 가공유 제조업",
+  "adopted": "20200701",
+  "addr": "부산광역시 기장군 장안읍 오리길",
+  "series": [
+   {
+    "ym": "202511",
+    "headcount": 3
+   },
+   {
+    "ym": "202510",
+    "headcount": 5,
+    "acq": 0,
+    "lost": 2
+   }
+  ],
+  "bill_per_head": 169553,
+  "_asof": "2026-11-05"
+ },
+ "food:20260421311": {
+  "match": {
+   "seq": 7078850,
+   "name": "주식회사 복시루",
+   "bizno6": "344880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 866400,
+  "industry": "떡류 제조업",
+  "adopted": "20260601",
+  "addr": "경기도 부천시 원미구 조마루로427번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 288800,
+  "_asof": "2026-11-05"
+ },
+ "food:20260682065": {
+  "match": {
+   "seq": 5907901,
+   "name": "용원푸드",
+   "bizno6": "852460",
+   "ym": "202607",
+   "match_score": 1.0
+  },
+  "headcount": 10,
+  "monthly_bill": 3011500,
+  "industry": "기타 식품 첨가물 제조업",
+  "adopted": "20260423",
+  "addr": "충청북도 옥천군 동이면 옥천동이로",
+  "series": [
+   {
+    "ym": "202607",
+    "headcount": 10
+   },
+   {
+    "ym": "202606",
+    "headcount": 10,
+    "acq": 1,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 301150,
+  "_asof": "2026-11-05"
+ },
+ "food:20260951136": {
+  "match": {
+   "seq": 7038275,
+   "name": "유한회사 호수",
+   "bizno6": "877870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 895160,
+  "industry": "전기용품 및 조명장치 소매업",
+  "adopted": "20250901",
+  "addr": "전북특별자치도 군산시 나운안2길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 298387,
+  "_asof": "2026-11-05"
+ },
+ "food:20260750308": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260508116": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260486911": {
+  "match": {
+   "seq": 6560187,
+   "name": "(주)다리와사람들",
+   "bizno6": "211876",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 28,
+  "monthly_bill": 9798200,
+  "industry": "경영 컨설팅업",
+  "adopted": "20050901",
+  "addr": "서울특별시 마포구 월드컵북로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 28
+   },
+   {
+    "ym": "202608",
+    "headcount": 27,
+    "acq": 4,
+    "lost": 3
+   }
+  ],
+  "bill_per_head": 349936,
+  "_asof": "2026-11-05"
+ },
+ "food:20260203443": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260552538": {
+  "match": {
+   "seq": 7080708,
+   "name": "주식회사 뉴트리원 이천물류지점",
+   "bizno6": "220884",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 5,
+  "monthly_bill": 2225060,
+  "industry": "기타 가공식품 도매업",
+  "adopted": "20260602",
+  "addr": "경기도 이천시 부발읍 중부대로1928번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 5
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 445012,
+  "_asof": "2026-11-05"
+ },
+ "food:20260870149": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260054784": {
+  "match": {
+   "seq": 7081914,
+   "name": "주식회사 모굴프랜즈",
+   "bizno6": "702880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 737660,
+  "industry": "기타 음ㆍ식료품 위주 종합 소매업",
+  "adopted": "20260605",
+  "addr": "서울특별시 성동구 성수일로1길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 245887,
+  "_asof": "2026-11-05"
+ },
+ "food:20260848608": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260816089": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260118641": {
+  "_asof": "2026-11-05"
+ },
+ "food:20240279565": {
+  "_asof": "2026-11-05"
+ },
+ "food:20240702932": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260804023": {
+  "match": {
+   "seq": 7006558,
+   "name": "사단법인 백년",
+   "bizno6": "392820",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 4,
+  "monthly_bill": 1052480,
+  "industry": "BIZ_NO미존재사업장",
+  "adopted": "20250101",
+  "addr": "전북특별자치도 부안군 진서면 청자로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 263120,
+  "_asof": "2026-11-05"
+ },
+ "food:20260631105": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260926367": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260172100": {
+  "match": {
+   "seq": 6816371,
+   "name": "주식회사다해씨푸드",
+   "bizno6": "866870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 16,
+  "monthly_bill": 3682760,
+  "industry": "수산동물 건조 및 염장품 제조업",
+  "adopted": "20180701",
+  "addr": "부산광역시 서구 원양로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 16
+   },
+   {
+    "ym": "202608",
+    "headcount": 16,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 230172,
+  "_asof": "2026-11-05"
+ },
+ "food:20260715160": {
+  "_asof": "2026-11-05"
+ },
+ "food:20240683424": {
+  "match": {
+   "seq": 6540706,
+   "name": "(주)선제",
+   "bizno6": "312815",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 68,
+  "monthly_bill": 22065020,
+  "industry": "기타 식품 첨가물 제조업",
+  "adopted": "20040301",
+  "addr": "충청남도 천안시 서북구 성환읍 성환21길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 68
+   },
+   {
+    "ym": "202608",
+    "headcount": 70,
+    "acq": 0,
+    "lost": 2
+   }
+  ],
+  "bill_per_head": 324486,
+  "_asof": "2026-11-05"
+ },
+ "food:20250121060": {
+  "match": {
+   "seq": 6532577,
+   "name": "규리(주)",
+   "bizno6": "116816",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 13,
+  "monthly_bill": 3357360,
+  "industry": "상품 종합 도매업",
+  "adopted": "20030701",
+  "addr": "서울특별시 영등포구 영신로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 13
+   },
+   {
+    "ym": "202608",
+    "headcount": 12,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 258258,
+  "_asof": "2026-11-05"
+ },
+ "food:20250742111": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250582020": {
+  "match": {
+   "seq": 6647172,
+   "name": "(주)임진강김치",
+   "bizno6": "127811",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 11,
+  "monthly_bill": 2569660,
+  "industry": "김치류 제조업",
+  "adopted": "19920101",
+  "addr": "경기도 연천군 청산면 학담로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 11
+   },
+   {
+    "ym": "202608",
+    "headcount": 11,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 233605,
+  "_asof": "2026-11-05"
+ },
+ "food:20250577120": {
+  "match": {
+   "seq": 6809918,
+   "name": "주식회사 신비바이오",
+   "bizno6": "262870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 68,
+  "monthly_bill": 20598300,
+  "industry": "전자상거래 소매업",
+  "adopted": "20180426",
+  "addr": "경기도 포천시 가산면 좌의길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 68
+   },
+   {
+    "ym": "202608",
+    "headcount": 70,
+    "acq": 2,
+    "lost": 4
+   }
+  ],
+  "bill_per_head": 302916,
+  "_asof": "2026-11-05"
+ },
+ "food:20250555223": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250248963": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260953018": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260192502": {
+  "match": {
+   "seq": 6834028,
+   "name": "주식회사와이즈벨류",
+   "bizno6": "582810",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 8,
+  "monthly_bill": 3054320,
+  "industry": "비주거용 건물 임대업(점포, 자기땅)",
+  "adopted": "20190201",
+  "addr": "부산광역시 해운대구 중동1로43번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 8
+   },
+   {
+    "ym": "202608",
+    "headcount": 7,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 381790,
+  "_asof": "2026-11-05"
+ },
+ "food:20260593254": {
+  "match": {
+   "seq": 7072215,
+   "name": "소스쟁이더맛 주식회사",
+   "bizno6": "725870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 4,
+  "monthly_bill": 831820,
+  "industry": "조미료 도매업",
+  "adopted": "20260501",
+  "addr": "경기도 포천시 군내면 반월산성로317번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 207955,
+  "_asof": "2026-11-05"
+ },
+ "food:20260718604": {
+  "match": {
+   "seq": 7083381,
+   "name": "농업회사법인주식회사 마노아",
+   "bizno6": "435870",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 4,
+  "monthly_bill": 919600,
+  "industry": "그 외 기타 식료품 제조업",
+  "adopted": "20260602",
+  "addr": "충청남도 아산시 음봉면 월암로436번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 229900,
+  "_asof": "2026-11-05"
+ },
+ "food:20260855257": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260682171": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260508535": {
+  "match": {
+   "seq": 6894631,
+   "name": "주식회사미식도감",
+   "bizno6": "265880",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 659860,
+  "industry": "김치류 제조업",
+  "adopted": "20210315",
+  "addr": "경기도 남양주시 다산중앙로123번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 219953,
+  "_asof": "2026-11-05"
+ },
+ "food:20260651091": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260310884": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260719073": {
+  "match": {
+   "seq": 6903522,
+   "name": "농업회사법인주식회사우리밀에프엔비",
+   "bizno6": "117860",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 4,
+  "monthly_bill": 1901680,
+  "industry": "과자류 및 코코아 제품 제조업",
+  "adopted": "20210701",
+  "addr": "경기도 평택시 팽성읍 근내2길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 475420,
+  "_asof": "2026-11-05"
+ },
+ "food:20240594747": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250024169": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250203212": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250408284": {
+  "match": {
+   "seq": 6926924,
+   "name": "주식회사 보노에프앤비(Bono F&B)",
+   "bizno6": "803860",
+   "ym": "202609",
+   "match_score": 0.9
+  },
+  "headcount": 13,
+  "monthly_bill": 4585080,
+  "industry": "빵류, 과자류, 당류, 초콜릿 도매업",
+  "adopted": "20220630",
+  "addr": "경기도 안양시 만안구 덕천로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 13
+   },
+   {
+    "ym": "202608",
+    "headcount": 13,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 352698,
+  "_asof": "2026-11-05"
+ },
+ "food:20250504033": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250783271": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250635074": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250137477": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250137633": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250590743": {
+  "_asof": "2026-11-05"
+ },
+ "food:20250703002": {
+  "match": {
+   "seq": 6349417,
+   "name": "월드미트",
+   "bizno6": "785920",
+   "ym": "202608",
+   "match_score": 1.0
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "육류 소매업",
+  "adopted": "20221206",
+  "addr": "전남광주통합특별시 서구 상무대로1224번길",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "food:20250666166": {
+  "match": {
+   "seq": 7080025,
+   "name": "사계절푸드 주식회사",
+   "bizno6": "411860",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 905140,
+  "industry": "한식 일반 음식점업",
+  "adopted": "20260501",
+  "addr": null,
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 301713,
+  "_asof": "2026-11-05"
+ },
+ "food:20260728058": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260971830": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260795284": {
+  "_asof": "2026-11-05"
+ },
+ "food:20260310438": {
+  "match": {
+   "seq": 6640899,
+   "name": "주식회사 무호",
+   "bizno6": "408811",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 25,
+  "monthly_bill": 8853860,
+  "industry": "기타 토목 시설물 건설업",
+  "adopted": "19950302",
+  "addr": "전북특별자치도 고창군 고창읍 성산4길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 25
+   },
+   {
+    "ym": "202608",
+    "headcount": 24,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 354154,
+  "_asof": "2026-11-05"
  }
 }

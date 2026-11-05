@@ -1,25 +1,440 @@
 {
  "date": "2026-11-05",
- "generated_at": "2026-11-05T12:56:22+09:00",
+ "generated_at": "2026-11-05T14:13:23+09:00",
  "counts": {
   "dart": 534,
   "localdata_signals": 96,
-  "scored": 3570,
-  "above_threshold": 2016,
+  "scored": 4130,
+  "above_threshold": 2047,
   "queue": 20,
-  "backlog_unreviewed": 1981
+  "backlog_unreviewed": 2012
  },
  "notes": [
   "DART 증분: 2026-11-01~2026-11-04, 감사보고서 13건",
   "DART 후보(설립 5년 이하·첫 외감): 534곳, 감사보고서 신규 파싱 0건",
   "인허가 식품제조가공업: 증분(2026-11-02~) 60,644건 → 보유 95,906건, 증설·다거점 신호 96건",
-  "국민연금 월간 파일 13개월 신규 반영 (보유 13개월)",
+  "식품안전나라: 최근 180일 품목제조보고 70,860건(이후 일괄), HACCP 신규 5,426곳 → 다품종·OEM·HACCP 신호 3,944곳",
+  "식품안전나라 단독 후보 660곳",
   "국민연금 패널 202509~202609 (13개월), 고용 급성장 후보 3097곳",
-  "법인 전환 감지: 최근 24개월 전환 174곳, 신규 후보 20곳",
-  "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 141곳 (1위 화장품  비누 및 방향제 소매업)",
-  "국민연금 조회 4곳 (파라미터 방식: camel)"
+  "법인 전환 감지: 최근 24개월 전환 174곳, 신규 후보 15곳",
+  "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 139곳 (1위 화장품  비누 및 방향제 소매업)",
+  "국민연금 조회 60곳 (파라미터 방식: camel)"
  ],
  "queue": [
+  {
+   "key": "food:20260342955",
+   "name": "주식회사 퓨어스",
+   "name_norm": "퓨어스",
+   "sources": [
+    "food",
+    "nps"
+   ],
+   "age_years": 0.3,
+   "age_basis": "식품 인허가 연도(대리지표)",
+   "industry": "식품제조가공업",
+   "induty_code": "10",
+   "food": {
+    "lcns_no": "20260342955",
+    "name": "주식회사 퓨어스",
+    "name_norm": "퓨어스",
+    "license_year": "2026",
+    "new_items": 13,
+    "item_types": 2,
+    "types": [
+     "과.채가공품",
+     "서류가공품"
+    ],
+    "client_brands": [],
+    "first_new": "20260706",
+    "last_new": "20261021",
+    "sku_burst": false,
+    "haccp_new": "20260722",
+    "haccp_item": "과ㆍ채가공품"
+   },
+   "financials": {},
+   "nps": {
+    "ym": "202609",
+    "headcount": 14,
+    "monthly_bill": 3857160,
+    "sites": 1,
+    "adopt": "20230913",
+    "industry": "화장품  비누 및 방향제 소매업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 14
+     },
+     {
+      "ym": "202608",
+      "headcount": 11
+     },
+     {
+      "ym": "202607",
+      "headcount": 9
+     },
+     {
+      "ym": "202606",
+      "headcount": 9
+     },
+     {
+      "ym": "202605",
+      "headcount": 9
+     },
+     {
+      "ym": "202604",
+      "headcount": 7
+     },
+     {
+      "ym": "202511",
+      "headcount": 8
+     },
+     {
+      "ym": "202510",
+      "headcount": 6
+     },
+     {
+      "ym": "202509",
+      "headcount": 6
+     }
+    ],
+    "growth_3m": 0.556,
+    "growth_6m_from_zero": true,
+    "growth_12m": 1.333,
+    "up_months": 7,
+    "months_observed": 8,
+    "max_jump_share": 0.38,
+    "bill_per_head": 275511,
+    "bill_per_head_change_12m": 0.232
+   },
+   "nps_key": "797870|퓨어스",
+   "score": 100,
+   "reasons": [
+    "업력 0.3년(추정) (+22)",
+    "고용 12개월 +133% (+30)",
+    "국민연금 가입자 14명",
+    "팀 14명 (얼리 스테이지 규모) (+8)",
+    "8개월 중 7개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +23% (+6)",
+    "HACCP 신규 지정 2026.07 (과ㆍ채가공품): 대형 채널 입점 선행 (+6)",
+    "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)",
+    "복수 소스 동시 포착: food, nps (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "food:20250697125",
+   "name": "주식회사이안글로벌",
+   "name_norm": "이안글로벌",
+   "sources": [
+    "food",
+    "nps"
+   ],
+   "age_years": 1.3,
+   "age_basis": "식품 인허가 연도(대리지표)",
+   "industry": "식품제조가공업",
+   "induty_code": "10",
+   "food": {
+    "lcns_no": "20250697125",
+    "name": "주식회사이안글로벌",
+    "name_norm": "이안글로벌",
+    "license_year": "2025",
+    "new_items": 2,
+    "item_types": 2,
+    "types": [
+     "소스",
+     "즉석조리식품"
+    ],
+    "client_brands": [],
+    "first_new": "20260723",
+    "last_new": "20260723",
+    "sku_burst": false,
+    "haccp_new": "20261008",
+    "haccp_item": "즉석조리식품"
+   },
+   "financials": {},
+   "nps": {
+    "ym": "202609",
+    "headcount": 21,
+    "monthly_bill": 7050420,
+    "sites": 1,
+    "adopt": "20240701",
+    "industry": "포장용 플라스틱 성형용기 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 21
+     },
+     {
+      "ym": "202608",
+      "headcount": 18
+     },
+     {
+      "ym": "202607",
+      "headcount": 18
+     },
+     {
+      "ym": "202606",
+      "headcount": 15
+     },
+     {
+      "ym": "202605",
+      "headcount": 14
+     },
+     {
+      "ym": "202604",
+      "headcount": 14
+     },
+     {
+      "ym": "202603",
+      "headcount": 14
+     },
+     {
+      "ym": "202602",
+      "headcount": 12
+     },
+     {
+      "ym": "202601",
+      "headcount": 12
+     },
+     {
+      "ym": "202512",
+      "headcount": 13
+     },
+     {
+      "ym": "202511",
+      "headcount": 11
+     },
+     {
+      "ym": "202510",
+      "headcount": 12
+     },
+     {
+      "ym": "202509",
+      "headcount": 8
+     }
+    ],
+    "growth_3m": 0.4,
+    "growth_6m": 0.5,
+    "growth_12m": 1.625,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.31,
+    "bill_per_head": 335734,
+    "bill_per_head_change_12m": 0.085
+   },
+   "nps_key": "673870|이안글로벌",
+   "score": 94,
+   "reasons": [
+    "업력 1.3년(추정) (+22)",
+    "고용 12개월 +162% (+30)",
+    "국민연금 가입자 21명",
+    "팀 21명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "HACCP 신규 지정 2026.10 (즉석조리식품): 대형 채널 입점 선행 (+6)",
+    "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)",
+    "복수 소스 동시 포착: food, nps (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "food:20250055037",
+   "name": "성베스 씨케이",
+   "name_norm": "성베스씨케이",
+   "sources": [
+    "food",
+    "nps"
+   ],
+   "age_years": 1.3,
+   "age_basis": "식품 인허가 연도(대리지표)",
+   "industry": "식품제조가공업",
+   "induty_code": "10",
+   "food": {
+    "lcns_no": "20250055037",
+    "name": "성베스 씨케이",
+    "name_norm": "성베스씨케이",
+    "license_year": "2025",
+    "new_items": 0,
+    "item_types": 0,
+    "types": [],
+    "client_brands": [],
+    "sku_burst": false,
+    "haccp_new": "20260602",
+    "haccp_item": "빵류"
+   },
+   "financials": {},
+   "nps": {
+    "ym": "202609",
+    "headcount": 10,
+    "monthly_bill": 2276000,
+    "sites": 1,
+    "adopt": "20250901",
+    "industry": "빵류  과자류  당류  초콜릿 도매업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 10
+     },
+     {
+      "ym": "202608",
+      "headcount": 9
+     },
+     {
+      "ym": "202607",
+      "headcount": 8
+     },
+     {
+      "ym": "202606",
+      "headcount": 7
+     },
+     {
+      "ym": "202605",
+      "headcount": 6
+     },
+     {
+      "ym": "202604",
+      "headcount": 6
+     },
+     {
+      "ym": "202603",
+      "headcount": 5
+     },
+     {
+      "ym": "202602",
+      "headcount": 5
+     },
+     {
+      "ym": "202512",
+      "headcount": 5
+     },
+     {
+      "ym": "202511",
+      "headcount": 6
+     },
+     {
+      "ym": "202510",
+      "headcount": 5
+     },
+     {
+      "ym": "202509",
+      "headcount": 5
+     }
+    ],
+    "growth_3m": 0.429,
+    "growth_6m": 1.0,
+    "growth_12m": 1.0,
+    "up_months": 10,
+    "months_observed": 11,
+    "max_jump_share": 0.2,
+    "bill_per_head": 227600,
+    "bill_per_head_change_12m": 0.061
+   },
+   "nps_key": "795850|성베스씨케이",
+   "score": 94,
+   "reasons": [
+    "업력 1.3년(추정) (+22)",
+    "고용 12개월 +100% (+30)",
+    "국민연금 가입자 10명",
+    "팀 10명 (얼리 스테이지 규모) (+8)",
+    "11개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "HACCP 신규 지정 2026.06 (빵류): 대형 채널 입점 선행 (+6)",
+    "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)",
+    "복수 소스 동시 포착: food, nps (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "loc:핫시즈너가공3",
+   "name": "핫시즈너 가공(3)",
+   "name_norm": "핫시즈너가공3",
+   "sources": [
+    "localdata",
+    "food"
+   ],
+   "age_years": 1.3,
+   "age_basis": "첫 인허가일(대리지표)",
+   "addr": "서울특별시 성동구 성수이로18길 7, HS빌딩 7층 (성수동2가)",
+   "localdata": [
+    {
+     "source": "localdata",
+     "kind": "expansion",
+     "name": "핫시즈너 가공(3)",
+     "name_norm": "핫시즈너가공3",
+     "industry": "식품제조가공업",
+     "active_sites": 1,
+     "new_sites": 1,
+     "first_permit": "20250714",
+     "new_permits": [
+      {
+       "date": "20260901",
+       "addr": "서울특별시 성동구 성수이로18길 7, HS빌딩 7층 (성수동2가)",
+       "area_m2": 552.39,
+       "name": "핫시즈너 가공(3)"
+      }
+     ],
+     "max_new_area_m2": 552.39,
+     "sido": [
+      "서울"
+     ],
+     "thesis": "food_mfg"
+    }
+   ],
+   "financials": {},
+   "food": {
+    "lcns_no": "20260054859",
+    "name": "핫시즈너 가공(3)",
+    "name_norm": "핫시즈너가공3",
+    "license_year": "2026",
+    "new_items": 1,
+    "item_types": 1,
+    "types": [
+     "떡류"
+    ],
+    "client_brands": [],
+    "first_new": "20260903",
+    "last_new": "20260903",
+    "sku_burst": false,
+    "haccp_new": "20260910",
+    "haccp_item": "떡류"
+   },
+   "nps": {
+    "ym": "202609",
+    "headcount": 15,
+    "monthly_bill": 7493380,
+    "sites": 1,
+    "adopt": "20260901",
+    "industry": "떡류 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 15
+     }
+    ],
+    "growth_3m_from_zero": true,
+    "growth_6m_from_zero": true,
+    "growth_12m_from_zero": true,
+    "bill_per_head": 499559
+   },
+   "nps_key": "706850|핫시즈너가공3",
+   "industry_momentum": {
+    "industry": "떡류 제조업",
+    "rank": 15,
+    "formation_yoy": 0.143,
+    "cohort_growth_12m": 0.208,
+    "young_firms": 44
+   },
+   "score": 90,
+   "reasons": [
+    "업력 1.3년(추정) (+22)",
+    "식품제조가공업 신규 인허가 1건 (기존 사업장 보유, 증설) (+30)",
+    "국민연금 가입자 15명",
+    "팀 15명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 50만원 (상위 15% 보수 수준) (+6)",
+    "업종 모멘텀 15위: 떡류 제조업 (젊은 법인 신설 +14%, 고용 +21%) (+8)",
+    "HACCP 신규 지정 2026.09 (떡류): 대형 채널 입점 선행 (+6)",
+    "복수 소스 동시 포착: food, localdata (+10)"
+   ],
+   "change": "new"
+  },
   {
    "key": "dart:01966077",
    "name": "주식회사 큐어버스",
@@ -140,6 +555,143 @@
    "change": "new"
   },
   {
+   "key": "loc:더에이치컴퍼니",
+   "name": "주식회사 더에이치컴퍼니",
+   "name_norm": "더에이치컴퍼니",
+   "sources": [
+    "localdata",
+    "food"
+   ],
+   "age_years": 2.9,
+   "age_basis": "첫 인허가일(대리지표)",
+   "addr": "경기도 화성시 효행구 정남면 발산6길 9-38, 1층 전부, 2층 일부",
+   "localdata": [
+    {
+     "source": "localdata",
+     "kind": "expansion",
+     "name": "주식회사 더에이치컴퍼니",
+     "name_norm": "더에이치컴퍼니",
+     "industry": "식품제조가공업",
+     "active_sites": 2,
+     "new_sites": 1,
+     "first_permit": "20231220",
+     "new_permits": [
+      {
+       "date": "20260622",
+       "addr": "경기도 화성시 효행구 정남면 발산6길 9-38, 1층 전부, 2층 일부",
+       "area_m2": 229.75,
+       "name": "주식회사 더에이치컴퍼니"
+      }
+     ],
+     "max_new_area_m2": 229.75,
+     "sido": [
+      "경기"
+     ],
+     "thesis": "food_mfg"
+    }
+   ],
+   "financials": {},
+   "food": {
+    "lcns_no": "20260565443",
+    "name": "주식회사 더에이치컴퍼니",
+    "name_norm": "더에이치컴퍼니",
+    "license_year": "2026",
+    "new_items": 20,
+    "item_types": 1,
+    "types": [
+     "빵류"
+    ],
+    "client_brands": [],
+    "first_new": "20260622",
+    "last_new": "20260707",
+    "sku_burst": false,
+    "haccp_new": "20260805",
+    "haccp_item": "빵류"
+   },
+   "nps": {
+    "ym": "202609",
+    "headcount": 10,
+    "monthly_bill": 3665120,
+    "sites": 1,
+    "adopt": "20230901",
+    "industry": "경영 컨설팅업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 10
+     },
+     {
+      "ym": "202608",
+      "headcount": 14
+     },
+     {
+      "ym": "202607",
+      "headcount": 14
+     },
+     {
+      "ym": "202606",
+      "headcount": 14
+     },
+     {
+      "ym": "202605",
+      "headcount": 14
+     },
+     {
+      "ym": "202604",
+      "headcount": 15
+     },
+     {
+      "ym": "202603",
+      "headcount": 14
+     },
+     {
+      "ym": "202602",
+      "headcount": 14
+     },
+     {
+      "ym": "202601",
+      "headcount": 14
+     },
+     {
+      "ym": "202512",
+      "headcount": 14
+     },
+     {
+      "ym": "202511",
+      "headcount": 12
+     },
+     {
+      "ym": "202510",
+      "headcount": 10
+     },
+     {
+      "ym": "202509",
+      "headcount": 10
+     }
+    ],
+    "growth_3m": -0.286,
+    "growth_6m": -0.286,
+    "growth_12m": 0.0,
+    "up_months": 10,
+    "months_observed": 12,
+    "bill_per_head": 366512,
+    "bill_per_head_change_12m": 0.279
+   },
+   "nps_key": "742870|더에이치컴퍼니",
+   "score": 86,
+   "reasons": [
+    "업력 2.9년(추정) (+16)",
+    "식품제조가공업 신규 인허가 1건 (기존 사업장 보유, 증설) (+30)",
+    "국민연금 가입자 10명",
+    "팀 10명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +28% (+6)",
+    "HACCP 신규 지정 2026.08 (빵류): 대형 채널 입점 선행 (+6)",
+    "복수 소스 동시 포착: food, localdata (+10)"
+   ],
+   "change": "new"
+  },
+  {
    "key": "nps:264880:아스테로모프",
    "name": "주식회사 아스테로모프",
    "name_norm": "아스테로모프",
@@ -240,110 +792,6 @@
     "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
     "1인당 고지금액 46만원 (상위 15% 보수 수준) (+6)",
     "업종 모멘텀 10위: 자연과학 및 공학 융합 연구개발업 (젊은 법인 신설 +40%, 고용 +12%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:463840:라인페이홀딩태국컴퍼니리미티드영업소",
-   "name": "라인 페이 홀딩 태국 컴퍼니 리미티드(영업소)",
-   "name_norm": "라인페이홀딩태국컴퍼니리미티드영업소",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "463840",
-   "age_years": 1.8,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 성남시 분당구 대왕판교로",
-   "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
-   "induty_code": "721000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 21,
-    "monthly_bill": 12037340,
-    "sites": 1,
-    "adopt": "20250113",
-    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 21
-     },
-     {
-      "ym": "202608",
-      "headcount": 21
-     },
-     {
-      "ym": "202607",
-      "headcount": 21
-     },
-     {
-      "ym": "202606",
-      "headcount": 21
-     },
-     {
-      "ym": "202605",
-      "headcount": 20
-     },
-     {
-      "ym": "202604",
-      "headcount": 19
-     },
-     {
-      "ym": "202603",
-      "headcount": 19
-     },
-     {
-      "ym": "202602",
-      "headcount": 19
-     },
-     {
-      "ym": "202601",
-      "headcount": 16
-     },
-     {
-      "ym": "202512",
-      "headcount": 16
-     },
-     {
-      "ym": "202511",
-      "headcount": 14
-     },
-     {
-      "ym": "202510",
-      "headcount": 14
-     },
-     {
-      "ym": "202509",
-      "headcount": 10
-     }
-    ],
-    "growth_3m": 0.0,
-    "growth_6m": 0.105,
-    "growth_12m": 1.1,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.36,
-    "bill_per_head": 573207,
-    "bill_per_head_change_12m": 0.059
-   },
-   "nps_key": "463840|라인페이홀딩태국컴퍼니리미티드영업소",
-   "financials": {},
-   "industry_momentum": {
-    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
-    "rank": 6,
-    "formation_yoy": 0.421,
-    "cohort_growth_12m": 0.147,
-    "young_firms": 367
-   },
-   "score": 84,
-   "reasons": [
-    "업력 1.8년(추정) (+22)",
-    "고용 12개월 +110% (+30)",
-    "국민연금 가입자 21명",
-    "팀 21명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 57만원 (상위 15% 보수 수준) (+6)",
-    "업종 모멘텀 6위: 컴퓨터 시스템 통합 자문 및 구축 서비스업 (젊은 법인 신설 +42%, 고용 +15%) (+8)"
    ],
    "change": "new"
   },
@@ -552,103 +1000,6 @@
     "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
     "1인당 고지금액 42만원 (상위 15% 보수 수준) (+6)",
     "업종 모멘텀 4위: 탭  밸브 및 유사 장치 제조업 (젊은 법인 신설 +33%, 고용 +25%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "dart:01970803",
-   "name": "루미나마스크주식회사",
-   "name_norm": "루미나마스크",
-   "sources": [
-    "dart",
-    "nps"
-   ],
-   "corp_code": "01970803",
-   "bizno": "1228803358",
-   "est_dt": "20251201",
-   "age_years": 0.9,
-   "age_basis": "설립일(DART)",
-   "induty_code": "2629",
-   "ceo": "이동훈",
-   "addr": "충청남도 천안시 서북구 성거읍 성거길 112",
-   "homepage": "",
-   "dart_first_audit": "20260403",
-   "latest_audit": {
-    "rcept_dt": "20260403",
-    "rcept_no": "20260403002077",
-    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002077"
-   },
-   "financials": {
-    "excerpt": ""
-   },
-   "nps": {
-    "ym": "202609",
-    "headcount": 31,
-    "monthly_bill": 12855320,
-    "sites": 1,
-    "adopt": "20251201",
-    "industry": "그 외 기타 전자 부품 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 31
-     },
-     {
-      "ym": "202608",
-      "headcount": 31
-     },
-     {
-      "ym": "202607",
-      "headcount": 24
-     },
-     {
-      "ym": "202606",
-      "headcount": 24
-     },
-     {
-      "ym": "202605",
-      "headcount": 23
-     },
-     {
-      "ym": "202604",
-      "headcount": 19
-     },
-     {
-      "ym": "202603",
-      "headcount": 17
-     },
-     {
-      "ym": "202602",
-      "headcount": 14
-     },
-     {
-      "ym": "202601",
-      "headcount": 14
-     },
-     {
-      "ym": "202512",
-      "headcount": 12
-     }
-    ],
-    "growth_3m": 0.292,
-    "growth_6m": 0.824,
-    "growth_12m_from_zero": true,
-    "up_months": 9,
-    "months_observed": 9,
-    "max_jump_share": 0.37,
-    "bill_per_head": 414688
-   },
-   "nps_key": "122880|루미나마스크",
-   "score": 83,
-   "reasons": [
-    "2026년 처음 감사보고서 제출 (+12)",
-    "업력 0.9년 (+22)",
-    "12개월 전 미가입 → 현재 31명 (+15)",
-    "국민연금 가입자 31명",
-    "팀 31명 (얼리 스테이지 규모) (+8)",
-    "9개월 중 9개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 41만원 (상위 15% 보수 수준) (+6)",
-    "복수 소스 동시 포착: dart, nps (+10)"
    ],
    "change": "new"
   },
@@ -1235,124 +1586,6 @@
    "change": "new"
   },
   {
-   "key": "dart:01917497",
-   "name": "케이파이브이앤지(주)",
-   "name_norm": "케이파이브이앤지",
-   "sources": [
-    "dart"
-   ],
-   "corp_code": "01917497",
-   "bizno": "1478802815",
-   "est_dt": "20231219",
-   "age_years": 2.9,
-   "age_basis": "설립일(DART)",
-   "induty_code": "24290",
-   "ceo": "김장호",
-   "addr": "경상남도 진주시 정촌면 산단중앙로 50",
-   "homepage": "",
-   "dart_first_audit": "20260413",
-   "latest_audit": {
-    "rcept_dt": "20260413",
-    "rcept_no": "20260413002503",
-    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260413002503"
-   },
-   "financials": {
-    "unit": "원",
-    "confidence": "low",
-    "revenue": 9403934755,
-    "revenue_prev": 2849640601,
-    "op_income": 1001214688,
-    "op_income_prev": 606741941,
-    "net_income": 367146577,
-    "net_income_prev": 14755470,
-    "excerpt": "손 익 계 산 서\n | 제 3 기 2025년 12월 31일 현재 \n | 제 2 기 2024년 12월 31일 현재 \n | 회사명 : 케이파이브이앤지 주식회사 | (단위 : 원) \n | \n | 과 목 | 제 3 (당) 기 | 제 2 (전) 기(감사받지아니한 재무제표) \n | Ⅰ. 매출액 | | 9,403,934,755 | | 2,849,640,601 \n | 제품매출 | 9,391,118,155 | | 2,807,125,801 | \n | 기타매출 | 12,816,600 | | 42,514,800 | \n | Ⅱ. 매출원가 | | 7,001,990,472 | | 1,399,909,440 \n | 제품매출원가 | 7,001,990,472 | | 1,399,909,440 | \n | Ⅲ. 매출총이익 | | 2,401,944,283 | | 1,449,731,161 \n | Ⅳ. 판매비와관리비(주석 17,18) | | 1,400,729,595 | | 842,989,220 \n | 급여 | 577,889,670 | | 215,500,000 | \n | 퇴직급여 | 68,101,851 | | - | \n | 복리후생비 | 32,690,057 | | 37,429,275 | \n | 여비교통비 | 14,964,262 | | 10,470,825 | \n | 기업업무추진비 | 59,775,677 | | 38,801,999 | \n | 통신비 | 5,136,261 | | 3,697,545 | \n | 수도광열비 | 15,248,681 | | 8,003,534 | \n | 세금과공과금 | 58,766,910 | | 82,398,710 | \n | 감가상각비 | 301,749,359 | | 247,446,065 | \n | 지급임차료 | 20,103,104 | | 7,946,920 | \n | 수선비 | 51,887,000 | | 43,245,389 | \n | 보험료 | 10,689,940 | | 16,711,056 | \n | 교육훈련비 | 5,215,000 | | - | \n | 도서인쇄비 | 420,500 | | 873,600 | \n | 사무용품비 | 1,985,865 | | 1,339,090 | \n | 소모품비 | 47,561,251 | | 28,907,150 | \n | 지급수수료 | 126,970,874 | | 97,342,379 | \n | 광고선전비 | 1,000,000 | | 2,148,183 | \n | 무형고정자산상각 | 573,333 | | - | \n | 잡비 | - | | 727,500 | \n | Ⅴ. 영업이익 | | 1,001,214,688 | | 606,741,941 \n | Ⅵ. 영업외수익 | | 136,011,694 | | 160,445,683 \n | 이자수익 | 1,229,002 | | 629,459 | \n | 외환차익 | 81,073,074 | | 149,880,161 | \n | 유형자산처분이익 | 403,636 | | - | \n | 잡이익 | 53,305,982 | | 9,936,063 | \n | Ⅶ. 영업외비용 | | 770,079,805 | | 726,815,684"
-   },
-   "nps": {
-    "ym": "202609",
-    "headcount": 36,
-    "monthly_bill": 13013540,
-    "sites": 1,
-    "adopt": "20240201",
-    "industry": "설치용 및 위생용 플라스틱제품 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 36
-     },
-     {
-      "ym": "202608",
-      "headcount": 35
-     },
-     {
-      "ym": "202607",
-      "headcount": 32
-     },
-     {
-      "ym": "202606",
-      "headcount": 32
-     },
-     {
-      "ym": "202605",
-      "headcount": 32
-     },
-     {
-      "ym": "202604",
-      "headcount": 34
-     },
-     {
-      "ym": "202603",
-      "headcount": 34
-     },
-     {
-      "ym": "202602",
-      "headcount": 33
-     },
-     {
-      "ym": "202601",
-      "headcount": 31
-     },
-     {
-      "ym": "202512",
-      "headcount": 31
-     },
-     {
-      "ym": "202511",
-      "headcount": 31
-     },
-     {
-      "ym": "202510",
-      "headcount": 27
-     },
-     {
-      "ym": "202509",
-      "headcount": 27
-     }
-    ],
-    "growth_3m": 0.125,
-    "growth_6m": 0.059,
-    "growth_12m": 0.333,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.44,
-    "bill_per_head": 361487,
-    "bill_per_head_change_12m": 0.027
-   },
-   "nps_key": "147880|케이파이브이앤지",
-   "score": 81,
-   "reasons": [
-    "2026년 처음 감사보고서 제출 (+12)",
-    "업력 2.9년 (+16)",
-    "매출 94억(추정)",
-    "매출 성장 230% (+15)",
-    "영업이익률 11% (+12)",
-    "고용 12개월 +33% (+8)",
-    "국민연금 가입자 36명",
-    "팀 36명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
-   ],
-   "change": "new"
-  },
-  {
    "key": "nps:863810:크리스아이티",
    "name": "주식회사크리스아이티",
    "name_norm": "크리스아이티",
@@ -1457,128 +1690,25 @@
    "change": "new"
   },
   {
-   "key": "nps:495810:데이드림",
-   "name": "(주)데이드림",
-   "name_norm": "데이드림",
+   "key": "nps:314880:비마이마케터",
+   "name": "주식회사 비마이마케터",
+   "name_norm": "비마이마케터",
    "sources": [
     "nps"
    ],
-   "bizno6": "495810",
-   "age_years": 1.3,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 안양시 동안구 엘에스로91번길",
-   "industry": "빵류 제조업",
-   "induty_code": "154104",
-   "nps": {
-    "ym": "202609",
-    "headcount": 22,
-    "monthly_bill": 6772140,
-    "sites": 1,
-    "adopt": "20250715",
-    "industry": "빵류 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 22
-     },
-     {
-      "ym": "202608",
-      "headcount": 22
-     },
-     {
-      "ym": "202607",
-      "headcount": 22
-     },
-     {
-      "ym": "202606",
-      "headcount": 21
-     },
-     {
-      "ym": "202605",
-      "headcount": 21
-     },
-     {
-      "ym": "202604",
-      "headcount": 20
-     },
-     {
-      "ym": "202603",
-      "headcount": 19
-     },
-     {
-      "ym": "202602",
-      "headcount": 19
-     },
-     {
-      "ym": "202601",
-      "headcount": 19
-     },
-     {
-      "ym": "202512",
-      "headcount": 20
-     },
-     {
-      "ym": "202511",
-      "headcount": 13
-     },
-     {
-      "ym": "202510",
-      "headcount": 10
-     },
-     {
-      "ym": "202509",
-      "headcount": 6
-     }
-    ],
-    "growth_3m": 0.048,
-    "growth_6m": 0.158,
-    "growth_12m": 2.667,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.44,
-    "bill_per_head": 307825,
-    "bill_per_head_change_12m": 0.018
-   },
-   "nps_key": "495810|데이드림",
-   "financials": {},
-   "industry_momentum": {
-    "industry": "빵류 제조업",
-    "rank": 14,
-    "formation_yoy": 0.188,
-    "cohort_growth_12m": 0.171,
-    "young_firms": 121
-   },
-   "score": 78,
-   "reasons": [
-    "업력 1.3년(추정) (+22)",
-    "고용 12개월 +267% (+30)",
-    "국민연금 가입자 22명",
-    "팀 22명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "업종 모멘텀 14위: 빵류 제조업 (젊은 법인 신설 +19%, 고용 +17%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:467880:위드인에이치알",
-   "name": "(주)위드인에이치알",
-   "name_norm": "위드인에이치알",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "467880",
-   "age_years": 3.0,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 안산시 상록구 광덕1로",
-   "industry": "그 외 기타 분류 안된 사업 지원 서비스업(기타임가공",
-   "induty_code": "749604",
+   "bizno6": "314880",
+   "age_years": 2.3,
+   "age_basis": "개인사업 시작(국민연금 적용일)",
+   "addr": "서울특별시 금천구 디지털로9길",
+   "industry": "광고 대행업",
+   "induty_code": "743002",
    "nps": {
     "ym": "202609",
     "headcount": 28,
-    "monthly_bill": 5844460,
+    "monthly_bill": 7391260,
     "sites": 1,
-    "adopt": "20231025",
-    "industry": "그 외 기타 분류 안된 사업 지원 서비스업(기타임가공",
+    "adopt": "20251101",
+    "industry": "광고 대행업",
     "series": [
      {
       "ym": "202609",
@@ -1590,211 +1720,11 @@
      },
      {
       "ym": "202607",
-      "headcount": 24
-     },
-     {
-      "ym": "202606",
-      "headcount": 23
-     },
-     {
-      "ym": "202605",
-      "headcount": 21
-     },
-     {
-      "ym": "202604",
-      "headcount": 22
-     },
-     {
-      "ym": "202603",
-      "headcount": 21
-     },
-     {
-      "ym": "202602",
       "headcount": 19
      },
      {
-      "ym": "202601",
-      "headcount": 18
-     },
-     {
-      "ym": "202512",
-      "headcount": 16
-     },
-     {
-      "ym": "202511",
-      "headcount": 13
-     },
-     {
-      "ym": "202510",
-      "headcount": 16
-     },
-     {
-      "ym": "202509",
-      "headcount": 14
-     }
-    ],
-    "growth_3m": 0.217,
-    "growth_6m": 0.333,
-    "growth_12m": 1.0,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.21,
-    "bill_per_head": 208731,
-    "bill_per_head_change_12m": 0.346
-   },
-   "nps_key": "467880|위드인에이치알",
-   "financials": {},
-   "industry_momentum": {
-    "industry": "그 외 기타 분류 안된 사업 지원 서비스업(기타임가공",
-    "rank": 12,
-    "formation_yoy": 0.5,
-    "cohort_growth_12m": 0.107,
-    "young_firms": 138
-   },
-   "score": 78,
-   "reasons": [
-    "업력 3.0년(추정) (+16)",
-    "고용 12개월 +100% (+30)",
-    "국민연금 가입자 28명",
-    "팀 28명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +35% (+6)",
-    "업종 모멘텀 12위: 그 외 기타 분류 안된 사업 지원 서비스업(기타임가공 (젊은 법인 신설 +50%, 고용 +11%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "loc:핫시즈너가공3",
-   "name": "핫시즈너 가공(3)",
-   "name_norm": "핫시즈너가공3",
-   "sources": [
-    "localdata"
-   ],
-   "age_years": 1.3,
-   "age_basis": "첫 인허가일(대리지표)",
-   "addr": "서울특별시 성동구 성수이로18길 7, HS빌딩 7층 (성수동2가)",
-   "localdata": [
-    {
-     "source": "localdata",
-     "kind": "expansion",
-     "name": "핫시즈너 가공(3)",
-     "name_norm": "핫시즈너가공3",
-     "industry": "식품제조가공업",
-     "active_sites": 1,
-     "new_sites": 1,
-     "first_permit": "20250714",
-     "new_permits": [
-      {
-       "date": "20260901",
-       "addr": "서울특별시 성동구 성수이로18길 7, HS빌딩 7층 (성수동2가)",
-       "area_m2": 552.39,
-       "name": "핫시즈너 가공(3)"
-      }
-     ],
-     "max_new_area_m2": 552.39,
-     "sido": [
-      "서울"
-     ],
-     "thesis": "food_mfg"
-    }
-   ],
-   "financials": {},
-   "nps": {
-    "ym": "202609",
-    "headcount": 15,
-    "monthly_bill": 7493380,
-    "sites": 1,
-    "adopt": "20260901",
-    "industry": "떡류 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 15
-     }
-    ],
-    "growth_3m_from_zero": true,
-    "growth_6m_from_zero": true,
-    "growth_12m_from_zero": true,
-    "bill_per_head": 499559
-   },
-   "nps_key": "706850|핫시즈너가공3",
-   "industry_momentum": {
-    "industry": "떡류 제조업",
-    "rank": 15,
-    "formation_yoy": 0.143,
-    "cohort_growth_12m": 0.208,
-    "young_firms": 44
-   },
-   "score": 74,
-   "reasons": [
-    "업력 1.3년(추정) (+22)",
-    "식품제조가공업 신규 인허가 1건 (기존 사업장 보유, 증설) (+30)",
-    "국민연금 가입자 15명",
-    "팀 15명 (얼리 스테이지 규모) (+8)",
-    "1인당 고지금액 50만원 (상위 15% 보수 수준) (+6)",
-    "업종 모멘텀 15위: 떡류 제조업 (젊은 법인 신설 +14%, 고용 +21%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "loc:더에이치컴퍼니",
-   "name": "주식회사 더에이치컴퍼니",
-   "name_norm": "더에이치컴퍼니",
-   "sources": [
-    "localdata"
-   ],
-   "age_years": 2.9,
-   "age_basis": "첫 인허가일(대리지표)",
-   "addr": "경기도 화성시 효행구 정남면 발산6길 9-38, 1층 전부, 2층 일부",
-   "localdata": [
-    {
-     "source": "localdata",
-     "kind": "expansion",
-     "name": "주식회사 더에이치컴퍼니",
-     "name_norm": "더에이치컴퍼니",
-     "industry": "식품제조가공업",
-     "active_sites": 2,
-     "new_sites": 1,
-     "first_permit": "20231220",
-     "new_permits": [
-      {
-       "date": "20260622",
-       "addr": "경기도 화성시 효행구 정남면 발산6길 9-38, 1층 전부, 2층 일부",
-       "area_m2": 229.75,
-       "name": "주식회사 더에이치컴퍼니"
-      }
-     ],
-     "max_new_area_m2": 229.75,
-     "sido": [
-      "경기"
-     ],
-     "thesis": "food_mfg"
-    }
-   ],
-   "financials": {},
-   "nps": {
-    "ym": "202609",
-    "headcount": 10,
-    "monthly_bill": 3665120,
-    "sites": 1,
-    "adopt": "20230901",
-    "industry": "경영 컨설팅업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 10
-     },
-     {
-      "ym": "202608",
-      "headcount": 14
-     },
-     {
-      "ym": "202607",
-      "headcount": 14
-     },
-     {
       "ym": "202606",
-      "headcount": 14
+      "headcount": 17
      },
      {
       "ym": "202605",
@@ -1802,23 +1732,158 @@
      },
      {
       "ym": "202604",
-      "headcount": 15
+      "headcount": 16
      },
      {
       "ym": "202603",
-      "headcount": 14
+      "headcount": 17
      },
      {
       "ym": "202602",
-      "headcount": 14
+      "headcount": 16
      },
      {
       "ym": "202601",
-      "headcount": 14
+      "headcount": 16
      },
      {
       "ym": "202512",
-      "headcount": 14
+      "headcount": 16
+     }
+    ],
+    "growth_3m": 0.647,
+    "growth_6m": 0.647,
+    "up_months": 7,
+    "months_observed": 9,
+    "bill_per_head": 263974,
+    "growth_12m": 1.545,
+    "combined_headcount_12m_ago": 11
+   },
+   "nps_key": "314880|비마이마케터",
+   "financials": {},
+   "conversion": {
+    "indiv_key": "409350|비마이마케터",
+    "indiv_name": "비마이마케터",
+    "indiv_adopt": "20240701",
+    "indiv_peak_headcount": 12,
+    "indiv_last_seen": "202510",
+    "corp_start": "20251101",
+    "months_since_conversion": 10,
+    "match": "업종"
+   },
+   "score": 76,
+   "reasons": [
+    "업력 2.3년(추정) (+16)",
+    "고용 12개월 +154% (+30)",
+    "국민연금 가입자 28명",
+    "팀 28명 (얼리 스테이지 규모) (+8)",
+    "9개월 중 7개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "개인사업(2024.07~, 최대 12명) → 법인 전환 10개월 전 (+12)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "loc:조선에프앤비",
+   "name": "조선에프앤비",
+   "name_norm": "조선에프앤비",
+   "sources": [
+    "localdata",
+    "food"
+   ],
+   "age_years": 4.9,
+   "age_basis": "첫 인허가일(대리지표)",
+   "addr": "인천광역시 검단구 마중로 85 (오류동)",
+   "localdata": [
+    {
+     "source": "localdata",
+     "kind": "expansion",
+     "name": "조선에프앤비",
+     "name_norm": "조선에프앤비",
+     "industry": "식품제조가공업",
+     "active_sites": 1,
+     "new_sites": 1,
+     "first_permit": "20211203",
+     "new_permits": [
+      {
+       "date": "20260629",
+       "addr": "인천광역시 검단구 마중로 85 (오류동)",
+       "area_m2": 486.17,
+       "name": "(주)조선에프앤비"
+      }
+     ],
+     "max_new_area_m2": 486.17,
+     "sido": [
+      "인천"
+     ],
+     "thesis": "food_mfg"
+    }
+   ],
+   "financials": {},
+   "food": {
+    "lcns_no": "20260292106",
+    "name": "(주)조선에프앤비",
+    "name_norm": "조선에프앤비",
+    "license_year": "2026",
+    "new_items": 7,
+    "item_types": 2,
+    "types": [
+     "김치",
+     "절임식품"
+    ],
+    "client_brands": [],
+    "first_new": "20260713",
+    "last_new": "20260803",
+    "sku_burst": false,
+    "haccp_new": "20261021",
+    "haccp_item": "절임식품"
+   },
+   "nps": {
+    "ym": "202609",
+    "headcount": 19,
+    "monthly_bill": 5102180,
+    "sites": 1,
+    "adopt": "20240612",
+    "industry": "가금류 가공 및 저장 처리업 / 육류 포장육 및 냉동육",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 19
+     },
+     {
+      "ym": "202608",
+      "headcount": 18
+     },
+     {
+      "ym": "202607",
+      "headcount": 15
+     },
+     {
+      "ym": "202606",
+      "headcount": 17
+     },
+     {
+      "ym": "202605",
+      "headcount": 23
+     },
+     {
+      "ym": "202604",
+      "headcount": 21
+     },
+     {
+      "ym": "202603",
+      "headcount": 21
+     },
+     {
+      "ym": "202602",
+      "headcount": 20
+     },
+     {
+      "ym": "202601",
+      "headcount": 13
+     },
+     {
+      "ym": "202512",
+      "headcount": 12
      },
      {
       "ym": "202511",
@@ -1826,62 +1891,65 @@
      },
      {
       "ym": "202510",
-      "headcount": 10
+      "headcount": 13
      },
      {
       "ym": "202509",
-      "headcount": 10
+      "headcount": 14
      }
     ],
-    "growth_3m": -0.286,
-    "growth_6m": -0.286,
-    "growth_12m": 0.0,
-    "up_months": 10,
+    "growth_3m": 0.118,
+    "growth_6m": -0.095,
+    "growth_12m": 0.357,
+    "up_months": 8,
     "months_observed": 12,
-    "bill_per_head": 366512,
-    "bill_per_head_change_12m": 0.279
+    "max_jump_share": 1.4,
+    "bill_per_head": 268536,
+    "bill_per_head_change_12m": 0.059
    },
-   "nps_key": "742870|더에이치컴퍼니",
-   "score": 70,
+   "nps_key": "717860|조선에프앤비",
+   "score": 68,
    "reasons": [
-    "업력 2.9년(추정) (+16)",
+    "업력 4.9년(추정) (+6)",
     "식품제조가공업 신규 인허가 1건 (기존 사업장 보유, 증설) (+30)",
-    "국민연금 가입자 10명",
-    "팀 10명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +28% (+6)"
+    "고용 12개월 +36% (+8)",
+    "국민연금 가입자 19명",
+    "팀 19명 (얼리 스테이지 규모) (+8)",
+    "HACCP 신규 지정 2026.10 (절임식품): 대형 채널 입점 선행 (+6)",
+    "복수 소스 동시 포착: food, localdata (+10)"
    ],
    "change": "new"
   },
   {
-   "key": "loc:프레시원",
-   "name": "농업회사법인 주식회사 프레시원",
-   "name_norm": "프레시원",
+   "key": "loc:산스파운드리",
+   "name": "산스파운드리",
+   "name_norm": "산스파운드리",
    "sources": [
-    "localdata"
+    "localdata",
+    "food"
    ],
-   "age_years": 1.6,
+   "age_years": 1.7,
    "age_basis": "첫 인허가일(대리지표)",
-   "addr": "경기도 광주시 곤지암읍 경충대로498번길 9-5, 1층 일부호",
+   "addr": "경기도 안산시 단원구 별망로 35 (주)부림케터링 안산공장B동 1층, 2층 (성곡동)",
    "localdata": [
     {
      "source": "localdata",
      "kind": "expansion",
-     "name": "농업회사법인 주식회사 프레시원",
-     "name_norm": "프레시원",
+     "name": "산스파운드리",
+     "name_norm": "산스파운드리",
      "industry": "식품제조가공업",
-     "active_sites": 2,
+     "active_sites": 1,
      "new_sites": 1,
-     "first_permit": "20250313",
+     "first_permit": "20250220",
      "new_permits": [
       {
-       "date": "20261002",
-       "addr": "경기도 광주시 곤지암읍 경충대로498번길 9-5, 1층 일부호",
-       "area_m2": 264.69,
-       "name": "프레시원 과채공장"
+       "date": "20260619",
+       "addr": "경기도 안산시 단원구 별망로 35 (주)부림케터링 안산공장B동 1층, 2층 (성곡동)",
+       "area_m2": 744.22,
+       "name": "산스파운드리"
       }
      ],
-     "max_new_area_m2": 264.69,
+     "max_new_area_m2": 744.22,
      "sido": [
       "경기"
      ],
@@ -1889,206 +1957,167 @@
     }
    ],
    "financials": {},
+   "food": {
+    "lcns_no": "20260474407",
+    "name": "산스파운드리",
+    "name_norm": "산스파운드리",
+    "license_year": "2026",
+    "new_items": 4,
+    "item_types": 2,
+    "types": [
+     "고형차",
+     "액상차"
+    ],
+    "client_brands": [],
+    "first_new": "20260708",
+    "last_new": "20260930",
+    "sku_burst": false,
+    "haccp_new": "20260818",
+    "haccp_item": "액상차"
+   },
    "nps": {
     "ym": "202609",
-    "headcount": 14,
-    "monthly_bill": 5208640,
+    "headcount": 8,
+    "monthly_bill": 2928240,
     "sites": 1,
-    "adopt": "20240401",
-    "industry": "육류 포장육 및 냉동육 가공업(가금류 제외)",
+    "adopt": "20260511",
+    "industry": "차류 가공업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 14
+      "headcount": 8
      },
      {
       "ym": "202608",
-      "headcount": 13
+      "headcount": 7
      },
      {
       "ym": "202607",
-      "headcount": 13
+      "headcount": 6
      },
      {
       "ym": "202606",
-      "headcount": 13
-     },
-     {
-      "ym": "202605",
-      "headcount": 13
-     },
-     {
-      "ym": "202604",
-      "headcount": 13
-     },
-     {
-      "ym": "202603",
-      "headcount": 13
-     },
-     {
-      "ym": "202602",
-      "headcount": 13
-     },
-     {
-      "ym": "202601",
-      "headcount": 13
-     },
-     {
-      "ym": "202512",
-      "headcount": 13
-     },
-     {
-      "ym": "202511",
-      "headcount": 13
-     },
-     {
-      "ym": "202510",
-      "headcount": 13
-     },
-     {
-      "ym": "202509",
-      "headcount": 13
+      "headcount": 6
      }
     ],
-    "growth_3m": 0.077,
-    "growth_6m": 0.077,
-    "growth_12m": 0.077,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 1.0,
-    "bill_per_head": 372046,
-    "bill_per_head_change_12m": 0.606
+    "growth_3m": 0.333,
+    "growth_6m_from_zero": true,
+    "growth_12m_from_zero": true,
+    "bill_per_head": 366030
    },
-   "nps_key": "579860|프레시원",
-   "score": 66,
+   "nps_key": "508851|산스파운드리",
+   "score": 68,
    "reasons": [
-    "업력 1.6년(추정) (+22)",
+    "업력 1.7년(추정) (+22)",
     "식품제조가공업 신규 인허가 1건 (기존 사업장 보유, 증설) (+30)",
-    "국민연금 가입자 14명",
-    "팀 14명 (얼리 스테이지 규모) (+8)",
-    "1인당 고지금액 12개월 +61% (+6)"
+    "국민연금 가입자 8명",
+    "HACCP 신규 지정 2026.08 (액상차): 대형 채널 입점 선행 (+6)",
+    "복수 소스 동시 포착: food, localdata (+10)"
    ],
    "change": "new"
   },
   {
-   "key": "loc:완뚝",
-   "name": "(주)완뚝",
-   "name_norm": "완뚝",
+   "key": "nps:882880:베타디파트먼트",
+   "name": "주식회사 베타디파트먼트",
+   "name_norm": "베타디파트먼트",
    "sources": [
-    "localdata"
+    "nps"
    ],
-   "age_years": 3.9,
-   "age_basis": "첫 인허가일(대리지표)",
-   "addr": "경상북도 고령군 성산면 도룡길 30-49",
-   "localdata": [
-    {
-     "source": "localdata",
-     "kind": "expansion",
-     "name": "(주)완뚝",
-     "name_norm": "완뚝",
-     "industry": "식품제조가공업",
-     "active_sites": 2,
-     "new_sites": 1,
-     "first_permit": "20221222",
-     "new_permits": [
-      {
-       "date": "20260629",
-       "addr": "경상북도 고령군 성산면 도룡길 30-49",
-       "area_m2": 991.34,
-       "name": "주식회사 완뚝"
-      }
-     ],
-     "max_new_area_m2": 991.34,
-     "sido": [
-      "경북",
-      "대구"
-     ],
-     "thesis": "food_mfg"
-    }
-   ],
-   "financials": {},
+   "bizno6": "882880",
+   "age_years": 3.2,
+   "age_basis": "개인사업 시작(국민연금 적용일)",
+   "addr": "서울특별시 마포구 토정로",
+   "industry": "광고 영화 및 비디오물 제작업",
+   "induty_code": "921501",
    "nps": {
     "ym": "202609",
-    "headcount": 14,
-    "monthly_bill": 3802720,
+    "headcount": 34,
+    "monthly_bill": 10843920,
     "sites": 1,
-    "adopt": "20221201",
-    "industry": "기타 산업용 농산물 도매업",
+    "adopt": "20260301",
+    "industry": "광고 영화 및 비디오물 제작업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 14
+      "headcount": 34
      },
      {
       "ym": "202608",
-      "headcount": 14
+      "headcount": 32
      },
      {
       "ym": "202607",
-      "headcount": 36
+      "headcount": 28
      },
      {
       "ym": "202606",
-      "headcount": 30
+      "headcount": 28
      },
      {
       "ym": "202605",
-      "headcount": 29
-     },
-     {
-      "ym": "202604",
       "headcount": 26
      },
      {
-      "ym": "202603",
+      "ym": "202604",
       "headcount": 25
-     },
-     {
-      "ym": "202602",
-      "headcount": 24
-     },
-     {
-      "ym": "202601",
-      "headcount": 23
-     },
-     {
-      "ym": "202512",
-      "headcount": 22
-     },
-     {
-      "ym": "202511",
-      "headcount": 21
-     },
-     {
-      "ym": "202510",
-      "headcount": 22
-     },
-     {
-      "ym": "202509",
-      "headcount": 18
      }
     ],
-    "growth_3m": -0.533,
-    "growth_6m": -0.44,
-    "growth_12m": -0.222,
-    "up_months": 10,
-    "months_observed": 12,
-    "bill_per_head": 271623,
-    "bill_per_head_change_12m": 0.006
+    "growth_3m": 0.214,
+    "up_months": 5,
+    "months_observed": 5,
+    "bill_per_head": 318939,
+    "growth_12m": 0.889,
+    "combined_headcount_12m_ago": 18
    },
-   "nps_key": "225880|완뚝",
+   "nps_key": "882880|베타디파트먼트",
+   "financials": {},
+   "conversion": {
+    "indiv_key": "206496|베타디파트먼트",
+    "indiv_name": "베타디파트먼트",
+    "indiv_adopt": "20230901",
+    "indiv_peak_headcount": 18,
+    "indiv_last_seen": "202602",
+    "corp_start": "20260301",
+    "months_since_conversion": 6,
+    "match": "업종"
+   },
    "score": 54,
    "reasons": [
-    "업력 3.9년(추정) (+6)",
-    "식품제조가공업 신규 인허가 1건 (기존 사업장 보유, 증설) (+30)",
-    "국민연금 가입자 14명",
-    "팀 14명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+    "업력 3.2년(추정) (+6)",
+    "고용 12개월 +89% (+18)",
+    "국민연금 가입자 34명",
+    "팀 34명 (얼리 스테이지 규모) (+8)",
+    "5개월 중 5개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "개인사업(2023.09~, 최대 18명) → 법인 전환 6개월 전 (+12)"
    ],
    "change": "new"
   }
  ],
  "above_threshold": [
+  {
+   "key": "food:20260342955",
+   "name": "주식회사 퓨어스",
+   "score": 100,
+   "change": "new"
+  },
+  {
+   "key": "food:20250697125",
+   "name": "주식회사이안글로벌",
+   "score": 94,
+   "change": "new"
+  },
+  {
+   "key": "food:20250055037",
+   "name": "성베스 씨케이",
+   "score": 94,
+   "change": "new"
+  },
+  {
+   "key": "loc:핫시즈너가공3",
+   "name": "핫시즈너 가공(3)",
+   "score": 90,
+   "change": "new"
+  },
   {
    "key": "dart:01957705",
    "name": "주식회사 엔케이에더먼트",
@@ -2108,14 +2137,20 @@
    "change": "new"
   },
   {
-   "key": "nps:264880:아스테로모프",
-   "name": "주식회사 아스테로모프",
-   "score": 84,
+   "key": "food:20230648302",
+   "name": "어업회사법인 대보 주식회사",
+   "score": 86,
    "change": "new"
   },
   {
-   "key": "nps:463840:라인페이홀딩태국컴퍼니리미티드영업소",
-   "name": "라인 페이 홀딩 태국 컴퍼니 리미티드(영업소)",
+   "key": "loc:더에이치컴퍼니",
+   "name": "주식회사 더에이치컴퍼니",
+   "score": 86,
+   "change": "new"
+  },
+  {
+   "key": "nps:264880:아스테로모프",
+   "name": "주식회사 아스테로모프",
    "score": 84,
    "change": "new"
   },
@@ -2240,6 +2275,12 @@
    "change": "new"
   },
   {
+   "key": "food:20250233343",
+   "name": "제이비지 에프앤비(JBG F&B)",
+   "score": 78,
+   "change": "new"
+  },
+  {
    "key": "nps:824870:알씨에어",
    "name": "알씨에어 주식회사",
    "score": 78,
@@ -2266,6 +2307,12 @@
   {
    "key": "dart:01979053",
    "name": "주식회사 동하메디칼",
+   "score": 77,
+   "change": "new"
+  },
+  {
+   "key": "food:20220683473",
+   "name": "주식회사 에이브바이오랩스",
    "score": 77,
    "change": "new"
   },
@@ -2696,12 +2743,6 @@
    "change": "new"
   },
   {
-   "key": "nps:128872:송도퀸즈그로브산후조리원",
-   "name": "주식회사송도퀸즈그로브산후조리원",
-   "score": 76,
-   "change": "new"
-  },
-  {
    "key": "nps:130880:피에스아이티",
    "name": "(주)피에스아이티",
    "score": 76,
@@ -2735,6 +2776,18 @@
    "key": "nps:751860:뉴텍바이오",
    "name": "주식회사 뉴텍바이오",
    "score": 76,
+   "change": "new"
+  },
+  {
+   "key": "dart:01928907",
+   "name": "유동산업주식회사",
+   "score": 76,
+   "change": "new"
+  },
+  {
+   "key": "food:20250390262",
+   "name": "호텔아이파크(주)성남센터",
+   "score": 75,
    "change": "new"
   },
   {
@@ -2780,8 +2833,8 @@
    "change": "new"
   },
   {
-   "key": "loc:핫시즈너가공3",
-   "name": "핫시즈너 가공(3)",
+   "key": "food:20250939121",
+   "name": "농업회사법인(주) 콧털삼촌",
    "score": 74,
    "change": "new"
   },
@@ -2866,12 +2919,6 @@
   {
    "key": "nps:572850:네오오토예산",
    "name": "(주)네오오토 예산 제4공장",
-   "score": 70,
-   "change": "new"
-  },
-  {
-   "key": "nps:675800:헤리티지요양원",
-   "name": "헤리티지요양원",
    "score": 70,
    "change": "new"
   },
@@ -2966,12 +3013,6 @@
    "change": "new"
   },
   {
-   "key": "nps:167820:혜원요양원",
-   "name": "혜원요양원",
-   "score": 70,
-   "change": "new"
-  },
-  {
    "key": "nps:811870:법무법인초원",
    "name": "법무법인 초원",
    "score": 70,
@@ -3062,12 +3103,6 @@
    "change": "new"
   },
   {
-   "key": "nps:234827:청춘주간보호센터",
-   "name": "청춘주간보호센터",
-   "score": 70,
-   "change": "new"
-  },
-  {
    "key": "nps:367860:제일종합식자재",
    "name": "제일종합식자재 주식회사",
    "score": 70,
@@ -3076,12 +3111,6 @@
   {
    "key": "nps:642880:모스트267",
    "name": "주식회사 모스트267",
-   "score": 70,
-   "change": "new"
-  },
-  {
-   "key": "nps:511828:제천시립치매전담요양원",
-   "name": "제천시립치매전담요양원",
    "score": 70,
    "change": "new"
   },
@@ -3410,12 +3439,6 @@
    "change": "new"
   },
   {
-   "key": "nps:712850:포항휴주간보호센터",
-   "name": "포항휴주간보호센터",
-   "score": 70,
-   "change": "new"
-  },
-  {
    "key": "nps:798860:트윈티",
    "name": "주식회사 트윈티",
    "score": 70,
@@ -3508,12 +3531,6 @@
   {
    "key": "nps:444810:씨에스나우",
    "name": "씨에스나우",
-   "score": 70,
-   "change": "new"
-  },
-  {
-   "key": "nps:554820:큰마을주간보호센터",
-   "name": "큰마을주간보호센터",
    "score": 70,
    "change": "new"
   },
@@ -3710,6 +3727,12 @@
    "change": "new"
   },
   {
+   "key": "food:20250470999",
+   "name": "주식회사 비에스바이오",
+   "score": 70,
+   "change": "new"
+  },
+  {
    "key": "nps:123865:장식전북센터",
    "name": "유한회사 장식전북센터",
    "score": 70,
@@ -3782,14 +3805,8 @@
    "change": "new"
   },
   {
-   "key": "nps:795850:성베스씨케이",
-   "name": "성베스 씨케이",
-   "score": 70,
-   "change": "new"
-  },
-  {
-   "key": "loc:더에이치컴퍼니",
-   "name": "주식회사 더에이치컴퍼니",
+   "key": "food:20250555892",
+   "name": "유진푸드",
    "score": 70,
    "change": "new"
   },
@@ -3814,6 +3831,24 @@
   {
    "key": "dart:01903537",
    "name": "청목해운(주)",
+   "score": 69,
+   "change": "new"
+  },
+  {
+   "key": "food:20260054054",
+   "name": "골든 성수",
+   "score": 69,
+   "change": "new"
+  },
+  {
+   "key": "food:20260470178",
+   "name": "주식회사 뉴비전프라임",
+   "score": 69,
+   "change": "new"
+  },
+  {
+   "key": "food:20250279110",
+   "name": "(주)주성엠에스",
    "score": 69,
    "change": "new"
   },
@@ -3872,6 +3907,12 @@
    "change": "new"
   },
   {
+   "key": "food:20230193345",
+   "name": "주식회사 기뜬정",
+   "score": 68,
+   "change": "new"
+  },
+  {
    "key": "nps:240860:비중에프앤비",
    "name": "주식회사 비중에프앤비",
    "score": 68,
@@ -3886,12 +3927,6 @@
   {
    "key": "nps:738860:아르토",
    "name": "주식회사 아르토",
-   "score": 68,
-   "change": "new"
-  },
-  {
-   "key": "nps:797870:퓨어스",
-   "name": "퓨어스 주식회사",
    "score": 68,
    "change": "new"
   },
@@ -3914,8 +3949,32 @@
    "change": "new"
   },
   {
+   "key": "food:20240543432",
+   "name": "(주)베이코",
+   "score": 68,
+   "change": "new"
+  },
+  {
    "key": "nps:293870:생과방",
    "name": "(주)생과방",
+   "score": 68,
+   "change": "new"
+  },
+  {
+   "key": "loc:조선에프앤비",
+   "name": "조선에프앤비",
+   "score": 68,
+   "change": "new"
+  },
+  {
+   "key": "food:20250635011",
+   "name": "농업회사법인(주)진샘",
+   "score": 68,
+   "change": "new"
+  },
+  {
+   "key": "loc:산스파운드리",
+   "name": "산스파운드리",
    "score": 68,
    "change": "new"
   },
@@ -4394,6 +4453,12 @@
    "change": "new"
   },
   {
+   "key": "food:20260565425",
+   "name": "(주)서래바이오",
+   "score": 66,
+   "change": "new"
+  },
+  {
    "key": "dart:01961036",
    "name": "유한회사 폴렌느코리아",
    "score": 65,
@@ -4486,12 +4551,6 @@
   {
    "key": "nps:347810:리더인항공",
    "name": "(주)리더 인 항공",
-   "score": 64,
-   "change": "new"
-  },
-  {
-   "key": "nps:673870:이안글로벌",
-   "name": "주식회사 이안글로벌",
    "score": 64,
    "change": "new"
   },
@@ -4838,8 +4897,26 @@
    "change": "new"
   },
   {
+   "key": "food:20250482273",
+   "name": "(주)디어푸드",
+   "score": 64,
+   "change": "new"
+  },
+  {
+   "key": "food:20260692159",
+   "name": "유에스파마텍코리아 주식회사",
+   "score": 64,
+   "change": "new"
+  },
+  {
    "key": "dart:01918955",
    "name": "이도밸류평택 주식회사",
+   "score": 64,
+   "change": "new"
+  },
+  {
+   "key": "loc:완뚝",
+   "name": "(주)완뚝",
    "score": 64,
    "change": "new"
   },
@@ -4922,6 +4999,12 @@
    "change": "new"
   },
   {
+   "key": "food:20240530065",
+   "name": "(주)스포츠바이오텍",
+   "score": 62,
+   "change": "new"
+  },
+  {
    "key": "nps:692880:케이알시큐리티krsecuritycorp",
    "name": "주식회사케이알시큐리티(krsecurityCorp.)",
    "score": 62,
@@ -4930,6 +5013,12 @@
   {
    "key": "nps:491880:위더스",
    "name": "위더스주식회사",
+   "score": 62,
+   "change": "new"
+  },
+  {
+   "key": "food:20260274293",
+   "name": "(주)글리보",
    "score": 62,
    "change": "new"
   },
@@ -4952,14 +5041,32 @@
    "change": "new"
   },
   {
+   "key": "food:20240883092",
+   "name": "농업회사법인 베리굿푸드 주식회사",
+   "score": 62,
+   "change": "new"
+  },
+  {
    "key": "nps:549860:메리온",
    "name": "주식회사메리온",
    "score": 62,
    "change": "new"
   },
   {
+   "key": "food:20260758475",
+   "name": "주식회사 밀투고",
+   "score": 62,
+   "change": "new"
+  },
+  {
    "key": "nps:784860:피제이인베스트",
    "name": "(주)피제이인베스트",
+   "score": 62,
+   "change": "new"
+  },
+  {
+   "key": "food:20220514509",
+   "name": "주식회사 예본바이오",
    "score": 62,
    "change": "new"
   },
@@ -5594,8 +5701,8 @@
    "change": "new"
   },
   {
-   "key": "nps:297800:더플러스시니어빌리지요양원",
-   "name": "더플러스 시니어빌리지 요양원",
+   "key": "food:20220241566",
+   "name": "(주)도마소리",
    "score": 60,
    "change": "new"
   },
@@ -5680,12 +5787,6 @@
   {
    "key": "nps:516810:유에이엠테크",
    "name": "(주)유에이엠테크",
-   "score": 60,
-   "change": "new"
-  },
-  {
-   "key": "nps:589810:씨에프씨케이터링cfccateringlimited",
-   "name": "씨에프씨케이터링 유한회사(CFC Catering Limited)",
    "score": 60,
    "change": "new"
   },
@@ -6260,12 +6361,6 @@
    "change": "new"
   },
   {
-   "key": "nps:165850:그레이스힐요양원",
-   "name": "그레이스힐요양원",
-   "score": 60,
-   "change": "new"
-  },
-  {
    "key": "nps:198880:공감에이치엘매니지먼트",
    "name": "(주)공감에이치엘 매니지먼트",
    "score": 60,
@@ -6404,8 +6499,32 @@
    "change": "new"
   },
   {
-   "key": "dart:01928907",
-   "name": "유동산업주식회사",
+   "key": "loc:천해",
+   "name": "(주)천해",
+   "score": 60,
+   "change": "new"
+  },
+  {
+   "key": "food:20250548955",
+   "name": "농업회사법인 주식회사 푸드랩",
+   "score": 60,
+   "change": "new"
+  },
+  {
+   "key": "food:20260930104",
+   "name": "빅마마씨푸드(주)F3",
+   "score": 60,
+   "change": "new"
+  },
+  {
+   "key": "food:20260832076",
+   "name": "주식회사 디에이치바이오",
+   "score": 60,
+   "change": "new"
+  },
+  {
+   "key": "dart:01904031",
+   "name": "해오름 농업회사법인(주)",
    "score": 60,
    "change": "new"
   },
@@ -6470,6 +6589,12 @@
    "change": "new"
   },
   {
+   "key": "loc:브라보비버경기",
+   "name": "주식회사 브라보비버경기",
+   "score": 58,
+   "change": "new"
+  },
+  {
    "key": "nps:494870:대신에이치엘",
    "name": "주식회사 대신에이치엘",
    "score": 58,
@@ -6488,8 +6613,20 @@
    "change": "new"
   },
   {
+   "key": "food:20250483507",
+   "name": "(주)와이엔비컴퍼니",
+   "score": 58,
+   "change": "new"
+  },
+  {
    "key": "nps:519810:엘케이플랜트",
    "name": "주식회사엘케이플랜트",
+   "score": 58,
+   "change": "new"
+  },
+  {
+   "key": "food:20240712144",
+   "name": "(주)신우코퍼레이션",
    "score": 58,
    "change": "new"
   },
@@ -6590,8 +6727,26 @@
    "change": "new"
   },
   {
+   "key": "food:20240716189",
+   "name": "주식회사 씨위드푸드",
+   "score": 58,
+   "change": "new"
+  },
+  {
+   "key": "food:20260920203",
+   "name": "(주)에스제이푸드시스템",
+   "score": 58,
+   "change": "new"
+  },
+  {
    "key": "dart:01927874",
    "name": "주식회사 오에이엔터테인먼트",
+   "score": 58,
+   "change": "new"
+  },
+  {
+   "key": "food:20240672181",
+   "name": "(주)씨이에스팜",
    "score": 58,
    "change": "new"
   },
@@ -6676,6 +6831,48 @@
   {
    "key": "nps:302813:핵사에너지",
    "name": "핵사에너지 주식회사",
+   "score": 56,
+   "change": "new"
+  },
+  {
+   "key": "food:20230249279",
+   "name": "(주)달구지푸드 2공장",
+   "score": 56,
+   "change": "new"
+  },
+  {
+   "key": "food:20250924014",
+   "name": "농업회사법인(주)별담푸드",
+   "score": 56,
+   "change": "new"
+  },
+  {
+   "key": "food:20260268233",
+   "name": "주식회사 디저트하우스",
+   "score": 56,
+   "change": "new"
+  },
+  {
+   "key": "food:20250694341",
+   "name": "주식회사대현에벤에셀",
+   "score": 56,
+   "change": "new"
+  },
+  {
+   "key": "food:20260682065",
+   "name": "용원푸드",
+   "score": 56,
+   "change": "new"
+  },
+  {
+   "key": "food:20260486911",
+   "name": "(주)다리와사람들",
+   "score": 56,
+   "change": "new"
+  },
+  {
+   "key": "food:20260378005",
+   "name": "주식회사 글프리",
    "score": 56,
    "change": "new"
   },
@@ -6812,12 +7009,6 @@
    "change": "new"
   },
   {
-   "key": "nps:111830:은평구청장애인복지과2026장애인전일제일자리사업",
-   "name": "은평구청 장애인복지과(2026 장애인 전일제일자리 사업)",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:113813:산청종합관리ph2일반청소용역1공구",
    "name": "(주)산청종합관리-Ph2일반청소용역 1공구",
    "score": 55,
@@ -6832,12 +7023,6 @@
   {
    "key": "nps:118820:청주청남시니어클럽",
    "name": "청주청남시니어클럽",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:120821:시흥시남부노인복지관",
-   "name": "시흥시남부노인복지관",
    "score": 55,
    "change": "new"
   },
@@ -6904,12 +7089,6 @@
   {
    "key": "nps:136870:대달산업",
    "name": "대달산업주식회사",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:143827:광주시장애인복지관",
-   "name": "광주시장애인복지관",
    "score": 55,
    "change": "new"
   },
@@ -6998,12 +7177,6 @@
    "change": "new"
   },
   {
-   "key": "nps:216827:신곡노인종합복지관흥선노인복지관",
-   "name": "신곡노인종합복지관 흥선노인복지관",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:216880:규장갓피플",
    "name": "주식회사 규장갓피플",
    "score": 55,
@@ -7046,12 +7219,6 @@
    "change": "new"
   },
   {
-   "key": "nps:224820:원주시노인종합복지관맞춤돌봄사업",
-   "name": "원주시노인종합복지관 (맞춤돌봄사업)",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:225830:평창군청2026년평창군직접일자리사업",
    "name": "평창군청/2026년 평창군 직접일자리사업",
    "score": 55,
@@ -7066,12 +7233,6 @@
   {
    "key": "nps:229860:케이티엘전기",
    "name": "주식회사 케이티엘전기",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:231827:강릉시립노인요양센터",
-   "name": "강릉시립노인요양센터",
    "score": 55,
    "change": "new"
   },
@@ -7120,12 +7281,6 @@
   {
    "key": "nps:250810:비씨모빌리티",
    "name": "비씨모빌리티 주식회사",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:254820:홍익요양원",
-   "name": "홍익요양원",
    "score": 55,
    "change": "new"
   },
@@ -7222,12 +7377,6 @@
   {
    "key": "nps:356880:레디영",
    "name": "주식회사 레디영",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:357850:강립실업성심요양원",
-   "name": "주식회사 강립실업 성심요양원",
    "score": 55,
    "change": "new"
   },
@@ -7370,12 +7519,6 @@
    "change": "new"
   },
   {
-   "key": "nps:504820:사회복지법인가정복지회장애인활동지원기관",
-   "name": "사회복지법인가정복지회/장애인활동지원기관",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:507828:아산시",
    "name": "아산시 가족센터",
    "score": 55,
@@ -7436,12 +7579,6 @@
    "change": "new"
   },
   {
-   "key": "nps:540850:빌리지포유",
-   "name": "빌리지포유 통합요양센터",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:540870:퍼시픽뮤직그룹pacificmusicgroupltd",
    "name": "퍼시픽뮤직그룹 주식회사(PACIFIC MUSIC GROUP Ltd.)",
    "score": 55,
@@ -7474,12 +7611,6 @@
   {
    "key": "nps:579850:노무법인이산산재보상센터인천북부지사",
    "name": "노무법인 이산 산재보상센터 인천북부지사",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:580820:노인맞춤돌봄서비스사업상주시노인종합복지관",
-   "name": "노인맞춤돌봄서비스사업(상주시노인종합복지관)",
    "score": 55,
    "change": "new"
   },
@@ -7520,20 +7651,8 @@
    "change": "new"
   },
   {
-   "key": "nps:604827:강서구립마곡어르신복지관",
-   "name": "강서구립마곡어르신복지관",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:607862:엘제이컴퍼니",
    "name": "(주)엘제이컴퍼니",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:617820:남구종합사회복지관노인맞춤돌봄",
-   "name": "남구종합사회복지관-노인맞춤돌봄",
    "score": 55,
    "change": "new"
   },
@@ -7652,12 +7771,6 @@
    "change": "new"
   },
   {
-   "key": "nps:727840:제이이티jetcoltd영업소",
-   "name": "주식회사 제이이티(J.E.T.Co. Ltd)(영업소)",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:732870:파마스퀘어",
    "name": "주식회사 파마스퀘어",
    "score": 55,
@@ -7720,12 +7833,6 @@
   {
    "key": "nps:775810:서영푸드",
    "name": "서영푸드주식회사",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:780800:베스트재활요양원",
-   "name": "베스트재활요양원",
    "score": 55,
    "change": "new"
   },
@@ -7858,12 +7965,6 @@
   {
    "key": "nps:876820:국립강원전문과학관",
    "name": "국립강원전문과학관",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:881840:버진애틀랜틱에어웨이즈리미티드영업소",
-   "name": "버진 애틀랜틱 에어웨이즈 리미티드(영업소)",
    "score": 55,
    "change": "new"
   },
@@ -8786,12 +8887,6 @@
    "change": "new"
   },
   {
-   "key": "nps:345850:대교뉴이프방문요양센터창원센터",
-   "name": "대교뉴이프 방문요양센터창원센터",
-   "score": 54,
-   "change": "new"
-  },
-  {
    "key": "nps:350870:법무법인넥서스",
    "name": "법무법인 넥서스",
    "score": 54,
@@ -8990,8 +9085,14 @@
    "change": "new"
   },
   {
-   "key": "loc:완뚝",
-   "name": "(주)완뚝",
+   "key": "food:20240320424",
+   "name": "농업회사법인주식회사큰울",
+   "score": 54,
+   "change": "new"
+  },
+  {
+   "key": "food:20260552538",
+   "name": "주식회사 뉴트리원",
    "score": 54,
    "change": "new"
   },
@@ -9218,12 +9319,6 @@
    "change": "new"
   },
   {
-   "key": "loc:조선에프앤비",
-   "name": "조선에프앤비",
-   "score": 52,
-   "change": "new"
-  },
-  {
    "key": "dart:01908709",
    "name": "주식회사 제네시스프라이빗에쿼티",
    "score": 52,
@@ -9232,6 +9327,24 @@
   {
    "key": "nps:727870:쓰리디멤",
    "name": "주식회사 쓰리디멤",
+   "score": 52,
+   "change": "new"
+  },
+  {
+   "key": "food:20220538344",
+   "name": "주식회사 에버스",
+   "score": 52,
+   "change": "new"
+  },
+  {
+   "key": "food:20240742781",
+   "name": "주식회사 소이프트바이옴",
+   "score": 52,
+   "change": "new"
+  },
+  {
+   "key": "food:20240893141",
+   "name": "손수",
    "score": 52,
    "change": "new"
   },
@@ -9248,20 +9361,38 @@
    "change": "new"
   },
   {
-   "key": "loc:산스파운드리",
-   "name": "산스파운드리",
-   "score": 52,
-   "change": "new"
-  },
-  {
    "key": "loc:제철한입",
    "name": "제철한입",
    "score": 52,
    "change": "new"
   },
   {
+   "key": "food:20260172100",
+   "name": "(주)다해씨푸드",
+   "score": 52,
+   "change": "new"
+  },
+  {
+   "key": "food:20260801057",
+   "name": "광양꼬수미",
+   "score": 52,
+   "change": "new"
+  },
+  {
    "key": "nps:321860:더베이지",
    "name": "주식회사 더베이지",
+   "score": 52,
+   "change": "new"
+  },
+  {
+   "key": "food:20240279514",
+   "name": "주식회사 큐플",
+   "score": 52,
+   "change": "new"
+  },
+  {
+   "key": "food:20240607406",
+   "name": "주식회사 웰메이드웰니스",
    "score": 52,
    "change": "new"
   },
@@ -9446,12 +9577,6 @@
    "change": "new"
   },
   {
-   "key": "nps:369810:슈퍼마이크로컴퓨터코리아supermicrocomputerkorealimited",
-   "name": "슈퍼마이크로컴퓨터코리아 유한회사(Super Micro Computer Korea Limited)",
-   "score": 51,
-   "change": "new"
-  },
-  {
    "key": "nps:391830:인천광역시검단구자원순환과",
    "name": "인천광역시 검단구 자원순환과",
    "score": 51,
@@ -9550,12 +9675,6 @@
   {
    "key": "nps:595870:에이비디",
    "name": "주식회사 에이비디",
-   "score": 51,
-   "change": "new"
-  },
-  {
-   "key": "nps:603821:사회복지시설그리스도요양원",
-   "name": "사회복지시설그리스도요양원",
    "score": 51,
    "change": "new"
   },
@@ -9794,12 +9913,6 @@
    "change": "new"
   },
   {
-   "key": "nps:748870:대보",
-   "name": "어업회사법인대보주식회사",
-   "score": 50,
-   "change": "new"
-  },
-  {
    "key": "nps:402861:엠에스피",
    "name": "주식회사 엠에스피",
    "score": 50,
@@ -9998,6 +10111,12 @@
    "change": "new"
   },
   {
+   "key": "food:20260211106",
+   "name": "주식회사 신의에프앤씨",
+   "score": 50,
+   "change": "new"
+  },
+  {
    "key": "dart:01913215",
    "name": "에스에이인터로지스 주식회사",
    "score": 50,
@@ -10006,6 +10125,66 @@
   {
    "key": "dart:01927953",
    "name": "다다마 주식회사",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20220820077",
+   "name": "주식회사 에이원바이옴",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20240683424",
+   "name": "(주)선제",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20250121060",
+   "name": "규리(주)",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20250582020",
+   "name": "주식회사 임진강김치",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20250577120",
+   "name": "주식회사 신비바이오",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20260870080",
+   "name": "쏘쓰공장",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20220495373",
+   "name": "(주)드림찬",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20260369326",
+   "name": "주식회사 에스아이씨",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20260799295",
+   "name": "(주)넥스트고",
+   "score": 50,
+   "change": "new"
+  },
+  {
+   "key": "food:20260291511",
+   "name": "주식회사 베스트푸드케터링",
    "score": 50,
    "change": "new"
   },
@@ -10103,12 +10282,6 @@
    "key": "dart:01928369",
    "name": "주식회사 아인에이치엠",
    "score": 49,
-   "change": "new"
-  },
-  {
-   "key": "nps:174828:동백꽃노인종합복지관",
-   "name": "동백꽃노인종합복지관",
-   "score": 48,
    "change": "new"
   },
   {
@@ -10346,12 +10519,6 @@
    "change": "new"
   },
   {
-   "key": "nps:118840:인드라시스테마스에스에이영업소",
-   "name": "인드라시스테마스에스에이(영업소)",
-   "score": 48,
-   "change": "new"
-  },
-  {
    "key": "nps:241860:광수물산",
    "name": "광수물산 영어조합법인",
    "score": 48,
@@ -10436,6 +10603,18 @@
    "change": "new"
   },
   {
+   "key": "food:20230623146",
+   "name": "주식회사 케이비푸드",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20230623401",
+   "name": "(주)내츄럴스푸드 할랄전용공장",
+   "score": 48,
+   "change": "new"
+  },
+  {
    "key": "dart:02056854",
    "name": "주식회사 미래이엔피",
    "score": 48,
@@ -10466,6 +10645,102 @@
    "change": "new"
   },
   {
+   "key": "food:20250666001",
+   "name": "건영웰푸드",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20250203108",
+   "name": "주식회사 지니바이오",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260836002",
+   "name": "크레이지피넛",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260421311",
+   "name": "(주)복시루",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260951136",
+   "name": "(주)호수",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260750308",
+   "name": "(주)로엔티크",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260677228",
+   "name": "지인바이오",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260508116",
+   "name": "비스킷블랑",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260203443",
+   "name": "달콤미푸드",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260559122",
+   "name": "(주)코스모바이오",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260870149",
+   "name": "동방제유(주) 2공장",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260054784",
+   "name": "주식회사 모굴프랜즈",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260848608",
+   "name": "주식회사 미정 천북공장",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260816089",
+   "name": "어업회사법인 남도해담 주식회사",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260719073",
+   "name": "농업회사법인(주)우리밀에프엔비",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20260118641",
+   "name": "몬쉘코리아 가산센터",
+   "score": 48,
+   "change": "new"
+  },
+  {
    "key": "nps:307870:엔플러스랩",
    "name": "주식회사 엔플러스랩",
    "score": 48,
@@ -10486,6 +10761,18 @@
   {
    "key": "nps:895810:케이에스식품",
    "name": "주식회사 케이에스식품",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20250543200",
+   "name": "주식회사 푸드베이스",
+   "score": 48,
+   "change": "new"
+  },
+  {
+   "key": "food:20250775635",
+   "name": "농업회사법인 주식회사 비에이비",
    "score": 48,
    "change": "new"
   },
@@ -10646,12 +10933,6 @@
    "change": "new"
   },
   {
-   "key": "nps:886870:온코리아onkorealimited",
-   "name": "온코리아유한회사(OnKoreaLimited)",
-   "score": 46,
-   "change": "new"
-  },
-  {
    "key": "nps:675870:다인이엔지",
    "name": "주식회사 다인이엔지",
    "score": 46,
@@ -10670,8 +10951,20 @@
    "change": "new"
   },
   {
+   "key": "food:20230179667",
+   "name": "주식회사 부바",
+   "score": 46,
+   "change": "new"
+  },
+  {
    "key": "dart:01898518",
    "name": "블래스트 주식회사",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20220441530",
+   "name": "농업회사법인 엔엘글로벌(주)",
    "score": 46,
    "change": "new"
   },
@@ -10682,6 +10975,18 @@
    "change": "rejected"
   },
   {
+   "key": "food:20230691173",
+   "name": "에스시디디 주식회사 익산2공장",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20230481112",
+   "name": "척척바이오랩(주)",
+   "score": 46,
+   "change": "new"
+  },
+  {
    "key": "nps:264815:바른식방",
    "name": "주식회사 바른식방",
    "score": 46,
@@ -10690,6 +10995,12 @@
   {
    "key": "nps:731870:엠투비",
    "name": "주식회사 엠투비",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20220261312",
+   "name": "주식회사 제이에스바이오",
    "score": 46,
    "change": "new"
   },
@@ -10736,6 +11047,48 @@
    "change": "new"
   },
   {
+   "key": "food:20250408284",
+   "name": "(주)보노에프앤비",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20250746257",
+   "name": "농업회사법인유한회사 한우물",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20260926177",
+   "name": "(주)오렌지 카우",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20260870053",
+   "name": "해오름식품",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20260718489",
+   "name": "주식회사 플래노프",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20260310438",
+   "name": "주식회사 무호",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20260674473",
+   "name": "한마음염소영농조합법인",
+   "score": 46,
+   "change": "new"
+  },
+  {
    "key": "nps:172860:스텀프",
    "name": "주식회사 스텀프",
    "score": 46,
@@ -10744,12 +11097,6 @@
   {
    "key": "nps:197880:법무법인유한제이알lawfirmjr",
    "name": "법무법인(유한) 제이알(Lawfirm JR)",
-   "score": 46,
-   "change": "new"
-  },
-  {
-   "key": "nps:239810:엘리멘타코리아elementakoreacolimited",
-   "name": "엘리멘타코리아 주식회사 ELEMENTA KOREA CO.  LIMITED",
    "score": 46,
    "change": "new"
   },
@@ -10840,6 +11187,12 @@
   {
    "key": "dart:01908444",
    "name": "에프이브이에테르노 주식회사",
+   "score": 46,
+   "change": "new"
+  },
+  {
+   "key": "food:20250746301",
+   "name": "(주)미당",
    "score": 46,
    "change": "new"
   },
@@ -10994,12 +11347,6 @@
    "change": "new"
   },
   {
-   "key": "nps:109821:나주시노인복지관",
-   "name": "나주시노인복지관",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:111819:헐타",
    "name": "주식회사헐타",
    "score": 45,
@@ -11042,20 +11389,8 @@
    "change": "new"
   },
   {
-   "key": "nps:120867:호텔아이파크",
-   "name": "호텔아이파크 주식회사 성남센터",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:120879:서울트레저웨이브제주",
    "name": "서울트레저 주식회사-웨이브제주",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:121821:금산군장애인복지관",
-   "name": "금산군장애인복지관",
    "score": 45,
    "change": "new"
   },
@@ -11092,12 +11427,6 @@
   {
    "key": "nps:124830:화성시청2026년농지이용실태조사지원사업",
    "name": "화성시청/2026년 농지이용실태조사 지원사업",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:124858:그루터기양평주간보호센터",
-   "name": "그루터기양평주간보호센터",
    "score": 45,
    "change": "new"
   },
@@ -11288,12 +11617,6 @@
    "change": "new"
   },
   {
-   "key": "nps:151880:주성엠에스",
-   "name": "유한회사 주성엠에스",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:152880:에이팩스오퍼레이션즈",
    "name": "주식회사 에이팩스 오퍼레이션즈",
    "score": 45,
@@ -11468,12 +11791,6 @@
    "change": "new"
   },
   {
-   "key": "nps:210829:부천시립노인전문요양원",
-   "name": "부천시립노인전문요양원",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:211857:하얏트플레이스부산연산",
    "name": "하얏트플레이스 부산연산",
    "score": 45,
@@ -11540,12 +11857,6 @@
    "change": "new"
   },
   {
-   "key": "nps:222830:도계읍행정복지센터2026년하반기지역공동체일자리사업도계읍",
-   "name": "도계읍 행정복지센터/2026년 하반기 지역공동체 일자리사업(도계읍)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:222830:동해시청경제과2026년도제2단계행복일자리사업",
    "name": "동해시청 경제과/2026년도 제2단계 행복일자리사업",
    "score": 45,
@@ -11596,12 +11907,6 @@
   {
    "key": "nps:227830:양양군청26년수상안전관리요원",
    "name": "양양군청/26년 수상안전관리요원",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:230827:해피케어하우스",
-   "name": "해피케어하우스 재활주간보호센터",
    "score": 45,
    "change": "new"
   },
@@ -11686,12 +11991,6 @@
   {
    "key": "nps:250880:티덴탈스튜디오",
    "name": "주식회사 티덴탈스튜디오",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:251820:마포서부재가노인복지기관",
-   "name": "마포서부재가노인복지기관",
    "score": 45,
    "change": "new"
   },
@@ -11858,20 +12157,8 @@
    "change": "new"
   },
   {
-   "key": "nps:301827:청주가경노인복지관노인맞춤돌봄서비스",
-   "name": "청주가경노인복지관(노인맞춤돌봄서비스)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:302880:힐탑아이씨티",
    "name": "주식회사 힐탑아이씨티",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:303830:충주시청장애인복지과2026년일반형일자리",
-   "name": "충주시청(장애인복지과)-2026년 일반형일자리",
    "score": 45,
    "change": "new"
   },
@@ -11984,12 +12271,6 @@
    "change": "new"
   },
   {
-   "key": "nps:318827:구리시장애인종합복지관",
-   "name": "구리시장애인종합복지관",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:325870:리듬앤토탈",
    "name": "주식회사 리듬앤토탈",
    "score": 45,
@@ -12016,12 +12297,6 @@
   {
    "key": "nps:335860:해인솔루션",
    "name": "해인솔루션 주식회사",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:338850:다시봄요양센터",
-   "name": "다시봄요양센터",
    "score": 45,
    "change": "new"
   },
@@ -12172,12 +12447,6 @@
   {
    "key": "nps:385820:진달래마을",
    "name": "진달래마을",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:392820:휘경이문누리종합사회복지관",
-   "name": "휘경이문누리종합사회복지관",
    "score": 45,
    "change": "new"
   },
@@ -12416,12 +12685,6 @@
    "change": "new"
   },
   {
-   "key": "nps:416820:순천종합사회복지관노인맞춤돌봄서비스",
-   "name": "순천종합사회복지관  노인맞춤돌봄서비스",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:416830:구례군청2026년산림재난대응단",
    "name": "구례군청/2026년 산림재난대응단",
    "score": 45,
@@ -12488,20 +12751,8 @@
    "change": "new"
   },
   {
-   "key": "nps:435820:필라멘트복지법인활동지원기관",
-   "name": "사단법인 필라멘트복지법인/활동지원기관",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:436860:하이어인",
    "name": "(주)하이어인",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:437820:옥계농협요양원",
-   "name": "옥계농협요양원",
    "score": 45,
    "change": "new"
   },
@@ -12572,12 +12823,6 @@
    "change": "new"
   },
   {
-   "key": "nps:457880:뉴비전프라임",
-   "name": "주식회사 뉴비전프라임",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:458860:디앤비플러스",
    "name": "주식회사 디앤비플러스",
    "score": 45,
@@ -12640,12 +12885,6 @@
   {
    "key": "nps:470870:코어시스템",
    "name": "유한회사 코어시스템",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:472800:아름다운시니어스요양원",
-   "name": "아름다운시니어스요양원",
    "score": 45,
    "change": "new"
   },
@@ -13046,12 +13285,6 @@
    "change": "new"
   },
   {
-   "key": "nps:594810:한사랑주간보호센터",
-   "name": "(주)한사랑주간보호센터",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:594860:대운에이치알",
    "name": "(주)대운에이치알",
    "score": 45,
@@ -13346,12 +13579,6 @@
    "change": "new"
   },
   {
-   "key": "nps:621861:남안성요양센터",
-   "name": "남안성요양센터",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:623850:더크라운이앤에스크라운파크호텔",
    "name": "주식회사 더크라운이앤에스 크라운파크호텔",
    "score": 45,
@@ -13468,12 +13695,6 @@
   {
    "key": "nps:664860:뱅크샐러드금융서비스",
    "name": "주식회사 뱅크샐러드금융서비스",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:665850:골든성수",
-   "name": "골든성수",
    "score": 45,
    "change": "new"
   },
@@ -13712,12 +13933,6 @@
    "change": "new"
   },
   {
-   "key": "nps:751840:엔세이피아도쿄영업소",
-   "name": "엔세이피아도쿄 주식회사(영업소)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:751880:육가본",
    "name": "(주) 육가본",
    "score": 45,
@@ -13762,12 +13977,6 @@
   {
    "key": "nps:763880:우진",
    "name": "(주)우진",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:764820:수애원노인복지센터",
-   "name": "수애원노인복지센터",
    "score": 45,
    "change": "new"
   },
@@ -13976,18 +14185,6 @@
    "change": "new"
   },
   {
-   "key": "nps:824870:잡플래닛jobplanetlimited",
-   "name": "잡플래닛 유한회사(Jobplanet Limited)",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:825810:늘품부모요양원",
-   "name": "(주) 늘품부모요양원",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:825810:세화기업",
    "name": "주식회사 세화기업",
    "score": 45,
@@ -14032,12 +14229,6 @@
   {
    "key": "nps:834880:파랑새",
    "name": "파랑새주식회사",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:835820:천안시립노인요양원",
-   "name": "천안시립노인요양원",
    "score": 45,
    "change": "new"
   },
