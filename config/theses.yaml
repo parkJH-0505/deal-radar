@@ -2,12 +2,12 @@
 # "잘 크는 숨은 알짜"를 무엇으로 판별할지 정의한다. Claude가 사용자 피드백을 보고 이 파일을 수정·커밋한다.
 
 global:
-  max_company_age_years: 6        # 설립 6년 이하 (5년차 미만 + 여유 1년)
+  max_company_age_years: 5        # 얼리 스테이지: 업력 5년 이하 (2026-11-05 사용자 피드백)
   min_score_to_report: 45         # 이 점수 이상만 후보 파일에 오른다
   max_candidates_per_day: 20      # 판단 단계로 넘기는 최대 후보 수
   queue_quota:                    # 소스별 최소 자리 (나머지는 점수순)
-    nps: 5                        # 국민연금 단독 발견 (공시 없는 고용 급성장)
-    localdata: 3                  # 인허가 단독 발견 (공장 증설·체인 확장)
+    nps: 10                       # 국민연금 단독 발견 (공시 없는 소규모 팀의 고용 급성장) = 주력
+    localdata: 4                  # 인허가 단독 발견 (공장 증설·체인 확장)
   # 표준산업분류 앞자리. 젊은 첫 외감사의 1/3이 부동산(68)이고, 금융·발전·골프장·지주사는
   # 대부분 SPC나 대기업 분할법인이라 '조용히 잘 크는 회사'와 구조적으로 무관하다.
   exclude_industry_prefixes: ["68", "64", "65", "66", "35", "9112", "7151"]
@@ -16,6 +16,8 @@ global:
     - "(엘지|에이치디|에스케이|롯데|씨제이|한화|포스코|신세계|카카오|토스|쿠팡|네이버|현대자동차|현대모비스|아모레퍼시픽|엘에스)"
     - "(^|[^A-Za-z])(LG|SK|CJ|GS|HD|KT)([^A-Za-z]|$)"
     - "(인베스트먼트|자산운용|캐피탈|파트너스|홀딩스|지주)"
+    - "어린이집|유치원"
+    - "\\s\\S+점$"                  # 'OO 남원도통점' 같은 가맹·지점 법인 (가맹본부가 아니라 가맹점)
     - "공사$"
     - "공단"
     - "재단"
@@ -49,9 +51,9 @@ sources:
     store_max_age_years: 6.5       # 저장 대상: 국민연금 적용일 6.5년 이내 법인
     store_min_headcount: 5
     scan:
-      min_headcount: 30            # 현재 가입자 30명 이상
-      min_growth_12m: 0.5          # 12개월 +50% 이상
-      min_growth_6m: 0.3           # 또는 6개월 +30% 이상
+      min_headcount: 10            # 얼리 스테이지: 현재 가입자 10명 이상
+      min_growth_12m: 1.0          # 작은 기저에서는 +50%가 흔하므로 12개월 2배 이상
+      min_growth_6m: 0.6           # 또는 6개월 +60% 이상
   nps:                             # API는 최신 월만 제공 → 패널에 없는 후보의 현재 인원 보강용
     enabled: true
     months: 1
@@ -69,10 +71,13 @@ theses:
     note: 가맹 정보공개서 API(페어데이터) 연동 전까지는 DART·국민연금 신호로만 잡힌다
 
 weights:
-  dart_first_audit: 30            # 최근 처음 외감 대상 → 100억 고개를 넘었을 가능성
-  age_le_3y: 15
-  age_le_6y: 8
-  revenue_ge_100b_krw: 10         # 매출 100억 이상 (best-effort 추출)
+  # 2026-11-05 사용자 피드백: "매출이 꼭 백억 단위일 필요 없다, 더 얼리 스테이지".
+  # 첫 외감(≈100억 돌파)은 늦은 신호라 비중을 낮추고, 소규모 팀의 꾸준한 고용 성장을 주력으로.
+  dart_first_audit: 12            # 최근 처음 외감 대상 (늦은 신호)
+  age_le_2y: 22
+  age_le_3y: 16
+  age_le_max: 6                   # 업력 3~5년
+  late_stage_size: -15            # 매출 500억+ 또는 가입자 300명+
   revenue_growth_ge_50pct: 15
   revenue_growth_ge_25pct: 8
   op_margin_ge_10pct: 12          # 이익 체력
@@ -80,12 +85,16 @@ weights:
   localdata_expansion: 30         # 기존 사업자의 공장급(200㎡+) 신규 인허가 = 증설
   localdata_chain_rollout: 22     # 같은 브랜드 신규 매장 3곳+ = 체인 확장 (프랜차이즈형)
   localdata_multi_new: 15
-  headcount_growth_12m_ge_100pct: 30   # 1년 새 고용 2배 이상: 숨은 알짜의 전형
-  headcount_growth_12m_ge_50pct: 20
-  headcount_growth_12m_ge_25pct: 10
-  headcount_ge_30: 5
-  headcount_new_scaleup: 15       # 12개월 전엔 미가입(또는 5명 미만) → 지금 60명+
-  bill_per_head_rising: 6         # 1인당 고지금액 12개월 +10% 이상 (보수 수준 상승)
+  headcount_growth_12m_ge_100pct: 30   # 1년 새 고용 2배 이상
+  headcount_growth_12m_ge_50pct: 18
+  headcount_growth_12m_ge_25pct: 8
+  headcount_new_scaleup: 15       # 12개월 전 미가입 → 지금 20명+
+  early_team_size: 8              # 가입자 10~80명
+  steady_growth: 10               # 관측 개월 대부분 증가·유지, 한 달 몰림 50% 이하
+  lumpy_growth: -12               # 증가분 60%+가 한 달에 (분할·양수·위탁 전환)
+  bill_per_head_high: 6           # 1인당 고지금액 40만원+ (≈월급 440만원+, 상위 15%)
+  bill_per_head_rising: 6         # 1인당 고지금액 12개월 +10% 이상
   thesis_industry_match: 8
-  likely_spinoff: -25             # 설립 3년 내 매출 1,500억+ 또는 고용 0→150명+ : 분할·합작·양수 법인
+  foreign_subsidiary_hint: -15    # 'OO코리아 유한회사' 등 외국계 한국법인 의심
+  likely_spinoff: -25             # 설립 3년 내 매출 1,500억+ 또는 고용 0→150명+
   multi_source_bonus: 10          # 서로 다른 소스 2개 이상에서 동시에 잡힘

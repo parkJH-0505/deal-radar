@@ -38,15 +38,20 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
 
     age = c.get("age_years")
     if age is not None:
-        if age <= 3:
-            add("age_le_3y", f"설립 {age}년")
+        basis = "" if c.get("age_basis", "").startswith("설립일") else "(추정)"
+        if age <= 2:
+            add("age_le_2y", f"업력 {age}년{basis}")
+        elif age <= 3:
+            add("age_le_3y", f"업력 {age}년{basis}")
         elif age <= cfg["global"]["max_company_age_years"]:
-            add("age_le_6y", f"설립 {age}년")
+            add("age_le_max", f"업력 {age}년{basis}")
 
     fin = c.get("financials") or {}
     rev, prev = fin.get("revenue"), fin.get("revenue_prev")
-    if rev and rev >= 10_000_000_000:
-        add("revenue_ge_100b_krw", f"매출 {rev / 1e8:,.0f}억(추정)")
+    if rev:
+        why.append(f"매출 {rev / 1e8:,.0f}억(추정)")
+        if rev >= 50_000_000_000:  # 얼리 스테이지 테제: 이미 500억+ 는 늦다
+            add("late_stage_size", f"매출 {rev / 1e8:,.0f}억: 이미 큰 회사")
     if rev and prev and prev > 0:
         g = (rev - prev) / prev
         if g >= 10:  # 10배+ 는 대개 전기가 설립 첫 부분연도 → 성장률로 쓰지 않는다
@@ -84,10 +89,23 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
             add("headcount_growth_12m_ge_50pct", f"고용 12개월 {g12:+.0%}")
         elif g12 >= 0.25:
             add("headcount_growth_12m_ge_25pct", f"고용 12개월 {g12:+.0%}")
-    elif nps.get("growth_12m_from_zero") and (nps.get("headcount") or 0) >= 60:
+    elif nps.get("growth_12m_from_zero") and (nps.get("headcount") or 0) >= 20:
         add("headcount_new_scaleup", f"12개월 전 미가입 → 현재 {nps['headcount']}명")
-    if (nps.get("headcount") or 0) >= 30:
-        add("headcount_ge_30", f"국민연금 가입자 {nps['headcount']}명")
+    hc = nps.get("headcount") or 0
+    if hc:
+        why.append(f"국민연금 가입자 {hc}명")
+        if 10 <= hc <= 80:
+            add("early_team_size", f"팀 {hc}명 (얼리 스테이지 규모)")
+        elif hc >= 300:
+            add("late_stage_size", f"가입자 {hc}명: 이미 큰 조직")
+    up, obs, jump = nps.get("up_months"), nps.get("months_observed"), nps.get("max_jump_share")
+    if up is not None and obs and up >= obs - 2 and (jump is None or jump <= 0.5):
+        add("steady_growth", f"{obs}개월 중 {up}개월 증가·유지 (꾸준히 쌓인 성장)")
+    elif jump is not None and jump > 0.6 and hc >= 30:
+        add("lumpy_growth", f"증가분의 {jump:.0%}가 한 달에 몰림 (분할·양수·전환 의심)")
+    bph = nps.get("bill_per_head")
+    if bph and bph >= 400_000:
+        add("bill_per_head_high", f"1인당 고지금액 {bph / 1e4:.0f}만원 (상위 15% 보수 수준)")
     bpc = nps.get("bill_per_head_change_12m")
     if bpc is not None and bpc >= 0.10:
         add("bill_per_head_rising", f"1인당 고지금액 12개월 {bpc:+.0%}")
@@ -98,6 +116,11 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
         transplanted = nps.get("growth_12m_from_zero") and (nps.get("headcount") or 0) >= 150
         if big_rev or transplanted:
             add("likely_spinoff", "설립 직후부터 대형(매출 1,500억+ 또는 0→150명+): 분할·합작 의심")
+
+    # 외국 본사의 한국 법인 (예: 'OO코리아 유한회사'): 투자 대상이 아님 → 판단 단계에서 확인
+    if re.search(r"코리아\s*(주식회사|유한회사|\(유\)|\(주\))?$|^(주식회사|유한회사)\s*\S*코리아$",
+                 (c.get("name") or "").strip()):
+        add("foreign_subsidiary_hint", "상호가 'OO코리아' 형태: 외국계 한국법인 의심")
 
     induty = str(c.get("induty_code") or "")
     for th in cfg.get("theses", {}).values():

@@ -67,7 +67,7 @@ def fake_get(url, params=None, **kw):
             return FakeResp({"status": "000", "total_page": 1, "list": rows})
         if url.endswith("company.json"):
             code = p["corp_code"]
-            est = {"00000002": "20210610", "00000003": "20230101"}.get(code, "19990101")
+            est = {"00000002": "20220610", "00000003": "20230101"}.get(code, "19990101")
             nm = {"00000002": "(주)해담식품", "00000003": "제3호유동화전문유한회사"}.get(code, "오래된회사")
             return FakeResp({"status": "000", "corp_code": code, "corp_name": nm,
                              "est_dt": est, "induty_code": "10799",

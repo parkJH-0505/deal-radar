@@ -277,13 +277,16 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
             if "nps" not in by_key[k]["sources"]:
                 by_key[k]["sources"].append("nps")
             continue
-        if excluded(f["name"], pats):
+        if excluded(f["name"], pats) or str(f.get("induty_code")) == "999999":
             continue
         adopt = f["nps"].get("adopt")
+        a = age_years(adopt, today)
+        if a is None or a > cfg["global"]["max_company_age_years"]:
+            continue
         cands.append({
             "key": f["key"], "name": f["name"], "name_norm": norm_name(f["name"]),
             "sources": ["nps"], "bizno6": f["bizno6"],
-            "age_years": age_years(adopt, today), "age_basis": "국민연금 적용일(대리지표)",
+            "age_years": a, "age_basis": "국민연금 적용일(대리지표)",
             "addr": f["addr"], "industry": f["induty_name"], "induty_code": f["induty_code"],
             "nps": f["nps"], "nps_key": k,
             "financials": {},
@@ -358,8 +361,12 @@ def daily(today: dt.date | None = None) -> dict:
         notes.append(f"국민연금 조회 {looked}곳 (파라미터 방식: {nps.style})")
 
     g = cfg["global"]
+    def added(c):  # 동점 해소: 12개월 동안 실제로 늘어난 인원 (작은 비율 놀음 방지)
+        n = c.get("nps") or {}
+        hc, g12 = n.get("headcount") or 0, n.get("growth_12m")
+        return hc - hc / (1 + g12) if g12 and g12 > -1 else 0
     picked = sorted([c for c in cands if c["score"] >= g["min_score_to_report"]],
-                    key=lambda c: -c["score"])
+                    key=lambda c: (-c["score"], -added(c)))
 
     # watchlist bookkeeping: new vs changed
     wl_path = DATA / "watchlist.json"
@@ -372,8 +379,13 @@ def daily(today: dt.date | None = None) -> dict:
         # baseline = last score recorded BEFORE today, so same-day re-runs don't
         # swallow today's new candidates
         before = [h for h in (prev or {}).get("score_history", []) if h["date"] < today.isoformat()]
-        if prev is None or prev.get("first_seen") == today.isoformat() or not before:
+        # 'new' = 판단 단계에 아직 한 번도 안 올라간 회사. 하루 자리가 한정돼 있으므로
+        # 임계점을 넘은 대기 후보는 점수순으로 매일 소진된다 (오늘 이미 올린 건 재실행에도 유지).
+        q = (prev or {}).get("queued_on")
+        if prev is None or not q or q == today.isoformat():
             c["change"] = "new"
+        elif not before:
+            c["change"] = "same"
         elif c["score"] - before[-1]["score"] >= 10 or \
                 kinds(c["reasons"]) - kinds(prev.get("reasons_before", prev.get("reasons", []))):
             c["change"] = "changed"
@@ -410,12 +422,19 @@ def daily(today: dt.date | None = None) -> dict:
         if c["key"] not in used:
             queue.append(c); used.add(c["key"])
     queue = sorted(queue[:cap], key=lambda c: -c["score"])
+    for c in queue:
+        rec = wl.get(c["key"])
+        if rec is not None:
+            rec.setdefault("queued_on", today.isoformat())
+            rec["last_queued"] = today.isoformat()
+    write_json(wl_path, wl)
+    backlog = sum(1 for c in picked if c["change"] == "new") - sum(1 for c in queue if c["change"] == "new")
     payload = {
         "date": today.isoformat(),
         "generated_at": dt.datetime.now(KST).isoformat(timespec="seconds"),
         "counts": {"dart": len(dart_c), "localdata_signals": len(loc),
                    "scored": len(cands), "above_threshold": len(picked),
-                   "queue": len(queue)},
+                   "queue": len(queue), "backlog_unreviewed": max(0, backlog)},
         "notes": notes,
         "queue": queue,
         "above_threshold": [{"key": c["key"], "name": c["name"], "score": c["score"],

@@ -151,3 +151,23 @@ def test_partial_year_and_spinoff_guards():
     assert any("분할" in r for r in w2)
     p3, w3 = score({**base, "nps": {"growth_12m_from_zero": True, "headcount": 409}}, cfg, TODAY)
     assert any("분할" in r for r in w3)
+
+
+def test_early_stage_growth_shape():
+    import yaml
+    from radar.score import score
+    cfg = yaml.safe_load(open("config/theses.yaml", encoding="utf-8"))
+    base = {"sources": ["nps"], "age_years": 2.0, "age_basis": "국민연금 적용일(대리지표)"}
+    steady = {"headcount": 24, "growth_12m": 1.4, "up_months": 12, "months_observed": 12,
+              "max_jump_share": 0.2, "bill_per_head": 450_000}
+    lumpy = {"headcount": 60, "growth_12m": 1.4, "up_months": 11, "months_observed": 12,
+             "max_jump_share": 0.8}
+    ps, ws = score({**base, "nps": steady}, cfg, TODAY)
+    pl, wl = score({**base, "nps": lumpy}, cfg, TODAY)
+    assert any("꾸준히" in r for r in ws) and any("얼리" in r for r in ws)
+    assert any("한 달에 몰림" in r for r in wl)
+    assert ps > pl
+    # late-stage size is penalised, revenue itself no longer earns points
+    pb, wb = score({"sources": ["dart"], "age_years": 2.5, "age_basis": "설립일(DART)",
+                    "financials": {"revenue": 60_000_000_000}}, cfg, TODAY)
+    assert any("이미 큰 회사" in r for r in wb)

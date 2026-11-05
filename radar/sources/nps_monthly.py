@@ -34,7 +34,9 @@ BASE = "https://www.data.go.kr"
 
 # Temporary construction-site workplaces dominate name searches
 # ("○○건설/일용/△△ 신축공사 중 철골공사"); they are never targets.
-TEMP_SITE = re.compile(r"/일용/|/상용/|공사\s*중|신축공사|증축|현장|건설공사")
+TEMP_SITE = re.compile(r"일용|[(/\-]\s*상용\s*[)/\-]|공사\s*중|신축|증축|현장|건설공사|본소")
+# 업종 자체가 프로젝트 단위로 인원이 오르내리는 경우 (고용 성장이 사업 성장을 뜻하지 않음)
+CYCLICAL_INDUSTRY = re.compile(r"건설업|공사업|인력 공급|인력공급|경비|청소|사업시설 유지")
 
 FIELDS = ["key", "name", "bizno6", "adopt", "induty_code", "induty_name", "sido",
           "addr", "headcount", "bill", "acq", "lost", "sites"]
@@ -260,6 +262,15 @@ def metrics_for(key: str, yms: list[str], data: dict) -> dict | None:
                 out[f"growth_{lag}m"] = round((hc - past["headcount"]) / past["headcount"], 3)
             elif past is None and ym in data:
                 out[f"growth_{lag}m_from_zero"] = True  # not enrolled then (or < threshold)
+    # 성장의 '모양': 꾸준히 쌓였는지, 한 달에 통째로 옮겨왔는지(분할·양수·위탁 전환)
+    seq = [p["headcount"] for p in reversed(out["series"])]  # oldest -> newest
+    if len(seq) >= 6:
+        steps = [b - a for a, b in zip(seq, seq[1:])]
+        out["up_months"] = sum(1 for d in steps if d >= 0)
+        out["months_observed"] = len(steps)
+        gain = seq[-1] - seq[0]
+        if gain > 0:
+            out["max_jump_share"] = round(max(steps) / gain, 2)
     if hc:
         out["bill_per_head"] = round(cur["bill"] / hc)
         past12 = data.get(_ym_minus(last, 12), {}).get(key)
@@ -279,6 +290,8 @@ def scan(yms: list[str], data: dict, *, today: dt.date, max_age_years: float,
     out = []
     for key, r in data[last].items():
         if r["adopt"] < cutoff or r["headcount"] < min_headcount:
+            continue
+        if TEMP_SITE.search(r["name"]) or CYCLICAL_INDUSTRY.search(r.get("induty_name") or ""):
             continue
         m = metrics_for(key, yms, data)
         g12, g6 = m.get("growth_12m"), m.get("growth_6m")
