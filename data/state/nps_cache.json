@@ -4947,5 +4947,763 @@
   "addr": "경상남도 거제시 연초면 연하해안로",
   "series": [],
   "_asof": "2026-11-05"
+ },
+ "loc:영월절임배추": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01958892": {
+  "match": {
+   "seq": 7001574,
+   "name": "(주)블루웨일즈",
+   "bizno6": "664810",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1505340,
+  "industry": "기타 금융 투자업",
+  "adopted": "20250101",
+  "addr": "서울특별시 강남구 학동로5길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 501780,
+  "_asof": "2026-11-05"
+ },
+ "dart:01878329": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01904411": {
+  "match": {
+   "seq": 1556078,
+   "name": "대주오토텍 주식회사",
+   "bizno6": "817810",
+   "ym": "202512",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1189700,
+  "industry": "육상 금속 골조 구조재 제조업",
+  "adopted": "20240110",
+  "addr": "전북특별자치도 완주군 봉동읍 완주산단6로",
+  "series": [
+   {
+    "ym": "202512",
+    "headcount": 3
+   },
+   {
+    "ym": "202511",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 396567,
+  "_asof": "2026-11-05"
+ },
+ "dart:01912076": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01912605": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01913914": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01916072": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01917655": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01917992": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01918025": {
+  "match": {
+   "seq": 5059547,
+   "name": "주식회사 에이티블럭",
+   "bizno6": "489880",
+   "ym": "202606",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 803020,
+  "industry": "그 외 기타 콘크리트 제품 및 유사 제품 제조업",
+  "adopted": "20221101",
+  "addr": "충청남도 천안시 동남구 성남면 대흥1길",
+  "series": [
+   {
+    "ym": "202606",
+    "headcount": 3
+   },
+   {
+    "ym": "202605",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 267673,
+  "_asof": "2026-11-05"
+ },
+ "dart:01918919": {
+  "match": {
+   "seq": 6977138,
+   "name": "주식회사동부테크",
+   "bizno6": "767860",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "전기용 기계ㆍ장비 및 관련 기자재 도매업",
+  "adopted": "20240301",
+  "addr": "경기도 화성시 동탄구 동탄첨단산업1로",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01919909": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01922143": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01922499": {
+  "match": {
+   "seq": 6995146,
+   "name": "주식회사 코스타밸리",
+   "bizno6": "394810",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 863900,
+  "industry": "사업 및 무형 재산권 중개업",
+  "adopted": "20240901",
+  "addr": "울산광역시 북구 동대로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 215975,
+  "_asof": "2026-11-05"
+ },
+ "dart:01922921": {
+  "match": {
+   "seq": 253097,
+   "name": "주식회사 아이엠지무역 (AMG TRADING)",
+   "bizno6": "310813",
+   "ym": "202510",
+   "match_score": 1.2
+  },
+  "headcount": 5,
+  "monthly_bill": 2408020,
+  "industry": "상품 종합 도매업",
+  "adopted": "20240301",
+  "addr": "인천광역시 연수구 함박뫼로50번길",
+  "series": [
+   {
+    "ym": "202510",
+    "headcount": 5
+   },
+   {
+    "ym": "202509",
+    "headcount": 5,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 481604,
+  "_asof": "2026-11-05"
+ },
+ "dart:01923124": {
+  "match": {
+   "seq": 5788457,
+   "name": "(주)기프티비즈",
+   "bizno6": "263860",
+   "ym": "202607",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "응용 소프트웨어 개발 및 공급업",
+  "adopted": "20230901",
+  "addr": "서울특별시 금천구 가산디지털2로",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01923902": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01923984": {
+  "match": {
+   "seq": 6345641,
+   "name": "주식회사 스피츠",
+   "bizno6": "645870",
+   "ym": "202608",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "포털 및 기타 인터넷 정보 매개 서비스업",
+  "adopted": "20220901",
+  "addr": "경기도 평택시 고덕중앙로",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01924691": {
+  "match": {
+   "seq": 5753501,
+   "name": "주식회사글로벌오션",
+   "bizno6": "207870",
+   "ym": "202607",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "단독 주택 건설업 / 아파트 건설업 / 기타 공동 주택",
+  "adopted": "20220919",
+  "addr": "울산광역시 울주군 서생면 당물길",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01924868": {
+  "match": {
+   "seq": 4611647,
+   "name": "주식회사원헌드레드레이블",
+   "bizno6": "510860",
+   "ym": "202605",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1005460,
+  "industry": "매니저업",
+  "adopted": "20230922",
+  "addr": "서울특별시 강남구 선릉로190길",
+  "series": [
+   {
+    "ym": "202605",
+    "headcount": 3
+   },
+   {
+    "ym": "202604",
+    "headcount": 6,
+    "acq": 0,
+    "lost": 3
+   }
+  ],
+  "bill_per_head": 335153,
+  "_asof": "2026-11-05"
+ },
+ "dart:01924965": {
+  "match": {
+   "seq": 6934059,
+   "name": "코어뉴에너지주식회사",
+   "bizno6": "773810",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1345740,
+  "industry": "전동기 및 발전기 제조업",
+  "adopted": "20220810",
+  "addr": "경기도 성남시 분당구 분당내곡로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 448580,
+  "_asof": "2026-11-05"
+ },
+ "dart:01926769": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01927087": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01927102": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01930294": {
+  "match": {
+   "seq": 4596407,
+   "name": "케이에이치에코텍(주)",
+   "bizno6": "228870",
+   "ym": "202605",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 944180,
+  "industry": "기타 비철금속 압연, 압출 및 연신제품 제조업",
+  "adopted": "20230601",
+  "addr": "울산광역시 울주군 온산읍 화산1길",
+  "series": [
+   {
+    "ym": "202605",
+    "headcount": 3
+   },
+   {
+    "ym": "202604",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 314727,
+  "_asof": "2026-11-05"
+ },
+ "dart:01943775": {
+  "match": {
+   "seq": 6964088,
+   "name": "주식회사클레비아이",
+   "bizno6": "474870",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 1602620,
+  "industry": "의복 액세서리 및 모조 장신구 소매업",
+  "adopted": "20231001",
+  "addr": "경기도 평택시 비전5로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 400655,
+  "_asof": "2026-11-05"
+ },
+ "dart:01948284": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01951181": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01952630": {
+  "match": {
+   "seq": 6936268,
+   "name": "(주)엠아이케이익스퍼트(MIKEXPORTCO.,LTD)",
+   "bizno6": "534880",
+   "ym": "202609",
+   "match_score": 1.2
+  },
+  "headcount": 3,
+  "monthly_bill": 1545620,
+  "industry": "상품 종합 도매업",
+  "adopted": "20221001",
+  "addr": "인천광역시 서해구 염곡로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 515207,
+  "_asof": "2026-11-05"
+ },
+ "dart:01955239": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01960709": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01960736": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01961975": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01942970": {
+  "match": {
+   "seq": 6987121,
+   "name": "엘리스테이보령 유한회사",
+   "bizno6": "696810",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 1228020,
+  "industry": "주거용 건물 개발 및 공급업",
+  "adopted": "20240603",
+  "addr": "충청남도 보령시 웅천읍 독산로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 1,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 307005,
+  "_asof": "2026-11-05"
+ },
+ "dart:01599875": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01705005": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01857247": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01894895": {
+  "match": {
+   "seq": 5283329,
+   "name": "케이앤엘팩주식회사",
+   "bizno6": "179810",
+   "ym": "202606",
+   "match_score": 1.3
+  },
+  "headcount": 20,
+  "monthly_bill": 6687120,
+  "industry": "종이 포대 및 가방 제조업",
+  "adopted": "20221212",
+  "addr": "충청북도 충주시 대소원면 첨단산업6로",
+  "series": [
+   {
+    "ym": "202606",
+    "headcount": 20
+   },
+   {
+    "ym": "202605",
+    "headcount": 19,
+    "acq": 2,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 334356,
+  "_asof": "2026-11-05"
+ },
+ "dart:01897616": {
+  "match": {
+   "seq": 7016943,
+   "name": "주식회사 슈퍼트러스트(SUPER TRUST)",
+   "bizno6": "559870",
+   "ym": "202609",
+   "match_score": 1.2
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "광고 대행업",
+  "adopted": "20250317",
+  "addr": "서울특별시 송파구 송파대로",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01898402": {
+  "match": {
+   "seq": 6927214,
+   "name": "공주의당아스콘 주식회사",
+   "bizno6": "866870",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 979900,
+  "industry": "아스팔트 콘크리트 및 혼합제품 제조업",
+  "adopted": "20220720",
+  "addr": "충청남도 공주시 의당면 의당전의로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 244975,
+  "_asof": "2026-11-05"
+ },
+ "dart:01898679": {
+  "match": {
+   "seq": 1109255,
+   "name": "주식회사시알이노테크",
+   "bizno6": "254870",
+   "ym": "202511",
+   "match_score": 1.3
+  },
+  "headcount": null,
+  "monthly_bill": 0,
+  "industry": "정형 내화 요업제품 제조업",
+  "adopted": "20220901",
+  "addr": "경상북도 영천시 도남공단3길",
+  "series": [],
+  "_asof": "2026-11-05"
+ },
+ "dart:01905632": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01911271": {
+  "match": {
+   "seq": 6949098,
+   "name": "(주)제이디네트웍스",
+   "bizno6": "230811",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 1878120,
+  "industry": "전자상거래 소매업",
+  "adopted": "20230401",
+  "addr": "경기도 용인시 처인구 중부대로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 3
+   },
+   {
+    "ym": "202608",
+    "headcount": 3,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 626040,
+  "_asof": "2026-11-05"
+ },
+ "dart:01911730": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01913251": {
+  "match": {
+   "seq": 6918594,
+   "name": "주식회사 코스모아이엔씨",
+   "bizno6": "643870",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 1787780,
+  "industry": "상품 종합 도매업",
+  "adopted": "20220301",
+  "addr": "서울특별시 서초구 서초대로29길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 446945,
+  "_asof": "2026-11-05"
+ },
+ "dart:01916902": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01919857": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01919875": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01920127": {
+  "match": {
+   "seq": 6956831,
+   "name": "(주)엔아이스틸용인시스",
+   "bizno6": "342870",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 2229980,
+  "industry": "건설 및 토목공사용 기계ㆍ장비 임대업",
+  "adopted": "20230701",
+  "addr": "경기도 용인시 처인구 포곡읍 곡현로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 4
+   },
+   {
+    "ym": "202608",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 557495,
+  "_asof": "2026-11-05"
+ },
+ "dart:01920190": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01925201": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01925496": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01927157": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01930638": {
+  "match": {
+   "seq": 3377360,
+   "name": "(주)서진이엔씨",
+   "bizno6": "718870",
+   "ym": "202603",
+   "match_score": 1.3
+  },
+  "headcount": 4,
+  "monthly_bill": 1858280,
+  "industry": "사무ㆍ상업용 및 공공기관용 건물 건설업",
+  "adopted": "20211207",
+  "addr": "경기도 남양주시 오남읍 양지로",
+  "series": [
+   {
+    "ym": "202603",
+    "headcount": 4
+   },
+   {
+    "ym": "202602",
+    "headcount": 6,
+    "acq": 0,
+    "lost": 2
+   }
+  ],
+  "bill_per_head": 464570,
+  "_asof": "2026-11-05"
+ },
+ "dart:01936234": {
+  "match": {
+   "seq": 6662773,
+   "name": "(주)동일우드",
+   "bizno6": "137819",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 13,
+  "monthly_bill": 4032840,
+  "industry": "표면 가공목재 및 특정 목적용 제재목 제조업",
+  "adopted": "20100415",
+  "addr": "경기도 김포시 통진읍 김포대로2385번길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 13
+   },
+   {
+    "ym": "202608",
+    "headcount": 13,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 310218,
+  "_asof": "2026-11-05"
+ },
+ "dart:01949353": {
+  "_asof": "2026-11-05"
+ },
+ "dart:01950960": {
+  "match": {
+   "seq": 6350447,
+   "name": "인사이어티(주)",
+   "bizno6": "591860",
+   "ym": "202608",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 776900,
+  "industry": "사업시설 유지ㆍ관리 서비스업",
+  "adopted": "20221202",
+  "addr": "경기도 파주시 고봉로",
+  "series": [
+   {
+    "ym": "202608",
+    "headcount": 3
+   },
+   {
+    "ym": "202607",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 258967,
+  "_asof": "2026-11-05"
+ },
+ "dart:01957811": {
+  "match": {
+   "seq": 5063733,
+   "name": "(주)와이케이위자즈",
+   "bizno6": "191870",
+   "ym": "202606",
+   "match_score": 1.3
+  },
+  "headcount": 3,
+  "monthly_bill": 604820,
+  "industry": "주거용 건물 건설업",
+  "adopted": "20230213",
+  "addr": "경기도 부천시 원미구 지봉로107번길",
+  "series": [
+   {
+    "ym": "202606",
+    "headcount": 3
+   },
+   {
+    "ym": "202605",
+    "headcount": 6,
+    "acq": 0,
+    "lost": 3
+   }
+  ],
+  "bill_per_head": 201607,
+  "_asof": "2026-11-05"
+ },
+ "dart:01960000": {
+  "_asof": "2026-11-05"
  }
 }
