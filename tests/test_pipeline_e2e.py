@@ -147,8 +147,20 @@ def test_daily_end_to_end(sandbox):
     q = names["(주)조용한성장"]                              # found by the NPS panel scan alone
     assert q["sources"] == ["nps"] and q["nps"]["growth_12m"] > 1
     assert len(out["queue"]) == 3, [c["name"] for c in out["queue"]]
-    # second run: nothing new, everything cached
-    out2 = P.daily(dt.date(2026, 11, 6))
-    assert all(c["change"] != "new" for c in out2["queue"])
+    # unjudged candidates stay in the queue on a later day (backlog is not lost)
+    out_b = P.daily(dt.date(2026, 11, 6))
+    assert {c["name"] for c in out_b["queue"]} == set(names)
+    # the morning judgment reviews them: one survivor, the rest rejected
+    keys = {c["name"]: c["key"] for c in out["queue"]}
+    jd = sandbox / "judgments"
+    jd.mkdir()
+    rows_keep = f"| {keys['(주)해담식품']} | 해담식품 | ok |"
+    rows_rej = "\n".join(f"| {k} | {n} | 이유 | - |" for n, k in keys.items() if n != "(주)해담식품")
+    (jd / "2026-11-06.md").write_text(
+        f"# 판단\n## 생존\n| 키 | 회사 | 메모 |\n|---|---|---|\n{rows_keep}\n"
+        f"## 탈락\n| 키 | 회사 | 이유 | 근거 |\n|---|---|---|---|\n{rows_rej}\n", encoding="utf-8")
+    out2 = P.daily(dt.date(2026, 11, 7))
+    assert all(c["change"] not in ("new", "rejected") for c in out2["queue"])
+    assert not any(c["name"] != "(주)해담식품" for c in out2["queue"])
     assert (sandbox / "watchlist.json").exists()
     assert (sandbox / "runs" / "2026-11-05.md").exists()

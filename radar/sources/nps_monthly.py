@@ -36,7 +36,7 @@ BASE = "https://www.data.go.kr"
 # ("○○건설/일용/△△ 신축공사 중 철골공사"); they are never targets.
 TEMP_SITE = re.compile(r"일용|[(/\-]\s*상용\s*[)/\-]|공사\s*중|신축|증축|현장|건설공사|본소")
 # 업종 자체가 프로젝트 단위로 인원이 오르내리는 경우 (고용 성장이 사업 성장을 뜻하지 않음)
-CYCLICAL_INDUSTRY = re.compile(r"건설업|공사업|인력 공급|인력공급|경비|청소|사업시설 유지")
+CYCLICAL_INDUSTRY = re.compile(r"건설업|공사업|인력 공급|인력공급|고용 알선|경비|청소|사업시설 유지")
 
 FIELDS = ["key", "name", "bizno6", "adopt", "induty_code", "induty_name", "sido",
           "addr", "headcount", "bill", "acq", "lost", "sites"]
@@ -297,7 +297,8 @@ def scan(yms: list[str], data: dict, *, today: dt.date, max_age_years: float,
         g12, g6 = m.get("growth_12m"), m.get("growth_6m")
         if (g12 is not None and g12 >= min_growth_12m) or (g6 is not None and g6 >= min_growth_6m) \
                 or (m.get("growth_12m_from_zero") and r["headcount"] >= min_headcount * 2):
-            out.append({"key": f"nps:{key}", "name": r["name"], "bizno6": r["bizno6"],
+            # 후보 키에는 '|'를 쓰지 않는다 (판단 기록 마크다운 표를 깨뜨림)
+            out.append({"key": "nps:" + key.replace("|", ":"), "panel_key": key, "name": r["name"], "bizno6": r["bizno6"],
                         "nps": m, "sido_code": r["sido"], "addr": r["addr"],
                         "induty_name": r["induty_name"], "induty_code": r["induty_code"]})
     log(f"[nps-monthly] scan {last}: {len(out)} growth candidates")

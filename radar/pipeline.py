@@ -267,12 +267,12 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
             if m:
                 c["nps"] = m
                 c["nps_key"] = k
-                claimed.add(f"nps:{k}")
+                claimed.add(k)
     # 2) add NPS-only growth candidates (or mark existing ones as multi-source)
     by_key = {c.get("nps_key"): c for c in cands if c.get("nps_key")}
     pats = cfg["global"]["exclude_name_patterns"]
     for f in found:
-        k = f["key"][4:]
+        k = f.get("panel_key") or f["key"][4:]
         if k in by_key:
             if "nps" not in by_key[k]["sources"]:
                 by_key[k]["sources"].append("nps")
@@ -292,6 +292,30 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
             "financials": {},
         })
     return cands
+
+
+# ================================================================= JUDGMENTS
+
+_KEY = re.compile(r"\|\s*((?:dart|nps|loc):[^\s|]+)\s*\|")
+
+
+def load_judgments(folder) -> dict[str, dict]:
+    """Keys the morning judgment already reviewed, from data/judgments/YYYY-MM-DD.md.
+    Rows under a '## 탈락' heading are rejects; any other table row is a survivor."""
+    out: dict[str, dict] = {}
+    if not folder.exists():
+        return out
+    for f in sorted(folder.glob("*.md")):
+        date, section = f.stem[:10], ""
+        for line in f.read_text(encoding="utf-8").splitlines():
+            if line.startswith("## "):
+                section = line[3:].strip()
+                continue
+            m = _KEY.match(line.strip())
+            if m:
+                out[m.group(1)] = {"date": date,
+                                   "verdict": "reject" if "탈락" in section else "keep"}
+    return out
 
 
 # ======================================================================= MAIN
@@ -371,6 +395,8 @@ def daily(today: dt.date | None = None) -> dict:
     # watchlist bookkeeping: new vs changed
     wl_path = DATA / "watchlist.json"
     wl = read_json(wl_path, {})
+    reviewed = load_judgments(DATA / "judgments")
+
     def kinds(reasons):  # "고용 12개월 +55% (+20)" -> "고용 개월 % ()": numbers drift daily
         return {re.sub(r"[\d,.+\-]+", "", r) for r in reasons}
 
@@ -379,14 +405,22 @@ def daily(today: dt.date | None = None) -> dict:
         # baseline = last score recorded BEFORE today, so same-day re-runs don't
         # swallow today's new candidates
         before = [h for h in (prev or {}).get("score_history", []) if h["date"] < today.isoformat()]
-        # 'new' = 판단 단계에 아직 한 번도 안 올라간 회사. 하루 자리가 한정돼 있으므로
-        # 임계점을 넘은 대기 후보는 점수순으로 매일 소진된다 (오늘 이미 올린 건 재실행에도 유지).
-        q = (prev or {}).get("queued_on")
-        if prev is None or not q or q == today.isoformat():
+        # 판단 이력(data/judgments)이 진실의 원천이다.
+        #  - 아직 판단받지 않은 회사 = new (임계점 넘은 대기 후보는 점수순으로 매일 소진)
+        #  - 탈락한 회사 = 점수가 판단 당시보다 15점 이상 오를 때만 changed로 재상정
+        #  - 생존한 회사 = 신호가 새로 생기거나 10점 이상 오르면 changed
+        verdict = reviewed.get(c["key"])
+        base = before[-1]["score"] if before else c["score"]
+        if verdict is None:
             c["change"] = "new"
+        elif verdict["verdict"] == "reject":
+            jscore = next((h["score"] for h in reversed((prev or {}).get("score_history", []))
+                           if h["date"] <= verdict["date"]), base)
+            c["change"] = "changed" if c["score"] - jscore >= 15 and \
+                verdict["date"] < today.isoformat() else "rejected"
         elif not before:
             c["change"] = "same"
-        elif c["score"] - before[-1]["score"] >= 10 or \
+        elif c["score"] - base >= 10 or \
                 kinds(c["reasons"]) - kinds(prev.get("reasons_before", prev.get("reasons", []))):
             c["change"] = "changed"
         else:
@@ -422,12 +456,6 @@ def daily(today: dt.date | None = None) -> dict:
         if c["key"] not in used:
             queue.append(c); used.add(c["key"])
     queue = sorted(queue[:cap], key=lambda c: -c["score"])
-    for c in queue:
-        rec = wl.get(c["key"])
-        if rec is not None:
-            rec.setdefault("queued_on", today.isoformat())
-            rec["last_queued"] = today.isoformat()
-    write_json(wl_path, wl)
     backlog = sum(1 for c in picked if c["change"] == "new") - sum(1 for c in queue if c["change"] == "new")
     payload = {
         "date": today.isoformat(),
