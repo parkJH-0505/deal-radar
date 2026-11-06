@@ -1,3 +1,16 @@
-init ok: ['후보', '관점', '판단 로그']
-push ok: 3 candidates, 0 lens, 20 log rows
-pull ok: 5 rows, 13 lens lines
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/deal-radar/deal-radar/radar/sheets.py", line 257, in <module>
+    {"init": init, "pull": pull, "push": push}[cmd]()
+  File "/home/runner/work/deal-radar/deal-radar/radar/sheets.py", line 176, in init
+    sh.batch_update({"requests": [{  # columns may have shifted (e.g. 등급 inserted): clear old dropdowns
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/gspread/spreadsheet.py", line 101, in batch_update
+    return self.client.batch_update(self.id, body)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/gspread/http_client.py", line 139, in batch_update
+    r = self.request("post", SPREADSHEET_BATCH_UPDATE_URL % id, json=body)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [403]: The caller does not have permission
