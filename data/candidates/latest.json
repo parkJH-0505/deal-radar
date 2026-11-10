@@ -1,23 +1,23 @@
 {
- "date": "2026-11-10",
- "generated_at": "2026-11-10T10:37:03+09:00",
+ "date": "2026-11-11",
+ "generated_at": "2026-11-11T07:59:03+09:00",
  "counts": {
   "dart": 529,
-  "localdata_signals": 0,
-  "scored": 3593,
-  "above_threshold": 1978,
+  "localdata_signals": 97,
+  "scored": 3605,
+  "above_threshold": 1987,
   "queue": 20,
   "backlog_unreviewed": 1856
  },
  "notes": [
-  "DART 증분: 2026-11-06~2026-11-09, 감사보고서 6건",
+  "DART 증분: 2026-11-06~2026-11-10, 감사보고서 10건",
   "DART 후보(설립 5년 이하·첫 외감): 529곳, 감사보고서 신규 파싱 0건",
-  "인허가 식품제조가공업 수집 실패: https://apis.data.go.kr/1741000/food_manufacturing_processors/info -> ConnectTimeout: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Max retries exceeded with url: /1741000/food_manufacturing_processors/info?serviceKey=***&pageNo=530&numOfRows=100&returnType=json&cond%5BDAT_UPDT_PNT%3A%3AGTE%5D=2026-11-07 (Caused by ConnectTimeoutError(<HTTPSConnection(host='apis.data.go.kr', port=443) at 0x77f1b8d0ca70>, 'Connection to apis.data.go.kr timed out. (connect timeout=60)'))",
-  "식품안전나라: 최근 180일 품목제조보고 70,782건(이후 일괄), HACCP 첫 지정 0곳 → 다품종·HACCP 신호 996곳",
-  "식품안전나라 단독 후보 134곳",
+  "인허가 식품제조가공업: 증분(2026-11-07~) 60,692건 → 보유 95,927건, 증설·다거점 신호 97건",
+  "식품안전나라: 최근 180일 품목제조보고 70,741건(이후 일괄), HACCP 첫 지정 0곳 → 다품종·HACCP 신호 994곳",
+  "식품안전나라 단독 후보 133곳",
   "국민연금 패널 202509~202609 (13개월), 고용 급성장 후보 3096곳",
   "법인 전환 감지: 최근 24개월 전환 174곳, 신규 후보 15곳",
-  "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 139곳 (1위 화장품  비누 및 방향제 소매업)",
+  "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 140곳 (1위 화장품  비누 및 방향제 소매업)",
   "국민연금 조회 0곳 (파라미터 방식: camel)"
  ],
  "queue": [
@@ -2693,6 +2693,12 @@
    "change": "rejected"
   },
   {
+   "key": "loc:핫시즈너가공3",
+   "name": "핫시즈너 가공(3)",
+   "score": 74,
+   "change": "rejected"
+  },
+  {
    "key": "dart:01984259",
    "name": "(주)세일투데이",
    "score": 73,
@@ -3653,6 +3659,12 @@
    "change": "new"
   },
   {
+   "key": "loc:더에이치컴퍼니",
+   "name": "주식회사 더에이치컴퍼니",
+   "score": 70,
+   "change": "rejected"
+  },
+  {
    "key": "dart:01920330",
    "name": "(주)아진일렉트론",
    "score": 69,
@@ -4257,6 +4269,12 @@
    "name": "주식회사 브리스9",
    "score": 66,
    "change": "new"
+  },
+  {
+   "key": "loc:프레시원",
+   "name": "농업회사법인 주식회사 프레시원",
+   "score": 66,
+   "change": "rejected"
   },
   {
    "key": "dart:01961036",
@@ -8789,6 +8807,12 @@
    "change": "new"
   },
   {
+   "key": "loc:완뚝",
+   "name": "(주)완뚝",
+   "score": 54,
+   "change": "rejected"
+  },
+  {
    "key": "nps:210829:상도장애인활동지원기관",
    "name": "상도장애인활동지원기관",
    "score": 53,
@@ -9017,6 +9041,12 @@
    "change": "new"
   },
   {
+   "key": "loc:조선에프앤비",
+   "name": "조선에프앤비",
+   "score": 52,
+   "change": "rejected"
+  },
+  {
    "key": "dart:01908709",
    "name": "주식회사 제네시스프라이빗에쿼티",
    "score": 52,
@@ -9045,6 +9075,18 @@
    "name": "주식회사 명성이앤티",
    "score": 52,
    "change": "new"
+  },
+  {
+   "key": "loc:산스파운드리",
+   "name": "산스파운드리",
+   "score": 52,
+   "change": "rejected"
+  },
+  {
+   "key": "loc:제철한입",
+   "name": "제철한입",
+   "score": 52,
+   "change": "rejected"
   },
   {
    "key": "nps:321860:더베이지",
@@ -10563,6 +10605,18 @@
    "name": "주식회사 센골드",
    "score": 46,
    "change": "new"
+  },
+  {
+   "key": "loc:해든푸드",
+   "name": "해든푸드",
+   "score": 46,
+   "change": "rejected"
+  },
+  {
+   "key": "loc:거기가",
+   "name": "거기가",
+   "score": 46,
+   "change": "rejected"
   },
   {
    "key": "nps:172860:스텀프",
