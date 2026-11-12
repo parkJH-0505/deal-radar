@@ -1,4 +1,4 @@
-[dart] 2026-11-08~2026-11-12: 10 audit reports (index=46044)
+[dart] 2026-11-09~2026-11-12: 10 audit reports (index=46044)
 [dart] first-time auditees since 20251009: 4164
 [localdata:food_manufacturing_processors] totalCount=60715
 [localdata:food_manufacturing_processors] fetched 60715 rows in 608 page(s)
@@ -7,4 +7,4 @@
 [foodsafety] I0580 -: 39,615 / 39,615 rows
 [foodsafety] I0580 39,615 rows → first-ever HACCP since 20260517: 0 sites
 [nps-monthly] scan 202609: 3096 growth candidates
-[done] queue=20 above=1986 in 2901s
+[done] queue=20 above=1986 in 2510s
