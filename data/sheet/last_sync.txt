@@ -1,3 +1,3 @@
 init ok: ['후보', '관점', '판단 로그']
-push ok: 2 candidates, 0 lens, 20 log rows
+push: outbox empty
 pull ok: 18 rows, 13 lens lines
