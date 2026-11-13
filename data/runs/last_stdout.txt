@@ -1,10 +1,10 @@
-[dart] 2026-11-09~2026-11-13: 14 audit reports (index=46044)
+[dart] 2026-11-10~2026-11-13: 11 audit reports (index=46044)
 [dart] first-time auditees since 20251010: 4164
 [localdata:food_manufacturing_processors] totalCount=60727
 [localdata:food_manufacturing_processors] fetched 60727 rows in 608 page(s)
 [localdata] 식품제조가공업: 96 expansion-type signals
-[foodsafety] I1250 PRMS_DT=20260518: 71,790 / 71,790 rows
-[foodsafety] I0580 -: 39,629 / 39,631 rows
+[foodsafety] I1250 PRMS_DT=20260518: 71,795 / 71,790 rows
+[foodsafety] I0580 -: 39,629 / 39,629 rows
 [foodsafety] I0580 39,629 rows → first-ever HACCP since 20260518: 0 sites
 [nps-monthly] scan 202609: 3096 growth candidates
-[done] queue=20 above=1985 in 2454s
+[done] queue=20 above=1985 in 2236s
