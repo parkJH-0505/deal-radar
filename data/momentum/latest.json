@@ -627,12 +627,12 @@
   },
   {
    "industry": "남녀용 겉옷 및 셔츠 도매업",
-   "young_firms": 189,
-   "young_headcount": 2158,
+   "young_firms": 188,
+   "young_headcount": 2152,
    "new_6m": 5,
    "new_6m_year_ago": 6,
    "formation_yoy": -0.091,
-   "cohort_growth_12m": 0.153,
+   "cohort_growth_12m": 0.154,
    "momentum": 0.684,
    "rank": 53,
    "hot": false
@@ -1251,8 +1251,8 @@
   },
   {
    "industry": "건물 및 토목 엔지니어링 서비스업",
-   "young_firms": 304,
-   "young_headcount": 3065,
+   "young_firms": 303,
+   "young_headcount": 3058,
    "new_6m": 16,
    "new_6m_year_ago": 18,
    "formation_yoy": -0.087,
@@ -1767,13 +1767,13 @@
   },
   {
    "industry": "그 외 기타 분류 안된 사업 지원 서비스업",
-   "young_firms": 1530,
-   "young_headcount": 27556,
+   "young_firms": 1529,
+   "young_headcount": 27550,
    "new_6m": 113,
    "new_6m_year_ago": 115,
    "formation_yoy": -0.017,
-   "cohort_growth_12m": 0.05,
-   "momentum": 0.484,
+   "cohort_growth_12m": 0.049,
+   "momentum": 0.482,
    "rank": 148,
    "hot": false
   },
@@ -2642,6 +2642,18 @@
    "hot": false
   },
   {
+   "industry": "재생용 재료 수집 및 판매업",
+   "young_firms": 101,
+   "young_headcount": 915,
+   "new_6m": 3,
+   "new_6m_year_ago": 8,
+   "formation_yoy": -0.385,
+   "cohort_growth_12m": 0.049,
+   "momentum": 0.271,
+   "rank": 221,
+   "hot": false
+  },
+  {
    "industry": "전세버스 운송업",
    "young_firms": 52,
    "young_headcount": 531,
@@ -2650,7 +2662,7 @@
    "formation_yoy": -0.143,
    "cohort_growth_12m": 0.005,
    "momentum": 0.271,
-   "rank": 221,
+   "rank": 222,
    "hot": false
   },
   {
@@ -2662,18 +2674,6 @@
    "formation_yoy": -0.286,
    "cohort_growth_12m": 0.04,
    "momentum": 0.271,
-   "rank": 222,
-   "hot": false
-  },
-  {
-   "industry": "재생용 재료 수집 및 판매업",
-   "young_firms": 101,
-   "young_headcount": 915,
-   "new_6m": 3,
-   "new_6m_year_ago": 8,
-   "formation_yoy": -0.385,
-   "cohort_growth_12m": 0.049,
-   "momentum": 0.27,
    "rank": 223,
    "hot": false
   },
