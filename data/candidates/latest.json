@@ -1,20 +1,20 @@
 {
- "date": "2026-11-14",
- "generated_at": "2026-11-14T08:43:20+09:00",
+ "date": "2026-11-15",
+ "generated_at": "2026-11-15T07:15:06+09:00",
  "counts": {
-  "dart": 529,
-  "localdata_signals": 96,
-  "scored": 3603,
-  "above_threshold": 1985,
+  "dart": 528,
+  "localdata_signals": 94,
+  "scored": 3599,
+  "above_threshold": 1984,
   "queue": 20,
-  "backlog_unreviewed": 1797
+  "backlog_unreviewed": 1777
  },
  "notes": [
-  "DART 증분: 2026-11-10~2026-11-13, 감사보고서 11건",
-  "DART 후보(설립 5년 이하·첫 외감): 529곳, 감사보고서 신규 파싱 0건",
-  "인허가 식품제조가공업: 증분(2026-11-11~) 60,727건 → 보유 95,938건, 증설·다거점 신호 96건",
-  "식품안전나라: 최근 180일 품목제조보고 71,789건(이후 일괄), HACCP 첫 지정 0곳 → 다품종·HACCP 신호 1,001곳",
-  "식품안전나라 단독 후보 132곳",
+  "DART 증분: 2026-11-10~2026-11-14, 감사보고서 11건",
+  "DART 후보(설립 5년 이하·첫 외감): 528곳, 감사보고서 신규 파싱 0건",
+  "인허가 식품제조가공업: 증분(2026-11-11~) 32,400건 → 보유 95,945건, 증설·다거점 신호 94건",
+  "식품안전나라: 최근 180일 품목제조보고 71,293건(이후 일괄), HACCP 첫 지정 0곳 → 다품종·HACCP 신호 989곳",
+  "식품안전나라 단독 후보 129곳",
   "국민연금 패널 202509~202609 (13개월), 고용 급성장 후보 3096곳",
   "법인 전환 감지: 최근 24개월 전환 174곳, 신규 후보 15곳",
   "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 140곳 (1위 화장품  비누 및 방향제 소매업)",
@@ -22,633 +22,133 @@
  ],
  "queue": [
   {
-   "key": "nps:684860:리월드",
-   "name": "리월드 주식회사",
-   "name_norm": "리월드",
+   "key": "nps:779850:아이벡스메디칼시스템즈서울",
+   "name": "(주)아이벡스메디칼시스템즈_서울지점",
+   "name_norm": "아이벡스메디칼시스템즈서울",
    "sources": [
     "nps"
    ],
-   "bizno6": "684860",
+   "bizno6": "779850",
    "age_years": 2.9,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "전남광주통합특별시 나주시 왕곡면 혁신산단6길",
-   "industry": "치약  비누 및 기타 세제 제조업",
-   "induty_code": "242402",
+   "addr": "서울특별시 송파구 오금로",
+   "industry": "의료용품 도매업",
+   "induty_code": "513313",
    "nps": {
     "ym": "202609",
-    "headcount": 13,
-    "monthly_bill": 3396180,
+    "headcount": 40,
+    "monthly_bill": 14965680,
     "sites": 1,
     "adopt": "20240101",
-    "industry": "치약  비누 및 기타 세제 제조업",
+    "industry": "의료용품 도매업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 13
-     },
-     {
-      "ym": "202608",
-      "headcount": 11
-     },
-     {
-      "ym": "202607",
-      "headcount": 11
-     },
-     {
-      "ym": "202606",
-      "headcount": 11
-     },
-     {
-      "ym": "202605",
-      "headcount": 9
-     },
-     {
-      "ym": "202604",
-      "headcount": 10
-     },
-     {
-      "ym": "202603",
-      "headcount": 7
-     },
-     {
-      "ym": "202602",
-      "headcount": 7
-     },
-     {
-      "ym": "202601",
-      "headcount": 7
-     },
-     {
-      "ym": "202512",
-      "headcount": 7
-     },
-     {
-      "ym": "202511",
-      "headcount": 7
-     },
-     {
-      "ym": "202510",
-      "headcount": 5
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.182,
-    "growth_6m": 0.857,
-    "growth_12m": 1.6,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.38,
-    "bill_per_head": 261245,
-    "bill_per_head_change_12m": -0.252
-   },
-   "nps_key": "684860|리월드",
-   "financials": {},
-   "industry_momentum": {
-    "industry": "치약  비누 및 기타 세제 제조업",
-    "rank": 8,
-    "formation_yoy": 0.167,
-    "cohort_growth_12m": 0.402,
-    "young_firms": 43
-   },
-   "score": 72,
-   "reasons": [
-    "업력 2.9년(추정) (+16)",
-    "고용 12개월 +160% (+30)",
-    "국민연금 가입자 13명",
-    "팀 13명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "업종 모멘텀 8위: 치약  비누 및 기타 세제 제조업 (젊은 법인 신설 +17%, 고용 +40%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:379860:푸드웨이브",
-   "name": "주식회사푸드웨이브",
-   "name_norm": "푸드웨이브",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "379860",
-   "age_years": 2.7,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 용인시 기흥구 강남로",
-   "industry": "빵류 제조업",
-   "induty_code": "154104",
-   "nps": {
-    "ym": "202609",
-    "headcount": 13,
-    "monthly_bill": 3547020,
-    "sites": 1,
-    "adopt": "20240304",
-    "industry": "빵류 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 13
-     },
-     {
-      "ym": "202608",
-      "headcount": 12
-     },
-     {
-      "ym": "202607",
-      "headcount": 12
-     },
-     {
-      "ym": "202606",
-      "headcount": 10
-     },
-     {
-      "ym": "202605",
-      "headcount": 9
-     },
-     {
-      "ym": "202604",
-      "headcount": 9
-     },
-     {
-      "ym": "202603",
-      "headcount": 10
-     },
-     {
-      "ym": "202602",
-      "headcount": 8
-     },
-     {
-      "ym": "202601",
-      "headcount": 8
-     },
-     {
-      "ym": "202512",
-      "headcount": 8
-     },
-     {
-      "ym": "202511",
-      "headcount": 5
-     },
-     {
-      "ym": "202510",
-      "headcount": 5
-     },
-     {
-      "ym": "202509",
-      "headcount": 6
-     }
-    ],
-    "growth_3m": 0.3,
-    "growth_6m": 0.3,
-    "growth_12m": 1.167,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.43,
-    "bill_per_head": 272848,
-    "bill_per_head_change_12m": 0.051
-   },
-   "nps_key": "379860|푸드웨이브",
-   "financials": {},
-   "industry_momentum": {
-    "industry": "빵류 제조업",
-    "rank": 14,
-    "formation_yoy": 0.188,
-    "cohort_growth_12m": 0.171,
-    "young_firms": 121
-   },
-   "score": 72,
-   "reasons": [
-    "업력 2.7년(추정) (+16)",
-    "고용 12개월 +117% (+30)",
-    "국민연금 가입자 13명",
-    "팀 13명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "업종 모멘텀 14위: 빵류 제조업 (젊은 법인 신설 +19%, 고용 +17%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:604814:에이아이씨엔티",
-   "name": "에이아이씨엔티 주식회사",
-   "name_norm": "에이아이씨엔티",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "604814",
-   "age_years": 2.0,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "전남광주통합특별시 북구 첨단과기로",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 13,
-    "monthly_bill": 5465700,
-    "sites": 1,
-    "adopt": "20241201",
-    "industry": "응용 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 13
-     },
-     {
-      "ym": "202608",
-      "headcount": 8
-     },
-     {
-      "ym": "202607",
-      "headcount": 8
-     },
-     {
-      "ym": "202606",
-      "headcount": 6
-     },
-     {
-      "ym": "202605",
-      "headcount": 6
-     },
-     {
-      "ym": "202604",
-      "headcount": 6
-     },
-     {
-      "ym": "202603",
-      "headcount": 6
-     },
-     {
-      "ym": "202602",
-      "headcount": 6
-     },
-     {
-      "ym": "202601",
-      "headcount": 6
-     },
-     {
-      "ym": "202512",
-      "headcount": 6
-     },
-     {
-      "ym": "202511",
-      "headcount": 6
-     },
-     {
-      "ym": "202510",
-      "headcount": 6
-     },
-     {
-      "ym": "202509",
-      "headcount": 6
-     }
-    ],
-    "growth_3m": 1.167,
-    "growth_6m": 1.167,
-    "growth_12m": 1.167,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.71,
-    "bill_per_head": 420438,
-    "bill_per_head_change_12m": 0.258
-   },
-   "nps_key": "604814|에이아이씨엔티",
-   "financials": {},
-   "score": 72,
-   "reasons": [
-    "업력 2.0년(추정) (+22)",
-    "고용 12개월 +117% (+30)",
-    "국민연금 가입자 13명",
-    "팀 13명 (얼리 스테이지 규모) (+8)",
-    "1인당 고지금액 42만원 (상위 15% 보수 수준) (+6)",
-    "1인당 고지금액 12개월 +26% (+6)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:352810:다트로보틱스dartroboticsinc",
-   "name": "다트로보틱스 주식회사 (DART ROBOTICS Inc.)",
-   "name_norm": "다트로보틱스dartroboticsinc",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "352810",
-   "age_years": 1.5,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 강남구 언주로98길",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 12,
-    "monthly_bill": 6048360,
-    "sites": 1,
-    "adopt": "20250601",
-    "industry": "응용 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 12
-     },
-     {
-      "ym": "202608",
-      "headcount": 10
-     },
-     {
-      "ym": "202607",
-      "headcount": 10
-     },
-     {
-      "ym": "202606",
-      "headcount": 11
-     },
-     {
-      "ym": "202605",
-      "headcount": 11
-     },
-     {
-      "ym": "202604",
-      "headcount": 11
-     },
-     {
-      "ym": "202603",
-      "headcount": 11
-     },
-     {
-      "ym": "202602",
-      "headcount": 11
-     },
-     {
-      "ym": "202601",
-      "headcount": 11
-     },
-     {
-      "ym": "202512",
-      "headcount": 11
-     },
-     {
-      "ym": "202511",
-      "headcount": 10
-     },
-     {
-      "ym": "202510",
-      "headcount": 9
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.091,
-    "growth_6m": 0.091,
-    "growth_12m": 1.4,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.57,
-    "bill_per_head": 504030,
-    "bill_per_head_change_12m": 0.24
-   },
-   "nps_key": "352810|다트로보틱스dartroboticsinc",
-   "financials": {},
-   "score": 72,
-   "reasons": [
-    "업력 1.5년(추정) (+22)",
-    "고용 12개월 +140% (+30)",
-    "국민연금 가입자 12명",
-    "팀 12명 (얼리 스테이지 규모) (+8)",
-    "1인당 고지금액 50만원 (상위 15% 보수 수준) (+6)",
-    "1인당 고지금액 12개월 +24% (+6)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:294810:베러스쿱크리머리",
-   "name": "(주)베러스쿱크리머리",
-   "name_norm": "베러스쿱크리머리",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "294810",
-   "age_years": 1.8,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 강남구 선릉로",
-   "industry": "낙농품 및 동ㆍ식물성 유지 도매업",
-   "induty_code": "512245",
-   "nps": {
-    "ym": "202609",
-    "headcount": 256,
-    "monthly_bill": 64278420,
-    "sites": 1,
-    "adopt": "20250115",
-    "industry": "낙농품 및 동ㆍ식물성 유지 도매업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 256
-     },
-     {
-      "ym": "202608",
-      "headcount": 246
-     },
-     {
-      "ym": "202607",
-      "headcount": 220
-     },
-     {
-      "ym": "202606",
-      "headcount": 181
-     },
-     {
-      "ym": "202605",
-      "headcount": 157
-     },
-     {
-      "ym": "202604",
-      "headcount": 145
-     },
-     {
-      "ym": "202603",
-      "headcount": 135
-     },
-     {
-      "ym": "202602",
-      "headcount": 130
-     },
-     {
-      "ym": "202601",
-      "headcount": 126
-     },
-     {
-      "ym": "202512",
-      "headcount": 131
-     },
-     {
-      "ym": "202511",
-      "headcount": 123
-     },
-     {
-      "ym": "202510",
-      "headcount": 119
-     },
-     {
-      "ym": "202509",
-      "headcount": 116
-     }
-    ],
-    "growth_3m": 0.414,
-    "growth_6m": 0.896,
-    "growth_12m": 1.207,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.28,
-    "bill_per_head": 251088,
-    "bill_per_head_change_12m": -0.205
-   },
-   "nps_key": "294810|베러스쿱크리머리",
-   "financials": {},
-   "industry_momentum": {
-    "industry": "낙농품 및 동ㆍ식물성 유지 도매업",
-    "rank": 9,
-    "formation_yoy": 0.167,
-    "cohort_growth_12m": 0.387,
-    "young_firms": 41
-   },
-   "score": 70,
-   "reasons": [
-    "업력 1.8년(추정) (+22)",
-    "고용 12개월 +121% (+30)",
-    "국민연금 가입자 256명",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "업종 모멘텀 9위: 낙농품 및 동ㆍ식물성 유지 도매업 (젊은 법인 신설 +17%, 고용 +39%) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:549870:홀리데이로보틱스",
-   "name": "주식회사 홀리데이로보틱스",
-   "name_norm": "홀리데이로보틱스",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "549870",
-   "age_years": 2.6,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 강남구 논현로85길",
-   "industry": "시스템 소프트웨어 개발 및 공급업",
-   "induty_code": "722004",
-   "nps": {
-    "ym": "202609",
-    "headcount": 71,
-    "monthly_bill": 40948020,
-    "sites": 1,
-    "adopt": "20240401",
-    "industry": "시스템 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 71
-     },
-     {
-      "ym": "202608",
-      "headcount": 69
-     },
-     {
-      "ym": "202607",
-      "headcount": 60
-     },
-     {
-      "ym": "202606",
-      "headcount": 50
-     },
-     {
-      "ym": "202605",
-      "headcount": 45
-     },
-     {
-      "ym": "202604",
       "headcount": 40
      },
      {
-      "ym": "202603",
+      "ym": "202608",
+      "headcount": 37
+     },
+     {
+      "ym": "202607",
+      "headcount": 35
+     },
+     {
+      "ym": "202606",
       "headcount": 36
      },
      {
+      "ym": "202605",
+      "headcount": 36
+     },
+     {
+      "ym": "202604",
+      "headcount": 37
+     },
+     {
+      "ym": "202603",
+      "headcount": 35
+     },
+     {
       "ym": "202602",
-      "headcount": 34
+      "headcount": 35
      },
      {
       "ym": "202601",
-      "headcount": 29
+      "headcount": 30
      },
      {
       "ym": "202512",
-      "headcount": 28
+      "headcount": 20
      },
      {
       "ym": "202511",
-      "headcount": 25
+      "headcount": 17
      },
      {
       "ym": "202510",
-      "headcount": 25
+      "headcount": 16
      },
      {
       "ym": "202509",
-      "headcount": 24
+      "headcount": 15
      }
     ],
-    "growth_3m": 0.42,
-    "growth_6m": 0.972,
-    "growth_12m": 1.958,
-    "up_months": 12,
+    "growth_3m": 0.111,
+    "growth_6m": 0.143,
+    "growth_12m": 1.667,
+    "up_months": 10,
     "months_observed": 12,
-    "max_jump_share": 0.21,
-    "bill_per_head": 576733,
-    "bill_per_head_change_12m": 0.006
+    "max_jump_share": 0.4,
+    "bill_per_head": 374142,
+    "bill_per_head_change_12m": 0.145
    },
-   "nps_key": "549870|홀리데이로보틱스",
+   "nps_key": "779850|아이벡스메디칼시스템즈서울",
    "financials": {},
    "score": 70,
    "reasons": [
-    "업력 2.6년(추정) (+16)",
-    "고용 12개월 +196% (+30)",
-    "국민연금 가입자 71명",
-    "팀 71명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 58만원 (상위 15% 보수 수준) (+6)"
+    "업력 2.9년(추정) (+16)",
+    "고용 12개월 +167% (+30)",
+    "국민연금 가입자 40명",
+    "팀 40명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +14% (+6)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:572850:네오오토예산",
-   "name": "(주)네오오토 예산 제4공장",
-   "name_norm": "네오오토예산",
+   "key": "nps:264880:법무법인스탠다드",
+   "name": "법무법인 스탠다드",
+   "name_norm": "법무법인스탠다드",
    "sources": [
     "nps"
    ],
-   "bizno6": "572850",
-   "age_years": 1.4,
+   "bizno6": "264880",
+   "age_years": 1.8,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "",
-   "industry": "그 외 자동차용 신품 부품 제조업",
-   "induty_code": "343000",
+   "addr": "서울특별시 강남구 테헤란로38길",
+   "industry": "변호사업",
+   "induty_code": "741101",
    "nps": {
     "ym": "202609",
-    "headcount": 52,
-    "monthly_bill": 16802740,
+    "headcount": 41,
+    "monthly_bill": 15528980,
     "sites": 1,
-    "adopt": "20250616",
-    "industry": "그 외 자동차용 신품 부품 제조업",
+    "adopt": "20250206",
+    "industry": "변호사업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 52
+      "headcount": 41
      },
      {
       "ym": "202608",
-      "headcount": 52
+      "headcount": 41
      },
      {
       "ym": "202607",
-      "headcount": 42
+      "headcount": 36
      },
      {
       "ym": "202606",
@@ -656,376 +156,90 @@
      },
      {
       "ym": "202605",
-      "headcount": 41
+      "headcount": 29
      },
      {
       "ym": "202604",
-      "headcount": 38
-     },
-     {
-      "ym": "202603",
-      "headcount": 31
-     },
-     {
-      "ym": "202602",
-      "headcount": 32
-     },
-     {
-      "ym": "202601",
-      "headcount": 31
-     },
-     {
-      "ym": "202512",
-      "headcount": 20
-     },
-     {
-      "ym": "202511",
-      "headcount": 20
-     },
-     {
-      "ym": "202510",
-      "headcount": 7
-     },
-     {
-      "ym": "202509",
-      "headcount": 7
-     }
-    ],
-    "growth_3m": 0.405,
-    "growth_6m": 0.677,
-    "growth_12m": 6.429,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.29,
-    "bill_per_head": 323130,
-    "bill_per_head_change_12m": -0.019
-   },
-   "nps_key": "572850|네오오토예산",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 1.4년(추정) (+22)",
-    "고용 12개월 +643% (+30)",
-    "국민연금 가입자 52명",
-    "팀 52명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:134810:진영산업",
-   "name": "진영산업(주) 경주공장",
-   "name_norm": "진영산업",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "134810",
-   "age_years": 1.5,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경상북도 경주시 내남면 명계3산단로3길",
-   "industry": "그 외 자동차용 신품 부품 제조업",
-   "induty_code": "343000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 55,
-    "monthly_bill": 17775920,
-    "sites": 1,
-    "adopt": "20250523",
-    "industry": "그 외 자동차용 신품 부품 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 55
-     },
-     {
-      "ym": "202608",
-      "headcount": 55
-     },
-     {
-      "ym": "202607",
-      "headcount": 51
-     },
-     {
-      "ym": "202606",
-      "headcount": 50
-     },
-     {
-      "ym": "202605",
-      "headcount": 49
-     },
-     {
-      "ym": "202604",
-      "headcount": 50
-     },
-     {
-      "ym": "202603",
-      "headcount": 49
-     },
-     {
-      "ym": "202602",
-      "headcount": 47
-     },
-     {
-      "ym": "202601",
-      "headcount": 42
-     },
-     {
-      "ym": "202512",
-      "headcount": 44
-     },
-     {
-      "ym": "202511",
-      "headcount": 30
-     },
-     {
-      "ym": "202510",
       "headcount": 28
+     },
+     {
+      "ym": "202603",
+      "headcount": 24
+     },
+     {
+      "ym": "202602",
+      "headcount": 23
+     },
+     {
+      "ym": "202601",
+      "headcount": 23
+     },
+     {
+      "ym": "202512",
+      "headcount": 22
+     },
+     {
+      "ym": "202511",
+      "headcount": 22
+     },
+     {
+      "ym": "202510",
+      "headcount": 21
      },
      {
       "ym": "202509",
       "headcount": 17
      }
     ],
-    "growth_3m": 0.1,
-    "growth_6m": 0.122,
-    "growth_12m": 2.235,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.37,
-    "bill_per_head": 323199,
-    "bill_per_head_change_12m": 0.076
-   },
-   "nps_key": "134810|진영산업",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 1.5년(추정) (+22)",
-    "고용 12개월 +224% (+30)",
-    "국민연금 가입자 55명",
-    "팀 55명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:650860:여울회계법인",
-   "name": "여울회계법인",
-   "name_norm": "여울회계법인",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "650860",
-   "age_years": 1.2,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 서초구 남부순환로347길",
-   "industry": "공인회계사업",
-   "induty_code": "741202",
-   "nps": {
-    "ym": "202609",
-    "headcount": 55,
-    "monthly_bill": 12331300,
-    "sites": 1,
-    "adopt": "20250831",
-    "industry": "공인회계사업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 55
-     },
-     {
-      "ym": "202608",
-      "headcount": 50
-     },
-     {
-      "ym": "202607",
-      "headcount": 52
-     },
-     {
-      "ym": "202606",
-      "headcount": 49
-     },
-     {
-      "ym": "202605",
-      "headcount": 49
-     },
-     {
-      "ym": "202604",
-      "headcount": 45
-     },
-     {
-      "ym": "202603",
-      "headcount": 41
-     },
-     {
-      "ym": "202602",
-      "headcount": 39
-     },
-     {
-      "ym": "202601",
-      "headcount": 39
-     },
-     {
-      "ym": "202512",
-      "headcount": 32
-     },
-     {
-      "ym": "202511",
-      "headcount": 31
-     },
-     {
-      "ym": "202510",
-      "headcount": 28
-     },
-     {
-      "ym": "202509",
-      "headcount": 18
-     }
-    ],
-    "growth_3m": 0.122,
-    "growth_6m": 0.341,
-    "growth_12m": 2.056,
+    "growth_3m": 0.108,
+    "growth_6m": 0.708,
+    "growth_12m": 1.412,
     "up_months": 11,
     "months_observed": 12,
-    "max_jump_share": 0.27,
-    "bill_per_head": 224205,
-    "bill_per_head_change_12m": 0.096
+    "max_jump_share": 0.33,
+    "bill_per_head": 378756,
+    "bill_per_head_change_12m": 0.029
    },
-   "nps_key": "650860|여울회계법인",
+   "nps_key": "264880|법무법인스탠다드",
    "financials": {},
    "score": 70,
    "reasons": [
-    "업력 1.2년(추정) (+22)",
-    "고용 12개월 +206% (+30)",
-    "국민연금 가입자 55명",
-    "팀 55명 (얼리 스테이지 규모) (+8)",
+    "업력 1.8년(추정) (+22)",
+    "고용 12개월 +141% (+30)",
+    "국민연금 가입자 41명",
+    "팀 41명 (얼리 스테이지 규모) (+8)",
     "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:570880:이엠엑스",
-   "name": "주식회사 이엠엑스",
-   "name_norm": "이엠엑스",
+   "key": "nps:412860:씨엔케이네트워크",
+   "name": "주식회사 씨엔케이네트워크",
+   "name_norm": "씨엔케이네트워크",
    "sources": [
     "nps"
    ],
-   "bizno6": "570880",
-   "age_years": 2.8,
+   "bizno6": "412860",
+   "age_years": 2.0,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 마포구 월드컵북로1길",
-   "industry": "일반 영화 및 비디오물 제작업",
-   "induty_code": "921502",
+   "addr": "대구광역시 동구 이노밸리로26길",
+   "industry": "기타 엔지니어링 서비스업",
+   "induty_code": "742104",
    "nps": {
     "ym": "202609",
-    "headcount": 47,
-    "monthly_bill": 20997000,
+    "headcount": 46,
+    "monthly_bill": 13509440,
     "sites": 1,
-    "adopt": "20240209",
-    "industry": "일반 영화 및 비디오물 제작업",
+    "adopt": "20241202",
+    "industry": "기타 엔지니어링 서비스업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 47
+      "headcount": 46
      },
      {
       "ym": "202608",
-      "headcount": 42
-     },
-     {
-      "ym": "202607",
-      "headcount": 37
-     },
-     {
-      "ym": "202606",
-      "headcount": 35
-     },
-     {
-      "ym": "202605",
-      "headcount": 31
-     },
-     {
-      "ym": "202604",
-      "headcount": 27
-     },
-     {
-      "ym": "202603",
-      "headcount": 24
-     },
-     {
-      "ym": "202602",
-      "headcount": 20
-     },
-     {
-      "ym": "202601",
-      "headcount": 17
-     },
-     {
-      "ym": "202512",
-      "headcount": 13
-     },
-     {
-      "ym": "202511",
-      "headcount": 12
-     },
-     {
-      "ym": "202510",
-      "headcount": 11
-     },
-     {
-      "ym": "202509",
-      "headcount": 12
-     }
-    ],
-    "growth_3m": 0.343,
-    "growth_6m": 0.958,
-    "growth_12m": 2.917,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.14,
-    "bill_per_head": 446745,
-    "bill_per_head_change_12m": -0.039
-   },
-   "nps_key": "570880|이엠엑스",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 2.8년(추정) (+16)",
-    "고용 12개월 +292% (+30)",
-    "국민연금 가입자 47명",
-    "팀 47명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 45만원 (상위 15% 보수 수준) (+6)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:277860:오리지널아카이브",
-   "name": "오리지널아카이브 주식회사",
-   "name_norm": "오리지널아카이브",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "277860",
-   "age_years": 1.7,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 마포구 독막로3길",
-   "industry": "전자상거래 소매업",
-   "induty_code": "525101",
-   "nps": {
-    "ym": "202609",
-    "headcount": 52,
-    "monthly_bill": 20149980,
-    "sites": 1,
-    "adopt": "20250306",
-    "industry": "전자상거래 소매업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 52
-     },
-     {
-      "ym": "202608",
-      "headcount": 51
+      "headcount": 44
      },
      {
       "ym": "202607",
@@ -1033,218 +247,305 @@
      },
      {
       "ym": "202606",
-      "headcount": 43
+      "headcount": 45
      },
      {
       "ym": "202605",
-      "headcount": 37
+      "headcount": 44
      },
      {
       "ym": "202604",
-      "headcount": 33
+      "headcount": 43
      },
      {
       "ym": "202603",
-      "headcount": 33
-     },
-     {
-      "ym": "202602",
-      "headcount": 30
-     },
-     {
-      "ym": "202601",
       "headcount": 32
      },
      {
-      "ym": "202512",
-      "headcount": 24
-     },
-     {
-      "ym": "202511",
+      "ym": "202602",
       "headcount": 21
      },
      {
+      "ym": "202601",
+      "headcount": 21
+     },
+     {
+      "ym": "202512",
+      "headcount": 22
+     },
+     {
+      "ym": "202511",
+      "headcount": 22
+     },
+     {
       "ym": "202510",
-      "headcount": 19
+      "headcount": 22
      },
      {
       "ym": "202509",
-      "headcount": 18
+      "headcount": 22
      }
     ],
-    "growth_3m": 0.209,
-    "growth_6m": 0.576,
-    "growth_12m": 1.889,
-    "up_months": 11,
+    "growth_3m": 0.022,
+    "growth_6m": 0.438,
+    "growth_12m": 1.091,
+    "up_months": 10,
     "months_observed": 12,
-    "max_jump_share": 0.24,
-    "bill_per_head": 387500,
-    "bill_per_head_change_12m": 0.007
+    "max_jump_share": 0.46,
+    "bill_per_head": 293683,
+    "bill_per_head_change_12m": 0.015
    },
-   "nps_key": "277860|오리지널아카이브",
+   "nps_key": "412860|씨엔케이네트워크",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.0년(추정) (+22)",
+    "고용 12개월 +109% (+30)",
+    "국민연금 가입자 46명",
+    "팀 46명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:217830:노원구청행정지원과실무수습",
+   "name": "노원구청-행정지원과(실무수습)",
+   "name_norm": "노원구청행정지원과실무수습",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "217830",
+   "age_years": 2.9,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 노원구 노해로",
+   "industry": "비주거용 건물 임대업(점포  자기땅)",
+   "induty_code": "701201",
+   "nps": {
+    "ym": "202609",
+    "headcount": 34,
+    "monthly_bill": 6889080,
+    "sites": 1,
+    "adopt": "20240101",
+    "industry": "비주거용 건물 임대업(점포  자기땅)",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 34
+     },
+     {
+      "ym": "202608",
+      "headcount": 34
+     },
+     {
+      "ym": "202607",
+      "headcount": 25
+     },
+     {
+      "ym": "202606",
+      "headcount": 25
+     },
+     {
+      "ym": "202605",
+      "headcount": 25
+     },
+     {
+      "ym": "202604",
+      "headcount": 25
+     },
+     {
+      "ym": "202603",
+      "headcount": 25
+     },
+     {
+      "ym": "202602",
+      "headcount": 25
+     },
+     {
+      "ym": "202601",
+      "headcount": 22
+     },
+     {
+      "ym": "202510",
+      "headcount": 10
+     },
+     {
+      "ym": "202509",
+      "headcount": 10
+     }
+    ],
+    "growth_3m": 0.36,
+    "growth_6m": 0.36,
+    "growth_12m": 2.4,
+    "up_months": 10,
+    "months_observed": 10,
+    "max_jump_share": 0.5,
+    "bill_per_head": 202620,
+    "bill_per_head_change_12m": 0.107
+   },
+   "nps_key": "217830|노원구청행정지원과실무수습",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.9년(추정) (+16)",
+    "고용 12개월 +240% (+30)",
+    "국민연금 가입자 34명",
+    "팀 34명 (얼리 스테이지 규모) (+8)",
+    "10개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +11% (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:764860:에버런스",
+   "name": "주식회사 에버런스",
+   "name_norm": "에버런스",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "764860",
+   "age_years": 1.7,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 구로구 디지털로34길",
+   "industry": "광고 대행업",
+   "induty_code": "743002",
+   "nps": {
+    "ym": "202609",
+    "headcount": 32,
+    "monthly_bill": 8890300,
+    "sites": 1,
+    "adopt": "20250217",
+    "industry": "광고 대행업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 32
+     },
+     {
+      "ym": "202608",
+      "headcount": 30
+     },
+     {
+      "ym": "202607",
+      "headcount": 28
+     },
+     {
+      "ym": "202606",
+      "headcount": 28
+     },
+     {
+      "ym": "202605",
+      "headcount": 21
+     },
+     {
+      "ym": "202604",
+      "headcount": 19
+     },
+     {
+      "ym": "202603",
+      "headcount": 15
+     },
+     {
+      "ym": "202602",
+      "headcount": 13
+     },
+     {
+      "ym": "202601",
+      "headcount": 13
+     },
+     {
+      "ym": "202512",
+      "headcount": 13
+     },
+     {
+      "ym": "202511",
+      "headcount": 11
+     },
+     {
+      "ym": "202510",
+      "headcount": 11
+     },
+     {
+      "ym": "202509",
+      "headcount": 8
+     }
+    ],
+    "growth_3m": 0.143,
+    "growth_6m": 1.133,
+    "growth_12m": 3.0,
+    "up_months": 12,
+    "months_observed": 12,
+    "max_jump_share": 0.29,
+    "bill_per_head": 277822,
+    "bill_per_head_change_12m": -0.119
+   },
+   "nps_key": "764860|에버런스",
    "financials": {},
    "score": 70,
    "reasons": [
     "업력 1.7년(추정) (+22)",
-    "고용 12개월 +189% (+30)",
-    "국민연금 가입자 52명",
-    "팀 52명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+    "고용 12개월 +300% (+30)",
+    "국민연금 가입자 32명",
+    "팀 32명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:553860:러쉬에잇rusheightinc",
-   "name": "러쉬에잇주식회사(RushEightInc.)",
-   "name_norm": "러쉬에잇rusheightinc",
+   "key": "nps:811870:법무법인초원",
+   "name": "법무법인 초원",
+   "name_norm": "법무법인초원",
    "sources": [
     "nps"
    ],
-   "bizno6": "553860",
-   "age_years": 3.0,
+   "bizno6": "811870",
+   "age_years": 1.4,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 강남구 언주로",
-   "industry": "기타 게임 소프트웨어 개발 및 공급업",
-   "induty_code": "722003",
+   "addr": "서울특별시 강남구 영동대로",
+   "industry": "변호사업",
+   "induty_code": "741101",
    "nps": {
     "ym": "202609",
-    "headcount": 52,
-    "monthly_bill": 19049280,
+    "headcount": 39,
+    "monthly_bill": 13727040,
     "sites": 1,
-    "adopt": "20231201",
-    "industry": "기타 게임 소프트웨어 개발 및 공급업",
+    "adopt": "20250701",
+    "industry": "변호사업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 52
+      "headcount": 39
      },
      {
       "ym": "202608",
-      "headcount": 48
+      "headcount": 37
      },
      {
       "ym": "202607",
-      "headcount": 45
+      "headcount": 36
      },
      {
       "ym": "202606",
-      "headcount": 35
+      "headcount": 31
      },
      {
       "ym": "202605",
-      "headcount": 28
+      "headcount": 29
      },
      {
       "ym": "202604",
-      "headcount": 26
+      "headcount": 31
      },
      {
       "ym": "202603",
-      "headcount": 24
-     },
-     {
-      "ym": "202602",
       "headcount": 25
      },
      {
-      "ym": "202601",
-      "headcount": 24
-     },
-     {
-      "ym": "202512",
-      "headcount": 24
-     },
-     {
-      "ym": "202511",
-      "headcount": 24
-     },
-     {
-      "ym": "202510",
-      "headcount": 23
-     },
-     {
-      "ym": "202509",
-      "headcount": 22
-     }
-    ],
-    "growth_3m": 0.486,
-    "growth_6m": 1.167,
-    "growth_12m": 1.364,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.33,
-    "bill_per_head": 366332,
-    "bill_per_head_change_12m": 0.275
-   },
-   "nps_key": "553860|러쉬에잇rusheightinc",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 3.0년(추정) (+16)",
-    "고용 12개월 +136% (+30)",
-    "국민연금 가입자 52명",
-    "팀 52명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +28% (+6)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:888860:더드림푸드",
-   "name": "주식회사 더드림푸드",
-   "name_norm": "더드림푸드",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "888860",
-   "age_years": 1.4,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경상북도 칠곡군 왜관읍 현대로",
-   "industry": "기타 가공식품 도매업",
-   "induty_code": "512280",
-   "nps": {
-    "ym": "202609",
-    "headcount": 43,
-    "monthly_bill": 8147900,
-    "sites": 1,
-    "adopt": "20250616",
-    "industry": "기타 가공식품 도매업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 43
-     },
-     {
-      "ym": "202608",
-      "headcount": 40
-     },
-     {
-      "ym": "202607",
-      "headcount": 35
-     },
-     {
-      "ym": "202606",
-      "headcount": 31
-     },
-     {
-      "ym": "202605",
-      "headcount": 31
-     },
-     {
-      "ym": "202604",
-      "headcount": 28
-     },
-     {
-      "ym": "202603",
-      "headcount": 22
-     },
-     {
       "ym": "202602",
-      "headcount": 20
+      "headcount": 27
      },
      {
       "ym": "202601",
-      "headcount": 20
+      "headcount": 24
      },
      {
       "ym": "202512",
@@ -1252,82 +553,751 @@
      },
      {
       "ym": "202511",
-      "headcount": 19
+      "headcount": 20
      },
      {
       "ym": "202510",
+      "headcount": 20
+     },
+     {
+      "ym": "202509",
+      "headcount": 18
+     }
+    ],
+    "growth_3m": 0.258,
+    "growth_6m": 0.56,
+    "growth_12m": 1.167,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.29,
+    "bill_per_head": 351975,
+    "bill_per_head_change_12m": 0.086
+   },
+   "nps_key": "811870|법무법인초원",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.4년(추정) (+22)",
+    "고용 12개월 +117% (+30)",
+    "국민연금 가입자 39명",
+    "팀 39명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:505860:캐리마텍",
+   "name": "주식회사 캐리마텍",
+   "name_norm": "캐리마텍",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "505860",
+   "age_years": 2.6,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 강서구 양천로",
+   "industry": "디지털 적층 성형기계 제조업",
+   "induty_code": "292205",
+   "nps": {
+    "ym": "202609",
+    "headcount": 36,
+    "monthly_bill": 12193340,
+    "sites": 1,
+    "adopt": "20240422",
+    "industry": "디지털 적층 성형기계 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 36
+     },
+     {
+      "ym": "202608",
+      "headcount": 33
+     },
+     {
+      "ym": "202607",
+      "headcount": 30
+     },
+     {
+      "ym": "202606",
+      "headcount": 29
+     },
+     {
+      "ym": "202605",
+      "headcount": 30
+     },
+     {
+      "ym": "202604",
+      "headcount": 31
+     },
+     {
+      "ym": "202603",
+      "headcount": 30
+     },
+     {
+      "ym": "202602",
+      "headcount": 29
+     },
+     {
+      "ym": "202601",
+      "headcount": 25
+     },
+     {
+      "ym": "202512",
+      "headcount": 21
+     },
+     {
+      "ym": "202511",
+      "headcount": 17
+     },
+     {
+      "ym": "202510",
+      "headcount": 17
+     },
+     {
+      "ym": "202509",
       "headcount": 15
+     }
+    ],
+    "growth_3m": 0.241,
+    "growth_6m": 0.2,
+    "growth_12m": 1.4,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.19,
+    "bill_per_head": 338704,
+    "bill_per_head_change_12m": 0.156
+   },
+   "nps_key": "505860|캐리마텍",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.6년(추정) (+16)",
+    "고용 12개월 +140% (+30)",
+    "국민연금 가입자 36명",
+    "팀 36명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +16% (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:745810:모티프드라이브",
+   "name": "주식회사 모티프드라이브",
+   "name_norm": "모티프드라이브",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "745810",
+   "age_years": 2.3,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "충청남도 천안시 서북구 불당36길",
+   "industry": "응용 소프트웨어 개발 및 공급업",
+   "induty_code": "722000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 35,
+    "monthly_bill": 16123000,
+    "sites": 1,
+    "adopt": "20240814",
+    "industry": "응용 소프트웨어 개발 및 공급업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 35
+     },
+     {
+      "ym": "202608",
+      "headcount": 30
+     },
+     {
+      "ym": "202607",
+      "headcount": 27
+     },
+     {
+      "ym": "202606",
+      "headcount": 23
+     },
+     {
+      "ym": "202605",
+      "headcount": 20
+     },
+     {
+      "ym": "202604",
+      "headcount": 19
+     },
+     {
+      "ym": "202603",
+      "headcount": 17
+     },
+     {
+      "ym": "202602",
+      "headcount": 16
+     },
+     {
+      "ym": "202601",
+      "headcount": 13
+     },
+     {
+      "ym": "202512",
+      "headcount": 13
+     },
+     {
+      "ym": "202511",
+      "headcount": 14
+     },
+     {
+      "ym": "202510",
+      "headcount": 14
      },
      {
       "ym": "202509",
       "headcount": 14
      }
     ],
-    "growth_3m": 0.387,
-    "growth_6m": 0.955,
-    "growth_12m": 2.071,
+    "growth_3m": 0.522,
+    "growth_6m": 1.059,
+    "growth_12m": 1.5,
     "up_months": 11,
     "months_observed": 12,
-    "max_jump_share": 0.21,
-    "bill_per_head": 189486,
-    "bill_per_head_change_12m": -0.02
+    "max_jump_share": 0.24,
+    "bill_per_head": 460657,
+    "bill_per_head_change_12m": -0.097
    },
-   "nps_key": "888860|더드림푸드",
+   "nps_key": "745810|모티프드라이브",
    "financials": {},
    "score": 70,
    "reasons": [
-    "업력 1.4년(추정) (+22)",
-    "고용 12개월 +207% (+30)",
-    "국민연금 가입자 43명",
-    "팀 43명 (얼리 스테이지 규모) (+8)",
+    "업력 2.3년(추정) (+16)",
+    "고용 12개월 +150% (+30)",
+    "국민연금 가입자 35명",
+    "팀 35명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 46만원 (상위 15% 보수 수준) (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:587810:세움디자인하우징",
+   "name": "주식회사 세움디자인하우징",
+   "name_norm": "세움디자인하우징",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "587810",
+   "age_years": 1.6,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "경기도 김포시 통진읍 김포대로",
+   "industry": "기타 구조용 금속제품 제조업",
+   "induty_code": "281106",
+   "nps": {
+    "ym": "202609",
+    "headcount": 32,
+    "monthly_bill": 8289220,
+    "sites": 1,
+    "adopt": "20250401",
+    "industry": "기타 구조용 금속제품 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 32
+     },
+     {
+      "ym": "202608",
+      "headcount": 32
+     },
+     {
+      "ym": "202607",
+      "headcount": 30
+     },
+     {
+      "ym": "202606",
+      "headcount": 24
+     },
+     {
+      "ym": "202605",
+      "headcount": 19
+     },
+     {
+      "ym": "202604",
+      "headcount": 16
+     },
+     {
+      "ym": "202603",
+      "headcount": 13
+     },
+     {
+      "ym": "202602",
+      "headcount": 14
+     },
+     {
+      "ym": "202601",
+      "headcount": 12
+     },
+     {
+      "ym": "202512",
+      "headcount": 12
+     },
+     {
+      "ym": "202511",
+      "headcount": 12
+     },
+     {
+      "ym": "202510",
+      "headcount": 13
+     },
+     {
+      "ym": "202509",
+      "headcount": 11
+     }
+    ],
+    "growth_3m": 0.333,
+    "growth_6m": 1.462,
+    "growth_12m": 1.909,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.29,
+    "bill_per_head": 259038,
+    "bill_per_head_change_12m": -0.139
+   },
+   "nps_key": "587810|세움디자인하우징",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.6년(추정) (+22)",
+    "고용 12개월 +191% (+30)",
+    "국민연금 가입자 32명",
+    "팀 32명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:423860:혜온hyeoninc",
+   "name": "주식회사 혜온 (hyeon Inc.)",
+   "name_norm": "혜온hyeoninc",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "423860",
+   "age_years": 1.9,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "인천광역시 연수구 아트센터대로168번길",
+   "industry": "경영 컨설팅업",
+   "induty_code": "741400",
+   "nps": {
+    "ym": "202609",
+    "headcount": 28,
+    "monthly_bill": 6794500,
+    "sites": 1,
+    "adopt": "20250101",
+    "industry": "경영 컨설팅업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 28
+     },
+     {
+      "ym": "202608",
+      "headcount": 25
+     },
+     {
+      "ym": "202607",
+      "headcount": 25
+     },
+     {
+      "ym": "202606",
+      "headcount": 27
+     },
+     {
+      "ym": "202605",
+      "headcount": 24
+     },
+     {
+      "ym": "202604",
+      "headcount": 22
+     },
+     {
+      "ym": "202603",
+      "headcount": 20
+     },
+     {
+      "ym": "202602",
+      "headcount": 16
+     },
+     {
+      "ym": "202601",
+      "headcount": 15
+     },
+     {
+      "ym": "202512",
+      "headcount": 15
+     },
+     {
+      "ym": "202511",
+      "headcount": 12
+     },
+     {
+      "ym": "202510",
+      "headcount": 13
+     },
+     {
+      "ym": "202509",
+      "headcount": 8
+     }
+    ],
+    "growth_3m": 0.037,
+    "growth_6m": 0.4,
+    "growth_12m": 2.5,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.25,
+    "bill_per_head": 242661,
+    "bill_per_head_change_12m": 0.04
+   },
+   "nps_key": "423860|혜온hyeoninc",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.9년(추정) (+22)",
+    "고용 12개월 +250% (+30)",
+    "국민연금 가입자 28명",
+    "팀 28명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:635880:크로스허브",
+   "name": "주식회사 크로스허브",
+   "name_norm": "크로스허브",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "635880",
+   "age_years": 2.5,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "전북특별자치도 전주시 덕진구 유상로",
+   "industry": "응용 소프트웨어 개발 및 공급업",
+   "induty_code": "722000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 32,
+    "monthly_bill": 7782480,
+    "sites": 1,
+    "adopt": "20240521",
+    "industry": "응용 소프트웨어 개발 및 공급업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 32
+     },
+     {
+      "ym": "202608",
+      "headcount": 23
+     },
+     {
+      "ym": "202607",
+      "headcount": 23
+     },
+     {
+      "ym": "202606",
+      "headcount": 24
+     },
+     {
+      "ym": "202605",
+      "headcount": 22
+     },
+     {
+      "ym": "202604",
+      "headcount": 20
+     },
+     {
+      "ym": "202603",
+      "headcount": 18
+     },
+     {
+      "ym": "202602",
+      "headcount": 18
+     },
+     {
+      "ym": "202601",
+      "headcount": 15
+     },
+     {
+      "ym": "202512",
+      "headcount": 17
+     },
+     {
+      "ym": "202511",
+      "headcount": 14
+     },
+     {
+      "ym": "202510",
+      "headcount": 13
+     },
+     {
+      "ym": "202509",
+      "headcount": 13
+     }
+    ],
+    "growth_3m": 0.333,
+    "growth_6m": 0.778,
+    "growth_12m": 1.462,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.47,
+    "bill_per_head": 243202,
+    "bill_per_head_change_12m": 0.23
+   },
+   "nps_key": "635880|크로스허브",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.5년(추정) (+16)",
+    "고용 12개월 +146% (+30)",
+    "국민연금 가입자 32명",
+    "팀 32명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +23% (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:118827:화성서해마루유스호스텔",
+   "name": "화성 서해마루 유스호스텔",
+   "name_norm": "화성서해마루유스호스텔",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "118827",
+   "age_years": 1.5,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "경기도 화성시 만세구 서신면 궁평관광로153번길",
+   "industry": "해당없음",
+   "induty_code": "000000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 23,
+    "monthly_bill": 7354100,
+    "sites": 1,
+    "adopt": "20250601",
+    "industry": "해당없음",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 23
+     },
+     {
+      "ym": "202608",
+      "headcount": 27
+     },
+     {
+      "ym": "202607",
+      "headcount": 26
+     },
+     {
+      "ym": "202606",
+      "headcount": 19
+     },
+     {
+      "ym": "202605",
+      "headcount": 18
+     },
+     {
+      "ym": "202604",
+      "headcount": 18
+     },
+     {
+      "ym": "202603",
+      "headcount": 18
+     },
+     {
+      "ym": "202602",
+      "headcount": 18
+     },
+     {
+      "ym": "202601",
+      "headcount": 17
+     },
+     {
+      "ym": "202512",
+      "headcount": 16
+     },
+     {
+      "ym": "202511",
+      "headcount": 12
+     },
+     {
+      "ym": "202510",
+      "headcount": 10
+     },
+     {
+      "ym": "202509",
+      "headcount": 5
+     }
+    ],
+    "growth_3m": 0.211,
+    "growth_6m": 0.278,
+    "growth_12m": 3.6,
+    "up_months": 11,
+    "months_observed": 12,
+    "max_jump_share": 0.39,
+    "bill_per_head": 319743,
+    "bill_per_head_change_12m": -0.253
+   },
+   "nps_key": "118827|화성서해마루유스호스텔",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.5년(추정) (+22)",
+    "고용 12개월 +360% (+30)",
+    "국민연금 가입자 23명",
+    "팀 23명 (얼리 스테이지 규모) (+8)",
     "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:171880:이노그린메탈",
-   "name": "(주)이노그린메탈",
-   "name_norm": "이노그린메탈",
+   "key": "nps:824880:보영산업",
+   "name": "주식회사 보영산업",
+   "name_norm": "보영산업",
    "sources": [
     "nps"
    ],
-   "bizno6": "171880",
-   "age_years": 3.0,
+   "bizno6": "824880",
+   "age_years": 2.5,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "충청남도 당진시 석문면 산단3로9길",
-   "industry": "금속광물 도매업",
-   "induty_code": "514250",
+   "addr": "전남광주통합특별시 광양시 광양읍 율촌산단3로",
+   "industry": "선박 구성 부분품 제조업",
+   "induty_code": "351103",
    "nps": {
     "ym": "202609",
-    "headcount": 40,
-    "monthly_bill": 13000120,
+    "headcount": 34,
+    "monthly_bill": 7937860,
     "sites": 1,
-    "adopt": "20231120",
-    "industry": "금속광물 도매업",
+    "adopt": "20240507",
+    "industry": "선박 구성 부분품 제조업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 40
-     },
-     {
-      "ym": "202608",
-      "headcount": 35
-     },
-     {
-      "ym": "202607",
       "headcount": 34
      },
      {
+      "ym": "202608",
+      "headcount": 32
+     },
+     {
+      "ym": "202607",
+      "headcount": 30
+     },
+     {
       "ym": "202606",
-      "headcount": 36
+      "headcount": 25
      },
      {
       "ym": "202605",
-      "headcount": 26
+      "headcount": 19
      },
      {
       "ym": "202604",
-      "headcount": 26
+      "headcount": 18
+     },
+     {
+      "ym": "202603",
+      "headcount": 20
+     },
+     {
+      "ym": "202602",
+      "headcount": 20
+     },
+     {
+      "ym": "202601",
+      "headcount": 20
+     },
+     {
+      "ym": "202512",
+      "headcount": 20
+     },
+     {
+      "ym": "202511",
+      "headcount": 18
+     },
+     {
+      "ym": "202510",
+      "headcount": 16
+     },
+     {
+      "ym": "202509",
+      "headcount": 16
+     }
+    ],
+    "growth_3m": 0.36,
+    "growth_6m": 0.7,
+    "growth_12m": 1.125,
+    "up_months": 11,
+    "months_observed": 12,
+    "max_jump_share": 0.33,
+    "bill_per_head": 233466,
+    "bill_per_head_change_12m": 0.191
+   },
+   "nps_key": "824880|보영산업",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.5년(추정) (+16)",
+    "고용 12개월 +112% (+30)",
+    "국민연금 가입자 34명",
+    "팀 34명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +19% (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:573850:베리시성수verishseongsu",
+   "name": "베리시 성수(Verish Seongsu)",
+   "name_norm": "베리시성수verishseongsu",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "573850",
+   "age_years": 1.8,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 성동구 연무장길",
+   "industry": "속옷 및 잠옷 소매업",
+   "induty_code": "523221",
+   "nps": {
+    "ym": "202609",
+    "headcount": 29,
+    "monthly_bill": 5876560,
+    "sites": 1,
+    "adopt": "20250120",
+    "industry": "속옷 및 잠옷 소매업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 29
+     },
+     {
+      "ym": "202608",
+      "headcount": 30
+     },
+     {
+      "ym": "202607",
+      "headcount": 30
+     },
+     {
+      "ym": "202606",
+      "headcount": 25
+     },
+     {
+      "ym": "202605",
+      "headcount": 25
+     },
+     {
+      "ym": "202604",
+      "headcount": 22
      },
      {
       "ym": "202603",
@@ -1343,11 +1313,297 @@
      },
      {
       "ym": "202512",
+      "headcount": 16
+     },
+     {
+      "ym": "202511",
+      "headcount": 16
+     },
+     {
+      "ym": "202510",
+      "headcount": 15
+     },
+     {
+      "ym": "202509",
+      "headcount": 12
+     }
+    ],
+    "growth_3m": 0.16,
+    "growth_6m": 0.261,
+    "growth_12m": 1.417,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.29,
+    "bill_per_head": 202640,
+    "bill_per_head_change_12m": -0.014
+   },
+   "nps_key": "573850|베리시성수verishseongsu",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.8년(추정) (+22)",
+    "고용 12개월 +142% (+30)",
+    "국민연금 가입자 29명",
+    "팀 29명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:639880:비웨이브엔터테인먼트",
+   "name": "비웨이브 엔터테인먼트 주식회사",
+   "name_norm": "비웨이브엔터테인먼트",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "639880",
+   "age_years": 1.4,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 마포구 토정로",
+   "industry": "매니저업",
+   "induty_code": "749911",
+   "nps": {
+    "ym": "202609",
+    "headcount": 22,
+    "monthly_bill": 6870380,
+    "sites": 1,
+    "adopt": "20250625",
+    "industry": "매니저업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 22
+     },
+     {
+      "ym": "202608",
+      "headcount": 22
+     },
+     {
+      "ym": "202607",
+      "headcount": 22
+     },
+     {
+      "ym": "202606",
+      "headcount": 20
+     },
+     {
+      "ym": "202605",
+      "headcount": 18
+     },
+     {
+      "ym": "202604",
+      "headcount": 17
+     },
+     {
+      "ym": "202603",
+      "headcount": 14
+     },
+     {
+      "ym": "202602",
+      "headcount": 12
+     },
+     {
+      "ym": "202601",
+      "headcount": 8
+     },
+     {
+      "ym": "202512",
+      "headcount": 8
+     },
+     {
+      "ym": "202511",
+      "headcount": 7
+     },
+     {
+      "ym": "202510",
+      "headcount": 6
+     },
+     {
+      "ym": "202509",
+      "headcount": 5
+     }
+    ],
+    "growth_3m": 0.1,
+    "growth_6m": 0.571,
+    "growth_12m": 3.4,
+    "up_months": 12,
+    "months_observed": 12,
+    "max_jump_share": 0.24,
+    "bill_per_head": 312290,
+    "bill_per_head_change_12m": -0.191
+   },
+   "nps_key": "639880|비웨이브엔터테인먼트",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.4년(추정) (+22)",
+    "고용 12개월 +340% (+30)",
+    "국민연금 가입자 22명",
+    "팀 22명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:309860:브리즈건축사사무소",
+   "name": "브리즈 건축사사무소 주식회사",
+   "name_norm": "브리즈건축사사무소",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "309860",
+   "age_years": 2.8,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 강남구 도곡로2길",
+   "industry": "건축 설계 및 관련 서비스업(건축사)",
+   "induty_code": "742105",
+   "nps": {
+    "ym": "202609",
+    "headcount": 31,
+    "monthly_bill": 13768300,
+    "sites": 1,
+    "adopt": "20240117",
+    "industry": "건축 설계 및 관련 서비스업(건축사)",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 31
+     },
+     {
+      "ym": "202608",
+      "headcount": 33
+     },
+     {
+      "ym": "202607",
+      "headcount": 33
+     },
+     {
+      "ym": "202606",
+      "headcount": 28
+     },
+     {
+      "ym": "202605",
+      "headcount": 28
+     },
+     {
+      "ym": "202604",
+      "headcount": 23
+     },
+     {
+      "ym": "202603",
+      "headcount": 21
+     },
+     {
+      "ym": "202602",
+      "headcount": 20
+     },
+     {
+      "ym": "202601",
+      "headcount": 15
+     },
+     {
+      "ym": "202512",
       "headcount": 15
      },
      {
       "ym": "202511",
-      "headcount": 12
+      "headcount": 14
+     },
+     {
+      "ym": "202510",
+      "headcount": 14
+     },
+     {
+      "ym": "202509",
+      "headcount": 14
+     }
+    ],
+    "growth_3m": 0.107,
+    "growth_6m": 0.476,
+    "growth_12m": 1.214,
+    "up_months": 11,
+    "months_observed": 12,
+    "max_jump_share": 0.29,
+    "bill_per_head": 444139,
+    "bill_per_head_change_12m": 0.005
+   },
+   "nps_key": "309860|브리즈건축사사무소",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.8년(추정) (+16)",
+    "고용 12개월 +121% (+30)",
+    "국민연금 가입자 31명",
+    "팀 31명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 44만원 (상위 15% 보수 수준) (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:879880:트루쿡",
+   "name": "주식회사 트루쿡",
+   "name_norm": "트루쿡",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "879880",
+   "age_years": 1.5,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 송파구 법원로11길",
+   "industry": "수동식 식품 가공 기기 및 금속 주방용기 제조업",
+   "induty_code": "289903",
+   "nps": {
+    "ym": "202609",
+    "headcount": 29,
+    "monthly_bill": 8624940,
+    "sites": 1,
+    "adopt": "20250516",
+    "industry": "수동식 식품 가공 기기 및 금속 주방용기 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 29
+     },
+     {
+      "ym": "202608",
+      "headcount": 28
+     },
+     {
+      "ym": "202607",
+      "headcount": 25
+     },
+     {
+      "ym": "202606",
+      "headcount": 22
+     },
+     {
+      "ym": "202605",
+      "headcount": 22
+     },
+     {
+      "ym": "202604",
+      "headcount": 19
+     },
+     {
+      "ym": "202603",
+      "headcount": 19
+     },
+     {
+      "ym": "202602",
+      "headcount": 18
+     },
+     {
+      "ym": "202601",
+      "headcount": 15
+     },
+     {
+      "ym": "202512",
+      "headcount": 14
+     },
+     {
+      "ym": "202511",
+      "headcount": 13
      },
      {
       "ym": "202510",
@@ -1355,75 +1611,97 @@
      },
      {
       "ym": "202509",
-      "headcount": 12
+      "headcount": 13
      }
     ],
-    "growth_3m": 0.111,
-    "growth_6m": 0.739,
-    "growth_12m": 2.333,
+    "growth_3m": 0.318,
+    "growth_6m": 0.526,
+    "growth_12m": 1.231,
     "up_months": 11,
     "months_observed": 12,
-    "max_jump_share": 0.36,
-    "bill_per_head": 325003,
-    "bill_per_head_change_12m": 0.121
+    "max_jump_share": 0.19,
+    "bill_per_head": 297412,
+    "bill_per_head_change_12m": -0.069
    },
-   "nps_key": "171880|이노그린메탈",
+   "nps_key": "879880|트루쿡",
    "financials": {},
    "score": 70,
    "reasons": [
-    "업력 3.0년(추정) (+16)",
-    "고용 12개월 +233% (+30)",
-    "국민연금 가입자 40명",
-    "팀 40명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +12% (+6)"
+    "업력 1.5년(추정) (+22)",
+    "고용 12개월 +123% (+30)",
+    "국민연금 가입자 29명",
+    "팀 29명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:135870:앤디디스",
-   "name": "주식회사 앤디디스",
-   "name_norm": "앤디디스",
+   "key": "food:20240672181",
+   "name": "(주)씨이에스팜",
+   "name_norm": "씨이에스팜",
    "sources": [
-    "nps"
+    "food"
    ],
-   "bizno6": "135870",
    "age_years": 2.4,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "부산광역시 동구 충장대로",
-   "industry": "그 외 기타 분류 안된 사업 지원 서비스업",
-   "induty_code": "749609",
+   "age_basis": "식품 인허가 연도(대리지표)",
+   "industry": "식품제조가공업",
+   "induty_code": "10",
+   "food": {
+    "lcns_no": "20240672181",
+    "name": "(주)씨이에스팜",
+    "name_norm": "씨이에스팜",
+    "license_year": "2024",
+    "new_items": 38,
+    "item_types": 4,
+    "types": [
+     "고형차",
+     "과.채가공품",
+     "기타가공품",
+     "당류가공품"
+    ],
+    "client_brands": [
+     "kidsMore",
+     "copun-i",
+     "NORVIA"
+    ],
+    "first_new": "20260520",
+    "last_new": "20261112",
+    "sku_burst": true,
+    "haccp_new": null,
+    "haccp_item": null
+   },
+   "financials": {},
    "nps": {
     "ym": "202609",
-    "headcount": 37,
-    "monthly_bill": 7686060,
+    "headcount": 10,
+    "monthly_bill": 3394160,
     "sites": 1,
-    "adopt": "20240613",
-    "industry": "그 외 기타 분류 안된 사업 지원 서비스업",
+    "adopt": "20210701",
+    "industry": "기타 가공식품 도매업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 37
+      "headcount": 10
      },
      {
       "ym": "202608",
-      "headcount": 36
+      "headcount": 15
      },
      {
       "ym": "202607",
-      "headcount": 32
+      "headcount": 13
      },
      {
       "ym": "202606",
-      "headcount": 27
+      "headcount": 11
      },
      {
       "ym": "202605",
-      "headcount": 24
+      "headcount": 12
      },
      {
       "ym": "202604",
-      "headcount": 24
+      "headcount": 11
      },
      {
       "ym": "202603",
@@ -1439,95 +1717,111 @@
      },
      {
       "ym": "202512",
-      "headcount": 12
+      "headcount": 9
      },
      {
       "ym": "202511",
-      "headcount": 12
+      "headcount": 8
      },
      {
       "ym": "202510",
-      "headcount": 11
+      "headcount": 8
      },
      {
       "ym": "202509",
       "headcount": 11
      }
     ],
-    "growth_3m": 0.37,
-    "growth_6m": 1.846,
-    "growth_12m": 2.364,
-    "up_months": 12,
+    "growth_3m": -0.091,
+    "growth_6m": -0.231,
+    "growth_12m": -0.091,
+    "up_months": 8,
     "months_observed": 12,
-    "max_jump_share": 0.42,
-    "bill_per_head": 207731,
-    "bill_per_head_change_12m": 0.455
+    "bill_per_head": 339416,
+    "bill_per_head_change_12m": 0.442
    },
-   "nps_key": "135870|앤디디스",
-   "financials": {},
-   "score": 70,
+   "nps_key": "890860|씨이에스팜",
+   "score": 50,
    "reasons": [
     "업력 2.4년(추정) (+16)",
-    "고용 12개월 +236% (+30)",
-    "국민연금 가입자 37명",
-    "팀 37명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +46% (+6)"
+    "국민연금 가입자 10명",
+    "팀 10명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 12개월 +44% (+6)",
+    "최근 6개월 신규 품목 38개·유형 4종 (다품종) (+12)",
+    "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:558870:우리마을유니티",
-   "name": "주식회사 우리마을유니티",
-   "name_norm": "우리마을유니티",
+   "key": "food:20220495373",
+   "name": "(주)드림찬",
+   "name_norm": "드림찬",
    "sources": [
-    "nps"
+    "food"
    ],
-   "bizno6": "558870",
-   "age_years": 1.9,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 부천시 소사구 양지로",
-   "industry": "경영 컨설팅업",
-   "induty_code": "741400",
+   "age_years": 4.4,
+   "age_basis": "식품 인허가 연도(대리지표)",
+   "industry": "식품제조가공업",
+   "induty_code": "10",
+   "food": {
+    "lcns_no": "20220495373",
+    "name": "(주)드림찬",
+    "name_norm": "드림찬",
+    "license_year": "2022",
+    "new_items": 53,
+    "item_types": 3,
+    "types": [
+     "당뇨환자용 식단형 식품",
+     "신장질환자용 식단형 식품",
+     "암환자용 식단형 식품"
+    ],
+    "client_brands": [],
+    "first_new": "20260519",
+    "last_new": "20261030",
+    "sku_burst": true,
+    "haccp_new": null,
+    "haccp_item": null
+   },
+   "financials": {},
    "nps": {
     "ym": "202609",
-    "headcount": 37,
-    "monthly_bill": 12413100,
+    "headcount": 13,
+    "monthly_bill": 3210240,
     "sites": 1,
-    "adopt": "20250101",
-    "industry": "경영 컨설팅업",
+    "adopt": "20210601",
+    "industry": "그 외 기타 식료품 제조업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 37
+      "headcount": 13
      },
      {
       "ym": "202608",
-      "headcount": 32
+      "headcount": 15
      },
      {
       "ym": "202607",
-      "headcount": 32
+      "headcount": 15
      },
      {
       "ym": "202606",
-      "headcount": 31
+      "headcount": 15
      },
      {
       "ym": "202605",
-      "headcount": 30
+      "headcount": 18
      },
      {
       "ym": "202604",
-      "headcount": 27
+      "headcount": 18
      },
      {
       "ym": "202603",
-      "headcount": 26
+      "headcount": 17
      },
      {
       "ym": "202602",
-      "headcount": 21
+      "headcount": 16
      },
      {
       "ym": "202601",
@@ -1535,349 +1829,154 @@
      },
      {
       "ym": "202512",
+      "headcount": 16
+     },
+     {
+      "ym": "202511",
+      "headcount": 16
+     },
+     {
+      "ym": "202510",
+      "headcount": 16
+     },
+     {
+      "ym": "202509",
+      "headcount": 15
+     }
+    ],
+    "growth_3m": -0.133,
+    "growth_6m": -0.235,
+    "growth_12m": -0.133,
+    "up_months": 10,
+    "months_observed": 12,
+    "bill_per_head": 246942,
+    "bill_per_head_change_12m": 0.34
+   },
+   "nps_key": "173870|드림찬",
+   "score": 50,
+   "reasons": [
+    "업력 4.4년(추정) (+6)",
+    "국민연금 가입자 13명",
+    "팀 13명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +34% (+6)",
+    "최근 6개월 신규 품목 53개·유형 3종 (다품종) (+12)",
+    "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "food:20230623401",
+   "name": "(주)내츄럴스푸드 할랄전용공장",
+   "name_norm": "내츄럴스푸드",
+   "sources": [
+    "food"
+   ],
+   "age_years": 3.4,
+   "age_basis": "식품 인허가 연도(대리지표)",
+   "industry": "식품제조가공업",
+   "induty_code": "10",
+   "food": {
+    "lcns_no": "20230623401",
+    "name": "(주)내츄럴스푸드 할랄전용공장",
+    "name_norm": "내츄럴스푸드",
+    "license_year": "2023",
+    "new_items": 32,
+    "item_types": 3,
+    "types": [
+     "곡류가공품",
+     "복합조미식품",
+     "소스"
+    ],
+    "client_brands": [],
+    "first_new": "20260519",
+    "last_new": "20261112",
+    "sku_burst": true,
+    "haccp_new": null,
+    "haccp_item": null
+   },
+   "financials": {},
+   "nps": {
+    "ym": "202609",
+    "headcount": 16,
+    "monthly_bill": 5949560,
+    "sites": 1,
+    "adopt": "20240101",
+    "industry": "천연 및 혼합 조제 조미료 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 16
+     },
+     {
+      "ym": "202608",
       "headcount": 15
      },
      {
-      "ym": "202511",
-      "headcount": 14
-     },
-     {
-      "ym": "202510",
-      "headcount": 11
-     },
-     {
-      "ym": "202509",
-      "headcount": 11
-     }
-    ],
-    "growth_3m": 0.194,
-    "growth_6m": 0.423,
-    "growth_12m": 2.364,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.19,
-    "bill_per_head": 335489,
-    "bill_per_head_change_12m": 0.032
-   },
-   "nps_key": "558870|우리마을유니티",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 1.9년(추정) (+22)",
-    "고용 12개월 +236% (+30)",
-    "국민연금 가입자 37명",
-    "팀 37명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:526850:거대곰탕",
-   "name": "(주)거대곰탕",
-   "name_norm": "거대곰탕",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "526850",
-   "age_years": 1.4,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 서초구 사임당로",
-   "industry": "한식 일반 음식점업",
-   "induty_code": "552101",
-   "nps": {
-    "ym": "202609",
-    "headcount": 31,
-    "monthly_bill": 8114440,
-    "sites": 1,
-    "adopt": "20250702",
-    "industry": "한식 일반 음식점업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 31
-     },
-     {
-      "ym": "202608",
-      "headcount": 31
-     },
-     {
       "ym": "202607",
-      "headcount": 31
+      "headcount": 15
      },
      {
       "ym": "202606",
-      "headcount": 32
+      "headcount": 16
      },
      {
       "ym": "202605",
-      "headcount": 28
+      "headcount": 15
      },
      {
       "ym": "202604",
-      "headcount": 25
+      "headcount": 16
      },
      {
       "ym": "202603",
-      "headcount": 23
+      "headcount": 15
      },
      {
       "ym": "202602",
-      "headcount": 22
+      "headcount": 14
      },
      {
       "ym": "202601",
-      "headcount": 12
+      "headcount": 13
      },
      {
       "ym": "202512",
-      "headcount": 9
+      "headcount": 12
      },
      {
       "ym": "202511",
-      "headcount": 7
+      "headcount": 12
      },
      {
       "ym": "202510",
-      "headcount": 8
+      "headcount": 11
      },
      {
       "ym": "202509",
-      "headcount": 5
+      "headcount": 12
      }
     ],
-    "growth_3m": -0.031,
-    "growth_6m": 0.348,
-    "growth_12m": 5.2,
-    "up_months": 10,
+    "growth_3m": 0.0,
+    "growth_6m": 0.067,
+    "growth_12m": 0.333,
+    "up_months": 9,
     "months_observed": 12,
-    "max_jump_share": 0.38,
-    "bill_per_head": 261756,
-    "bill_per_head_change_12m": -0.108
+    "max_jump_share": 0.25,
+    "bill_per_head": 371848,
+    "bill_per_head_change_12m": 0.157
    },
-   "nps_key": "526850|거대곰탕",
-   "financials": {},
-   "score": 70,
+   "nps_key": "794850|내츄럴스푸드",
+   "score": 48,
    "reasons": [
-    "업력 1.4년(추정) (+22)",
-    "고용 12개월 +520% (+30)",
-    "국민연금 가입자 31명",
-    "팀 31명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "food:20250694341",
-   "name": "주식회사대현에벤에셀",
-   "name_norm": "대현에벤에셀",
-   "sources": [
-    "food"
-   ],
-   "age_years": 1.4,
-   "age_basis": "식품 인허가 연도(대리지표)",
-   "industry": "식품제조가공업",
-   "induty_code": "10",
-   "food": {
-    "lcns_no": "20250694341",
-    "name": "주식회사대현에벤에셀",
-    "name_norm": "대현에벤에셀",
-    "license_year": "2025",
-    "new_items": 26,
-    "item_types": 6,
-    "types": [
-     "과.채가공품",
-     "기타가공품",
-     "당류가공품",
-     "유함유가공품",
-     "캔디류",
-     "효소식품"
-    ],
-    "client_brands": [],
-    "first_new": "20260605",
-    "last_new": "20261106",
-    "sku_burst": true,
-    "haccp_new": null,
-    "haccp_item": null
-   },
-   "financials": {},
-   "score": 50,
-   "reasons": [
-    "업력 1.4년(추정) (+22)",
-    "국민연금 가입자 18명",
-    "팀 18명 (얼리 스테이지 규모) (+8)",
-    "최근 6개월 신규 품목 26개·유형 6종 (다품종) (+12)",
+    "업력 3.4년(추정) (+6)",
+    "고용 12개월 +33% (+8)",
+    "국민연금 가입자 16명",
+    "팀 16명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 12개월 +16% (+6)",
+    "최근 6개월 신규 품목 32개·유형 3종 (다품종) (+12)",
     "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)"
    ],
-   "nps": {
-    "match": {
-     "seq": 7027544,
-     "name": "주식회사 대현에벤에셀 당진지점",
-     "bizno6": "211857",
-     "ym": "202609",
-     "match_score": 1.0
-    },
-    "headcount": 18,
-    "monthly_bill": 5981040,
-    "industry": "전자상거래 소매업",
-    "adopted": "20250701",
-    "addr": "충청남도 당진시 합덕읍 합덕산단3로",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 18
-     },
-     {
-      "ym": "202608",
-      "headcount": 18,
-      "acq": 0,
-      "lost": 0
-     }
-    ],
-    "bill_per_head": 332280
-   },
-   "change": "new"
-  },
-  {
-   "key": "food:20260682065",
-   "name": "용원푸드",
-   "name_norm": "용원푸드",
-   "sources": [
-    "food"
-   ],
-   "age_years": 0.4,
-   "age_basis": "식품 인허가 연도(대리지표)",
-   "industry": "식품제조가공업",
-   "induty_code": "10",
-   "food": {
-    "lcns_no": "20260682065",
-    "name": "용원푸드",
-    "name_norm": "용원푸드",
-    "license_year": "2026",
-    "new_items": 54,
-    "item_types": 5,
-    "types": [
-     "기타 농산가공품",
-     "기타장류",
-     "복합조미식품",
-     "소스",
-     "혼합장"
-    ],
-    "client_brands": [
-     "분말"
-    ],
-    "first_new": "20260518",
-    "last_new": "20261109",
-    "sku_burst": true,
-    "haccp_new": null,
-    "haccp_item": null
-   },
-   "financials": {},
-   "score": 50,
-   "reasons": [
-    "업력 0.4년(추정) (+22)",
-    "국민연금 가입자 10명",
-    "팀 10명 (얼리 스테이지 규모) (+8)",
-    "최근 6개월 신규 품목 54개·유형 5종 (다품종) (+12)",
-    "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)"
-   ],
-   "nps": {
-    "match": {
-     "seq": 5907901,
-     "name": "용원푸드",
-     "bizno6": "852460",
-     "ym": "202607",
-     "match_score": 1.0
-    },
-    "headcount": 10,
-    "monthly_bill": 3011500,
-    "industry": "기타 식품 첨가물 제조업",
-    "adopted": "20260423",
-    "addr": "충청북도 옥천군 동이면 옥천동이로",
-    "series": [
-     {
-      "ym": "202607",
-      "headcount": 10
-     },
-     {
-      "ym": "202606",
-      "headcount": 10,
-      "acq": 1,
-      "lost": 1
-     }
-    ],
-    "bill_per_head": 301150
-   },
-   "change": "new"
-  },
-  {
-   "key": "food:20260486911",
-   "name": "(주)다리와사람들",
-   "name_norm": "다리와사람들",
-   "sources": [
-    "food"
-   ],
-   "age_years": 0.4,
-   "age_basis": "식품 인허가 연도(대리지표)",
-   "industry": "식품제조가공업",
-   "induty_code": "10",
-   "food": {
-    "lcns_no": "20260486911",
-    "name": "(주)다리와사람들",
-    "name_norm": "다리와사람들",
-    "license_year": "2026",
-    "new_items": 23,
-    "item_types": 6,
-    "types": [
-     "기타가공품",
-     "김치",
-     "김칫속",
-     "소스",
-     "잼",
-     "절임식품"
-    ],
-    "client_brands": [],
-    "first_new": "20260629",
-    "last_new": "20261029",
-    "sku_burst": true,
-    "haccp_new": null,
-    "haccp_item": null
-   },
-   "financials": {},
-   "score": 50,
-   "reasons": [
-    "업력 0.4년(추정) (+22)",
-    "국민연금 가입자 28명",
-    "팀 28명 (얼리 스테이지 규모) (+8)",
-    "최근 6개월 신규 품목 23개·유형 6종 (다품종) (+12)",
-    "테제 업종: 식품 제조 (다품종 소량 OEM 포함) (+8)"
-   ],
-   "nps": {
-    "match": {
-     "seq": 6560187,
-     "name": "(주)다리와사람들",
-     "bizno6": "211876",
-     "ym": "202609",
-     "match_score": 1.0
-    },
-    "headcount": 28,
-    "monthly_bill": 9798200,
-    "industry": "경영 컨설팅업",
-    "adopted": "20050901",
-    "addr": "서울특별시 마포구 월드컵북로",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 28
-     },
-     {
-      "ym": "202608",
-      "headcount": 27,
-      "acq": 4,
-      "lost": 3
-     }
-    ],
-    "bill_per_head": 349936
-   },
    "change": "new"
   }
  ],
@@ -2618,103 +2717,103 @@
    "key": "nps:684860:리월드",
    "name": "리월드 주식회사",
    "score": 72,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:379860:푸드웨이브",
    "name": "주식회사푸드웨이브",
    "score": 72,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:604814:에이아이씨엔티",
    "name": "에이아이씨엔티 주식회사",
    "score": 72,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:352810:다트로보틱스dartroboticsinc",
    "name": "다트로보틱스 주식회사 (DART ROBOTICS Inc.)",
    "score": 72,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:294810:베러스쿱크리머리",
    "name": "(주)베러스쿱크리머리",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:549870:홀리데이로보틱스",
    "name": "주식회사 홀리데이로보틱스",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:572850:네오오토예산",
    "name": "(주)네오오토 예산 제4공장",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:134810:진영산업",
    "name": "진영산업(주) 경주공장",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:650860:여울회계법인",
    "name": "여울회계법인",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:570880:이엠엑스",
    "name": "주식회사 이엠엑스",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:277860:오리지널아카이브",
    "name": "오리지널아카이브 주식회사",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:553860:러쉬에잇rusheightinc",
    "name": "러쉬에잇주식회사(RushEightInc.)",
    "score": 70,
-   "change": "new"
+   "change": "same"
   },
   {
    "key": "nps:888860:더드림푸드",
    "name": "주식회사 더드림푸드",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:171880:이노그린메탈",
    "name": "(주)이노그린메탈",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:135870:앤디디스",
    "name": "주식회사 앤디디스",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:558870:우리마을유니티",
    "name": "주식회사 우리마을유니티",
    "score": 70,
-   "change": "new"
+   "change": "same"
   },
   {
    "key": "nps:526850:거대곰탕",
    "name": "(주)거대곰탕",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:779850:아이벡스메디칼시스템즈서울",
@@ -9701,12 +9800,6 @@
    "change": "new"
   },
   {
-   "key": "food:20250121060",
-   "name": "규리(주)",
-   "score": 50,
-   "change": "rejected"
-  },
-  {
    "key": "food:20250482273",
    "name": "(주)디어푸드",
    "score": 50,
@@ -9728,19 +9821,19 @@
    "key": "food:20250694341",
    "name": "주식회사대현에벤에셀",
    "score": 50,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "food:20260682065",
    "name": "용원푸드",
    "score": 50,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "food:20260486911",
    "name": "(주)다리와사람들",
    "score": 50,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "food:20240672181",
