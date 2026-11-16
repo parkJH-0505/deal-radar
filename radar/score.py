@@ -5,6 +5,8 @@ from __future__ import annotations
 import datetime as dt
 import re
 
+from .tech import industry_of, is_tech
+
 
 def age_years(est_dt: str | None, today: dt.date) -> float | None:
     if not est_dt or len(est_dt) < 8:
@@ -94,7 +96,8 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
     hc = nps.get("headcount") or 0
     if hc:
         why.append(f"국민연금 가입자 {hc}명")
-        if 10 <= hc <= 80:
+        lo = 5 if is_tech(industry_of(c), cfg) else 10  # 기술 팀은 VC 전 5명부터
+        if lo <= hc <= 80:
             add("early_team_size", f"팀 {hc}명 (얼리 스테이지 규모)")
         elif hc >= 300:
             add("late_stage_size", f"가입자 {hc}명: 이미 큰 조직")
@@ -157,7 +160,8 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
 
     induty = str(c.get("induty_code") or "")
     for th in cfg.get("theses", {}).values():
-        if any(induty.startswith(p) for p in th.get("dart_industry_prefixes", [])):
+        if (th.get("tech") and is_tech(industry_of(c), cfg)) or \
+                any(induty.startswith(p) for p in th.get("dart_industry_prefixes", [])):
             add("thesis_industry_match", f"테제 업종: {th['label']}")
             break
 

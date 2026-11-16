@@ -20,6 +20,7 @@ from .entity import bizno6, name_similarity, norm_name
 from .http import HttpError, log
 from . import conversion as CV
 from .sources import foodsafety as FS
+from . import tech as TECH
 from . import momentum as MO
 from .score import age_years, excluded, score
 from .sources import dart as D
@@ -228,7 +229,24 @@ def run_nps_monthly(cfg: dict, today: dt.date, notes: list[str]):
     found = NM.scan(yms, data, today=today, max_age_years=cfg["global"]["max_company_age_years"],
                     min_headcount=sc["min_headcount"], min_growth_12m=sc["min_growth_12m"],
                     min_growth_6m=sc["min_growth_6m"])
-    notes.append(f"국민연금 패널 {yms[0]}~{yms[-1]} ({len(yms)}개월), 고용 급성장 후보 {len(found)}곳")
+    n_all = len(found)
+    found = [f for f in found if not TECH.is_noise_service(f.get("induty_name") or "", cfg)]
+    # 기술 기반 팀은 VC 투자 전, 더 작고 어릴 때 잡는다 (5명·3년 이내)
+    ts = (cfg.get("tech") or {}).get("scan")
+    n_tech_extra = 0
+    if ts:
+        have = {f["key"] for f in found}
+        small = NM.scan(yms, data, today=today, max_age_years=ts["max_age_years"],
+                        min_headcount=ts["min_headcount"], min_growth_12m=ts["min_growth_12m"],
+                        min_growth_6m=ts["min_growth_6m"])
+        for f in small:
+            if f["key"] not in have and TECH.is_tech(f.get("induty_name") or "", cfg):
+                found.append(f)
+                n_tech_extra += 1
+    n_tech = sum(TECH.is_tech(f.get("induty_name") or "", cfg) for f in found)
+    notes.append(f"국민연금 패널 {yms[0]}~{yms[-1]} ({len(yms)}개월), 고용 급성장 후보 {len(found)}곳 "
+                 f"(전문직·돌봄·교습 {n_all - len(found) + n_tech_extra}곳 제외, 기술 기반 {n_tech}곳 중 "
+                 f"5~9명 소규모 팀 {n_tech_extra}곳)")
     return yms, data, found
 
 
@@ -607,6 +625,8 @@ def daily(today: dt.date | None = None) -> dict:
             return "conversion"
         if "dart" in src:
             return "dart"
+        if TECH.is_tech(TECH.industry_of(c), cfg):
+            return "tech"
         if "localdata" in src:
             return "localdata"
         return "food" if "food" in src else "nps"
