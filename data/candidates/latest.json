@@ -1,20 +1,20 @@
 {
- "date": "2026-11-16",
- "generated_at": "2026-11-16T17:19:47+09:00",
+ "date": "2026-11-17",
+ "generated_at": "2026-11-17T07:45:37+09:00",
  "counts": {
-  "dart": 527,
-  "localdata_signals": 95,
-  "scored": 3738,
-  "above_threshold": 2080,
+  "dart": 526,
+  "localdata_signals": 94,
+  "scored": 3719,
+  "above_threshold": 2070,
   "queue": 20,
-  "backlog_unreviewed": 1852
+  "backlog_unreviewed": 1842
  },
  "notes": [
-  "DART 증분: 2026-11-12~2026-11-15, 감사보고서 4건",
-  "DART 후보(설립 5년 이하·첫 외감): 527곳, 감사보고서 신규 파싱 0건",
-  "인허가 식품제조가공업: 증분(2026-11-12~) 26,400건 → 보유 95,951건, 증설·다거점 신호 95건",
-  "식품안전나라: 최근 180일 품목제조보고 71,087건(이후 일괄), HACCP 첫 지정 0곳 → 다품종·HACCP 신호 988곳",
-  "식품안전나라 단독 후보 128곳",
+  "DART 증분: 2026-11-12~2026-11-16, 감사보고서 7건",
+  "DART 후보(설립 5년 이하·첫 외감): 526곳, 감사보고서 신규 파싱 0건",
+  "인허가 식품제조가공업: 증분(2026-11-13~) 4,000건 → 보유 95,951건, 증설·다거점 신호 94건",
+  "식품안전나라: 최근 180일 품목제조보고 70,539건(이후 일괄), HACCP 첫 지정 0곳 → 다품종·HACCP 신호 982곳",
+  "식품안전나라 단독 후보 126곳",
   "국민연금 패널 202509~202609 (13개월), 고용 급성장 후보 3265곳 (전문직·돌봄·교습 90곳 제외, 기술 기반 724곳 중 5~9명 소규모 팀 261곳)",
   "법인 전환 감지: 최근 24개월 전환 174곳, 신규 후보 14곳",
   "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 159곳 (1위 화장품  비누 및 방향제 소매업)",
@@ -819,6 +819,112 @@
    "change": "changed"
   },
   {
+   "key": "nps:701880:티에스",
+   "name": "주식회사 티에스",
+   "name_norm": "티에스",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "701880",
+   "age_years": 1.8,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "경기도 화성시 만세구 향남읍 발안공단로3길",
+   "industry": "축전지 제조업",
+   "induty_code": "314000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 13,
+    "monthly_bill": 3652900,
+    "sites": 1,
+    "adopt": "20250203",
+    "industry": "축전지 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 13
+     },
+     {
+      "ym": "202608",
+      "headcount": 12
+     },
+     {
+      "ym": "202607",
+      "headcount": 13
+     },
+     {
+      "ym": "202606",
+      "headcount": 13
+     },
+     {
+      "ym": "202605",
+      "headcount": 13
+     },
+     {
+      "ym": "202604",
+      "headcount": 12
+     },
+     {
+      "ym": "202603",
+      "headcount": 11
+     },
+     {
+      "ym": "202602",
+      "headcount": 11
+     },
+     {
+      "ym": "202601",
+      "headcount": 11
+     },
+     {
+      "ym": "202512",
+      "headcount": 10
+     },
+     {
+      "ym": "202511",
+      "headcount": 12
+     },
+     {
+      "ym": "202510",
+      "headcount": 5
+     },
+     {
+      "ym": "202509",
+      "headcount": 5
+     }
+    ],
+    "growth_3m": 0.0,
+    "growth_6m": 0.182,
+    "growth_12m": 1.6,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.88,
+    "bill_per_head": 280992,
+    "bill_per_head_change_12m": 0.217
+   },
+   "nps_key": "701880|티에스",
+   "financials": {},
+   "industry_momentum": {
+    "industry": "축전지 제조업",
+    "rank": 15,
+    "formation_yoy": 0.5,
+    "cohort_growth_12m": 0.101,
+    "young_firms": 68
+   },
+   "score": 82,
+   "reasons": [
+    "업력 1.8년(추정) (+22)",
+    "고용 12개월 +160% (+30)",
+    "국민연금 가입자 13명",
+    "팀 13명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 12개월 +22% (+6)",
+    "업종 모멘텀 15위: 축전지 제조업 (젊은 법인 신설 +50%, 고용 +10%) (+8)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "prev_grade": "C",
+   "prev_judged": "2026-11-16",
+   "change": "changed"
+  },
+  {
    "key": "nps:396860:바이트웍스bytewoxinc",
    "name": "주식회사바이트웍스(BytewoxInc.)",
    "name_norm": "바이트웍스bytewoxinc",
@@ -1019,112 +1125,6 @@
     "팀 17명 (얼리 스테이지 규모) (+8)",
     "1인당 고지금액 46만원 (상위 15% 보수 수준) (+6)",
     "1인당 고지금액 12개월 +19% (+6)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "prev_grade": "C",
-   "prev_judged": "2026-11-13",
-   "change": "changed"
-  },
-  {
-   "key": "nps:691810:헬로프렌즈",
-   "name": "주식회사헬로프렌즈",
-   "name_norm": "헬로프렌즈",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "691810",
-   "age_years": 3.0,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "전남광주통합특별시 북구 용봉로",
-   "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
-   "induty_code": "721000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 14,
-    "monthly_bill": 2756380,
-    "sites": 1,
-    "adopt": "20231201",
-    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 14
-     },
-     {
-      "ym": "202608",
-      "headcount": 13
-     },
-     {
-      "ym": "202607",
-      "headcount": 11
-     },
-     {
-      "ym": "202606",
-      "headcount": 11
-     },
-     {
-      "ym": "202605",
-      "headcount": 9
-     },
-     {
-      "ym": "202604",
-      "headcount": 6
-     },
-     {
-      "ym": "202603",
-      "headcount": 6
-     },
-     {
-      "ym": "202602",
-      "headcount": 6
-     },
-     {
-      "ym": "202601",
-      "headcount": 5
-     },
-     {
-      "ym": "202512",
-      "headcount": 5
-     },
-     {
-      "ym": "202511",
-      "headcount": 5
-     },
-     {
-      "ym": "202510",
-      "headcount": 5
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.273,
-    "growth_6m": 1.333,
-    "growth_12m": 1.8,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.33,
-    "bill_per_head": 196884,
-    "bill_per_head_change_12m": 0.082
-   },
-   "nps_key": "691810|헬로프렌즈",
-   "financials": {},
-   "industry_momentum": {
-    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
-    "rank": 6,
-    "formation_yoy": 0.421,
-    "cohort_growth_12m": 0.15,
-    "young_firms": 364
-   },
-   "score": 80,
-   "reasons": [
-    "업력 3.0년(추정) (+16)",
-    "고용 12개월 +180% (+30)",
-    "국민연금 가입자 14명",
-    "팀 14명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "업종 모멘텀 6위: 컴퓨터 시스템 통합 자문 및 구축 서비스업 (젊은 법인 신설 +42%, 고용 +15%) (+8)",
     "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
    ],
    "prev_grade": "C",
@@ -1608,45 +1608,45 @@
    "change": "new"
   },
   {
-   "key": "nps:408821:광주동구지역자활센터우리함께",
-   "name": "광주동구지역자활센터(우리함께)",
-   "name_norm": "광주동구지역자활센터우리함께",
+   "key": "nps:739880:킴테크닉스",
+   "name": "주식회사 킴테크닉스",
+   "name_norm": "킴테크닉스",
    "sources": [
     "nps"
    ],
-   "bizno6": "408821",
-   "age_years": 1.8,
+   "bizno6": "739880",
+   "age_years": 2.7,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "전남광주통합특별시 동구 금남로",
-   "industry": "가방 및 기타 가죽제품 소매업",
-   "induty_code": "523993",
+   "addr": "경기도 화성시 동탄구 동탄첨단산업1로",
+   "industry": "감광 재료 및 관련 화학제품 제조업",
+   "induty_code": "242905",
    "nps": {
     "ym": "202609",
-    "headcount": 21,
-    "monthly_bill": 1581640,
+    "headcount": 17,
+    "monthly_bill": 7321140,
     "sites": 1,
-    "adopt": "20250203",
-    "industry": "가방 및 기타 가죽제품 소매업",
+    "adopt": "20240301",
+    "industry": "감광 재료 및 관련 화학제품 제조업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 21
+      "headcount": 17
      },
      {
       "ym": "202608",
-      "headcount": 20
+      "headcount": 15
      },
      {
       "ym": "202607",
-      "headcount": 16
-     },
-     {
-      "ym": "202606",
       "headcount": 13
      },
      {
+      "ym": "202606",
+      "headcount": 11
+     },
+     {
       "ym": "202605",
-      "headcount": 12
+      "headcount": 9
      },
      {
       "ym": "202604",
@@ -1666,134 +1666,136 @@
      },
      {
       "ym": "202512",
-      "headcount": 9
+      "headcount": 8
      },
      {
       "ym": "202511",
-      "headcount": 9
+      "headcount": 6
      },
      {
       "ym": "202510",
-      "headcount": 10
+      "headcount": 6
      },
      {
       "ym": "202509",
-      "headcount": 10
+      "headcount": 6
      }
     ],
-    "growth_3m": 0.615,
-    "growth_6m": 1.625,
-    "growth_12m": 1.1,
-    "up_months": 10,
+    "growth_3m": 0.545,
+    "growth_6m": 1.125,
+    "growth_12m": 1.833,
+    "up_months": 12,
     "months_observed": 12,
-    "max_jump_share": 0.36,
-    "bill_per_head": 75316,
-    "bill_per_head_change_12m": -0.345
+    "max_jump_share": 0.18,
+    "bill_per_head": 430655,
+    "bill_per_head_change_12m": -0.027
    },
-   "nps_key": "408821|광주동구지역자활센터우리함께",
+   "nps_key": "739880|킴테크닉스",
    "financials": {},
    "score": 70,
    "reasons": [
-    "업력 1.8년(추정) (+22)",
-    "고용 12개월 +110% (+30)",
-    "국민연금 가입자 21명",
-    "팀 21명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+    "업력 2.7년(추정) (+16)",
+    "고용 12개월 +183% (+30)",
+    "국민연금 가입자 17명",
+    "팀 17명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 43만원 (상위 15% 보수 수준) (+6)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:612829:폐가전회수센터",
-   "name": "폐가전회수센터",
-   "name_norm": "폐가전회수센터",
+   "key": "nps:118850:대승정밀",
+   "name": "대승정밀(주)",
+   "name_norm": "대승정밀",
    "sources": [
     "nps"
    ],
-   "bizno6": "612829",
-   "age_years": 1.2,
+   "bizno6": "118850",
+   "age_years": 2.5,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "부산광역시 강서구 생곡산단1로24번길",
-   "industry": "금속류 원료 재생업",
-   "induty_code": "371000",
+   "addr": "전북특별자치도 김제시 백산면 지평선산단4길",
+   "industry": "그 외 자동차용 신품 부품 제조업",
+   "induty_code": "343000",
    "nps": {
     "ym": "202609",
-    "headcount": 16,
-    "monthly_bill": 3919040,
+    "headcount": 20,
+    "monthly_bill": 8955000,
     "sites": 1,
-    "adopt": "20250901",
-    "industry": "금속류 원료 재생업",
+    "adopt": "20240501",
+    "industry": "그 외 자동차용 신품 부품 제조업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 16
+      "headcount": 20
      },
      {
       "ym": "202608",
-      "headcount": 16
+      "headcount": 18
      },
      {
       "ym": "202607",
-      "headcount": 15
+      "headcount": 19
      },
      {
       "ym": "202606",
-      "headcount": 10
+      "headcount": 18
      },
      {
       "ym": "202605",
-      "headcount": 10
+      "headcount": 16
      },
      {
       "ym": "202604",
-      "headcount": 9
+      "headcount": 14
      },
      {
       "ym": "202603",
-      "headcount": 9
+      "headcount": 12
      },
      {
       "ym": "202602",
-      "headcount": 8
+      "headcount": 12
      },
      {
       "ym": "202601",
-      "headcount": 6
+      "headcount": 11
      },
      {
       "ym": "202512",
-      "headcount": 6
+      "headcount": 11
      },
      {
       "ym": "202511",
-      "headcount": 6
+      "headcount": 10
      },
      {
       "ym": "202510",
-      "headcount": 6
+      "headcount": 9
      },
      {
       "ym": "202509",
-      "headcount": 5
+      "headcount": 9
      }
     ],
-    "growth_3m": 0.6,
-    "growth_6m": 0.778,
-    "growth_12m": 2.2,
-    "up_months": 12,
+    "growth_3m": 0.111,
+    "growth_6m": 0.667,
+    "growth_12m": 1.222,
+    "up_months": 11,
     "months_observed": 12,
-    "max_jump_share": 0.45,
-    "bill_per_head": 244940,
-    "bill_per_head_change_12m": -0.13
+    "max_jump_share": 0.18,
+    "bill_per_head": 447750,
+    "bill_per_head_change_12m": 0.087
    },
-   "nps_key": "612829|폐가전회수센터",
+   "nps_key": "118850|대승정밀",
    "financials": {},
    "score": 70,
    "reasons": [
-    "업력 1.2년(추정) (+22)",
-    "고용 12개월 +220% (+30)",
-    "국민연금 가입자 16명",
-    "팀 16명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+    "업력 2.5년(추정) (+16)",
+    "고용 12개월 +122% (+30)",
+    "국민연금 가입자 20명",
+    "팀 20명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 45만원 (상위 15% 보수 수준) (+6)"
    ],
    "change": "new"
   },
@@ -2263,7 +2265,7 @@
    "key": "nps:701880:티에스",
    "name": "주식회사 티에스",
    "score": 82,
-   "change": "rejected"
+   "change": "changed"
   },
   {
    "key": "nps:396860:바이트웍스bytewoxinc",
@@ -3348,18 +3350,6 @@
   {
    "key": "nps:153850:티비비코퍼레이션",
    "name": "티비비 코퍼레이션",
-   "score": 70,
-   "change": "new"
-  },
-  {
-   "key": "nps:408821:광주동구지역자활센터우리함께",
-   "name": "광주동구지역자활센터(우리함께)",
-   "score": 70,
-   "change": "new"
-  },
-  {
-   "key": "nps:612829:폐가전회수센터",
-   "name": "폐가전회수센터",
    "score": 70,
    "change": "new"
   },
@@ -4584,12 +4574,6 @@
   {
    "key": "nps:738810:제이알케이비젼",
    "name": "(주)제이알케이비젼",
-   "score": 66,
-   "change": "new"
-  },
-  {
-   "key": "nps:121826:인천동구지역자활센터공익형",
-   "name": "인천동구지역자활센터-공익형",
    "score": 66,
    "change": "new"
   },
@@ -6112,12 +6096,6 @@
    "change": "new"
   },
   {
-   "key": "nps:128829:전남담양지역자활센터샛별",
-   "name": "전남담양지역자활센터(샛별)",
-   "score": 60,
-   "change": "new"
-  },
-  {
    "key": "nps:772820:이엔의원",
    "name": "이엔의원",
    "score": 60,
@@ -7236,12 +7214,6 @@
   {
    "key": "nps:113813:산청종합관리ph2일반청소용역1공구",
    "name": "(주)산청종합관리-Ph2일반청소용역 1공구",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:116822:부평남부지역자활센터",
-   "name": "부평남부지역자활센터",
    "score": 55,
    "change": "new"
   },
@@ -10630,12 +10602,6 @@
    "change": "new"
   },
   {
-   "key": "nps:416826:순천지역자활센터에코런드리",
-   "name": "순천지역자활센터(에코런드리)",
-   "score": 48,
-   "change": "new"
-  },
-  {
    "key": "nps:534850:삼일프론테크용인",
    "name": "삼일프론테크용인",
    "score": 48,
@@ -11824,12 +11790,6 @@
    "change": "new"
   },
   {
-   "key": "nps:121826:인천제물포구지역자활센터임가공사업",
-   "name": "인천제물포구지역자활센터(임가공사업)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:122818:도로청소덕양구가로청소용역",
    "name": "도로청소（주）/덕양구 가로청소 용역",
    "score": 45,
@@ -12106,12 +12066,6 @@
    "change": "new"
   },
   {
-   "key": "nps:195820:사상지역자활센터자활근로",
-   "name": "사상지역자활센터(자활근로)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:199850:비와이씨",
    "name": "(주)비와이씨 완주스마트물류센터",
    "score": 45,
@@ -12262,12 +12216,6 @@
    "change": "new"
   },
   {
-   "key": "nps:226826:강릉지역자활센터사회서비스",
-   "name": "강릉지역자활센터-사회서비스",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:226830:강릉시청2026년하반기서민일자리사업",
    "name": "강릉시청/2026년 하반기 서민일자리사업",
    "score": 45,
@@ -12366,12 +12314,6 @@
   {
    "key": "nps:258880:에이아이테크",
    "name": "에이아이테크(주)",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:259820:경북포항나눔지역자활센터노인맞춤돌봄",
-   "name": "경북포항나눔지역자활센터-노인맞춤돌봄",
    "score": 45,
    "change": "new"
   },
