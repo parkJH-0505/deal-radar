@@ -1,0 +1,15 @@
+{
+ "candidates": [],
+ "log": [
+  {
+   "날짜": "2026-11-17",
+   "레이더 키": "manual:파티클헌트",
+   "회사명": "파티클헌트",
+   "등급": "C",
+   "판정": "보류",
+   "이유": "휴대용 사금 자동 채취 장치(AGM-V1) 개발 중, 2026 설립, 투자 없음(thevc). 시제품·고객·고용 공개 흔적 없어 성장 증거 부족 → C. 사용자 요청 수동 판단",
+   "근거": "https://thevc.kr/particlehunt , https://claude.ai/artifact/UoMMSB8aMK6LJ4wHmAS5aH"
+  }
+ ],
+ "lens": []
+}
