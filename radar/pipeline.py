@@ -16,7 +16,7 @@ from pathlib import Path
 
 import yaml
 
-from .entity import bizno6, name_similarity, norm_name
+from .entity import bizno6, is_branch_bizno, name_similarity, norm_name
 from .http import HttpError, log
 from . import conversion as CV
 from .sources import foodsafety as FS
@@ -298,7 +298,8 @@ def merge_nps(cands: list[dict], found: list[dict], pidx: PanelIndex, cfg: dict,
             if "nps" not in by_key[k]["sources"]:
                 by_key[k]["sources"].append("nps")
             continue
-        if excluded(f["name"], pats) or str(f.get("induty_code")) == "999999":
+        if excluded(f["name"], pats) or str(f.get("induty_code")) == "999999" \
+                or is_branch_bizno(f.get("bizno6")):
             continue
         adopt = f["nps"].get("adopt")
         a = age_years(adopt, today)
@@ -389,6 +390,7 @@ def attach_conversions(cands, yms, pdata, cfg, today, notes) -> list[dict]:
             continue
         r = pdata[last][ck]
         if excluded(r["name"], pats) or str(r.get("induty_code")) == "999999" \
+                or is_branch_bizno(r.get("bizno6")) \
                 or (r.get("induty_name") or "") in ("해당없음", "") \
                 or NM.CYCLICAL_INDUSTRY.search(r.get("induty_name") or ""):
             continue

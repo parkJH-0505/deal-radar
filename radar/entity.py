@@ -58,6 +58,13 @@ def bizno6(bizno: str | None) -> str:
     return d[:6] if len(d) >= 6 else ""
 
 
+def is_branch_bizno(b6: str | None) -> bool:
+    """사업자번호 4·5번째 자리 '85' = 영리법인의 지점. 본점의 업력·계열을 물려받으므로
+    젊은 독립 회사가 아니다 (2026-11-16~19 판단에서 F 7건)."""
+    d = re.sub(r"\D", "", str(b6 or ""))
+    return len(d) >= 5 and d[3:5] == "85"
+
+
 _SIDO = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기",
          "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"]
 _SIDO_LONG = {

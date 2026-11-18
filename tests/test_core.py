@@ -2,7 +2,7 @@ import datetime as dt
 
 import yaml
 
-from radar.entity import bizno6, name_similarity, norm_name, sido
+from radar.entity import bizno6, is_branch_bizno, name_similarity, norm_name, sido
 from radar.http import find_items, find_key, pick
 from radar.score import age_years, score
 from radar.sources import localdata as L
@@ -182,3 +182,11 @@ def test_transplanted_business_penalised():
          "financials": {"revenue": 35_100_000_000, "revenue_prev": 8_300_000_000}}
     _, why = score(c, cfg, TODAY)
     assert any("기존 사업 이전" in r for r in why)
+
+
+def test_is_branch_bizno():
+    assert is_branch_bizno("418851")
+    assert is_branch_bizno("897-85-0")
+    assert not is_branch_bizno("484870")
+    assert not is_branch_bizno("")
+    assert not is_branch_bizno(None)
