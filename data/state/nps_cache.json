@@ -7300,5 +7300,33 @@
   ],
   "bill_per_head": 258028,
   "_asof": "2026-11-18"
+ },
+ "food:20260721546": {
+  "match": {
+   "seq": 6752372,
+   "name": "농업회사법인지에이치내츄럴주식회사",
+   "bizno6": "132862",
+   "ym": "202609",
+   "match_score": 1.0
+  },
+  "headcount": 26,
+  "monthly_bill": 8638760,
+  "industry": "그 외 기타 식료품 제조업",
+  "adopted": "20150801",
+  "addr": "경기도 가평군 상면 물골길",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 26
+   },
+   {
+    "ym": "202608",
+    "headcount": 23,
+    "acq": 3,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 332260,
+  "_asof": "2026-11-20"
  }
 }

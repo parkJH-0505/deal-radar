@@ -345,7 +345,7 @@
    "new_6m_year_ago": 0,
    "formation_yoy": 1.4,
    "cohort_growth_12m": 0.072,
-   "momentum": 0.777,
+   "momentum": 0.779,
    "rank": 29,
    "hot": false
   },
@@ -687,8 +687,8 @@
   },
   {
    "industry": "기타 화학 물질 및 화학제품 도매업",
-   "young_firms": 59,
-   "young_headcount": 632,
+   "young_firms": 58,
+   "young_headcount": 627,
    "new_6m": 3,
    "new_6m_year_ago": 2,
    "formation_yoy": 0.143,
@@ -902,6 +902,18 @@
    "hot": false
   },
   {
+   "industry": "그 외 기타 기계 및 장비 도매업",
+   "young_firms": 97,
+   "young_headcount": 804,
+   "new_6m": 5,
+   "new_6m_year_ago": 5,
+   "formation_yoy": 0.0,
+   "cohort_growth_12m": 0.074,
+   "momentum": 0.607,
+   "rank": 76,
+   "hot": false
+  },
+  {
    "industry": "매니저업",
    "young_firms": 137,
    "young_headcount": 1602,
@@ -910,31 +922,7 @@
    "formation_yoy": -0.188,
    "cohort_growth_12m": 0.176,
    "momentum": 0.605,
-   "rank": 76,
-   "hot": false
-  },
-  {
-   "industry": "그 외 기타 기계 및 장비 도매업",
-   "young_firms": 97,
-   "young_headcount": 804,
-   "new_6m": 5,
-   "new_6m_year_ago": 5,
-   "formation_yoy": 0.0,
-   "cohort_growth_12m": 0.074,
-   "momentum": 0.605,
    "rank": 77,
-   "hot": false
-  },
-  {
-   "industry": "기타 인문 및 사회과학 연구개발업",
-   "young_firms": 146,
-   "young_headcount": 2303,
-   "new_6m": 9,
-   "new_6m_year_ago": 5,
-   "formation_yoy": 0.4,
-   "cohort_growth_12m": 0.023,
-   "momentum": 0.604,
-   "rank": 78,
    "hot": false
   },
   {
@@ -945,6 +933,18 @@
    "new_6m_year_ago": 2,
    "formation_yoy": -0.143,
    "cohort_growth_12m": 0.121,
+   "momentum": 0.602,
+   "rank": 78,
+   "hot": false
+  },
+  {
+   "industry": "기타 인문 및 사회과학 연구개발업",
+   "young_firms": 146,
+   "young_headcount": 2303,
+   "new_6m": 9,
+   "new_6m_year_ago": 5,
+   "formation_yoy": 0.4,
+   "cohort_growth_12m": 0.023,
    "momentum": 0.602,
    "rank": 79,
    "hot": false
@@ -957,7 +957,7 @@
    "new_6m_year_ago": 1,
    "formation_yoy": 0.5,
    "cohort_growth_12m": 0.019,
-   "momentum": 0.602,
+   "momentum": 0.6,
    "rank": 80,
    "hot": false
   },
@@ -1029,7 +1029,7 @@
    "new_6m_year_ago": 3,
    "formation_yoy": 0.375,
    "cohort_growth_12m": 0.02,
-   "momentum": 0.58,
+   "momentum": 0.578,
    "rank": 86,
    "hot": false
   },
@@ -1041,7 +1041,7 @@
    "new_6m_year_ago": 2,
    "formation_yoy": 0.286,
    "cohort_growth_12m": 0.024,
-   "momentum": 0.58,
+   "momentum": 0.578,
    "rank": 87,
    "hot": false
   },
@@ -1130,18 +1130,6 @@
    "hot": false
   },
   {
-   "industry": "일반 교과학원 / 미술학원 / 기타 예술학원 / 외국어",
-   "young_firms": 53,
-   "young_headcount": 539,
-   "new_6m": 5,
-   "new_6m_year_ago": 3,
-   "formation_yoy": 0.25,
-   "cohort_growth_12m": 0.02,
-   "momentum": 0.555,
-   "rank": 95,
-   "hot": false
-  },
-  {
    "industry": "포장 및 충전업",
    "young_firms": 81,
    "young_headcount": 2063,
@@ -1150,7 +1138,7 @@
    "formation_yoy": 0.182,
    "cohort_growth_12m": 0.033,
    "momentum": 0.555,
-   "rank": 96,
+   "rank": 95,
    "hot": false
   },
   {
@@ -1161,6 +1149,18 @@
    "new_6m_year_ago": 11,
    "formation_yoy": -0.125,
    "cohort_growth_12m": 0.095,
+   "momentum": 0.553,
+   "rank": 96,
+   "hot": false
+  },
+  {
+   "industry": "일반 교과학원 / 미술학원 / 기타 예술학원 / 외국어",
+   "young_firms": 53,
+   "young_headcount": 539,
+   "new_6m": 5,
+   "new_6m_year_ago": 3,
+   "formation_yoy": 0.25,
+   "cohort_growth_12m": 0.02,
    "momentum": 0.553,
    "rank": 97,
    "hot": false
@@ -1334,18 +1334,6 @@
    "hot": false
   },
   {
-   "industry": "자동차 신품 타이어 및 튜브 판매업",
-   "young_firms": 43,
-   "young_headcount": 448,
-   "new_6m": 3,
-   "new_6m_year_ago": 2,
-   "formation_yoy": 0.143,
-   "cohort_growth_12m": 0.025,
-   "momentum": 0.529,
-   "rank": 112,
-   "hot": false
-  },
-  {
    "industry": "가전제품 수리업",
    "young_firms": 41,
    "young_headcount": 404,
@@ -1354,7 +1342,7 @@
    "formation_yoy": 0.5,
    "cohort_growth_12m": -0.01,
    "momentum": 0.529,
-   "rank": 113,
+   "rank": 112,
    "hot": false
   },
   {
@@ -1365,6 +1353,18 @@
    "new_6m_year_ago": 4,
    "formation_yoy": -0.111,
    "cohort_growth_12m": 0.082,
+   "momentum": 0.527,
+   "rank": 113,
+   "hot": false
+  },
+  {
+   "industry": "자동차 신품 타이어 및 튜브 판매업",
+   "young_firms": 43,
+   "young_headcount": 448,
+   "new_6m": 3,
+   "new_6m_year_ago": 2,
+   "formation_yoy": 0.143,
+   "cohort_growth_12m": 0.025,
    "momentum": 0.527,
    "rank": 114,
    "hot": false
@@ -1394,18 +1394,6 @@
    "hot": false
   },
   {
-   "industry": "장례식장 및 장의관련 서비스업",
-   "young_firms": 42,
-   "young_headcount": 337,
-   "new_6m": 3,
-   "new_6m_year_ago": 2,
-   "formation_yoy": 0.143,
-   "cohort_growth_12m": 0.023,
-   "momentum": 0.525,
-   "rank": 117,
-   "hot": false
-  },
-  {
    "industry": "건물 및 토목 엔지니어링 서비스업(기술사)",
    "young_firms": 62,
    "young_headcount": 575,
@@ -1414,7 +1402,7 @@
    "formation_yoy": 0.25,
    "cohort_growth_12m": 0.013,
    "momentum": 0.523,
-   "rank": 118,
+   "rank": 117,
    "hot": false
   },
   {
@@ -1425,6 +1413,18 @@
    "new_6m_year_ago": 3,
    "formation_yoy": 0.25,
    "cohort_growth_12m": 0.013,
+   "momentum": 0.523,
+   "rank": 118,
+   "hot": false
+  },
+  {
+   "industry": "장례식장 및 장의관련 서비스업",
+   "young_firms": 42,
+   "young_headcount": 337,
+   "new_6m": 3,
+   "new_6m_year_ago": 2,
+   "formation_yoy": 0.143,
+   "cohort_growth_12m": 0.023,
    "momentum": 0.523,
    "rank": 119,
    "hot": false
@@ -1682,18 +1682,6 @@
    "hot": false
   },
   {
-   "industry": "일식 음식점업",
-   "young_firms": 286,
-   "young_headcount": 2547,
-   "new_6m": 31,
-   "new_6m_year_ago": 27,
-   "formation_yoy": 0.125,
-   "cohort_growth_12m": 0.022,
-   "momentum": 0.49,
-   "rank": 141,
-   "hot": false
-  },
-  {
    "industry": "산업 처리공정 제어장비 제조업",
    "young_firms": 107,
    "young_headcount": 920,
@@ -1702,6 +1690,18 @@
    "formation_yoy": 0.167,
    "cohort_growth_12m": 0.013,
    "momentum": 0.49,
+   "rank": 141,
+   "hot": false
+  },
+  {
+   "industry": "일식 음식점업",
+   "young_firms": 286,
+   "young_headcount": 2547,
+   "new_6m": 31,
+   "new_6m_year_ago": 27,
+   "formation_yoy": 0.125,
+   "cohort_growth_12m": 0.022,
+   "momentum": 0.488,
    "rank": 142,
    "hot": false
   },
@@ -1755,20 +1755,20 @@
   },
   {
    "industry": "그 외 기타 분류 안된 사업 지원 서비스업",
-   "young_firms": 1527,
-   "young_headcount": 27501,
+   "young_firms": 1526,
+   "young_headcount": 27395,
    "new_6m": 113,
    "new_6m_year_ago": 115,
    "formation_yoy": -0.017,
-   "cohort_growth_12m": 0.049,
-   "momentum": 0.484,
+   "cohort_growth_12m": 0.05,
+   "momentum": 0.486,
    "rank": 147,
    "hot": false
   },
   {
    "industry": "전자상거래 소매업",
-   "young_firms": 1172,
-   "young_headcount": 11911,
+   "young_firms": 1171,
+   "young_headcount": 11906,
    "new_6m": 39,
    "new_6m_year_ago": 60,
    "formation_yoy": -0.323,
@@ -1833,7 +1833,7 @@
    "new_6m_year_ago": 4,
    "formation_yoy": 0.0,
    "cohort_growth_12m": 0.023,
-   "momentum": 0.469,
+   "momentum": 0.467,
    "rank": 153,
    "hot": false
   },
@@ -1941,7 +1941,7 @@
    "new_6m_year_ago": 3,
    "formation_yoy": 0.0,
    "cohort_growth_12m": 0.02,
-   "momentum": 0.453,
+   "momentum": 0.451,
    "rank": 162,
    "hot": false
   },
@@ -2102,6 +2102,18 @@
    "hot": false
   },
   {
+   "industry": "시스템 소프트웨어 개발 및 공급업",
+   "young_firms": 394,
+   "young_headcount": 5880,
+   "new_6m": 14,
+   "new_6m_year_ago": 19,
+   "formation_yoy": -0.208,
+   "cohort_growth_12m": 0.072,
+   "momentum": 0.42,
+   "rank": 176,
+   "hot": false
+  },
+  {
    "industry": "전자상거래 소매 중개업",
    "young_firms": 118,
    "young_headcount": 1244,
@@ -2110,7 +2122,7 @@
    "formation_yoy": -0.3,
    "cohort_growth_12m": 0.091,
    "momentum": 0.42,
-   "rank": 176,
+   "rank": 177,
    "hot": false
   },
   {
@@ -2122,31 +2134,7 @@
    "formation_yoy": -0.143,
    "cohort_growth_12m": 0.053,
    "momentum": 0.418,
-   "rank": 177,
-   "hot": false
-  },
-  {
-   "industry": "시스템 소프트웨어 개발 및 공급업",
-   "young_firms": 394,
-   "young_headcount": 5880,
-   "new_6m": 14,
-   "new_6m_year_ago": 19,
-   "formation_yoy": -0.208,
-   "cohort_growth_12m": 0.072,
-   "momentum": 0.418,
    "rank": 178,
-   "hot": false
-  },
-  {
-   "industry": "그 외 기타 생활용품 도매업",
-   "young_firms": 110,
-   "young_headcount": 1120,
-   "new_6m": 5,
-   "new_6m_year_ago": 8,
-   "formation_yoy": -0.231,
-   "cohort_growth_12m": 0.075,
-   "momentum": 0.416,
-   "rank": 179,
    "hot": false
   },
   {
@@ -2157,6 +2145,18 @@
    "new_6m_year_ago": 12,
    "formation_yoy": -0.118,
    "cohort_growth_12m": 0.045,
+   "momentum": 0.414,
+   "rank": 179,
+   "hot": false
+  },
+  {
+   "industry": "그 외 기타 생활용품 도매업",
+   "young_firms": 109,
+   "young_headcount": 1112,
+   "new_6m": 5,
+   "new_6m_year_ago": 8,
+   "formation_yoy": -0.231,
+   "cohort_growth_12m": 0.072,
    "momentum": 0.414,
    "rank": 180,
    "hot": false
@@ -2337,7 +2337,7 @@
    "new_6m_year_ago": 5,
    "formation_yoy": -0.1,
    "cohort_growth_12m": 0.02,
-   "momentum": 0.369,
+   "momentum": 0.367,
    "rank": 195,
    "hot": false
   },
@@ -2354,18 +2354,6 @@
    "hot": false
   },
   {
-   "industry": "그 외 기타 달리 분류되지 않은 제품 제조업",
-   "young_firms": 52,
-   "young_headcount": 680,
-   "new_6m": 2,
-   "new_6m_year_ago": 3,
-   "formation_yoy": -0.125,
-   "cohort_growth_12m": 0.027,
-   "momentum": 0.359,
-   "rank": 197,
-   "hot": false
-  },
-  {
    "industry": "원목 및 건축관련 목제품 도매업",
    "young_firms": 62,
    "young_headcount": 451,
@@ -2374,6 +2362,18 @@
    "formation_yoy": 0.0,
    "cohort_growth_12m": -0.022,
    "momentum": 0.359,
+   "rank": 197,
+   "hot": false
+  },
+  {
+   "industry": "그 외 기타 달리 분류되지 않은 제품 제조업",
+   "young_firms": 52,
+   "young_headcount": 680,
+   "new_6m": 2,
+   "new_6m_year_ago": 3,
+   "formation_yoy": -0.125,
+   "cohort_growth_12m": 0.027,
+   "momentum": 0.357,
    "rank": 198,
    "hot": false
   },
@@ -2451,8 +2451,8 @@
   },
   {
    "industry": "철물  금속 파스너 및 수공구 도매업",
-   "young_firms": 53,
-   "young_headcount": 392,
+   "young_firms": 52,
+   "young_headcount": 382,
    "new_6m": 1,
    "new_6m_year_ago": 1,
    "formation_yoy": 0.0,
@@ -2565,7 +2565,7 @@
    "new_6m_year_ago": 10,
    "formation_yoy": -0.2,
    "cohort_growth_12m": 0.023,
-   "momentum": 0.293,
+   "momentum": 0.291,
    "rank": 214,
    "hot": false
   },
@@ -2642,18 +2642,6 @@
    "hot": false
   },
   {
-   "industry": "재생용 재료 수집 및 판매업",
-   "young_firms": 101,
-   "young_headcount": 915,
-   "new_6m": 3,
-   "new_6m_year_ago": 8,
-   "formation_yoy": -0.385,
-   "cohort_growth_12m": 0.049,
-   "momentum": 0.273,
-   "rank": 221,
-   "hot": false
-  },
-  {
    "industry": "시각 디자인업",
    "young_firms": 126,
    "young_headcount": 1115,
@@ -2662,6 +2650,18 @@
    "formation_yoy": -0.286,
    "cohort_growth_12m": 0.04,
    "momentum": 0.273,
+   "rank": 221,
+   "hot": false
+  },
+  {
+   "industry": "재생용 재료 수집 및 판매업",
+   "young_firms": 101,
+   "young_headcount": 915,
+   "new_6m": 3,
+   "new_6m_year_ago": 8,
+   "formation_yoy": -0.385,
+   "cohort_growth_12m": 0.049,
+   "momentum": 0.271,
    "rank": 222,
    "hot": false
   },
@@ -2702,6 +2702,18 @@
    "hot": false
   },
   {
+   "industry": "셔츠 및 블라우스 소매업",
+   "young_firms": 43,
+   "young_headcount": 672,
+   "new_6m": 3,
+   "new_6m_year_ago": 6,
+   "formation_yoy": -0.273,
+   "cohort_growth_12m": 0.032,
+   "momentum": 0.266,
+   "rank": 226,
+   "hot": false
+  },
+  {
    "industry": "방송 프로그램 제작업",
    "young_firms": 82,
    "young_headcount": 1255,
@@ -2710,7 +2722,7 @@
    "formation_yoy": -0.429,
    "cohort_growth_12m": 0.059,
    "momentum": 0.262,
-   "rank": 226,
+   "rank": 227,
    "hot": false
   },
   {
@@ -2722,7 +2734,7 @@
    "formation_yoy": -0.3,
    "cohort_growth_12m": 0.037,
    "momentum": 0.26,
-   "rank": 227,
+   "rank": 228,
    "hot": false
   },
   {
@@ -2734,7 +2746,7 @@
    "formation_yoy": -0.2,
    "cohort_growth_12m": 0.016,
    "momentum": 0.256,
-   "rank": 228,
+   "rank": 229,
    "hot": false
   },
   {
@@ -2746,7 +2758,7 @@
    "formation_yoy": -0.389,
    "cohort_growth_12m": 0.046,
    "momentum": 0.25,
-   "rank": 229,
+   "rank": 230,
    "hot": false
   },
   {
@@ -2758,7 +2770,7 @@
    "formation_yoy": -0.4,
    "cohort_growth_12m": 0.046,
    "momentum": 0.246,
-   "rank": 230,
+   "rank": 231,
    "hot": false
   },
   {
@@ -2770,7 +2782,7 @@
    "formation_yoy": -0.25,
    "cohort_growth_12m": 0.018,
    "momentum": 0.238,
-   "rank": 231,
+   "rank": 232,
    "hot": false
   },
   {
@@ -2782,18 +2794,6 @@
    "formation_yoy": -0.333,
    "cohort_growth_12m": 0.033,
    "momentum": 0.234,
-   "rank": 232,
-   "hot": false
-  },
-  {
-   "industry": "셔츠 및 블라우스 소매업",
-   "young_firms": 44,
-   "young_headcount": 689,
-   "new_6m": 3,
-   "new_6m_year_ago": 6,
-   "formation_yoy": -0.273,
-   "cohort_growth_12m": 0.019,
-   "momentum": 0.232,
    "rank": 233,
    "hot": false
   },
@@ -2901,7 +2901,7 @@
    "new_6m_year_ago": 6,
    "formation_yoy": -0.364,
    "cohort_growth_12m": 0.019,
-   "momentum": 0.188,
+   "momentum": 0.186,
    "rank": 242,
    "hot": false
   },
@@ -2913,20 +2913,8 @@
    "new_6m_year_ago": 7,
    "formation_yoy": -0.417,
    "cohort_growth_12m": 0.023,
-   "momentum": 0.172,
+   "momentum": 0.17,
    "rank": 243,
-   "hot": false
-  },
-  {
-   "industry": "그 외 자동차용 신품 부품 제조업",
-   "young_firms": 721,
-   "young_headcount": 25437,
-   "new_6m": 38,
-   "new_6m_year_ago": 69,
-   "formation_yoy": -0.419,
-   "cohort_growth_12m": 0.023,
-   "momentum": 0.168,
-   "rank": 244,
    "hot": false
   },
   {
@@ -2938,7 +2926,7 @@
    "formation_yoy": -0.368,
    "cohort_growth_12m": 0.017,
    "momentum": 0.168,
-   "rank": 245,
+   "rank": 244,
    "hot": false
   },
   {
@@ -2949,6 +2937,18 @@
    "new_6m_year_ago": 13,
    "formation_yoy": -0.667,
    "cohort_growth_12m": 0.034,
+   "momentum": 0.166,
+   "rank": 245,
+   "hot": false
+  },
+  {
+   "industry": "그 외 자동차용 신품 부품 제조업",
+   "young_firms": 721,
+   "young_headcount": 25437,
+   "new_6m": 38,
+   "new_6m_year_ago": 69,
+   "formation_yoy": -0.419,
+   "cohort_growth_12m": 0.023,
    "momentum": 0.166,
    "rank": 246,
    "hot": false
@@ -2985,7 +2985,7 @@
    "new_6m_year_ago": 11,
    "formation_yoy": -0.562,
    "cohort_growth_12m": 0.022,
-   "momentum": 0.139,
+   "momentum": 0.137,
    "rank": 249,
    "hot": false
   },
