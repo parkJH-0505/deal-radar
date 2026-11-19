@@ -1,82 +1,187 @@
 {
  "date": "2026-11-19",
- "generated_at": "2026-11-19T08:06:07+09:00",
+ "generated_at": "2026-11-19T09:09:30+09:00",
  "counts": {
   "dart": 526,
   "localdata_signals": 95,
-  "scored": 3716,
-  "above_threshold": 2068,
+  "scored": 3510,
+  "above_threshold": 1951,
   "queue": 20,
-  "backlog_unreviewed": 1803
+  "backlog_unreviewed": 1679
  },
  "notes": [
-  "DART 증분: 2026-11-14~2026-11-18, 감사보고서 11건",
+  "DART 증분: 2026-11-15~2026-11-18, 감사보고서 11건",
   "DART 후보(설립 5년 이하·첫 외감): 526곳, 감사보고서 신규 파싱 0건",
-  "인허가 식품제조가공업: 증분(2026-11-15~) 60,771건 → 보유 95,958건, 증설·다거점 신호 95건",
+  "인허가 식품제조가공업: 증분(2026-11-16~) 60,771건 → 보유 95,958건, 증설·다거점 신호 95건",
   "식품안전나라: 최근 180일 품목제조보고 70,610건(이후 일괄), HACCP 첫 지정 0곳 → 다품종·HACCP 신호 989곳",
   "식품안전나라 단독 후보 126곳",
   "국민연금 패널 202509~202609 (13개월), 고용 급성장 후보 3262곳 (전문직·돌봄·교습 90곳 제외, 기술 기반 723곳 중 5~9명 소규모 팀 261곳)",
-  "법인 전환 감지: 최근 24개월 전환 174곳, 신규 후보 14곳",
-  "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 159곳 (1위 화장품  비누 및 방향제 소매업)",
+  "법인 전환 감지: 최근 24개월 전환 174곳, 신규 후보 13곳",
+  "업종 모멘텀 202609: 상위 15개 업종, 해당 후보 155곳 (1위 화장품  비누 및 방향제 소매업)",
   "국민연금 조회 0곳 (파라미터 방식: camel)"
  ],
  "queue": [
   {
-   "key": "nps:484870:제니쓰zenith",
-   "name": "주식회사 제니쓰 (Zenith)",
-   "name_norm": "제니쓰zenith",
+   "key": "nps:141814:인딥에이아이",
+   "name": "(주)인딥에이아이",
+   "name_norm": "인딥에이아이",
    "sources": [
     "nps"
    ],
-   "bizno6": "484870",
-   "age_years": 2.7,
+   "bizno6": "141814",
+   "age_years": 4.8,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 강남구 테헤란로",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
+   "addr": "서울특별시 서초구 양재대로12길",
+   "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
+   "induty_code": "721000",
    "nps": {
     "ym": "202609",
-    "headcount": 16,
-    "monthly_bill": 5291300,
+    "headcount": 27,
+    "monthly_bill": 8446060,
     "sites": 1,
-    "adopt": "20240219",
-    "industry": "응용 소프트웨어 개발 및 공급업",
+    "adopt": "20220201",
+    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 16
+      "headcount": 27
      },
      {
       "ym": "202608",
-      "headcount": 15
+      "headcount": 25
      },
      {
       "ym": "202607",
-      "headcount": 16
+      "headcount": 25
      },
      {
       "ym": "202606",
-      "headcount": 16
+      "headcount": 26
      },
      {
       "ym": "202605",
-      "headcount": 16
+      "headcount": 23
      },
      {
       "ym": "202604",
-      "headcount": 16
+      "headcount": 26
      },
      {
       "ym": "202603",
-      "headcount": 16
+      "headcount": 24
      },
      {
       "ym": "202602",
-      "headcount": 16
+      "headcount": 21
      },
      {
       "ym": "202601",
+      "headcount": 21
+     },
+     {
+      "ym": "202512",
+      "headcount": 19
+     },
+     {
+      "ym": "202511",
+      "headcount": 17
+     },
+     {
+      "ym": "202510",
+      "headcount": 15
+     },
+     {
+      "ym": "202509",
+      "headcount": 13
+     }
+    ],
+    "growth_3m": 0.038,
+    "growth_6m": 0.125,
+    "growth_12m": 1.077,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.21,
+    "bill_per_head": 312817,
+    "bill_per_head_change_12m": 0.173
+   },
+   "nps_key": "141814|인딥에이아이",
+   "financials": {},
+   "industry_momentum": {
+    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
+    "rank": 6,
+    "formation_yoy": 0.421,
+    "cohort_growth_12m": 0.151,
+    "young_firms": 363
+   },
+   "score": 76,
+   "reasons": [
+    "업력 4.8년(추정) (+6)",
+    "고용 12개월 +108% (+30)",
+    "국민연금 가입자 27명",
+    "팀 27명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +17% (+6)",
+    "업종 모멘텀 6위: 컴퓨터 시스템 통합 자문 및 구축 서비스업 (젊은 법인 신설 +42%, 고용 +15%) (+8)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:311870:제이티소프트",
+   "name": "주식회사 제이티소프트",
+   "name_norm": "제이티소프트",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "311870",
+   "age_years": 1.5,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 금천구 가산디지털1로",
+   "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
+   "induty_code": "721000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 12,
+    "monthly_bill": 3152460,
+    "sites": 1,
+    "adopt": "20250502",
+    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 12
+     },
+     {
+      "ym": "202608",
+      "headcount": 13
+     },
+     {
+      "ym": "202607",
       "headcount": 14
+     },
+     {
+      "ym": "202606",
+      "headcount": 15
+     },
+     {
+      "ym": "202605",
+      "headcount": 11
+     },
+     {
+      "ym": "202604",
+      "headcount": 10
+     },
+     {
+      "ym": "202603",
+      "headcount": 8
+     },
+     {
+      "ym": "202602",
+      "headcount": 10
+     },
+     {
+      "ym": "202601",
+      "headcount": 10
      },
      {
       "ym": "202512",
@@ -84,7 +189,403 @@
      },
      {
       "ym": "202511",
+      "headcount": 9
+     },
+     {
+      "ym": "202510",
+      "headcount": 6
+     },
+     {
+      "ym": "202509",
+      "headcount": 5
+     }
+    ],
+    "growth_3m": -0.2,
+    "growth_6m": 0.5,
+    "growth_12m": 1.4,
+    "up_months": 8,
+    "months_observed": 12,
+    "max_jump_share": 0.57,
+    "bill_per_head": 262705,
+    "bill_per_head_change_12m": -0.176
+   },
+   "nps_key": "311870|제이티소프트",
+   "financials": {},
+   "industry_momentum": {
+    "industry": "컴퓨터 시스템 통합 자문 및 구축 서비스업",
+    "rank": 6,
+    "formation_yoy": 0.421,
+    "cohort_growth_12m": 0.151,
+    "young_firms": 363
+   },
+   "score": 76,
+   "reasons": [
+    "업력 1.5년(추정) (+22)",
+    "고용 12개월 +140% (+30)",
+    "국민연금 가입자 12명",
+    "팀 12명 (얼리 스테이지 규모) (+8)",
+    "업종 모멘텀 6위: 컴퓨터 시스템 통합 자문 및 구축 서비스업 (젊은 법인 신설 +42%, 고용 +15%) (+8)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:772860:컨피그인텔리전스코리아",
+   "name": "컨피그인텔리전스코리아 주식회사",
+   "name_norm": "컨피그인텔리전스코리아",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "772860",
+   "age_years": 1.9,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 강남구 테헤란로",
+   "industry": "응용 소프트웨어 개발 및 공급업",
+   "induty_code": "722000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 17,
+    "monthly_bill": 8078100,
+    "sites": 1,
+    "adopt": "20250102",
+    "industry": "응용 소프트웨어 개발 및 공급업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 17
+     },
+     {
+      "ym": "202608",
+      "headcount": 16
+     },
+     {
+      "ym": "202607",
+      "headcount": 13
+     },
+     {
+      "ym": "202606",
       "headcount": 10
+     },
+     {
+      "ym": "202605",
+      "headcount": 9
+     },
+     {
+      "ym": "202604",
+      "headcount": 8
+     },
+     {
+      "ym": "202603",
+      "headcount": 8
+     },
+     {
+      "ym": "202602",
+      "headcount": 8
+     },
+     {
+      "ym": "202601",
+      "headcount": 8
+     },
+     {
+      "ym": "202512",
+      "headcount": 8
+     },
+     {
+      "ym": "202511",
+      "headcount": 8
+     },
+     {
+      "ym": "202510",
+      "headcount": 8
+     },
+     {
+      "ym": "202509",
+      "headcount": 8
+     }
+    ],
+    "growth_3m": 0.7,
+    "growth_6m": 1.125,
+    "growth_12m": 1.125,
+    "up_months": 12,
+    "months_observed": 12,
+    "max_jump_share": 0.33,
+    "bill_per_head": 475182,
+    "bill_per_head_change_12m": 0.17
+   },
+   "nps_key": "772860|컨피그인텔리전스코리아",
+   "financials": {},
+   "score": 75,
+   "reasons": [
+    "업력 1.9년(추정) (+22)",
+    "고용 12개월 +112% (+30)",
+    "국민연금 가입자 17명",
+    "팀 17명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 48만원 (상위 15% 보수 수준) (+6)",
+    "1인당 고지금액 12개월 +17% (+6)",
+    "상호가 'OO코리아' 형태: 외국계 한국법인 의심 (-15)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:580810:라이온로보틱스",
+   "name": "(주)라이온로보틱스",
+   "name_norm": "라이온로보틱스",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "580810",
+   "age_years": 3.1,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "대전광역시 유성구 문지로",
+   "industry": "산업용 로봇 제조업",
+   "induty_code": "292901",
+   "nps": {
+    "ym": "202609",
+    "headcount": 59,
+    "monthly_bill": 26054960,
+    "sites": 2,
+    "adopt": "20231020",
+    "industry": "산업용 로봇 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 59
+     },
+     {
+      "ym": "202608",
+      "headcount": 53
+     },
+     {
+      "ym": "202607",
+      "headcount": 50
+     },
+     {
+      "ym": "202606",
+      "headcount": 47
+     },
+     {
+      "ym": "202605",
+      "headcount": 39
+     },
+     {
+      "ym": "202604",
+      "headcount": 35
+     },
+     {
+      "ym": "202603",
+      "headcount": 34
+     },
+     {
+      "ym": "202602",
+      "headcount": 31
+     },
+     {
+      "ym": "202601",
+      "headcount": 28
+     },
+     {
+      "ym": "202512",
+      "headcount": 26
+     },
+     {
+      "ym": "202511",
+      "headcount": 24
+     },
+     {
+      "ym": "202510",
+      "headcount": 23
+     },
+     {
+      "ym": "202509",
+      "headcount": 23
+     }
+    ],
+    "growth_3m": 0.255,
+    "growth_6m": 0.735,
+    "growth_12m": 1.565,
+    "up_months": 12,
+    "months_observed": 12,
+    "max_jump_share": 0.22,
+    "bill_per_head": 441609,
+    "bill_per_head_change_12m": 0.281
+   },
+   "nps_key": "580810|라이온로보틱스",
+   "financials": {},
+   "score": 74,
+   "reasons": [
+    "업력 3.1년(추정) (+6)",
+    "고용 12개월 +156% (+30)",
+    "국민연금 가입자 59명",
+    "팀 59명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 44만원 (상위 15% 보수 수준) (+6)",
+    "1인당 고지금액 12개월 +28% (+6)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:172810:바른플러스",
+   "name": "(주)바른플러스",
+   "name_norm": "바른플러스",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "172810",
+   "age_years": 1.9,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "충청남도 천안시 서북구 2공단4로",
+   "industry": "그 외 기타 전자 부품 제조업",
+   "induty_code": "321001",
+   "nps": {
+    "ym": "202609",
+    "headcount": 45,
+    "monthly_bill": 10648600,
+    "sites": 1,
+    "adopt": "20250101",
+    "industry": "그 외 기타 전자 부품 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 45
+     },
+     {
+      "ym": "202608",
+      "headcount": 44
+     },
+     {
+      "ym": "202607",
+      "headcount": 44
+     },
+     {
+      "ym": "202606",
+      "headcount": 46
+     },
+     {
+      "ym": "202605",
+      "headcount": 41
+     },
+     {
+      "ym": "202604",
+      "headcount": 41
+     },
+     {
+      "ym": "202603",
+      "headcount": 30
+     },
+     {
+      "ym": "202602",
+      "headcount": 33
+     },
+     {
+      "ym": "202601",
+      "headcount": 33
+     },
+     {
+      "ym": "202512",
+      "headcount": 31
+     },
+     {
+      "ym": "202511",
+      "headcount": 21
+     },
+     {
+      "ym": "202510",
+      "headcount": 24
+     },
+     {
+      "ym": "202509",
+      "headcount": 22
+     }
+    ],
+    "growth_3m": -0.022,
+    "growth_6m": 0.5,
+    "growth_12m": 1.045,
+    "up_months": 9,
+    "months_observed": 12,
+    "max_jump_share": 0.48,
+    "bill_per_head": 236636,
+    "bill_per_head_change_12m": 0.145
+   },
+   "nps_key": "172810|바른플러스",
+   "financials": {},
+   "score": 74,
+   "reasons": [
+    "업력 1.9년(추정) (+22)",
+    "고용 12개월 +104% (+30)",
+    "국민연금 가입자 45명",
+    "팀 45명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 12개월 +14% (+6)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:211869:가온아이",
+   "name": "(주)가온아이",
+   "name_norm": "가온아이",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "211869",
+   "age_years": 1.9,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 강남구 봉은사로",
+   "industry": "응용 소프트웨어 개발 및 공급업",
+   "induty_code": "722000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 20,
+    "monthly_bill": 9319140,
+    "sites": 1,
+    "adopt": "20250101",
+    "industry": "응용 소프트웨어 개발 및 공급업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 20
+     },
+     {
+      "ym": "202608",
+      "headcount": 20
+     },
+     {
+      "ym": "202607",
+      "headcount": 20
+     },
+     {
+      "ym": "202606",
+      "headcount": 20
+     },
+     {
+      "ym": "202605",
+      "headcount": 19
+     },
+     {
+      "ym": "202604",
+      "headcount": 19
+     },
+     {
+      "ym": "202603",
+      "headcount": 20
+     },
+     {
+      "ym": "202602",
+      "headcount": 20
+     },
+     {
+      "ym": "202601",
+      "headcount": 19
+     },
+     {
+      "ym": "202512",
+      "headcount": 8
+     },
+     {
+      "ym": "202511",
+      "headcount": 8
      },
      {
       "ym": "202510",
@@ -97,1488 +598,238 @@
     ],
     "growth_3m": 0.0,
     "growth_6m": 0.0,
-    "growth_12m": 1.0,
+    "growth_12m": 1.5,
     "up_months": 11,
     "months_observed": 12,
-    "max_jump_share": 0.5,
-    "bill_per_head": 330706,
-    "bill_per_head_change_12m": 0.339
+    "max_jump_share": 0.92,
+    "bill_per_head": 465957,
+    "bill_per_head_change_12m": -0.046
    },
-   "nps_key": "484870|제니쓰zenith",
+   "nps_key": "211869|가온아이",
    "financials": {},
-   "score": 78,
+   "score": 74,
    "reasons": [
-    "업력 2.7년(추정) (+16)",
-    "고용 12개월 +100% (+30)",
-    "국민연금 가입자 16명",
-    "팀 16명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +34% (+6)",
+    "업력 1.9년(추정) (+22)",
+    "고용 12개월 +150% (+30)",
+    "국민연금 가입자 20명",
+    "팀 20명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 47만원 (상위 15% 보수 수준) (+6)",
     "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:706810:이노마인드",
-   "name": "주식회사 이노마인드",
-   "name_norm": "이노마인드",
+   "key": "nps:479860:가나안산업",
+   "name": "주식회사 가나안산업",
+   "name_norm": "가나안산업",
    "sources": [
     "nps"
    ],
-   "bizno6": "706810",
-   "age_years": 1.7,
+   "bizno6": "479860",
+   "age_years": 1.3,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "전남광주통합특별시 나주시 중야2길",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
+   "addr": "경기도 평택시 산단로52번길",
+   "industry": "기타 반도체 소자 제조업",
+   "induty_code": "321000",
    "nps": {
     "ym": "202609",
-    "headcount": 13,
-    "monthly_bill": 3800040,
+    "headcount": 20,
+    "monthly_bill": 4470420,
     "sites": 1,
-    "adopt": "20250301",
-    "industry": "응용 소프트웨어 개발 및 공급업",
+    "adopt": "20250801",
+    "industry": "기타 반도체 소자 제조업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 13
+      "headcount": 20
      },
      {
       "ym": "202608",
-      "headcount": 12
+      "headcount": 20
      },
      {
       "ym": "202607",
-      "headcount": 8
+      "headcount": 20
      },
      {
       "ym": "202606",
-      "headcount": 8
+      "headcount": 21
      },
      {
       "ym": "202605",
-      "headcount": 8
+      "headcount": 25
      },
      {
       "ym": "202604",
-      "headcount": 8
+      "headcount": 21
      },
      {
       "ym": "202603",
-      "headcount": 8
+      "headcount": 19
      },
      {
       "ym": "202602",
-      "headcount": 7
+      "headcount": 23
      },
      {
       "ym": "202601",
-      "headcount": 5
+      "headcount": 19
      },
      {
       "ym": "202512",
-      "headcount": 5
-     },
-     {
-      "ym": "202511",
-      "headcount": 5
-     },
-     {
-      "ym": "202510",
-      "headcount": 5
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.625,
-    "growth_6m": 0.625,
-    "growth_12m": 1.6,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.5,
-    "bill_per_head": 292311,
-    "bill_per_head_change_12m": -0.184
-   },
-   "nps_key": "706810|이노마인드",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 1.7년(추정) (+22)",
-    "고용 12개월 +160% (+30)",
-    "국민연금 가입자 13명",
-    "팀 13명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:304870:펠즈",
-   "name": "주식회사 펠즈",
-   "name_norm": "펠즈",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "304870",
-   "age_years": 2.2,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 고양시 덕양구 향동로",
-   "industry": "포털 및 기타 인터넷 정보 매개 서비스업",
-   "induty_code": "642004",
-   "nps": {
-    "ym": "202609",
-    "headcount": 13,
-    "monthly_bill": 4613700,
-    "sites": 1,
-    "adopt": "20240919",
-    "industry": "포털 및 기타 인터넷 정보 매개 서비스업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 13
-     },
-     {
-      "ym": "202608",
       "headcount": 14
      },
      {
-      "ym": "202607",
-      "headcount": 12
-     },
-     {
-      "ym": "202606",
-      "headcount": 12
-     },
-     {
-      "ym": "202605",
-      "headcount": 12
-     },
-     {
-      "ym": "202604",
-      "headcount": 11
-     },
-     {
-      "ym": "202603",
-      "headcount": 11
-     },
-     {
-      "ym": "202602",
-      "headcount": 11
-     },
-     {
-      "ym": "202601",
-      "headcount": 10
-     },
-     {
-      "ym": "202512",
-      "headcount": 9
-     },
-     {
       "ym": "202511",
-      "headcount": 8
+      "headcount": 13
      },
      {
       "ym": "202510",
-      "headcount": 7
+      "headcount": 10
      },
      {
       "ym": "202509",
-      "headcount": 6
+      "headcount": 8
      }
     ],
-    "growth_3m": 0.083,
-    "growth_6m": 0.182,
-    "growth_12m": 1.167,
-    "up_months": 11,
+    "growth_3m": -0.048,
+    "growth_6m": 0.053,
+    "growth_12m": 1.5,
+    "up_months": 9,
     "months_observed": 12,
-    "max_jump_share": 0.29,
-    "bill_per_head": 354900,
-    "bill_per_head_change_12m": 0.148
+    "max_jump_share": 0.42,
+    "bill_per_head": 223521,
+    "bill_per_head_change_12m": 0.151
    },
-   "nps_key": "304870|펠즈",
+   "nps_key": "479860|가나안산업",
    "financials": {},
-   "score": 78,
+   "score": 74,
    "reasons": [
-    "업력 2.2년(추정) (+16)",
-    "고용 12개월 +117% (+30)",
-    "국민연금 가입자 13명",
-    "팀 13명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "업력 1.3년(추정) (+22)",
+    "고용 12개월 +150% (+30)",
+    "국민연금 가입자 20명",
+    "팀 20명 (얼리 스테이지 규모) (+8)",
     "1인당 고지금액 12개월 +15% (+6)",
     "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:349810:정테크솔루션",
-   "name": "주식회사 정테크솔루션",
-   "name_norm": "정테크솔루션",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "349810",
-   "age_years": 1.9,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 오산시 서동로157번길",
-   "industry": "기타 반도체 소자 제조업",
-   "induty_code": "321000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 12,
-    "monthly_bill": 4232100,
-    "sites": 1,
-    "adopt": "20250101",
-    "industry": "기타 반도체 소자 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 12
-     },
-     {
-      "ym": "202608",
-      "headcount": 12
-     },
-     {
-      "ym": "202607",
-      "headcount": 12
-     },
-     {
-      "ym": "202606",
-      "headcount": 10
-     },
-     {
-      "ym": "202605",
-      "headcount": 10
-     },
-     {
-      "ym": "202604",
-      "headcount": 10
-     },
-     {
-      "ym": "202603",
-      "headcount": 7
-     },
-     {
-      "ym": "202602",
-      "headcount": 6
-     },
-     {
-      "ym": "202601",
-      "headcount": 6
-     },
-     {
-      "ym": "202512",
-      "headcount": 6
-     },
-     {
-      "ym": "202511",
-      "headcount": 6
-     },
-     {
-      "ym": "202510",
-      "headcount": 6
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.2,
-    "growth_6m": 0.714,
-    "growth_12m": 1.4,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.43,
-    "bill_per_head": 352675,
-    "bill_per_head_change_12m": 0.013
-   },
-   "nps_key": "349810|정테크솔루션",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 1.9년(추정) (+22)",
-    "고용 12개월 +140% (+30)",
-    "국민연금 가입자 12명",
-    "팀 12명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:421880:콜레봅스",
-   "name": "(주)콜레봅스",
-   "name_norm": "콜레봅스",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "421880",
-   "age_years": 1.5,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "충청북도 청주시 서원구 충대로",
-   "industry": "컴퓨터 프로그래밍 서비스업",
-   "induty_code": "722005",
-   "nps": {
-    "ym": "202609",
-    "headcount": 12,
-    "monthly_bill": 3021020,
-    "sites": 1,
-    "adopt": "20250601",
-    "industry": "컴퓨터 프로그래밍 서비스업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 12
-     },
-     {
-      "ym": "202608",
-      "headcount": 10
-     },
-     {
-      "ym": "202607",
-      "headcount": 9
-     },
-     {
-      "ym": "202606",
-      "headcount": 8
-     },
-     {
-      "ym": "202605",
-      "headcount": 7
-     },
-     {
-      "ym": "202604",
-      "headcount": 8
-     },
-     {
-      "ym": "202603",
-      "headcount": 9
-     },
-     {
-      "ym": "202602",
-      "headcount": 9
-     },
-     {
-      "ym": "202601",
-      "headcount": 9
-     },
-     {
-      "ym": "202512",
-      "headcount": 8
-     },
-     {
-      "ym": "202511",
-      "headcount": 6
-     },
-     {
-      "ym": "202510",
-      "headcount": 6
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.5,
-    "growth_6m": 0.333,
-    "growth_12m": 1.4,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.29,
-    "bill_per_head": 251752,
-    "bill_per_head_change_12m": -0.005
-   },
-   "nps_key": "421880|콜레봅스",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 1.5년(추정) (+22)",
-    "고용 12개월 +140% (+30)",
-    "국민연금 가입자 12명",
-    "팀 12명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:702860:라온메타",
-   "name": "라온메타주식회사",
-   "name_norm": "라온메타",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "702860",
-   "age_years": 2.3,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 영등포구 여의대로",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 14,
-    "monthly_bill": 1967720,
-    "sites": 1,
-    "adopt": "20240801",
-    "industry": "응용 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 14
-     },
-     {
-      "ym": "202608",
-      "headcount": 14
-     },
-     {
-      "ym": "202607",
-      "headcount": 14
-     },
-     {
-      "ym": "202606",
-      "headcount": 14
-     },
-     {
-      "ym": "202605",
-      "headcount": 13
-     },
-     {
-      "ym": "202604",
-      "headcount": 13
-     },
-     {
-      "ym": "202603",
-      "headcount": 13
-     },
-     {
-      "ym": "202602",
-      "headcount": 13
-     },
-     {
-      "ym": "202601",
-      "headcount": 14
-     },
-     {
-      "ym": "202512",
-      "headcount": 11
-     },
-     {
-      "ym": "202511",
-      "headcount": 9
-     },
-     {
-      "ym": "202510",
-      "headcount": 9
-     },
-     {
-      "ym": "202509",
-      "headcount": 7
-     }
-    ],
-    "growth_3m": 0.0,
-    "growth_6m": 0.077,
-    "growth_12m": 1.0,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.43,
-    "bill_per_head": 140551,
-    "bill_per_head_change_12m": 0.315
-   },
-   "nps_key": "702860|라온메타",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 2.3년(추정) (+16)",
-    "고용 12개월 +100% (+30)",
-    "국민연금 가입자 14명",
-    "팀 14명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +32% (+6)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:759860:뷰테크글로벌",
-   "name": "주식회사 뷰테크 글로벌",
-   "name_norm": "뷰테크글로벌",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "759860",
-   "age_years": 2.5,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 성동구 아차산로",
-   "industry": "시스템 소프트웨어 개발 및 공급업",
-   "induty_code": "722004",
-   "nps": {
-    "ym": "202609",
-    "headcount": 14,
-    "monthly_bill": 4168960,
-    "sites": 1,
-    "adopt": "20240601",
-    "industry": "시스템 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 14
-     },
-     {
-      "ym": "202608",
-      "headcount": 15
-     },
-     {
-      "ym": "202607",
-      "headcount": 15
-     },
-     {
-      "ym": "202606",
-      "headcount": 13
-     },
-     {
-      "ym": "202605",
-      "headcount": 11
-     },
-     {
-      "ym": "202604",
-      "headcount": 11
-     },
-     {
-      "ym": "202603",
-      "headcount": 10
-     },
-     {
-      "ym": "202602",
-      "headcount": 10
-     },
-     {
-      "ym": "202601",
-      "headcount": 9
-     },
-     {
-      "ym": "202512",
-      "headcount": 9
-     },
-     {
-      "ym": "202511",
-      "headcount": 7
-     },
-     {
-      "ym": "202510",
-      "headcount": 6
-     },
-     {
-      "ym": "202509",
-      "headcount": 7
-     }
-    ],
-    "growth_3m": 0.077,
-    "growth_6m": 0.4,
-    "growth_12m": 1.0,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.29,
-    "bill_per_head": 297783,
-    "bill_per_head_change_12m": 0.142
-   },
-   "nps_key": "759860|뷰테크글로벌",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 2.5년(추정) (+16)",
-    "고용 12개월 +100% (+30)",
-    "국민연금 가입자 14명",
-    "팀 14명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +14% (+6)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:254860:위식스",
-   "name": "위식스 주식회사",
-   "name_norm": "위식스",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "254860",
-   "age_years": 1.9,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 영등포구 양산로",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 11,
-    "monthly_bill": 4207080,
-    "sites": 1,
-    "adopt": "20250101",
-    "industry": "응용 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 11
-     },
-     {
-      "ym": "202608",
-      "headcount": 11
-     },
-     {
-      "ym": "202607",
-      "headcount": 11
-     },
-     {
-      "ym": "202606",
-      "headcount": 11
-     },
-     {
-      "ym": "202605",
-      "headcount": 11
-     },
-     {
-      "ym": "202604",
-      "headcount": 10
-     },
-     {
-      "ym": "202603",
-      "headcount": 9
-     },
-     {
-      "ym": "202602",
-      "headcount": 7
-     },
-     {
-      "ym": "202601",
-      "headcount": 7
-     },
-     {
-      "ym": "202512",
-      "headcount": 6
-     },
-     {
-      "ym": "202511",
-      "headcount": 6
-     },
-     {
-      "ym": "202510",
-      "headcount": 5
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.0,
-    "growth_6m": 0.222,
-    "growth_12m": 1.2,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.33,
-    "bill_per_head": 382462,
-    "bill_per_head_change_12m": -0.095
-   },
-   "nps_key": "254860|위식스",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 1.9년(추정) (+22)",
-    "고용 12개월 +120% (+30)",
-    "국민연금 가입자 11명",
-    "팀 11명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:597860:에스티플리머스",
-   "name": "에스티플리머스 주식회사",
-   "name_norm": "에스티플리머스",
+   "key": "nps:597860:제이씨바이오",
+   "name": "주식회사 제이씨바이오",
+   "name_norm": "제이씨바이오",
    "sources": [
     "nps"
    ],
    "bizno6": "597860",
-   "age_years": 2.6,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 강남구 압구정로36길",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 11,
-    "monthly_bill": 3552980,
-    "sites": 1,
-    "adopt": "20240411",
-    "industry": "응용 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 11
-     },
-     {
-      "ym": "202608",
-      "headcount": 9
-     },
-     {
-      "ym": "202607",
-      "headcount": 8
-     },
-     {
-      "ym": "202606",
-      "headcount": 9
-     },
-     {
-      "ym": "202605",
-      "headcount": 9
-     },
-     {
-      "ym": "202604",
-      "headcount": 8
-     },
-     {
-      "ym": "202603",
-      "headcount": 8
-     },
-     {
-      "ym": "202602",
-      "headcount": 8
-     },
-     {
-      "ym": "202601",
-      "headcount": 6
-     },
-     {
-      "ym": "202512",
-      "headcount": 6
-     },
-     {
-      "ym": "202511",
-      "headcount": 7
-     },
-     {
-      "ym": "202510",
-      "headcount": 6
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.222,
-    "growth_6m": 0.375,
-    "growth_12m": 1.2,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.33,
-    "bill_per_head": 322998,
-    "bill_per_head_change_12m": 0.246
-   },
-   "nps_key": "597860|에스티플리머스",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 2.6년(추정) (+16)",
-    "고용 12개월 +120% (+30)",
-    "국민연금 가입자 11명",
-    "팀 11명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +25% (+6)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:607880:바다핀테크",
-   "name": "주식회사 바다핀테크",
-   "name_norm": "바다핀테크",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "607880",
-   "age_years": 2.1,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "대전광역시 유성구 궁동로2번길",
-   "industry": "시스템 소프트웨어 개발 및 공급업",
-   "induty_code": "722004",
-   "nps": {
-    "ym": "202609",
-    "headcount": 12,
-    "monthly_bill": 3363380,
-    "sites": 1,
-    "adopt": "20241001",
-    "industry": "시스템 소프트웨어 개발 및 공급업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 12
-     },
-     {
-      "ym": "202608",
-      "headcount": 12
-     },
-     {
-      "ym": "202607",
-      "headcount": 13
-     },
-     {
-      "ym": "202606",
-      "headcount": 13
-     },
-     {
-      "ym": "202605",
-      "headcount": 13
-     },
-     {
-      "ym": "202604",
-      "headcount": 10
-     },
-     {
-      "ym": "202603",
-      "headcount": 10
-     },
-     {
-      "ym": "202602",
-      "headcount": 10
-     },
-     {
-      "ym": "202601",
-      "headcount": 10
-     },
-     {
-      "ym": "202512",
-      "headcount": 10
-     },
-     {
-      "ym": "202511",
-      "headcount": 10
-     },
-     {
-      "ym": "202510",
-      "headcount": 8
-     },
-     {
-      "ym": "202509",
-      "headcount": 6
-     }
-    ],
-    "growth_3m": -0.077,
-    "growth_6m": 0.2,
-    "growth_12m": 1.0,
-    "up_months": 11,
-    "months_observed": 12,
-    "max_jump_share": 0.5,
-    "bill_per_head": 280282,
-    "bill_per_head_change_12m": 0.715
-   },
-   "nps_key": "607880|바다핀테크",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 2.1년(추정) (+16)",
-    "고용 12개월 +100% (+30)",
-    "국민연금 가입자 12명",
-    "팀 12명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +72% (+6)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:786880:인애이블퓨전",
-   "name": "(주)인애이블퓨전",
-   "name_norm": "인애이블퓨전",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "786880",
-   "age_years": 2.8,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 성남시 분당구 판교역로",
-   "industry": "기타 공학 연구개발업",
-   "induty_code": "730006",
-   "nps": {
-    "ym": "202609",
-    "headcount": 12,
-    "monthly_bill": 5845840,
-    "sites": 1,
-    "adopt": "20240214",
-    "industry": "기타 공학 연구개발업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 12
-     },
-     {
-      "ym": "202608",
-      "headcount": 12
-     },
-     {
-      "ym": "202607",
-      "headcount": 12
-     },
-     {
-      "ym": "202606",
-      "headcount": 12
-     },
-     {
-      "ym": "202605",
-      "headcount": 11
-     },
-     {
-      "ym": "202604",
-      "headcount": 10
-     },
-     {
-      "ym": "202603",
-      "headcount": 7
-     },
-     {
-      "ym": "202602",
-      "headcount": 7
-     },
-     {
-      "ym": "202601",
-      "headcount": 7
-     },
-     {
-      "ym": "202512",
-      "headcount": 7
-     },
-     {
-      "ym": "202511",
-      "headcount": 6
-     },
-     {
-      "ym": "202510",
-      "headcount": 6
-     },
-     {
-      "ym": "202509",
-      "headcount": 6
-     }
-    ],
-    "growth_3m": 0.0,
-    "growth_6m": 0.714,
-    "growth_12m": 1.0,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.5,
-    "bill_per_head": 487153,
-    "bill_per_head_change_12m": 0.091
-   },
-   "nps_key": "786880|인애이블퓨전",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 2.8년(추정) (+16)",
-    "고용 12개월 +100% (+30)",
-    "국민연금 가입자 12명",
-    "팀 12명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 49만원 (상위 15% 보수 수준) (+6)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:787860:비씨디텍",
-   "name": "비씨디텍 주식회사",
-   "name_norm": "비씨디텍",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "787860",
-   "age_years": 2.4,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "강원특별자치도 원주시 혁신로",
-   "industry": "반도체 제조용 기계 제조업",
-   "induty_code": "292908",
-   "nps": {
-    "ym": "202609",
-    "headcount": 11,
-    "monthly_bill": 4530060,
-    "sites": 1,
-    "adopt": "20240610",
-    "industry": "반도체 제조용 기계 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 11
-     },
-     {
-      "ym": "202608",
-      "headcount": 10
-     },
-     {
-      "ym": "202607",
-      "headcount": 9
-     },
-     {
-      "ym": "202606",
-      "headcount": 8
-     },
-     {
-      "ym": "202605",
-      "headcount": 9
-     },
-     {
-      "ym": "202604",
-      "headcount": 9
-     },
-     {
-      "ym": "202603",
-      "headcount": 7
-     },
-     {
-      "ym": "202602",
-      "headcount": 7
-     },
-     {
-      "ym": "202512",
-      "headcount": 5
-     },
-     {
-      "ym": "202511",
-      "headcount": 5
-     },
-     {
-      "ym": "202510",
-      "headcount": 5
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.375,
-    "growth_6m": 0.571,
-    "growth_12m": 1.2,
-    "up_months": 10,
-    "months_observed": 11,
-    "max_jump_share": 0.33,
-    "bill_per_head": 411824,
-    "bill_per_head_change_12m": 0.006
-   },
-   "nps_key": "787860|비씨디텍",
-   "financials": {},
-   "score": 78,
-   "reasons": [
-    "업력 2.4년(추정) (+16)",
-    "고용 12개월 +120% (+30)",
-    "국민연금 가입자 11명",
-    "팀 11명 (얼리 스테이지 규모) (+8)",
-    "11개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 41만원 (상위 15% 보수 수준) (+6)",
-    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:877870:알오에스",
-   "name": "주식회사 알오에스",
-   "name_norm": "알오에스",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "877870",
    "age_years": 1.4,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 남양주시 별내3로",
-   "industry": "응용 소프트웨어 개발 및 공급업",
-   "induty_code": "722000",
+   "addr": "경상북도 안동시 풍산읍 산업단지길",
+   "industry": "의학 및 약학 연구개발업",
+   "induty_code": "730003",
    "nps": {
     "ym": "202609",
-    "headcount": 11,
-    "monthly_bill": 2512520,
+    "headcount": 24,
+    "monthly_bill": 7066840,
     "sites": 1,
-    "adopt": "20250626",
-    "industry": "응용 소프트웨어 개발 및 공급업",
+    "adopt": "20250614",
+    "industry": "의학 및 약학 연구개발업",
     "series": [
      {
       "ym": "202609",
-      "headcount": 11
+      "headcount": 24
      },
      {
       "ym": "202608",
-      "headcount": 10
+      "headcount": 23
      },
      {
       "ym": "202607",
-      "headcount": 9
+      "headcount": 26
      },
      {
       "ym": "202606",
-      "headcount": 9
+      "headcount": 27
      },
      {
       "ym": "202605",
-      "headcount": 9
+      "headcount": 18
      },
      {
       "ym": "202604",
-      "headcount": 9
+      "headcount": 18
      },
      {
       "ym": "202603",
-      "headcount": 8
+      "headcount": 17
      },
      {
       "ym": "202602",
-      "headcount": 8
+      "headcount": 16
      },
      {
       "ym": "202601",
-      "headcount": 7
+      "headcount": 14
      },
      {
       "ym": "202512",
-      "headcount": 6
+      "headcount": 19
      },
      {
       "ym": "202511",
-      "headcount": 6
+      "headcount": 15
      },
      {
       "ym": "202510",
-      "headcount": 6
+      "headcount": 15
      },
      {
       "ym": "202509",
-      "headcount": 5
+      "headcount": 12
      }
     ],
-    "growth_3m": 0.222,
-    "growth_6m": 0.375,
-    "growth_12m": 1.2,
-    "up_months": 12,
+    "growth_3m": -0.111,
+    "growth_6m": 0.412,
+    "growth_12m": 1.0,
+    "up_months": 9,
     "months_observed": 12,
-    "max_jump_share": 0.17,
-    "bill_per_head": 228411,
-    "bill_per_head_change_12m": -0.016
+    "max_jump_share": 0.75,
+    "bill_per_head": 294452,
+    "bill_per_head_change_12m": 0.256
    },
-   "nps_key": "877870|알오에스",
+   "nps_key": "597860|제이씨바이오",
    "financials": {},
-   "score": 78,
+   "score": 74,
    "reasons": [
     "업력 1.4년(추정) (+22)",
-    "고용 12개월 +120% (+30)",
-    "국민연금 가입자 11명",
-    "팀 11명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "고용 12개월 +100% (+30)",
+    "국민연금 가입자 24명",
+    "팀 24명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 12개월 +26% (+6)",
     "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:418851:주왕산에프앤비",
-   "name": "주왕산에프앤비",
-   "name_norm": "주왕산에프앤비",
+   "key": "nps:891870:제이쓰리랩",
+   "name": "제이쓰리랩 주식회사",
+   "name_norm": "제이쓰리랩",
    "sources": [
     "nps"
    ],
-   "bizno6": "418851",
-   "age_years": 1.9,
+   "bizno6": "891870",
+   "age_years": 2.9,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "대구광역시 동구 부동7길",
-   "industry": "김치류 제조업",
-   "induty_code": "151301",
-   "nps": {
-    "ym": "202609",
-    "headcount": 15,
-    "monthly_bill": 3679780,
-    "sites": 1,
-    "adopt": "20250101",
-    "industry": "김치류 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 15
-     },
-     {
-      "ym": "202608",
-      "headcount": 15
-     },
-     {
-      "ym": "202607",
-      "headcount": 14
-     },
-     {
-      "ym": "202606",
-      "headcount": 10
-     },
-     {
-      "ym": "202605",
-      "headcount": 9
-     },
-     {
-      "ym": "202604",
-      "headcount": 7
-     },
-     {
-      "ym": "202603",
-      "headcount": 6
-     },
-     {
-      "ym": "202602",
-      "headcount": 7
-     },
-     {
-      "ym": "202601",
-      "headcount": 9
-     },
-     {
-      "ym": "202512",
-      "headcount": 8
-     },
-     {
-      "ym": "202511",
-      "headcount": 8
-     },
-     {
-      "ym": "202510",
-      "headcount": 6
-     },
-     {
-      "ym": "202509",
-      "headcount": 6
-     }
-    ],
-    "growth_3m": 0.5,
-    "growth_6m": 1.5,
-    "growth_12m": 1.5,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.44,
-    "bill_per_head": 245319,
-    "bill_per_head_change_12m": 0.065
-   },
-   "nps_key": "418851|주왕산에프앤비",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 1.9년(추정) (+22)",
-    "고용 12개월 +150% (+30)",
-    "국민연금 가입자 15명",
-    "팀 15명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:557860:멕스텍",
-   "name": "주식회사 멕스텍",
-   "name_norm": "멕스텍",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "557860",
-   "age_years": 2.2,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 성남시 수정구 달래내로",
-   "industry": "발광 다이오드 제조업",
-   "induty_code": "321004",
-   "nps": {
-    "ym": "202609",
-    "headcount": 15,
-    "monthly_bill": 5616880,
-    "sites": 1,
-    "adopt": "20240901",
-    "industry": "발광 다이오드 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 15
-     },
-     {
-      "ym": "202608",
-      "headcount": 14
-     },
-     {
-      "ym": "202607",
-      "headcount": 15
-     },
-     {
-      "ym": "202606",
-      "headcount": 12
-     },
-     {
-      "ym": "202605",
-      "headcount": 11
-     },
-     {
-      "ym": "202604",
-      "headcount": 12
-     },
-     {
-      "ym": "202603",
-      "headcount": 9
-     },
-     {
-      "ym": "202602",
-      "headcount": 9
-     },
-     {
-      "ym": "202601",
-      "headcount": 8
-     },
-     {
-      "ym": "202512",
-      "headcount": 8
-     },
-     {
-      "ym": "202511",
-      "headcount": 8
-     },
-     {
-      "ym": "202510",
-      "headcount": 8
-     },
-     {
-      "ym": "202509",
-      "headcount": 6
-     }
-    ],
-    "growth_3m": 0.25,
-    "growth_6m": 0.667,
-    "growth_12m": 1.5,
-    "up_months": 10,
-    "months_observed": 12,
-    "max_jump_share": 0.33,
-    "bill_per_head": 374459,
-    "bill_per_head_change_12m": 0.264
-   },
-   "nps_key": "557860|멕스텍",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 2.2년(추정) (+16)",
-    "고용 12개월 +150% (+30)",
-    "국민연금 가입자 15명",
-    "팀 15명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +26% (+6)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:598860:지에스피",
-   "name": "지에스피 (주)",
-   "name_norm": "지에스피",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "598860",
-   "age_years": 1.2,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "대구광역시 달서구 성서공단북로5길",
-   "industry": "그 외 자동차용 신품 부품 제조업",
-   "induty_code": "343000",
-   "nps": {
-    "ym": "202609",
-    "headcount": 14,
-    "monthly_bill": 4708900,
-    "sites": 1,
-    "adopt": "20250901",
-    "industry": "그 외 자동차용 신품 부품 제조업",
-    "series": [
-     {
-      "ym": "202609",
-      "headcount": 14
-     },
-     {
-      "ym": "202608",
-      "headcount": 14
-     },
-     {
-      "ym": "202607",
-      "headcount": 13
-     },
-     {
-      "ym": "202606",
-      "headcount": 12
-     },
-     {
-      "ym": "202605",
-      "headcount": 11
-     },
-     {
-      "ym": "202604",
-      "headcount": 11
-     },
-     {
-      "ym": "202603",
-      "headcount": 10
-     },
-     {
-      "ym": "202602",
-      "headcount": 10
-     },
-     {
-      "ym": "202601",
-      "headcount": 9
-     },
-     {
-      "ym": "202512",
-      "headcount": 7
-     },
-     {
-      "ym": "202511",
-      "headcount": 7
-     },
-     {
-      "ym": "202510",
-      "headcount": 5
-     },
-     {
-      "ym": "202509",
-      "headcount": 5
-     }
-    ],
-    "growth_3m": 0.167,
-    "growth_6m": 0.4,
-    "growth_12m": 1.8,
-    "up_months": 12,
-    "months_observed": 12,
-    "max_jump_share": 0.22,
-    "bill_per_head": 336350,
-    "bill_per_head_change_12m": -0.133
-   },
-   "nps_key": "598860|지에스피",
-   "financials": {},
-   "score": 70,
-   "reasons": [
-    "업력 1.2년(추정) (+22)",
-    "고용 12개월 +180% (+30)",
-    "국민연금 가입자 14명",
-    "팀 14명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
-   ],
-   "change": "new"
-  },
-  {
-   "key": "nps:857870:서관면옥",
-   "name": "주식회사 서관면옥",
-   "name_norm": "서관면옥",
-   "sources": [
-    "nps"
-   ],
-   "bizno6": "857870",
-   "age_years": 1.7,
-   "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "서울특별시 중구 퇴계로",
-   "industry": "경영 컨설팅업",
-   "induty_code": "741400",
+   "addr": "경기도 성남시 수정구 대왕판교로",
+   "industry": "응용 소프트웨어 개발 및 공급업",
+   "induty_code": "722000",
    "nps": {
     "ym": "202609",
     "headcount": 18,
-    "monthly_bill": 4745760,
+    "monthly_bill": 7384720,
     "sites": 1,
-    "adopt": "20250301",
-    "industry": "경영 컨설팅업",
+    "adopt": "20240109",
+    "industry": "응용 소프트웨어 개발 및 공급업",
     "series": [
      {
       "ym": "202609",
@@ -1586,31 +837,316 @@
      },
      {
       "ym": "202608",
-      "headcount": 18
+      "headcount": 17
      },
      {
       "ym": "202607",
       "headcount": 17
      },
      {
-      "ym": "202606",
-      "headcount": 16
-     },
-     {
       "ym": "202605",
-      "headcount": 15
+      "headcount": 5
      },
      {
       "ym": "202604",
-      "headcount": 14
+      "headcount": 5
      },
      {
       "ym": "202603",
-      "headcount": 15
+      "headcount": 5
+     },
+     {
+      "ym": "202602",
+      "headcount": 5
+     },
+     {
+      "ym": "202601",
+      "headcount": 5
+     },
+     {
+      "ym": "202512",
+      "headcount": 6
+     },
+     {
+      "ym": "202511",
+      "headcount": 6
+     },
+     {
+      "ym": "202510",
+      "headcount": 6
+     },
+     {
+      "ym": "202509",
+      "headcount": 6
+     }
+    ],
+    "growth_3m_from_zero": true,
+    "growth_6m": 2.6,
+    "growth_12m": 2.0,
+    "up_months": 10,
+    "months_observed": 11,
+    "max_jump_share": 1.0,
+    "bill_per_head": 410262,
+    "bill_per_head_change_12m": 0.221
+   },
+   "nps_key": "891870|제이쓰리랩",
+   "financials": {},
+   "score": 74,
+   "reasons": [
+    "업력 2.9년(추정) (+16)",
+    "고용 12개월 +200% (+30)",
+    "국민연금 가입자 18명",
+    "팀 18명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 41만원 (상위 15% 보수 수준) (+6)",
+    "1인당 고지금액 12개월 +22% (+6)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:266810:시스템노바",
+   "name": "주식회사 시스템노바",
+   "name_norm": "시스템노바",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "266810",
+   "age_years": 1.6,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 강남구 언주로106길",
+   "industry": "응용 소프트웨어 개발 및 공급업",
+   "induty_code": "722000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 21,
+    "monthly_bill": 6776560,
+    "sites": 1,
+    "adopt": "20250401",
+    "industry": "응용 소프트웨어 개발 및 공급업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 21
+     },
+     {
+      "ym": "202608",
+      "headcount": 21
+     },
+     {
+      "ym": "202607",
+      "headcount": 21
+     },
+     {
+      "ym": "202606",
+      "headcount": 18
+     },
+     {
+      "ym": "202605",
+      "headcount": 19
+     },
+     {
+      "ym": "202604",
+      "headcount": 19
+     },
+     {
+      "ym": "202603",
+      "headcount": 20
+     },
+     {
+      "ym": "202602",
+      "headcount": 19
+     },
+     {
+      "ym": "202601",
+      "headcount": 13
+     },
+     {
+      "ym": "202512",
+      "headcount": 14
+     },
+     {
+      "ym": "202511",
+      "headcount": 13
+     },
+     {
+      "ym": "202510",
+      "headcount": 13
+     },
+     {
+      "ym": "202509",
+      "headcount": 10
+     }
+    ],
+    "growth_3m": 0.167,
+    "growth_6m": 0.05,
+    "growth_12m": 1.1,
+    "up_months": 9,
+    "months_observed": 12,
+    "max_jump_share": 0.55,
+    "bill_per_head": 322693,
+    "bill_per_head_change_12m": 0.157
+   },
+   "nps_key": "266810|시스템노바",
+   "financials": {},
+   "score": 74,
+   "reasons": [
+    "업력 1.6년(추정) (+22)",
+    "고용 12개월 +110% (+30)",
+    "국민연금 가입자 21명",
+    "팀 21명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 12개월 +16% (+6)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:441860:세미에이아이",
+   "name": "주식회사 세미에이아이",
+   "name_norm": "세미에이아이",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "441860",
+   "age_years": 1.8,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 서초구 강남대로",
+   "industry": "전기ㆍ전자공학 연구개발업",
+   "induty_code": "730005",
+   "nps": {
+    "ym": "202609",
+    "headcount": 19,
+    "monthly_bill": 7941680,
+    "sites": 1,
+    "adopt": "20250201",
+    "industry": "전기ㆍ전자공학 연구개발업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 19
+     },
+     {
+      "ym": "202608",
+      "headcount": 17
+     },
+     {
+      "ym": "202607",
+      "headcount": 16
+     },
+     {
+      "ym": "202606",
+      "headcount": 17
+     },
+     {
+      "ym": "202605",
+      "headcount": 17
+     },
+     {
+      "ym": "202604",
+      "headcount": 17
+     },
+     {
+      "ym": "202603",
+      "headcount": 14
      },
      {
       "ym": "202602",
       "headcount": 15
+     },
+     {
+      "ym": "202601",
+      "headcount": 16
+     },
+     {
+      "ym": "202512",
+      "headcount": 14
+     },
+     {
+      "ym": "202511",
+      "headcount": 9
+     },
+     {
+      "ym": "202510",
+      "headcount": 9
+     },
+     {
+      "ym": "202509",
+      "headcount": 8
+     }
+    ],
+    "growth_3m": 0.118,
+    "growth_6m": 0.357,
+    "growth_12m": 1.375,
+    "up_months": 9,
+    "months_observed": 12,
+    "max_jump_share": 0.45,
+    "bill_per_head": 417983,
+    "bill_per_head_change_12m": -0.001
+   },
+   "nps_key": "441860|세미에이아이",
+   "financials": {},
+   "score": 74,
+   "reasons": [
+    "업력 1.8년(추정) (+22)",
+    "고용 12개월 +138% (+30)",
+    "국민연금 가입자 19명",
+    "팀 19명 (얼리 스테이지 규모) (+8)",
+    "1인당 고지금액 42만원 (상위 15% 보수 수준) (+6)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:490870:에이앰애스",
+   "name": "주식회사 에이앰애스",
+   "name_norm": "에이앰애스",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "490870",
+   "age_years": 4.5,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "경기도 화성시 동탄구 동탄순환대로",
+   "industry": "기타 반도체 소자 제조업",
+   "induty_code": "321000",
+   "nps": {
+    "ym": "202609",
+    "headcount": 22,
+    "monthly_bill": 10182860,
+    "sites": 1,
+    "adopt": "20220509",
+    "industry": "기타 반도체 소자 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 22
+     },
+     {
+      "ym": "202608",
+      "headcount": 22
+     },
+     {
+      "ym": "202607",
+      "headcount": 22
+     },
+     {
+      "ym": "202606",
+      "headcount": 21
+     },
+     {
+      "ym": "202605",
+      "headcount": 19
+     },
+     {
+      "ym": "202604",
+      "headcount": 18
+     },
+     {
+      "ym": "202603",
+      "headcount": 16
+     },
+     {
+      "ym": "202602",
+      "headcount": 17
      },
      {
       "ym": "202601",
@@ -1622,58 +1158,61 @@
      },
      {
       "ym": "202511",
-      "headcount": 13
-     },
-     {
-      "ym": "202510",
       "headcount": 11
      },
      {
+      "ym": "202510",
+      "headcount": 10
+     },
+     {
       "ym": "202509",
-      "headcount": 9
+      "headcount": 11
      }
     ],
-    "growth_3m": 0.125,
-    "growth_6m": 0.2,
+    "growth_3m": 0.048,
+    "growth_6m": 0.375,
     "growth_12m": 1.0,
-    "up_months": 11,
+    "up_months": 10,
     "months_observed": 12,
-    "max_jump_share": 0.22,
-    "bill_per_head": 263653,
-    "bill_per_head_change_12m": -0.087
+    "max_jump_share": 0.27,
+    "bill_per_head": 462857,
+    "bill_per_head_change_12m": 0.242
    },
-   "nps_key": "857870|서관면옥",
+   "nps_key": "490870|에이앰애스",
    "financials": {},
-   "score": 70,
+   "score": 74,
    "reasons": [
-    "업력 1.7년(추정) (+22)",
+    "업력 4.5년(추정) (+6)",
     "고용 12개월 +100% (+30)",
-    "국민연금 가입자 18명",
-    "팀 18명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+    "국민연금 가입자 22명",
+    "팀 22명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 46만원 (상위 15% 보수 수준) (+6)",
+    "1인당 고지금액 12개월 +24% (+6)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:895860:서도메타",
-   "name": "서도메타",
-   "name_norm": "서도메타",
+   "key": "nps:616870:에이원인포텍",
+   "name": "에이원인포텍(주)",
+   "name_norm": "에이원인포텍",
    "sources": [
     "nps"
    ],
-   "bizno6": "895860",
-   "age_years": 2.3,
+   "bizno6": "616870",
+   "age_years": 3.0,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "충청남도 아산시 음봉면 연암율금로",
-   "industry": "구조용 금속 판제품 및 공작물 제조업",
-   "induty_code": "281103",
+   "addr": "대전광역시 유성구 은구비남로7번길",
+   "industry": "시스템 소프트웨어 개발 및 공급업",
+   "induty_code": "722004",
    "nps": {
     "ym": "202609",
     "headcount": 15,
-    "monthly_bill": 4228000,
+    "monthly_bill": 6993980,
     "sites": 1,
-    "adopt": "20240819",
-    "industry": "구조용 금속 판제품 및 공작물 제조업",
+    "adopt": "20231101",
+    "industry": "시스템 소프트웨어 개발 및 공급업",
     "series": [
      {
       "ym": "202609",
@@ -1681,95 +1220,96 @@
      },
      {
       "ym": "202608",
-      "headcount": 13
+      "headcount": 15
      },
      {
       "ym": "202607",
-      "headcount": 13
+      "headcount": 15
      },
      {
       "ym": "202606",
-      "headcount": 9
+      "headcount": 15
      },
      {
       "ym": "202605",
-      "headcount": 9
+      "headcount": 15
      },
      {
       "ym": "202604",
-      "headcount": 9
+      "headcount": 16
      },
      {
       "ym": "202603",
-      "headcount": 10
+      "headcount": 16
      },
      {
       "ym": "202602",
-      "headcount": 8
+      "headcount": 16
      },
      {
       "ym": "202601",
-      "headcount": 8
+      "headcount": 15
      },
      {
       "ym": "202512",
-      "headcount": 8
+      "headcount": 15
      },
      {
       "ym": "202511",
-      "headcount": 8
+      "headcount": 15
      },
      {
       "ym": "202510",
-      "headcount": 6
+      "headcount": 15
      },
      {
       "ym": "202509",
-      "headcount": 6
+      "headcount": 5
      }
     ],
-    "growth_3m": 0.667,
-    "growth_6m": 0.5,
-    "growth_12m": 1.5,
+    "growth_3m": 0.0,
+    "growth_6m": -0.062,
+    "growth_12m": 2.0,
     "up_months": 11,
     "months_observed": 12,
-    "max_jump_share": 0.44,
-    "bill_per_head": 281867,
-    "bill_per_head_change_12m": 0.494
+    "max_jump_share": 1.0,
+    "bill_per_head": 466265,
+    "bill_per_head_change_12m": 0.64
    },
-   "nps_key": "895860|서도메타",
+   "nps_key": "616870|에이원인포텍",
    "financials": {},
-   "score": 70,
+   "score": 74,
    "reasons": [
-    "업력 2.3년(추정) (+16)",
-    "고용 12개월 +150% (+30)",
+    "업력 3.0년(추정) (+16)",
+    "고용 12개월 +200% (+30)",
     "국민연금 가입자 15명",
     "팀 15명 (얼리 스테이지 규모) (+8)",
-    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
-    "1인당 고지금액 12개월 +49% (+6)"
+    "1인당 고지금액 47만원 (상위 15% 보수 수준) (+6)",
+    "1인당 고지금액 12개월 +64% (+6)",
+    "테제 업종: 기술 기반 초기 스타트업 (SW·AI·반도체·로봇·바이오·의료기기) (+8)"
    ],
    "change": "new"
   },
   {
-   "key": "nps:126880:세종에듀",
-   "name": "주식회사 세종에듀",
-   "name_norm": "세종에듀",
+   "key": "nps:234860:끼니",
+   "name": "(주)끼니",
+   "name_norm": "끼니",
    "sources": [
     "nps"
    ],
-   "bizno6": "126880",
-   "age_years": 1.6,
+   "bizno6": "234860",
+   "age_years": 2.5,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "세종특별자치시  한누리대로",
-   "industry": "기타 교육지원 서비스업",
-   "induty_code": "930915",
+   "addr": "경기도 성남시 분당구 판교공원로1길",
+   "industry": "조리 반찬류 소매업",
+   "induty_code": "522109",
    "nps": {
     "ym": "202609",
     "headcount": 15,
-    "monthly_bill": 2072860,
+    "monthly_bill": 4168160,
     "sites": 1,
-    "adopt": "20250409",
-    "industry": "기타 교육지원 서비스업",
+    "adopt": "20240601",
+    "industry": "조리 반찬류 소매업",
     "series": [
      {
       "ym": "202609",
@@ -1785,27 +1325,27 @@
      },
      {
       "ym": "202606",
-      "headcount": 12
+      "headcount": 15
      },
      {
       "ym": "202605",
-      "headcount": 13
+      "headcount": 14
      },
      {
       "ym": "202604",
-      "headcount": 12
+      "headcount": 10
      },
      {
       "ym": "202603",
-      "headcount": 12
+      "headcount": 10
      },
      {
       "ym": "202602",
-      "headcount": 12
+      "headcount": 10
      },
      {
       "ym": "202601",
-      "headcount": 10
+      "headcount": 8
      },
      {
       "ym": "202512",
@@ -1817,23 +1357,298 @@
      },
      {
       "ym": "202510",
-      "headcount": 8
+      "headcount": 7
      },
      {
       "ym": "202509",
       "headcount": 7
      }
     ],
-    "growth_3m": 0.25,
-    "growth_6m": 0.25,
+    "growth_3m": 0.0,
+    "growth_6m": 0.5,
+    "growth_12m": 1.143,
+    "up_months": 11,
+    "months_observed": 12,
+    "max_jump_share": 0.5,
+    "bill_per_head": 277877,
+    "bill_per_head_change_12m": 0.431
+   },
+   "nps_key": "234860|끼니",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.5년(추정) (+16)",
+    "고용 12개월 +114% (+30)",
+    "국민연금 가입자 15명",
+    "팀 15명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +43% (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:282870:동신공영",
+   "name": "동신공영주식회사",
+   "name_norm": "동신공영",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "282870",
+   "age_years": 2.2,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "경기도 성남시 수정구 위례광장로",
+   "industry": "건물 및 토목 엔지니어링 서비스업",
+   "induty_code": "742109",
+   "nps": {
+    "ym": "202609",
+    "headcount": 15,
+    "monthly_bill": 1622480,
+    "sites": 1,
+    "adopt": "20240901",
+    "industry": "건물 및 토목 엔지니어링 서비스업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 15
+     },
+     {
+      "ym": "202608",
+      "headcount": 13
+     },
+     {
+      "ym": "202607",
+      "headcount": 14
+     },
+     {
+      "ym": "202606",
+      "headcount": 10
+     },
+     {
+      "ym": "202605",
+      "headcount": 8
+     },
+     {
+      "ym": "202604",
+      "headcount": 8
+     },
+     {
+      "ym": "202603",
+      "headcount": 8
+     },
+     {
+      "ym": "202602",
+      "headcount": 8
+     },
+     {
+      "ym": "202601",
+      "headcount": 8
+     },
+     {
+      "ym": "202512",
+      "headcount": 9
+     },
+     {
+      "ym": "202511",
+      "headcount": 7
+     },
+     {
+      "ym": "202510",
+      "headcount": 7
+     },
+     {
+      "ym": "202509",
+      "headcount": 7
+     }
+    ],
+    "growth_3m": 0.5,
+    "growth_6m": 0.875,
     "growth_12m": 1.143,
     "up_months": 10,
     "months_observed": 12,
     "max_jump_share": 0.5,
-    "bill_per_head": 138191,
-    "bill_per_head_change_12m": -0.209
+    "bill_per_head": 108165,
+    "bill_per_head_change_12m": 1.714
    },
-   "nps_key": "126880|세종에듀",
+   "nps_key": "282870|동신공영",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 2.2년(추정) (+16)",
+    "고용 12개월 +114% (+30)",
+    "국민연금 가입자 15명",
+    "팀 15명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 10개월 증가·유지 (꾸준히 쌓인 성장) (+10)",
+    "1인당 고지금액 12개월 +171% (+6)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:375870:마테오에이아이스튜디오",
+   "name": "주식회사 마테오에이아이스튜디오",
+   "name_norm": "마테오에이아이스튜디오",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "375870",
+   "age_years": 1.6,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "경기도 고양시 덕양구 통일로754번길",
+   "industry": "미디어콘텐츠창작업",
+   "induty_code": "921505",
+   "nps": {
+    "ym": "202609",
+    "headcount": 15,
+    "monthly_bill": 4337920,
+    "sites": 1,
+    "adopt": "20250501",
+    "industry": "미디어콘텐츠창작업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 15
+     },
+     {
+      "ym": "202608",
+      "headcount": 12
+     },
+     {
+      "ym": "202607",
+      "headcount": 12
+     },
+     {
+      "ym": "202606",
+      "headcount": 10
+     },
+     {
+      "ym": "202605",
+      "headcount": 6
+     },
+     {
+      "ym": "202604",
+      "headcount": 6
+     },
+     {
+      "ym": "202512",
+      "headcount": 7
+     },
+     {
+      "ym": "202511",
+      "headcount": 7
+     },
+     {
+      "ym": "202510",
+      "headcount": 7
+     },
+     {
+      "ym": "202509",
+      "headcount": 7
+     }
+    ],
+    "growth_3m": 0.5,
+    "growth_6m_from_zero": true,
+    "growth_12m": 1.143,
+    "up_months": 8,
+    "months_observed": 9,
+    "max_jump_share": 0.5,
+    "bill_per_head": 289195,
+    "bill_per_head_change_12m": 0.032
+   },
+   "nps_key": "375870|마테오에이아이스튜디오",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.6년(추정) (+22)",
+    "고용 12개월 +114% (+30)",
+    "국민연금 가입자 15명",
+    "팀 15명 (얼리 스테이지 규모) (+8)",
+    "9개월 중 8개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:482870:이도이엔지",
+   "name": "(주)이도이엔지",
+   "name_norm": "이도이엔지",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "482870",
+   "age_years": 1.6,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "경상북도 성주군 선남면 성주로",
+   "industry": "전기용 기계ㆍ장비 및 관련 기자재 도매업",
+   "induty_code": "515070",
+   "nps": {
+    "ym": "202609",
+    "headcount": 15,
+    "monthly_bill": 4433760,
+    "sites": 1,
+    "adopt": "20250423",
+    "industry": "전기용 기계ㆍ장비 및 관련 기자재 도매업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 15
+     },
+     {
+      "ym": "202608",
+      "headcount": 15
+     },
+     {
+      "ym": "202607",
+      "headcount": 15
+     },
+     {
+      "ym": "202606",
+      "headcount": 15
+     },
+     {
+      "ym": "202605",
+      "headcount": 17
+     },
+     {
+      "ym": "202604",
+      "headcount": 17
+     },
+     {
+      "ym": "202603",
+      "headcount": 13
+     },
+     {
+      "ym": "202602",
+      "headcount": 9
+     },
+     {
+      "ym": "202601",
+      "headcount": 7
+     },
+     {
+      "ym": "202512",
+      "headcount": 6
+     },
+     {
+      "ym": "202511",
+      "headcount": 7
+     },
+     {
+      "ym": "202510",
+      "headcount": 7
+     },
+     {
+      "ym": "202509",
+      "headcount": 7
+     }
+    ],
+    "growth_3m": 0.0,
+    "growth_6m": 0.154,
+    "growth_12m": 1.143,
+    "up_months": 10,
+    "months_observed": 12,
+    "max_jump_share": 0.5,
+    "bill_per_head": 295584,
+    "bill_per_head_change_12m": -0.203
+   },
+   "nps_key": "482870|이도이엔지",
    "financials": {},
    "score": 70,
    "reasons": [
@@ -1846,25 +1661,25 @@
    "change": "new"
   },
   {
-   "key": "nps:195880:키로직스",
-   "name": "주식회사 키로직스",
-   "name_norm": "키로직스",
+   "key": "nps:610863:스마트투데이",
+   "name": "주식회사 스마트투데이",
+   "name_norm": "스마트투데이",
    "sources": [
     "nps"
    ],
-   "bizno6": "195880",
-   "age_years": 1.6,
+   "bizno6": "610863",
+   "age_years": 1.4,
    "age_basis": "국민연금 적용일(대리지표)",
-   "addr": "경기도 하남시 위례대로",
-   "industry": "그 외 기타 분류 안된 운송관련 서비스업",
-   "induty_code": "630909",
+   "addr": "서울특별시 종로구 새문안로",
+   "industry": "신문 발행업",
+   "induty_code": "221201",
    "nps": {
     "ym": "202609",
     "headcount": 15,
-    "monthly_bill": 4168600,
+    "monthly_bill": 5869360,
     "sites": 1,
-    "adopt": "20250401",
-    "industry": "그 외 기타 분류 안된 운송관련 서비스업",
+    "adopt": "20250701",
+    "industry": "신문 발행업",
     "series": [
      {
       "ym": "202609",
@@ -1872,11 +1687,11 @@
      },
      {
       "ym": "202608",
-      "headcount": 15
+      "headcount": 14
      },
      {
       "ym": "202607",
-      "headcount": 14
+      "headcount": 13
      },
      {
       "ym": "202606",
@@ -1884,31 +1699,31 @@
      },
      {
       "ym": "202605",
-      "headcount": 12
+      "headcount": 14
      },
      {
       "ym": "202604",
-      "headcount": 12
+      "headcount": 13
      },
      {
       "ym": "202603",
-      "headcount": 11
+      "headcount": 13
      },
      {
       "ym": "202602",
-      "headcount": 11
+      "headcount": 13
      },
      {
       "ym": "202601",
-      "headcount": 11
+      "headcount": 13
      },
      {
       "ym": "202512",
-      "headcount": 11
+      "headcount": 13
      },
      {
       "ym": "202511",
-      "headcount": 9
+      "headcount": 10
      },
      {
       "ym": "202510",
@@ -1920,23 +1735,205 @@
      }
     ],
     "growth_3m": 0.071,
-    "growth_6m": 0.364,
+    "growth_6m": 0.154,
     "growth_12m": 1.143,
-    "up_months": 12,
+    "up_months": 11,
     "months_observed": 12,
-    "max_jump_share": 0.25,
-    "bill_per_head": 277907,
-    "bill_per_head_change_12m": 0.031
+    "max_jump_share": 0.38,
+    "bill_per_head": 391291,
+    "bill_per_head_change_12m": -0.098
    },
-   "nps_key": "195880|키로직스",
+   "nps_key": "610863|스마트투데이",
    "financials": {},
    "score": 70,
    "reasons": [
-    "업력 1.6년(추정) (+22)",
+    "업력 1.4년(추정) (+22)",
+    "고용 12개월 +114% (+30)",
+    "국민연금 가입자 15명",
+    "팀 15명 (얼리 스테이지 규모) (+8)",
+    "12개월 중 11개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:665860:베일러프렙서울",
+   "name": "베일러프렙서울 주식회사",
+   "name_norm": "베일러프렙서울",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "665860",
+   "age_years": 1.3,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "서울특별시 강남구 밤고개로21길",
+   "industry": "전시  컨벤션 및 행사 대행업",
+   "induty_code": "749907",
+   "nps": {
+    "ym": "202609",
+    "headcount": 15,
+    "monthly_bill": 4552880,
+    "sites": 1,
+    "adopt": "20250714",
+    "industry": "전시  컨벤션 및 행사 대행업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 15
+     },
+     {
+      "ym": "202608",
+      "headcount": 12
+     },
+     {
+      "ym": "202607",
+      "headcount": 12
+     },
+     {
+      "ym": "202606",
+      "headcount": 12
+     },
+     {
+      "ym": "202605",
+      "headcount": 11
+     },
+     {
+      "ym": "202604",
+      "headcount": 10
+     },
+     {
+      "ym": "202603",
+      "headcount": 10
+     },
+     {
+      "ym": "202602",
+      "headcount": 10
+     },
+     {
+      "ym": "202601",
+      "headcount": 9
+     },
+     {
+      "ym": "202512",
+      "headcount": 9
+     },
+     {
+      "ym": "202511",
+      "headcount": 8
+     },
+     {
+      "ym": "202510",
+      "headcount": 8
+     },
+     {
+      "ym": "202509",
+      "headcount": 7
+     }
+    ],
+    "growth_3m": 0.25,
+    "growth_6m": 0.5,
+    "growth_12m": 1.143,
+    "up_months": 12,
+    "months_observed": 12,
+    "max_jump_share": 0.38,
+    "bill_per_head": 303525,
+    "bill_per_head_change_12m": -0.006
+   },
+   "nps_key": "665860|베일러프렙서울",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.3년(추정) (+22)",
     "고용 12개월 +114% (+30)",
     "국민연금 가입자 15명",
     "팀 15명 (얼리 스테이지 규모) (+8)",
     "12개월 중 12개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
+   ],
+   "change": "new"
+  },
+  {
+   "key": "nps:417870:에스티에스플랜트",
+   "name": "(주)에스티에스플랜트",
+   "name_norm": "에스티에스플랜트",
+   "sources": [
+    "nps"
+   ],
+   "bizno6": "417870",
+   "age_years": 1.6,
+   "age_basis": "국민연금 적용일(대리지표)",
+   "addr": "충청북도 청주시 흥덕구 직지대로436번길",
+   "industry": "육상 금속 골조 구조재 제조업",
+   "induty_code": "281104",
+   "nps": {
+    "ym": "202609",
+    "headcount": 13,
+    "monthly_bill": 3007260,
+    "sites": 1,
+    "adopt": "20250501",
+    "industry": "육상 금속 골조 구조재 제조업",
+    "series": [
+     {
+      "ym": "202609",
+      "headcount": 13
+     },
+     {
+      "ym": "202608",
+      "headcount": 13
+     },
+     {
+      "ym": "202607",
+      "headcount": 11
+     },
+     {
+      "ym": "202606",
+      "headcount": 9
+     },
+     {
+      "ym": "202605",
+      "headcount": 8
+     },
+     {
+      "ym": "202604",
+      "headcount": 9
+     },
+     {
+      "ym": "202603",
+      "headcount": 9
+     },
+     {
+      "ym": "202602",
+      "headcount": 9
+     },
+     {
+      "ym": "202601",
+      "headcount": 9
+     },
+     {
+      "ym": "202512",
+      "headcount": 9
+     },
+     {
+      "ym": "202509",
+      "headcount": 5
+     }
+    ],
+    "growth_3m": 0.444,
+    "growth_6m": 0.444,
+    "growth_12m": 1.6,
+    "up_months": 9,
+    "months_observed": 10,
+    "max_jump_share": 0.5,
+    "bill_per_head": 231328,
+    "bill_per_head_change_12m": -0.127
+   },
+   "nps_key": "417870|에스티에스플랜트",
+   "financials": {},
+   "score": 70,
+   "reasons": [
+    "업력 1.6년(추정) (+22)",
+    "고용 12개월 +160% (+30)",
+    "국민연금 가입자 13명",
+    "팀 13명 (얼리 스테이지 규모) (+8)",
+    "10개월 중 9개월 증가·유지 (꾸준히 쌓인 성장) (+10)"
    ],
    "change": "new"
   }
@@ -2354,79 +2351,79 @@
    "key": "nps:484870:제니쓰zenith",
    "name": "주식회사 제니쓰 (Zenith)",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:706810:이노마인드",
    "name": "주식회사 이노마인드",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:304870:펠즈",
    "name": "주식회사 펠즈",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:349810:정테크솔루션",
    "name": "주식회사 정테크솔루션",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:421880:콜레봅스",
    "name": "(주)콜레봅스",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:702860:라온메타",
    "name": "라온메타주식회사",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:759860:뷰테크글로벌",
    "name": "주식회사 뷰테크 글로벌",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:254860:위식스",
    "name": "위식스 주식회사",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:597860:에스티플리머스",
    "name": "에스티플리머스 주식회사",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:607880:바다핀테크",
    "name": "주식회사 바다핀테크",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:786880:인애이블퓨전",
    "name": "(주)인애이블퓨전",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:787860:비씨디텍",
    "name": "비씨디텍 주식회사",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:877870:알오에스",
    "name": "주식회사 알오에스",
    "score": 78,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:663810:에스더eng",
@@ -2491,12 +2488,6 @@
   {
    "key": "nps:438880:한양에스앤디",
    "name": "주식회사 한양에스앤디",
-   "score": 76,
-   "change": "rejected"
-  },
-  {
-   "key": "nps:505852:삼영엠티",
-   "name": "삼영엠티(주)미음지점",
    "score": 76,
    "change": "rejected"
   },
@@ -2737,12 +2728,6 @@
   {
    "key": "nps:130880:피에스아이티",
    "name": "(주)피에스아이티",
-   "score": 76,
-   "change": "rejected"
-  },
-  {
-   "key": "nps:183850:제이엠케이",
-   "name": "(주)제이엠케이",
    "score": 76,
    "change": "rejected"
   },
@@ -3029,12 +3014,6 @@
    "change": "new"
   },
   {
-   "key": "nps:572850:네오오토예산",
-   "name": "(주)네오오토 예산 제4공장",
-   "score": 70,
-   "change": "rejected"
-  },
-  {
    "key": "nps:134810:진영산업",
    "name": "진영산업(주) 경주공장",
    "score": 70,
@@ -3075,18 +3054,6 @@
    "name": "주식회사 우리마을유니티",
    "score": 70,
    "change": "same"
-  },
-  {
-   "key": "nps:526850:거대곰탕",
-   "name": "(주)거대곰탕",
-   "score": 70,
-   "change": "rejected"
-  },
-  {
-   "key": "nps:779850:아이벡스메디칼시스템즈서울",
-   "name": "(주)아이벡스메디칼시스템즈_서울지점",
-   "score": 70,
-   "change": "rejected"
   },
   {
    "key": "nps:412860:씨엔케이네트워크",
@@ -3137,12 +3104,6 @@
    "change": "rejected"
   },
   {
-   "key": "nps:573850:베리시성수verishseongsu",
-   "name": "베리시 성수(Verish Seongsu)",
-   "score": 70,
-   "change": "rejected"
-  },
-  {
    "key": "nps:639880:비웨이브엔터테인먼트",
    "name": "비웨이브 엔터테인먼트 주식회사",
    "score": 70,
@@ -3159,12 +3120,6 @@
    "name": "주식회사 트루쿡",
    "score": 70,
    "change": "same"
-  },
-  {
-   "key": "nps:147850:해신철강",
-   "name": "해신철강(주) 울산공장",
-   "score": 70,
-   "change": "rejected"
   },
   {
    "key": "nps:233880:엑스탑xtopcoltd",
@@ -3263,12 +3218,6 @@
    "change": "rejected"
   },
   {
-   "key": "nps:153850:티비비코퍼레이션",
-   "name": "티비비 코퍼레이션",
-   "score": 70,
-   "change": "rejected"
-  },
-  {
    "key": "nps:692880:케이알시큐리티krsecuritycorp",
    "name": "주식회사케이알시큐리티(krsecurityCorp.)",
    "score": 70,
@@ -3281,22 +3230,10 @@
    "change": "rejected"
   },
   {
-   "key": "nps:118850:대승정밀",
-   "name": "대승정밀(주)",
-   "score": 70,
-   "change": "rejected"
-  },
-  {
    "key": "nps:597810:호영식품",
    "name": "주식회사 호영식품",
    "score": 70,
    "change": "same"
-  },
-  {
-   "key": "nps:897850:뉴시니어광릉수목원케어링스테이수목원점",
-   "name": "뉴시니어광릉수목원 주식회사(케어링 스테이 수목원점)",
-   "score": 70,
-   "change": "rejected"
   },
   {
    "key": "nps:307880:혜담",
@@ -3317,28 +3254,10 @@
    "change": "rejected"
   },
   {
-   "key": "nps:807850:쏘타스위트부산서면",
-   "name": "쏘타스위트 부산 서면",
-   "score": 70,
-   "change": "rejected"
-  },
-  {
-   "key": "nps:879850:혜성로지켐광양지사",
-   "name": "주식회사혜성로지켐광양지사",
-   "score": 70,
-   "change": "rejected"
-  },
-  {
    "key": "nps:788880:인천글로벌풀필먼트센터",
    "name": "인천글로벌풀필먼트센터 주식회사",
    "score": 70,
    "change": "rejected"
-  },
-  {
-   "key": "nps:418851:주왕산에프앤비",
-   "name": "주왕산에프앤비",
-   "score": 70,
-   "change": "new"
   },
   {
    "key": "nps:491880:위더스",
@@ -3350,37 +3269,37 @@
    "key": "nps:557860:멕스텍",
    "name": "주식회사 멕스텍",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:598860:지에스피",
    "name": "지에스피 (주)",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:857870:서관면옥",
    "name": "주식회사 서관면옥",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:895860:서도메타",
    "name": "서도메타",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:126880:세종에듀",
    "name": "주식회사 세종에듀",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:195880:키로직스",
    "name": "주식회사 키로직스",
    "score": 70,
-   "change": "new"
+   "change": "rejected"
   },
   {
    "key": "nps:234860:끼니",
@@ -3491,12 +3410,6 @@
    "change": "new"
   },
   {
-   "key": "nps:630850:을지갈매기",
-   "name": "을지갈매기",
-   "score": 70,
-   "change": "new"
-  },
-  {
    "key": "nps:659880:서동엔지니어링",
    "name": "(주)서동엔지니어링",
    "score": 70,
@@ -3527,12 +3440,6 @@
    "change": "new"
   },
   {
-   "key": "nps:535850:보보식당광화문",
-   "name": "보보식당 광화문",
-   "score": 70,
-   "change": "new"
-  },
-  {
    "key": "nps:650860:케이엠티솔루션",
    "name": "(주)케이엠티솔루션",
    "score": 70,
@@ -3547,12 +3454,6 @@
   {
    "key": "nps:239860:서부광역메트로",
    "name": "서부광역메트로 주식회사",
-   "score": 70,
-   "change": "new"
-  },
-  {
-   "key": "nps:310851:곱마포",
-   "name": "곱 마포",
    "score": 70,
    "change": "new"
   },
@@ -3689,12 +3590,6 @@
    "change": "new"
   },
   {
-   "key": "nps:795850:성베스씨케이",
-   "name": "성베스 씨케이",
-   "score": 70,
-   "change": "new"
-  },
-  {
    "key": "dart:01979910",
    "name": "알에프코어 주식회사",
    "score": 70,
@@ -3809,12 +3704,6 @@
    "change": "new"
   },
   {
-   "key": "nps:296850:삼화양행구미",
-   "name": "(주)삼화양행구미2공장",
-   "score": 68,
-   "change": "new"
-  },
-  {
    "key": "nps:751880:아티크론",
    "name": "주식회사아티크론",
    "score": 68,
@@ -3823,12 +3712,6 @@
   {
    "key": "nps:494870:테이칼튼",
    "name": "주식회사테이칼튼",
-   "score": 68,
-   "change": "new"
-  },
-  {
-   "key": "nps:829850:아이티켐",
-   "name": "(주)아이티켐 괴산공장",
    "score": 68,
    "change": "new"
   },
@@ -3883,12 +3766,6 @@
   {
    "key": "nps:526810:카이랩스",
    "name": "주식회사카이랩스",
-   "score": 68,
-   "change": "new"
-  },
-  {
-   "key": "nps:604851:폴라리스쓰리디서울지사",
-   "name": "(주)폴라리스쓰리디 서울지사",
    "score": 68,
    "change": "new"
   },
@@ -4079,12 +3956,6 @@
    "change": "new"
   },
   {
-   "key": "nps:260850:가이아스",
-   "name": "가이아스(주) 공장",
-   "score": 68,
-   "change": "new"
-  },
-  {
    "key": "nps:293870:생과방",
    "name": "(주)생과방",
    "score": 68,
@@ -4135,12 +4006,6 @@
   {
    "key": "nps:173870:블루다임",
    "name": "주식회사 블루다임",
-   "score": 67,
-   "change": "new"
-  },
-  {
-   "key": "nps:609854:네오배터리머티리얼즈코리아",
-   "name": "네오배터리머티리얼즈코리아(주)자유무역지점",
    "score": 67,
    "change": "new"
   },
@@ -4285,12 +4150,6 @@
   {
    "key": "nps:263820:오그린",
    "name": "오그린",
-   "score": 66,
-   "change": "new"
-  },
-  {
-   "key": "nps:277850:에이치케이정공",
-   "name": "주식회사 에이치케이정공 완주공장",
    "score": 66,
    "change": "new"
   },
@@ -4447,12 +4306,6 @@
   {
    "key": "nps:680870:엠디알크리에이티브",
    "name": "주식회사 엠디알크리에이티브",
-   "score": 66,
-   "change": "new"
-  },
-  {
-   "key": "nps:443850:삼원파워텍",
-   "name": "주식회사 삼원파워텍 광명공장",
    "score": 66,
    "change": "new"
   },
@@ -5489,12 +5342,6 @@
    "change": "new"
   },
   {
-   "key": "nps:326850:대한실업제주",
-   "name": "(주)대한실업 제주",
-   "score": 61,
-   "change": "new"
-  },
-  {
    "key": "nps:328880:오씨아이광양",
    "name": "오씨아이 주식회사 광양2공장",
    "score": 61,
@@ -5521,12 +5368,6 @@
   {
    "key": "nps:416828:천광원",
    "name": "천광원",
-   "score": 61,
-   "change": "new"
-  },
-  {
-   "key": "nps:419850:삼양바이오팜",
-   "name": "(주)삼양바이오팜 공주공장",
    "score": 61,
    "change": "new"
   },
@@ -5573,12 +5414,6 @@
    "change": "new"
   },
   {
-   "key": "nps:669850:남양부직포",
-   "name": "남양부직포(주)정읍공장",
-   "score": 61,
-   "change": "new"
-  },
-  {
    "key": "nps:708810:에이스팩토리",
    "name": "주식회사 에이스팩토리",
    "score": 61,
@@ -5587,18 +5422,6 @@
   {
    "key": "nps:821860:알피",
    "name": "주식회사알피",
-   "score": 61,
-   "change": "new"
-  },
-  {
-   "key": "nps:840850:세일하이텍모듈사업본부",
-   "name": "주식회사 세일하이텍 모듈사업본부",
-   "score": 61,
-   "change": "new"
-  },
-  {
-   "key": "nps:842850:시노다이나믹스",
-   "name": "(주)시노다이나믹스",
    "score": 61,
    "change": "new"
   },
@@ -5843,12 +5666,6 @@
    "change": "new"
   },
   {
-   "key": "nps:385850:케이엠모터스",
-   "name": "케이엠모터스 주식회사 화성공장",
-   "score": 60,
-   "change": "new"
-  },
-  {
    "key": "nps:456880:하이뷰티hybeautycoltd",
    "name": "주식회사 하이뷰티 (HYBEAUTY Co.  Ltd.)",
    "score": 60,
@@ -5929,12 +5746,6 @@
   {
    "key": "nps:892870:블리스블랑",
    "name": "주식회사 블리스블랑",
-   "score": 60,
-   "change": "new"
-  },
-  {
-   "key": "nps:383850:스탠다드브레드해운대",
-   "name": "스탠다드브레드 해운대",
    "score": 60,
    "change": "new"
   },
@@ -6497,12 +6308,6 @@
    "change": "new"
   },
   {
-   "key": "nps:776850:뉴시니어화성레이크케어링스테이레이크점",
-   "name": "뉴시니어화성레이크 주식회사(케어링스테이 레이크점)",
-   "score": 60,
-   "change": "new"
-  },
-  {
    "key": "nps:818870:뷰릿지코퍼레이션",
    "name": "(주)뷰릿지코퍼레이션",
    "score": 60,
@@ -6893,12 +6698,6 @@
    "change": "new"
   },
   {
-   "key": "nps:518850:삼미기업",
-   "name": "삼미기업(주) 중흥사업장",
-   "score": 56,
-   "change": "new"
-  },
-  {
    "key": "nps:350880:엑스솔콥코리아xsolcorpkoreainc",
    "name": "엑스솔콥코리아 주식회사 (XSOLCORP KOREA Inc.)",
    "score": 56,
@@ -7061,12 +6860,6 @@
    "change": "new"
   },
   {
-   "key": "nps:104852:정광피엔아이",
-   "name": "정광피엔아이주식회사",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:107830:영등포구청2026영등포구장애인일반형전일제일자리",
    "name": "영등포구청-2026 영등포구 장애인일반형(전일제) 일자리",
    "score": 55,
@@ -7199,12 +6992,6 @@
    "change": "new"
   },
   {
-   "key": "nps:174850:신흥오토모티브",
-   "name": "(주)신흥오토모티브 김해공장",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:181870:바름워크",
    "name": "주식회사 바름워크",
    "score": 55,
@@ -7237,12 +7024,6 @@
   {
    "key": "nps:202816:동당진현대서비스",
    "name": "주식회사 동당진현대서비스",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:203853:신한라이프케어쏠라체홈미사",
-   "name": "신한라이프케어 쏠라체 홈 미사",
    "score": 55,
    "change": "new"
   },
@@ -7325,12 +7106,6 @@
    "change": "new"
   },
   {
-   "key": "nps:244850:유림테크창녕",
-   "name": "주식회사 유림테크 창녕3공장",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:246880:노원키즈웨이브",
    "name": "주식회사 노원키즈웨이브",
    "score": 55,
@@ -7351,12 +7126,6 @@
   {
    "key": "nps:275870:스타로드대빵오락실",
    "name": "주식회사 스타로드대빵오락실",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:285850:위플러스",
-   "name": "주식회사 위플러스",
    "score": 55,
    "change": "new"
   },
@@ -7451,12 +7220,6 @@
    "change": "new"
   },
   {
-   "key": "nps:392850:남풍천북지사",
-   "name": "주식회사 남풍 천북지사",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:393860:남악현대서비스",
    "name": "유한회사 남악현대서비스",
    "score": 55,
@@ -7519,12 +7282,6 @@
   {
    "key": "nps:442860:핸드폰성지홈서비스아정당",
    "name": "주식회사 핸드폰성지홈서비스아정당",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:451850:서진아이오",
-   "name": "주식회사 서진아이오",
    "score": 55,
    "change": "new"
   },
@@ -7607,12 +7364,6 @@
    "change": "new"
   },
   {
-   "key": "nps:542850:백심비엔피",
-   "name": "(주)백심비엔피",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:552880:코어인",
    "name": "주식회사 코어인",
    "score": 55,
@@ -7621,12 +7372,6 @@
   {
    "key": "nps:555880:씨앤와이대빵오락실",
    "name": "(주)씨앤와이 대빵오락실",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:582850:자연드림치유식품김치공방",
-   "name": "㈜자연드림치유식품 김치공방",
    "score": 55,
    "change": "new"
   },
@@ -7643,12 +7388,6 @@
    "change": "new"
   },
   {
-   "key": "nps:603852:푸드엔",
-   "name": "(주)푸드엔 물류센터",
-   "score": 55,
-   "change": "new"
-  },
-  {
    "key": "nps:607862:엘제이컴퍼니",
    "name": "(주)엘제이컴퍼니",
    "score": 55,
@@ -7657,12 +7396,6 @@
   {
    "key": "nps:621830:양산시청2026년장애인일반형일자리사업전일제",
    "name": "양산시청/2026년장애인일반형일자리사업(전일제)",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:623850:에이치에스씨",
-   "name": "(주)에이치에스씨 제2공장",
    "score": 55,
    "change": "new"
   },
@@ -7699,12 +7432,6 @@
   {
    "key": "nps:673810:대운",
    "name": "주식회사 대운",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:694850:고메코리아파주직영점",
-   "name": "주식회사 고메코리아 (파주직영점)",
    "score": 55,
    "change": "new"
   },
@@ -7777,12 +7504,6 @@
   {
    "key": "nps:739820:제주느영나영시니어클럽",
    "name": "제주느영나영시니어클럽",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:749850:고메코리아대전둔산직영점",
-   "name": "(주)고메코리아 (대전둔산직영점)",
    "score": 55,
    "change": "new"
   },
@@ -7933,18 +7654,6 @@
   {
    "key": "nps:876820:국립강원전문과학관",
    "name": "국립강원전문과학관",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:884850:옵투스제약",
-   "name": "(주)옵투스제약 2공장",
-   "score": 55,
-   "change": "new"
-  },
-  {
-   "key": "nps:886850:비전모빌리티전주전시장",
-   "name": "(주)비전모빌리티 전주전시장",
    "score": 55,
    "change": "new"
   },
@@ -8177,12 +7886,6 @@
    "change": "new"
   },
   {
-   "key": "nps:752850:산스",
-   "name": "산스",
-   "score": 54,
-   "change": "new"
-  },
-  {
    "key": "nps:368810:에타솔루션",
    "name": "(주)에타솔루션",
    "score": 54,
@@ -8275,12 +7978,6 @@
   {
    "key": "nps:134812:쌍용개발평촌어바인퍼스트",
    "name": "(주)쌍용개발/평촌어바인퍼스트",
-   "score": 54,
-   "change": "new"
-  },
-  {
-   "key": "nps:261850:포세카신규캠프",
-   "name": "(주)포세카신규캠프지점",
    "score": 54,
    "change": "new"
   },
@@ -8399,12 +8096,6 @@
    "change": "new"
   },
   {
-   "key": "nps:122855:우성테크",
-   "name": "주식회사 우성테크",
-   "score": 54,
-   "change": "new"
-  },
-  {
    "key": "nps:175810:명인푸드",
    "name": "명인푸드주식회사",
    "score": 54,
@@ -8479,12 +8170,6 @@
   {
    "key": "nps:343870:디에스건설안전",
    "name": "주식회사 디에스건설안전",
-   "score": 54,
-   "change": "new"
-  },
-  {
-   "key": "nps:349850:유명",
-   "name": "(주)유명",
    "score": 54,
    "change": "new"
   },
@@ -8783,18 +8468,6 @@
    "change": "rejected"
   },
   {
-   "key": "nps:313850:지유루원양산점",
-   "name": "(주)지유(루원양산점)",
-   "score": 54,
-   "change": "new"
-  },
-  {
-   "key": "nps:377850:청기와타운서현점",
-   "name": "청기와타운(서현점)",
-   "score": 54,
-   "change": "new"
-  },
-  {
    "key": "nps:569810:팜브릿지",
    "name": "농업회사법인 팜브릿지 주식회사",
    "score": 54,
@@ -8865,12 +8538,6 @@
    "name": "주식회사 예본바이오",
    "score": 54,
    "change": "rejected"
-  },
-  {
-   "key": "nps:355850:지오푸드시스템",
-   "name": "주식회사 지오푸드시스템",
-   "score": 54,
-   "change": "new"
   },
   {
    "key": "dart:01912881",
@@ -8947,12 +8614,6 @@
   {
    "key": "nps:381810:서현세미텍",
    "name": "(주)서현세미텍",
-   "score": 54,
-   "change": "new"
-  },
-  {
-   "key": "nps:403852:행성테크놀러지서울사업부",
-   "name": "주식회사 행성 테크놀러지 서울사업부",
    "score": 54,
    "change": "new"
   },
@@ -9067,12 +8728,6 @@
   {
    "key": "dart:01949007",
    "name": "주식회사 아주",
-   "score": 53,
-   "change": "new"
-  },
-  {
-   "key": "nps:107855:다산네트웍스",
-   "name": "(주) 다산네트웍스 부천사업장",
    "score": 53,
    "change": "new"
   },
@@ -9221,12 +8876,6 @@
    "change": "new"
   },
   {
-   "key": "nps:549850:아이엠티",
-   "name": "(주)아이엠티 대전사업장",
-   "score": 53,
-   "change": "new"
-  },
-  {
    "key": "nps:564810:리턴모빌리티returnmobilityinc",
    "name": "주식회사 리턴모빌리티 (Return Mobility Inc.)",
    "score": 53,
@@ -9327,12 +8976,6 @@
    "name": "주식회사 애커튼테크놀로지서비스",
    "score": 52,
    "change": "rejected"
-  },
-  {
-   "key": "nps:504854:리앤에이에프씨명동",
-   "name": "주식회사리앤에이에프씨명동지점",
-   "score": 52,
-   "change": "new"
   },
   {
    "key": "nps:166880:페이지원",
@@ -9581,12 +9224,6 @@
    "change": "new"
   },
   {
-   "key": "nps:102850:인팩이피엠",
-   "name": "인팩이피엠주식회사수원지점",
-   "score": 51,
-   "change": "new"
-  },
-  {
    "key": "nps:112830:인천광역시영종구청환경공무관",
    "name": "인천광역시 영종구청-환경공무관",
    "score": 51,
@@ -9725,18 +9362,6 @@
    "change": "new"
   },
   {
-   "key": "nps:422850:다산디엠씨과천",
-   "name": "(주)다산디엠씨 과천",
-   "score": 51,
-   "change": "new"
-  },
-  {
-   "key": "nps:429850:삼양바이오팜",
-   "name": "(주)삼양바이오팜 엠디(MD)공장",
-   "score": 51,
-   "change": "new"
-  },
-  {
    "key": "nps:553880:에스에이치산업",
    "name": "에스에이치산업 주식회사",
    "score": 51,
@@ -9763,12 +9388,6 @@
   {
    "key": "nps:595870:에이비디",
    "name": "주식회사 에이비디",
-   "score": 51,
-   "change": "new"
-  },
-  {
-   "key": "nps:605854:simpac리스텍비즈",
-   "name": "주식회사 SIMPAC 리스텍비즈 1공장",
    "score": 51,
    "change": "new"
   },
@@ -9965,18 +9584,6 @@
    "change": "new"
   },
   {
-   "key": "nps:548850:공명연남점",
-   "name": "공명연남점",
-   "score": 50,
-   "change": "new"
-  },
-  {
-   "key": "nps:637850:원일중공업",
-   "name": "주식회사원일중공업",
-   "score": 50,
-   "change": "new"
-  },
-  {
    "key": "nps:764810:씨앤비인터내셔널",
    "name": "주식회사씨앤비인터내셔널",
    "score": 50,
@@ -9991,12 +9598,6 @@
   {
    "key": "nps:561880:에스피아그리",
    "name": "농업회사법인에스피아그리주식회사",
-   "score": 50,
-   "change": "new"
-  },
-  {
-   "key": "nps:504854:생활맥주삼성코엑스2호점",
-   "name": "생활맥주삼성코엑스2호점",
    "score": 50,
    "change": "new"
   },
@@ -10055,12 +9656,6 @@
    "change": "new"
   },
   {
-   "key": "nps:352850:용두네해장국티엠컴퍼니",
-   "name": "용두네해장국주식회사티엠컴퍼니",
-   "score": 50,
-   "change": "new"
-  },
-  {
    "key": "nps:409865:넥스젠",
    "name": "주식회사 넥스젠",
    "score": 50,
@@ -10105,12 +9700,6 @@
   {
    "key": "nps:315860:엘앤와이",
    "name": "(주)엘앤와이",
-   "score": 50,
-   "change": "new"
-  },
-  {
-   "key": "nps:897850:비루트랩제주연구소",
-   "name": "주식회사비루트랩제주연구소",
    "score": 50,
    "change": "new"
   },
@@ -10265,12 +9854,6 @@
    "change": "new"
   },
   {
-   "key": "nps:255850:해지개더블랙theblack",
-   "name": "해지개더블랙(Theblack)",
-   "score": 49,
-   "change": "new"
-  },
-  {
    "key": "nps:384880:파니엔테farnientecoltd",
    "name": "파니엔테 주식회사 (farniente Co.  Ltd.)",
    "score": 49,
@@ -10331,12 +9914,6 @@
    "change": "new"
   },
   {
-   "key": "nps:788850:한울맘농축수산물종합유통센터",
-   "name": "한울맘 농축수산물종합유통센터",
-   "score": 48,
-   "change": "new"
-  },
-  {
    "key": "nps:290870:에프엠원",
    "name": "주식회사에프엠원",
    "score": 48,
@@ -10375,12 +9952,6 @@
   {
    "key": "dart:01905696",
    "name": "주식회사 케이테스트",
-   "score": 48,
-   "change": "new"
-  },
-  {
-   "key": "nps:893850:조양산업",
-   "name": "조양산업(주)",
    "score": 48,
    "change": "new"
   },
@@ -10493,12 +10064,6 @@
    "change": "new"
   },
   {
-   "key": "nps:534850:삼일프론테크용인",
-   "name": "삼일프론테크용인",
-   "score": 48,
-   "change": "new"
-  },
-  {
    "key": "nps:653810:에이브스튜디오",
    "name": "(주)에이브스튜디오",
    "score": 48,
@@ -10549,12 +10114,6 @@
   {
    "key": "nps:610870:이디어스",
    "name": "주식회사 이디어스",
-   "score": 48,
-   "change": "new"
-  },
-  {
-   "key": "nps:770850:픽플러스개러지",
-   "name": "주식회사 픽플러스 개러지",
    "score": 48,
    "change": "new"
   },
@@ -11141,24 +10700,6 @@
    "change": "new"
   },
   {
-   "key": "nps:283850:헬스커넥트",
-   "name": "헬스커넥트",
-   "score": 47,
-   "change": "new"
-  },
-  {
-   "key": "nps:287850:kb골든라이프케어광교빌리지",
-   "name": "(주)KB골든라이프케어 광교빌리지",
-   "score": 47,
-   "change": "new"
-  },
-  {
-   "key": "nps:345850:삼양바이오팜",
-   "name": "(주)삼양바이오팜 의약공장",
-   "score": 47,
-   "change": "new"
-  },
-  {
    "key": "nps:378870:이오에이치",
    "name": "주식회사 이오에이치",
    "score": 47,
@@ -11633,12 +11174,6 @@
    "change": "new"
   },
   {
-   "key": "nps:107855:알앤쇼핑부산지사",
-   "name": "주식회사 알앤쇼핑 부산지사",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:107878:에스제이파워주요역질서통제위탁용역",
    "name": "(주)에스제이파워-주요역 질서통제 위탁용역",
    "score": 45,
@@ -11647,12 +11182,6 @@
   {
    "key": "nps:111819:헐타",
    "name": "주식회사헐타",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:112854:자연드림치유식품만두앤탕공방",
-   "name": "(주)자연드림치유식품만두앤탕공방",
    "score": 45,
    "change": "new"
   },
@@ -11819,12 +11348,6 @@
    "change": "new"
   },
   {
-   "key": "nps:135856:우양피앤엘",
-   "name": "우양피앤엘(주)부산지점",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:137812:에이비엠위브더스테이트관리단대표회의",
    "name": "에이비엠(주)-위브더스테이트관리단대표회의",
    "score": 45,
@@ -11843,20 +11366,8 @@
    "change": "new"
   },
   {
-   "key": "nps:145850:아티스트베이커리여의도",
-   "name": "아티스트베이커리 여의도",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:149810:플러스에이치알",
    "name": "주식회사 플러스에이치알",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:149850:부일쇼핑고산점",
-   "name": "주식회사 부일쇼핑(고산점)",
    "score": 45,
    "change": "new"
   },
@@ -11909,18 +11420,6 @@
    "change": "new"
   },
   {
-   "key": "nps:167850:보성금속공업",
-   "name": "보성금속공업(주)2공장",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:173850:온세까세로",
-   "name": "농업회사법인 (주) 온세까세로",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:174810:수아",
    "name": "주식회사 수아",
    "score": 45,
@@ -11957,20 +11456,8 @@
    "change": "new"
   },
   {
-   "key": "nps:191850:새림용인",
-   "name": "유한회사새림용인지점",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:192860:한국정밀소재산업제천",
    "name": "(주)한국정밀소재산업 제천",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:199850:비와이씨",
-   "name": "(주)비와이씨 완주스마트물류센터",
    "score": 45,
    "change": "new"
   },
@@ -12017,12 +11504,6 @@
    "change": "new"
   },
   {
-   "key": "nps:211857:하얏트플레이스부산연산",
-   "name": "하얏트플레이스 부산연산",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:211889:지원이앤씨",
    "name": "지원이앤씨 주식회사",
    "score": 45,
@@ -12043,12 +11524,6 @@
   {
    "key": "nps:215861:무림하우징두산알프하임아파트관리사무소",
    "name": "(주)무림하우징/두산알프하임아파트 관리사무소",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:217852:다인푸드시스템",
-   "name": "주식회사 다인푸드시스템 푸드센터",
    "score": 45,
    "change": "new"
   },
@@ -12077,12 +11552,6 @@
    "change": "new"
   },
   {
-   "key": "nps:221852:베리시명동verishmyeongdong",
-   "name": "베리시 명동(Verish Myeongdong)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:222830:동해시청경제과2026년도제2단계행복일자리사업",
    "name": "동해시청 경제과/2026년도 제2단계 행복일자리사업",
    "score": 45,
@@ -12103,12 +11572,6 @@
   {
    "key": "nps:222830:삼척시청경제과2026년하반기행정인턴",
    "name": "삼척시청 경제과/2026년 하반기 행정인턴",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:222851:에스피앤지김해",
-   "name": "에스피앤지(주)김해2공장",
    "score": 45,
    "change": "new"
   },
@@ -12157,12 +11620,6 @@
   {
    "key": "nps:238880:서관면옥다이닝",
    "name": "주식회사 서관면옥다이닝",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:240850:드말리베이커리앤다이닝",
-   "name": "드말리 베이커리 앤 다이닝",
    "score": 45,
    "change": "new"
   },
@@ -12253,12 +11710,6 @@
   {
    "key": "nps:265870:주누컴퍼니",
    "name": "주식회사 주누컴퍼니",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:266850:물푸레",
-   "name": "(주)물푸레",
    "score": 45,
    "change": "new"
   },
@@ -12403,12 +11854,6 @@
   {
    "key": "nps:310830:태안군청2026년해수욕장주간안전관리요원",
    "name": "태안군청/2026년 해수욕장 주간 안전관리요원",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:310851:온정유탑부티크호텔",
-   "name": "주식회사 온정 유탑 부티크 호텔",
    "score": 45,
    "change": "new"
   },
@@ -12617,12 +12062,6 @@
    "change": "new"
   },
   {
-   "key": "nps:399850:영동장어",
-   "name": "영동장어",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:401830:군산시청일자리경제과2026년하반기공공근로사업",
    "name": "군산시청 일자리경제과(2026년 하반기 공공근로사업)",
    "score": 45,
@@ -12635,12 +12074,6 @@
    "change": "new"
   },
   {
-   "key": "nps:402853:런던베이글뮤지엄서면",
-   "name": "런던베이글뮤지엄 서면",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:403830:익산시청2026년익산형뉴딜일자리",
    "name": "익산시청(2026년 익산형 뉴딜일자리)",
    "score": 45,
@@ -12649,12 +12082,6 @@
   {
    "key": "nps:403830:익산시청2026년하반기다이로움일자리환경정비",
    "name": "익산시청(2026년 하반기 다이로움 일자리(환경정비))",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:403852:우진큐피디",
-   "name": "(주)우진큐피디 아산공장",
    "score": 45,
    "change": "new"
   },
@@ -12847,12 +12274,6 @@
   {
    "key": "nps:425880:에스아이",
    "name": "에스아이 주식회사",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:431850:블리스어학원",
-   "name": "블리스 어학원",
    "score": 45,
    "change": "new"
   },
@@ -13133,12 +12554,6 @@
    "change": "new"
   },
   {
-   "key": "nps:516850:자연드림치유식품베이커리공방",
-   "name": "(주)자연드림치유식품베이커리공방",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:516870:차포스",
    "name": "주식회사 차포스",
    "score": 45,
@@ -13157,26 +12572,8 @@
    "change": "new"
   },
   {
-   "key": "nps:523850:정아정밀신천",
-   "name": "정아정밀(주)신천2공장",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:524850:메이드존독서실",
-   "name": "메이드존 독서실",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:534860:용가안산",
    "name": "주식회사 용가안산",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:536850:디비컴퍼니",
-   "name": "주식회사 디비컴퍼니",
    "score": 45,
    "change": "new"
   },
@@ -13219,12 +12616,6 @@
   {
    "key": "nps:557880:진수기업",
    "name": "주식회사 진수기업",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:558850:굿데이마트",
-   "name": "굿데이마트",
    "score": 45,
    "change": "new"
   },
@@ -13319,12 +12710,6 @@
    "change": "new"
   },
   {
-   "key": "nps:584850:브랑제리홍종흔천안점",
-   "name": "(주)브랑제리홍종흔(천안점)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:584860:내안에",
    "name": "내안에",
    "score": 45,
@@ -13415,12 +12800,6 @@
    "change": "new"
   },
   {
-   "key": "nps:604856:고메코리아대구동성로직영점",
-   "name": "(주)고메코리아(대구동성로직영점)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:605870:애더스",
    "name": "주식회사 애더스",
    "score": 45,
@@ -13475,12 +12854,6 @@
    "change": "new"
   },
   {
-   "key": "nps:610852:외식명가삼산정",
-   "name": "외식명가 삼산정",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:611820:북부농업공공형계절근로자",
    "name": "북부농업협동조합 공공형계절근로자",
    "score": 45,
@@ -13513,12 +12886,6 @@
   {
    "key": "nps:612830:통영시청일자리경제과2026년하반기공공근로사업",
    "name": "통영시청 일자리경제과(2026년 하반기 공공근로사업)",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:612851:고메코리아부산하단직영점",
-   "name": "(주)고메코리아 (부산하단직영점)",
    "score": 45,
    "change": "new"
   },
@@ -13619,12 +12986,6 @@
    "change": "new"
   },
   {
-   "key": "nps:623850:더크라운이앤에스크라운파크호텔",
-   "name": "주식회사 더크라운이앤에스 크라운파크호텔",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:625860:더에이치스퀘어장위월곡점",
    "name": "(주)더에이치스퀘어(장위월곡점)",
    "score": 45,
@@ -13651,12 +13012,6 @@
   {
    "key": "nps:636860:와이에이치산업yhsanupcoltd",
    "name": "주식회사 와이에이치산업 (YH SANUP Co.  Ltd.)",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:638850:이룸스탭스영천",
-   "name": "주식회사 이룸스탭스(영천)",
    "score": 45,
    "change": "new"
   },
@@ -13703,12 +13058,6 @@
    "change": "new"
   },
   {
-   "key": "nps:660850:애플트리어학원점글렉스",
-   "name": "애플트리어학원점 글렉스(주)",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:661810:주안",
    "name": "주식회사 주안",
    "score": 45,
@@ -13727,12 +13076,6 @@
    "change": "new"
   },
   {
-   "key": "nps:665850:골든성수",
-   "name": "골든성수",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:665870:오성웰서브",
    "name": "오성웰서브 주식회사",
    "score": 45,
@@ -13747,18 +13090,6 @@
   {
    "key": "nps:667870:주은산업",
    "name": "주은산업 주식회사",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:670850:케이에이치아카데미강남",
-   "name": "(주)케이에이치아카데미 강남",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:672850:천일에너지성수센터성북",
-   "name": "(주)천일에너지성수센터_성북지점",
    "score": 45,
    "change": "new"
   },
@@ -14009,12 +13340,6 @@
    "change": "new"
   },
   {
-   "key": "nps:767850:이지팜마켓",
-   "name": "이지팜마켓",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:768810:제니스오토",
    "name": "(주)제니스오토",
    "score": 45,
@@ -14063,12 +13388,6 @@
    "change": "new"
   },
   {
-   "key": "nps:790850:태신테크",
-   "name": "(주)태신테크",
-   "score": 45,
-   "change": "new"
-  },
-  {
    "key": "nps:792880:오로라비아노바",
    "name": "주식회사 오로라비아노바",
    "score": 45,
@@ -14095,24 +13414,6 @@
   {
    "key": "nps:802880:씨에프씨",
    "name": "(주)씨에프씨",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:805850:아이언오토대구서비스",
-   "name": "(주)아이언오토 대구서비스",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:805850:중원아이엔씨밀양",
-   "name": "중원아이엔씨(밀양)",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:806850:글로스터제주",
-   "name": "글로스터 제주",
    "score": 45,
    "change": "new"
   },
@@ -14299,12 +13600,6 @@
   {
    "key": "nps:874860:새온길엔지니어링",
    "name": "새온길엔지니어링(주)",
-   "score": 45,
-   "change": "new"
-  },
-  {
-   "key": "nps:875850:원텍",
-   "name": "원텍 주식회사",
    "score": 45,
    "change": "new"
   },
