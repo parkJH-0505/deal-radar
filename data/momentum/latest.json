@@ -1485,7 +1485,7 @@
    "new_6m_year_ago": 5,
    "formation_yoy": 0.2,
    "cohort_growth_12m": 0.018,
-   "momentum": 0.518,
+   "momentum": 0.516,
    "rank": 124,
    "hot": false
   },
@@ -2006,6 +2006,18 @@
    "hot": false
   },
   {
+   "industry": "그 외 기타 달리 분류되지 않은 개인 서비스업",
+   "young_firms": 171,
+   "young_headcount": 2059,
+   "new_6m": 11,
+   "new_6m_year_ago": 11,
+   "formation_yoy": 0.0,
+   "cohort_growth_12m": 0.019,
+   "momentum": 0.443,
+   "rank": 168,
+   "hot": false
+  },
+  {
    "industry": "음ㆍ식료품 및 담배 중개업",
    "young_firms": 84,
    "young_headcount": 965,
@@ -2014,18 +2026,6 @@
    "formation_yoy": -0.364,
    "cohort_growth_12m": 0.105,
    "momentum": 0.441,
-   "rank": 168,
-   "hot": false
-  },
-  {
-   "industry": "그 외 기타 달리 분류되지 않은 개인 서비스업",
-   "young_firms": 172,
-   "young_headcount": 2072,
-   "new_6m": 11,
-   "new_6m_year_ago": 11,
-   "formation_yoy": 0.0,
-   "cohort_growth_12m": 0.018,
-   "momentum": 0.439,
    "rank": 169,
    "hot": false
   },
@@ -2619,8 +2619,8 @@
   },
   {
    "industry": "슈퍼마켓",
-   "young_firms": 427,
-   "young_headcount": 9360,
+   "young_firms": 426,
+   "young_headcount": 9353,
    "new_6m": 46,
    "new_6m_year_ago": 48,
    "formation_yoy": -0.038,
@@ -2781,7 +2781,7 @@
    "new_6m_year_ago": 7,
    "formation_yoy": -0.25,
    "cohort_growth_12m": 0.018,
-   "momentum": 0.238,
+   "momentum": 0.236,
    "rank": 232,
    "hot": false
   },
@@ -3063,8 +3063,8 @@
   },
   {
    "industry": "기타 음ㆍ식료품 위주 종합 소매업",
-   "young_firms": 109,
-   "young_headcount": 1329,
+   "young_firms": 108,
+   "young_headcount": 1324,
    "new_6m": 5,
    "new_6m_year_ago": 15,
    "formation_yoy": -0.5,
