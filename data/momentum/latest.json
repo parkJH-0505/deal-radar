@@ -1346,18 +1346,6 @@
    "hot": false
   },
   {
-   "industry": "그 외 기타 상품 전문 도매업",
-   "young_firms": 46,
-   "young_headcount": 499,
-   "new_6m": 3,
-   "new_6m_year_ago": 4,
-   "formation_yoy": -0.111,
-   "cohort_growth_12m": 0.082,
-   "momentum": 0.527,
-   "rank": 113,
-   "hot": false
-  },
-  {
    "industry": "자동차 신품 타이어 및 튜브 판매업",
    "young_firms": 43,
    "young_headcount": 448,
@@ -1366,6 +1354,18 @@
    "formation_yoy": 0.143,
    "cohort_growth_12m": 0.025,
    "momentum": 0.527,
+   "rank": 113,
+   "hot": false
+  },
+  {
+   "industry": "그 외 기타 상품 전문 도매업",
+   "young_firms": 46,
+   "young_headcount": 499,
+   "new_6m": 3,
+   "new_6m_year_ago": 4,
+   "formation_yoy": -0.111,
+   "cohort_growth_12m": 0.082,
+   "momentum": 0.525,
    "rank": 114,
    "hot": false
   },
@@ -2235,13 +2235,13 @@
   },
   {
    "industry": "광고 대행업",
-   "young_firms": 858,
-   "young_headcount": 10060,
+   "young_firms": 857,
+   "young_headcount": 10054,
    "new_6m": 44,
    "new_6m_year_ago": 63,
    "formation_yoy": -0.279,
-   "cohort_growth_12m": 0.082,
-   "momentum": 0.396,
+   "cohort_growth_12m": 0.083,
+   "momentum": 0.402,
    "rank": 187,
    "hot": false
   },
