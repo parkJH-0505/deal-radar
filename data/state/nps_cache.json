@@ -7334,5 +7334,89 @@
  },
  "food:20260875184": {
   "_asof": "2026-11-24"
+ },
+ "dart:01921834": {
+  "match": {
+   "seq": 6937411,
+   "name": "주식회사이앤씨연천(연천지점)",
+   "bizno6": "188880",
+   "ym": "202610",
+   "match_score": 1.2
+  },
+  "headcount": 6,
+  "monthly_bill": 2458460,
+  "industry": "바이오 연료 및 혼합물 제조업",
+  "adopted": "20221114",
+  "addr": "인천광역시 서해구 첨단기술로",
+  "series": [
+   {
+    "ym": "202610",
+    "headcount": 6
+   },
+   {
+    "ym": "202609",
+    "headcount": 6,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 409743,
+  "_asof": "2026-11-24"
+ },
+ "dart:01950641": {
+  "match": {
+   "seq": 6325632,
+   "name": "주식회사삼각메탈",
+   "bizno6": "280880",
+   "ym": "202609",
+   "match_score": 1.3
+  },
+  "headcount": 5,
+  "monthly_bill": 1256140,
+  "industry": "기타 1차 비철금속 제조업",
+  "adopted": "20220201",
+  "addr": "경기도 화성시 만세구 송산면 삼존로",
+  "series": [
+   {
+    "ym": "202609",
+    "headcount": 5
+   },
+   {
+    "ym": "202608",
+    "headcount": 5,
+    "acq": 0,
+    "lost": 0
+   }
+  ],
+  "bill_per_head": 251228,
+  "_asof": "2026-11-24"
+ },
+ "dart:01961036": {
+  "match": {
+   "seq": 6977335,
+   "name": "유한회사폴렌느코리아(POLENEKOREALIMITED)",
+   "bizno6": "218817",
+   "ym": "202610",
+   "match_score": 1.2
+  },
+  "headcount": 18,
+  "monthly_bill": 6838280,
+  "industry": "가방 및 보호용 케이스 도매업",
+  "adopted": "20240422",
+  "addr": "서울특별시 강남구 논현로80길",
+  "series": [
+   {
+    "ym": "202610",
+    "headcount": 18
+   },
+   {
+    "ym": "202609",
+    "headcount": 19,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 379904,
+  "_asof": "2026-11-24"
  }
 }
