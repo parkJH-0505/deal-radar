@@ -1,4 +1,3 @@
-init: 후보 등록일 backfilled
 init ok: ['후보', '관점', '판단 로그']
-push: outbox empty
-pull ok: 28 rows, 15 lens lines
+push ok: 0 candidates, 1 lens, 0 log rows
+pull ok: 28 rows, 16 lens lines
