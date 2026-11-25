@@ -288,7 +288,12 @@ def init() -> None:
     for i, c in enumerate(CAND_COLS):
         if c not in h:
             pos = next((h.index(p) + 1 for p in reversed(CAND_COLS[:i]) if p in h), 0)
-            cand.insert_cols([[c]], col=pos + 1, value_input_option="RAW")
+            if pos < len(h):
+                cand.insert_cols([[c]], col=pos + 1, value_input_option="RAW")
+            else:  # at the right edge: insertDimension cannot go past the grid, so grow and write
+                if cand.col_count < pos + 1:
+                    cand.add_cols(pos + 1 - cand.col_count)
+                cand.update_cell(1, pos + 1, c)
             h.insert(pos, c)
             if c == BRIEF or c in NOTE_CAND_COLS:
                 sh.batch_update({"requests": [{"updateDimensionProperties": {
