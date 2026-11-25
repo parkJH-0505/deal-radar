@@ -106,6 +106,21 @@ def score(c: dict, cfg: dict, today: dt.date) -> tuple[int, list[str]]:
         add("steady_growth", f"{obs}개월 중 {up}개월 증가·유지 (꾸준히 쌓인 성장)")
     elif jump is not None and jump > 0.6 and hc >= 30:
         add("lumpy_growth", f"증가분의 {jump:.0%}가 한 달에 몰림 (분할·양수·전환 의심)")
+    # 사람 신호: 누가 남고, 누가 들어오고, 빨라지는가
+    churn = nps.get("churn_12m")
+    if churn is not None and hc >= 10:
+        if churn <= 0.30 and (g12 or 0) >= 0.5:
+            add("low_churn_growth", f"성장 중 이직 낮음: 12개월 상실 {churn:.0%} (평균 인원 대비)")
+        elif churn >= 0.90:
+            add("high_churn", f"이직 높음: 12개월 상실 {churn:.0%} (평균 인원 대비, 회전문 의심)")
+    kh = nps.get("key_hire")
+    if kh:
+        add("key_hire", f"핵심 인력 합류 추정 {kh['ym'][:4]}.{kh['ym'][4:]} (신규 1인당 고지 {kh['implied_bill'] / 1e4:.0f}만원)")
+    if nps.get("accel"):
+        add("hiring_acceleration", f"고용 가속: 최근 3개월 {nps['growth_3m']:+.0%} (직전 3개월 {nps['growth_3m_prev']:+.0%})")
+    co = nps.get("cohort")
+    if co and co["top_pct"] <= 5:  # 성장 후보 자체가 빠른 회사들이라 상위 10%는 29%가 해당 → 5%로
+        add("cohort_top", f"{co['industry']}·업력 {co['band']} 동료 {co['peers']}곳 중 고용 성장 상위 {co['top_pct']:.0f}%")
     bph = nps.get("bill_per_head")
     if bph and bph >= 400_000:
         add("bill_per_head_high", f"1인당 고지금액 {bph / 1e4:.0f}만원 (상위 15% 보수 수준)")

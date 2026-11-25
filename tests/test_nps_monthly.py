@@ -62,3 +62,34 @@ def test_aggregate_keeps_sole_proprietors_separately_any_age():
     ym, rows = NM.aggregate(raw, adopt_after="20200101", min_headcount=5, exclude=[], indiv_out=indiv)
     assert [r["name"] for r in rows] == ["(주)해담식품"]
     assert [r["name"] for r in indiv] == ["개인상점"] and indiv[0]["adopt"] == "20090501"
+
+
+def test_people_signals_churn_key_hire_accel():
+    from radar.sources.nps_monthly import people_signals
+    yms = [f"2025{m:02d}" for m in range(9, 13)] + [f"2026{m:02d}" for m in range(1, 10)]  # 202509..202609
+    hcs = [5, 5, 5, 5, 6, 6, 6, 7, 8, 9, 12, 14, 16]
+    data = {}
+    for ym, h in zip(yms, hcs):
+        data[ym] = {"k": {"headcount": h, "bill": h * 300_000, "acq": 1, "lost": 0}}
+    # 2026-08: one hire whose contribution is 60만원 (senior)
+    data["202608"]["k"].update(acq=1, lost=0, bill=data["202607"]["k"]["bill"] + 600_000 + 2 * 300_000)
+    data["202608"]["k"]["acq"] = 1
+    out = people_signals("k", yms, data)
+    assert out["churn_12m"] == 0.0 and out["hires_12m"] == 12
+    assert out["accel"] is True and out["growth_3m"] == round((16 - 9) / 9, 3)
+    # implied bill = (bill_08 - bill_07)/1 = 600k + 600k = 1.2M ≥ 45만 and ≥ 1.5×30만 → key hire
+    assert out["key_hire"]["ym"] == "202608"
+
+
+def test_cohort_ranks_percentile_within_industry_and_age_band():
+    import datetime as dt
+    from radar.sources.nps_monthly import cohort_ranks
+    yms = [f"2025{m:02d}" for m in range(9, 13)] + [f"2026{m:02d}" for m in range(1, 10)]
+    data = {ym: {} for ym in yms}
+    for i in range(25):
+        k = f"f{i}"
+        data["202509"][k] = {"headcount": 10, "adopt": "20250101", "induty_name": "응용 소프트웨어 개발 및 공급업"}
+        data["202609"][k] = {"headcount": 10 + i, "adopt": "20250101", "induty_name": "응용 소프트웨어 개발 및 공급업"}
+    r = cohort_ranks(yms, data, today=dt.date(2026, 11, 25))
+    assert r["f24"]["top_pct"] == 4.0 and r["f24"]["peers"] == 25 and r["f24"]["band"] == "2년 이하"
+    assert r["f0"]["top_pct"] == 100.0

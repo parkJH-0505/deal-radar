@@ -528,6 +528,18 @@ def daily(today: dt.date | None = None) -> dict:
                 attach_momentum(cands, yms, pdata, cfg, today, notes)
             except Exception as e:  # noqa: BLE001 - bonus signal only
                 notes.append(f"업종 모멘텀 계산 오류: {type(e).__name__}: {e}")
+            try:
+                ranks = NM.cohort_ranks(yms, pdata, today=today,
+                                        max_age_years=cfg["global"]["max_company_age_years"])
+                n = 0
+                for c in cands:
+                    r = ranks.get(c.get("nps_key") or "")
+                    if r and c.get("nps") is not None:
+                        c["nps"]["cohort"] = r
+                        n += 1
+                notes.append(f"업종·업력 동료 순위: {len(ranks):,}곳 비교 가능, 후보 {n}곳에 부착")
+            except Exception as e:  # noqa: BLE001 - bonus signal only
+                notes.append(f"동료 순위 계산 오류: {type(e).__name__}: {e}")
 
     for c in cands:
         c["score"], c["reasons"] = score(c, cfg, today)

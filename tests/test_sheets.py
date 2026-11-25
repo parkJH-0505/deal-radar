@@ -2,7 +2,7 @@ from radar import sheets as S
 
 
 def test_upsert_preserves_user_columns_and_adds_new_rows():
-    legacy = [c for c in S.CAND_COLS if c not in ("등급", S.REG)]  # sheet created before these columns
+    legacy = [c for c in S.CAND_COLS if c not in ("등급", S.REG, S.SUMMARY, S.NOTE_LINK)]  # older sheet
     existing = [legacy + ["내 메모(사용자 추가)"],
                 ["dart:1", "딥다이브", "관심", "+수익구조", "광고비 비중 확인", "80", "DART", "5.1",
                  "", "", "915", "11", "없음 확인", "", "", "", "", "", "2026-11-05", "2026-11-05", "따로 적은 것"]]
@@ -16,7 +16,7 @@ def test_upsert_preserves_user_columns_and_adds_new_rows():
     assert row["상태"] == "관심" and row["내 코멘트"] == "광고비 비중 확인"   # user cols untouched
     assert row["점수"] == "84" and row["첫 포착"] == "2026-11-05"           # system cols refreshed, first-seen kept
     assert row["내 메모(사용자 추가)"] == "따로 적은 것"                      # user's extra column survives
-    assert h.index("등급") == h.index("회사명") + 1 and row["등급"] == "B"     # new column inserted in place
+    assert h.index("등급") == h.index(S.NOTE_LINK) + 1 and h.index(S.SUMMARY) == h.index("회사명") + 1 and row["등급"] == "B"
     new = dict(zip(h, grid[2]))
     assert new["상태"] == "신규" and new["첫 포착"] == "2026-11-09"
 
@@ -46,7 +46,7 @@ def test_align_rows_follows_sheet_header():
 
 
 def test_registration_date_first_column_new_rows_and_backfill():
-    legacy = [c for c in S.CAND_COLS if c != S.REG]
+    legacy = [c for c in S.CAND_COLS if c not in (S.REG, S.SUMMARY, S.NOTE_LINK)]
     old = {S.KEY: "dart:1", "회사명": "딥다이브", "상태": "관심"}
     existing = [legacy, [old.get(c, "") for c in legacy]]
     grid = S.merge_candidates(existing, [{S.KEY: "nps:2:가", "등급": "A", "회사명": "가"},
@@ -66,3 +66,24 @@ def test_registration_dates_from_judgments(tmp_path):
         "## 판정\n| 키 | 등급 | 회사 |\n|---|---|---|\n| dart:1 | A | a |\n| nps:2:b | C | b |\n| nps:3:c | B | c |\n",
         encoding="utf-8")
     assert S.registration_dates(tmp_path) == {"dart:1": "2026-11-05", "nps:3:c": "2026-11-07"}
+
+
+def test_merge_note_keeps_old_fields_and_history():
+    old = S.merge_note(None, {S.KEY: "nps:1:가", "등급": "C", "조사일": "2026-11-20", "회사 개요": "· 2024 설립",
+                              "트랙션": "· 고용 5→10명"})
+    new = S.merge_note(old, {S.KEY: "nps:1:가", "등급": "B", "조사일": "2026-11-26", "트랙션": "· 고용 5→14명",
+                             "회사 개요": ""})
+    assert new["회사 개요"] == "· 2024 설립" and new["트랙션"] == "· 고용 5→14명" and new["등급"] == "B"
+    assert new["이력"] == [{"조사일": "2026-11-20", "등급": "C"}, {"조사일": "2026-11-26", "등급": "B"}]
+
+
+def test_note_grid_upsert_and_links():
+    g = S.upsert_grid([], S.NOTE_COLS, [{S.KEY: "nps:1:가", "회사명": "가", S.SUMMARY: "요약"}])
+    g = S.upsert_grid(g, S.NOTE_COLS, [{S.KEY: "nps:1:가", "트랙션": "· x"}, {S.KEY: "dart:2", "회사명": "나"}])
+    assert len(g) == 3 and dict(zip(g[0], g[1]))[S.SUMMARY] == "요약" and dict(zip(g[0], g[1]))["트랙션"] == "· x"
+    cand = [S.CAND_COLS, [("nps:1:가" if c == S.KEY else "노트 보기" if c == S.NOTE_LINK else "") for c in S.CAND_COLS],
+            [("dart:9" if c == S.KEY else "") for c in S.CAND_COLS]]
+    out = S.with_links(cand, 123, {"nps:1:가"})
+    li = S.CAND_COLS.index(S.NOTE_LINK)
+    assert out[1][li].startswith('=HYPERLINK("#gid=123&range=A"&MATCH("nps:1:가"') and out[2][li] == ""
+    assert S.note_path("nps:653860:허그유어스킨").name == "nps_653860_허그유어스킨.json"

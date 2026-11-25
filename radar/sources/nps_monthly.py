@@ -297,6 +297,83 @@ def metrics_for(key: str, yms: list[str], data: dict) -> dict | None:
         if past12 and past12["headcount"]:
             prev_bph = past12["bill"] / past12["headcount"]
             out["bill_per_head_change_12m"] = round(out["bill_per_head"] / prev_bph - 1, 3) if prev_bph else None
+    out.update(people_signals(key, yms, data))
+    return out
+
+
+KEY_HIRE_MIN_BILL = 450_000   # 신규 1명분 고지금액 ≈ 기준소득월액 500만원+ (연봉 6천만원+)
+
+
+def people_signals(key: str, yms: list[str], data: dict) -> dict:
+    """What the head-count line hides: who stays, who joins, and whether it is speeding up.
+
+    churn_12m      12개월 상실자 합 / 평균 인원. 같은 2배 성장이라도 27%와 86%는 다른 회사다
+    key_hire       신규 1~2명·상실 0인 달에 총 고지금액이 1인당 45만원+ (그리고 기존 평균의 1.5배+)
+                   늘어난 달 = 고연봉자(CTO·영업 임원 등) 합류. 7월은 기준소득월액 일괄 재산정이라 제외
+    accel          최근 3개월 증가율이 직전 3개월보다 15%p+ 높고 +3명 이상 = 성장이 빨라지는 중
+    """
+    last = yms[-1]
+    rows = [(ym, data[ym][key]) for ym in (_ym_minus(last, k) for k in range(12, -1, -1))
+            if ym in data and key in data[ym]]
+    out: dict = {}
+    if len(rows) >= 7:
+        recent = rows[1:]  # acquisitions/losses happen within each month after the first
+        lost = sum(r.get("lost") or 0 for _, r in recent)
+        acq = sum(r.get("acq") or 0 for _, r in recent)
+        avg = sum(r["headcount"] for _, r in recent) / len(recent)
+        if avg:
+            out["churn_12m"] = round(lost / avg, 2)
+            out["hires_12m"] = acq
+            out["churn_months"] = len(recent)
+    hires = []
+    for (ym0, a), (ym1, b) in zip(rows, rows[1:]):
+        if ym1 < _ym_minus(last, 6) or ym1.endswith("07") or _ym_minus(ym1, 1) != ym0:
+            continue
+        n = b.get("acq") or 0
+        if 1 <= n <= 2 and not (b.get("lost") or 0) and a["headcount"]:
+            implied = (b["bill"] - a["bill"]) / n
+            if implied >= max(KEY_HIRE_MIN_BILL, 1.5 * a["bill"] / a["headcount"]):
+                hires.append({"ym": ym1, "implied_bill": round(implied)})
+    if hires:
+        out["key_hire"] = hires[-1]
+    hc = {ym: r["headcount"] for ym, r in rows}
+    t0, t3, t6 = last, _ym_minus(last, 3), _ym_minus(last, 6)
+    if all(y in hc and hc[y] for y in (t3, t6)) and t0 in hc:
+        g_recent = (hc[t0] - hc[t3]) / hc[t3]
+        g_prev = (hc[t3] - hc[t6]) / hc[t6]
+        out["growth_3m"], out["growth_3m_prev"] = round(g_recent, 3), round(g_prev, 3)
+        out["accel"] = g_recent >= 0.25 and g_recent - g_prev >= 0.15 and hc[t0] - hc[t3] >= 3
+    return out
+
+
+def cohort_ranks(yms: list[str], data: dict, *, today: dt.date, max_age_years: float = 5,
+                 min_peers: int = 20) -> dict[str, dict]:
+    """12-month head-count growth percentile among peers: same 업종, same age band (≤2y / 2~5y).
+    Absolute growth means different things in different industries (식품 공장 20명 vs SW 20명)."""
+    if len(yms) < 13:
+        return {}
+    last, ago = yms[-1], _ym_minus(yms[-1], 12)
+    if ago not in data:
+        return {}
+    cut2 = (today - dt.timedelta(days=int(2 * 365.25))).strftime("%Y%m%d")
+    cut5 = (today - dt.timedelta(days=int(max_age_years * 365.25))).strftime("%Y%m%d")
+    groups: dict[tuple, list[tuple[str, float]]] = {}
+    for key, r in data[last].items():
+        p = data[ago].get(key)
+        if r["adopt"] < cut5 or not p or not p["headcount"]:
+            continue
+        band = "2년 이하" if r["adopt"] >= cut2 else "2~5년"
+        groups.setdefault((r.get("induty_name") or "", band), []).append(
+            (key, r["headcount"] / p["headcount"] - 1))
+    out = {}
+    for (ind, band), xs in groups.items():
+        if len(xs) < min_peers or not ind:
+            continue
+        vals = sorted(g for _, g in xs)
+        n = len(vals)
+        for key, g in xs:
+            below = sum(1 for v in vals if v < g)
+            out[key] = {"industry": ind, "band": band, "peers": n, "top_pct": round(100 * (1 - below / n), 1)}
     return out
 
 
