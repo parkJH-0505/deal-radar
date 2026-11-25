@@ -1,3 +1,16 @@
-init ok: ['후보', '관점', '판단 로그', '심사 노트']
-push ok: 28 candidates, 28 notes, 0 lens, 0 log rows
-pull ok: 28 rows, 16 lens lines
+init: 별도 '심사 노트' 탭 삭제 (내용은 후보 탭과 data/notes에 있음)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/deal-radar/deal-radar/radar/sheets.py", line 404, in <module>
+    {"init": init, "pull": pull, "push": push}[cmd]()
+  File "/home/runner/work/deal-radar/deal-radar/radar/sheets.py", line 291, in init
+    cand.insert_cols([[c]], col=pos + 1, value_input_option="RAW")
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/gspread/worksheet.py", line 2030, in insert_cols
+    self.client.batch_update(self.spreadsheet_id, insert_dimension_body)
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/gspread/http_client.py", line 139, in batch_update
+    r = self.request("post", SPREADSHEET_BATCH_UPDATE_URL % id, json=body)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [400]: Invalid requests[0].insertDimension: range.startIndex must be less than the grid size (23) if inheritFromBefore is false.
