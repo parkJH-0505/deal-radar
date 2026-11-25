@@ -2,7 +2,7 @@ from radar import sheets as S
 
 
 def test_upsert_preserves_user_columns_and_adds_new_rows():
-    legacy = [c for c in S.CAND_COLS if c != "등급"]  # sheet created before grades existed
+    legacy = [c for c in S.CAND_COLS if c not in ("등급", S.REG)]  # sheet created before these columns
     existing = [legacy + ["내 메모(사용자 추가)"],
                 ["dart:1", "딥다이브", "관심", "+수익구조", "광고비 비중 확인", "80", "DART", "5.1",
                  "", "", "915", "11", "없음 확인", "", "", "", "", "", "2026-11-05", "2026-11-05", "따로 적은 것"]]
@@ -43,3 +43,26 @@ def test_only_ab_create_rows_but_existing_rows_get_regraded():
 def test_align_rows_follows_sheet_header():
     header, rows = S.align_rows(["날짜", S.KEY, "판정"], [{"날짜": "d", S.KEY: "k", "등급": "C", "판정": "보류"}])
     assert header == ["날짜", S.KEY, "판정", "등급"] and rows == [["d", "k", "보류", "C"]]
+
+
+def test_registration_date_first_column_new_rows_and_backfill():
+    legacy = [c for c in S.CAND_COLS if c != S.REG]
+    old = {S.KEY: "dart:1", "회사명": "딥다이브", "상태": "관심"}
+    existing = [legacy, [old.get(c, "") for c in legacy]]
+    grid = S.merge_candidates(existing, [{S.KEY: "nps:2:가", "등급": "A", "회사명": "가"},
+                                         {S.KEY: "dart:1", S.REG: "2030-01-01", "점수": 90}],
+                              registered={"dart:1": "2026-11-05"}, today="2026-11-25")
+    h = grid[0]
+    assert h[0] == S.REG
+    rows = {r[h.index(S.KEY)]: dict(zip(h, r)) for r in grid[1:]}
+    assert rows["dart:1"][S.REG] == "2026-11-05"          # backfilled from judgments, not overwritten
+    assert rows["dart:1"]["상태"] == "관심" and rows["dart:1"]["점수"] == "90"
+    assert rows["nps:2:가"][S.REG] == "2026-11-25"        # new row: today
+
+
+def test_registration_dates_from_judgments(tmp_path):
+    (tmp_path / "2026-11-05.md").write_text("## 생존\n| 키 | 회사 |\n|---|---|\n| dart:1 | a |\n", encoding="utf-8")
+    (tmp_path / "2026-11-07.md").write_text(
+        "## 판정\n| 키 | 등급 | 회사 |\n|---|---|---|\n| dart:1 | A | a |\n| nps:2:b | C | b |\n| nps:3:c | B | c |\n",
+        encoding="utf-8")
+    assert S.registration_dates(tmp_path) == {"dart:1": "2026-11-05", "nps:3:c": "2026-11-07"}

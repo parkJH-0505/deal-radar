@@ -33,7 +33,8 @@ SHEET_ID_DEFAULT = "1vPTO0HS4ugVo04y2yQRmXMdxof8tx00qClo0ZB-UXGk"
 CAND_TAB, LENS_TAB, LOG_TAB = "후보", "관점", "판단 로그"
 KEY = "레이더 키"
 USER_COLS = ["상태", "이유 태그", "내 코멘트"]
-CAND_COLS = [KEY, "회사명", "등급", *USER_COLS, "점수", "소스", "업력(년)", "고용(명)",
+REG = "후보 등록일"  # 판단에서 처음 A·B를 받아 후보 탭에 올라간 날 (한 번 정해지면 바뀌지 않음)
+CAND_COLS = [REG, KEY, "회사명", "등급", *USER_COLS, "점수", "소스", "업력(년)", "고용(명)",
              "고용 12개월(%)", "매출(억, 추정)", "영업이익률(%)", "외부투자", "왜 지금",
              "반박 검증", "점수 사유", "근거 링크", "홈페이지", "첫 포착", "최근 포착"]
 LENS_COLS = ["날짜", "누가", "관점", "근거", "적용"]
@@ -50,7 +51,8 @@ LENS_MD = DATA / "feedback" / "lens.md"
 
 # ------------------------------------------------------------ pure logic (tested)
 
-def merge_candidates(existing: list[list[str]], upserts: list[dict]) -> list[list[str]]:
+def merge_candidates(existing: list[list[str]], upserts: list[dict],
+                     registered: dict[str, str] | None = None, today: str = "") -> list[list[str]]:
     """Return the full 후보 grid (header + rows) after upserting.
 
     Rows are matched by 레이더 키. For an existing row only system columns are
@@ -68,6 +70,9 @@ def merge_candidates(existing: list[list[str]], upserts: list[dict]) -> list[lis
                 r.insert(prev + 1, "")
     idx = {c: i for i, c in enumerate(header)}
     by_key = {r[idx[KEY]]: r for r in rows if r[idx[KEY]]}
+    for k, row in by_key.items():  # rows from before the column existed: date of the first A·B
+        if not row[idx[REG]] and (registered or {}).get(k):
+            row[idx[REG]] = registered[k]
     for u in upserts:
         k = str(u.get(KEY) or "").strip()
         if not k:
@@ -77,16 +82,34 @@ def merge_candidates(existing: list[list[str]], upserts: list[dict]) -> list[lis
             row = [""] * len(header)
             row[idx[KEY]] = k
             row[idx["상태"]] = "신규"
+            row[idx[REG]] = str(u.get(REG) or (registered or {}).get(k) or today)
             row[idx["첫 포착"]] = str(u.get("첫 포착") or u.get("최근 포착") or "")
             rows.append(row)
             by_key[k] = row
         for col, val in u.items():
             if col in USER_COLS or col == KEY or col not in idx:
                 continue
-            if col == "첫 포착" and row[idx[col]]:
+            if col == REG or (col == "첫 포착" and row[idx[col]]):
                 continue
             row[idx[col]] = "" if val is None else str(val)
     return [header] + rows
+
+
+def registration_dates(folder: Path | None = None) -> dict[str, str]:
+    """레이더 키 -> first judgment date that graded it A or B (data/judgments/*.md)."""
+    from .pipeline import _KEY, _grade_of
+    folder = folder or DATA / "judgments"
+    out: dict[str, str] = {}
+    for f in sorted(folder.glob("*.md")) if folder.exists() else []:
+        date, section = f.stem[:10], ""
+        for line in f.read_text(encoding="utf-8").splitlines():
+            if line.startswith("## "):
+                section = line[3:].strip()
+                continue
+            m = _KEY.match(line.strip())
+            if m and _grade_of(line, section) in ("A", "B"):
+                out.setdefault(m.group(1), date)
+    return out
 
 
 def snapshot(cand_grid: list[list[str]], lens_grid: list[list[str]]) -> dict:
@@ -170,6 +193,18 @@ def init() -> None:
     cand = _tab(sh, CAND_TAB, CAND_COLS)
     lens = _tab(sh, LENS_TAB, LENS_COLS)
     _tab(sh, LOG_TAB, LOG_COLS)
+    # new system columns are inserted physically (cells, dropdowns and formats shift with them)
+    h = cand.row_values(1)
+    for i, c in enumerate(CAND_COLS):
+        if c not in h:
+            pos = next((h.index(p) + 1 for p in reversed(CAND_COLS[:i]) if p in h), 0)
+            cand.insert_cols([[c]], col=pos + 1, value_input_option="RAW")
+            h.insert(pos, c)
+    grid = cand.get_all_values()
+    filled = merge_candidates(grid, [], registration_dates())
+    if filled != [list(r) + [""] * (len(filled[0]) - len(r)) for r in grid]:
+        cand.update(filled, "A1", value_input_option="USER_ENTERED")
+        print("init: 후보 등록일 backfilled")
     # dropdown for 상태; 이유 태그 is free text (comma-separated) listed in the note
     h = cand.row_values(1)
     col = h.index("상태") + 1
@@ -233,7 +268,8 @@ def push() -> None:
         log_add += box.get("log", [])
     if upserts:
         existing = cand_ws.get_all_values()
-        grid = merge_candidates(existing, only_listable(existing, upserts))
+        today = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
+        grid = merge_candidates(existing, only_listable(existing, upserts), registration_dates(), today)
         cand_ws.resize(rows=max(len(grid) + 50, cand_ws.row_count), cols=max(len(grid[0]), cand_ws.col_count))
         cand_ws.update(grid, "A1", value_input_option="USER_ENTERED")
     if lens_add:
