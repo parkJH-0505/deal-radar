@@ -31,20 +31,25 @@ from .store import DATA
 
 SHEET_ID_DEFAULT = "1vPTO0HS4ugVo04y2yQRmXMdxof8tx00qClo0ZB-UXGk"
 
-CAND_TAB, LENS_TAB, LOG_TAB, NOTE_TAB = "후보", "관점", "판단 로그", "심사 노트"
+CAND_TAB, LENS_TAB, LOG_TAB = "후보", "관점", "판단 로그"
+OLD_NOTE_TAB = "심사 노트"   # 2026-11-25 잠깐 별도 탭이었다가 후보 탭으로 합침 (init이 지운다)
 KEY = "레이더 키"
 USER_COLS = ["상태", "이유 태그", "내 코멘트"]
 REG = "후보 등록일"  # 판단에서 처음 A·B를 받아 후보 탭에 올라간 날 (한 번 정해지면 바뀌지 않음)
-SUMMARY, NOTE_LINK = "한 줄 요약", "심사 노트"
-CAND_COLS = [REG, KEY, "회사명", SUMMARY, NOTE_LINK, "등급", *USER_COLS, "점수", "소스", "업력(년)", "고용(명)",
-             "고용 12개월(%)", "매출(억, 추정)", "영업이익률(%)", "외부투자", "왜 지금",
-             "반박 검증", "점수 사유", "근거 링크", "홈페이지", "첫 포착", "최근 포착"]
-LENS_COLS = ["날짜", "누가", "관점", "근거", "적용"]
-LOG_COLS = ["날짜", KEY, "회사명", SUMMARY, "등급", "판정", "이유", "근거"]
+SUMMARY = "한 줄 요약"     # 노트 필드·판단 로그 열
+BRIEF = "요약·개요"        # 후보 열: [한 줄 요약] + [회사 개요]를 한 칸에
 # 심사 노트: 판단 때 조사한 내용을 회사마다 고정 양식으로 남긴다 (휘발 방지). 각 칸은 '· ' 줄 단위.
+# 원본은 data/notes/<키>.json, 시트에서는 후보 탭 오른쪽 열들로 보인다 (행 높이 21 고정, 클릭해서 읽음).
 NOTE_FIELDS = [SUMMARY, "회사 개요", "사업·제품", "고객·수익 구조", "팀·창업자", "트랙션", "시장·산업",
                "경쟁·대안", "왜 지금", "좋은 투자인가", "리스크·사전 부검", "컨택 시 확인할 것", "출처"]
-NOTE_COLS = [KEY, "회사명", "등급", "조사일", *NOTE_FIELDS, "노트 상태"]
+NOTE_CAND_COLS = ["사업·제품", "고객·수익 구조", "팀·창업자", "트랙션", "시장·산업", "경쟁·대안",
+                  "좋은 투자인가", "리스크·사전 부검", "컨택 시 확인할 것", "조사일", "노트 상태"]
+CAND_COLS = [REG, KEY, "회사명", BRIEF, "등급", *USER_COLS, "점수", "소스", "업력(년)", "고용(명)",
+             "고용 12개월(%)", "매출(억, 추정)", "영업이익률(%)", "외부투자", "왜 지금",
+             "반박 검증", "점수 사유", "근거 링크", "홈페이지", "첫 포착", "최근 포착", *NOTE_CAND_COLS]
+LENS_COLS = ["날짜", "누가", "관점", "근거", "적용"]
+LOG_COLS = ["날짜", KEY, "회사명", SUMMARY, "등급", "판정", "이유", "근거"]
+ROW_PX = 21  # 후보 탭 행 높이 고정 (사용자 요청 2026-11-25)
 GRADES = ["A", "B", "C", "D", "E", "F"]
 STATUS = ["신규", "관찰", "관심", "컨택", "패스"]
 TAGS = ["+수익구조", "+시장", "+창업자·팀", "+해자", "+타이밍",
@@ -140,48 +145,29 @@ def merge_note(old: dict | None, new: dict) -> dict:
     return out
 
 
-def upsert_grid(existing: list[list[str]], cols: list[str], records: list[dict]) -> list[list[str]]:
-    """Generic upsert by 레이더 키 (no user-owned columns). Missing columns are inserted in place."""
-    header = list(existing[0]) if existing else list(cols)
-    rows = [list(r) + [""] * (len(header) - len(r)) for r in existing[1:]]
-    for i, col in enumerate(cols):
-        if col not in header:
-            prev = next((header.index(p) for p in reversed(cols[:i]) if p in header), -1)
-            header.insert(prev + 1, col)
-            for r in rows:
-                r.insert(prev + 1, "")
-    idx = {c: i for i, c in enumerate(header)}
-    by_key = {r[idx[KEY]]: r for r in rows if r[idx[KEY]]}
-    for rec in records:
-        k = str(rec.get(KEY) or "").strip()
-        if not k:
-            continue
-        row = by_key.get(k)
-        if row is None:
-            row = [""] * len(header)
-            rows.append(row)
-            by_key[k] = row
-        for col, val in rec.items():
-            if col in idx:
-                row[idx[col]] = "" if val is None else str(val)
-    return [header] + rows
+def brief_text(note: dict) -> str:
+    """후보 탭 '요약·개요' 칸: [한 줄 요약] : …  +  [회사 개요] 줄들."""
+    parts = []
+    if note.get(SUMMARY):
+        parts.append(f"[한 줄 요약] : {note[SUMMARY]}")
+    if note.get("회사 개요"):
+        parts.append(f"[회사 개요]\n{note['회사 개요']}")
+    return "\n\n".join(parts)
 
 
-def note_link(gid: int, key: str) -> str:
-    """Jump to the company's row in 심사 노트 (MATCH keeps working if the user sorts)."""
-    return (f'=HYPERLINK("#gid={gid}&range=A"&MATCH("{key}",\'{NOTE_TAB}\'!A:A,0),"노트 보기")')
-
-
-def with_links(grid: list[list[str]], gid: int, note_keys: set[str]) -> list[list[str]]:
-    """Re-apply link formulas (a values read returns the display text, which would overwrite them)."""
-    if not grid or NOTE_LINK not in grid[0]:
-        return grid
-    h = grid[0]
-    ki, li = h.index(KEY), h.index(NOTE_LINK)
-    for r in grid[1:]:
-        if len(r) > max(ki, li) and r[ki] in note_keys:
-            r[li] = note_link(gid, r[ki])
-    return grid
+def note_to_cand(note: dict) -> dict:
+    """A company's research note as a 후보-row upsert (only non-empty fields)."""
+    rec = {KEY: note[KEY]}
+    if brief_text(note):
+        rec[BRIEF] = brief_text(note)
+    for c in NOTE_CAND_COLS:
+        if note.get(c):
+            rec[c] = note[c]
+    if note.get("왜 지금"):
+        rec["왜 지금"] = note["왜 지금"]
+    if note.get("출처"):
+        rec["근거 링크"] = note["출처"]
+    return rec
 
 
 def snapshot(cand_grid: list[list[str]], lens_grid: list[list[str]]) -> dict:
@@ -260,35 +246,36 @@ def _tab(sh, name: str, cols: list[str]):
     return ws
 
 
-def _note_tab(sh):
+def _migrate_cand(sh, cand) -> list[str]:
+    """One-time moves, idempotent: drop the '노트 보기' link column and the separate note tab,
+    turn the old '한 줄 요약' column into '요약·개요' in place."""
     import gspread
+    h = cand.row_values(1)
+    if OLD_NOTE_TAB in h:  # link column from the separate-tab design
+        cand.delete_columns(h.index(OLD_NOTE_TAB) + 1)
+        h = cand.row_values(1)
+    if SUMMARY in h and BRIEF not in h:
+        cand.update_cell(1, h.index(SUMMARY) + 1, BRIEF)
+        h[h.index(SUMMARY)] = BRIEF
     try:
-        return sh.worksheet(NOTE_TAB)
+        sh.del_worksheet(sh.worksheet(OLD_NOTE_TAB))
+        print("init: 별도 '심사 노트' 탭 삭제 (내용은 후보 탭과 data/notes에 있음)")
     except gspread.WorksheetNotFound:
-        ws = sh.add_worksheet(NOTE_TAB, rows=200, cols=len(NOTE_COLS))
-    ws.update([NOTE_COLS], "A1")
-    n = len(NOTE_COLS)
-    widths = [170, 150, 50, 90] + [330] * len(NOTE_FIELDS) + [150]
-    reqs = [{"updateSheetProperties": {"properties": {"sheetId": ws.id, "gridProperties": {
-                "frozenRowCount": 1, "frozenColumnCount": 2}},
-             "fields": "gridProperties.frozenRowCount,gridProperties.frozenColumnCount"}},
-            {"repeatCell": {"range": {"sheetId": ws.id, "startColumnIndex": 0, "endColumnIndex": n},
-                            "cell": {"userEnteredFormat": {"wrapStrategy": "WRAP", "verticalAlignment": "TOP"}},
-                            "fields": "userEnteredFormat.wrapStrategy,userEnteredFormat.verticalAlignment"}},
-            {"repeatCell": {"range": {"sheetId": ws.id, "startRowIndex": 0, "endRowIndex": 1},
-                            "cell": {"userEnteredFormat": {"textFormat": {"bold": True},
-                                     "backgroundColorStyle": {"rgbColor": {"red": .93, "green": .93, "blue": .93}}}},
-                            "fields": "userEnteredFormat.textFormat.bold,userEnteredFormat.backgroundColorStyle"}}]
-    reqs += [{"updateDimensionProperties": {"range": {"sheetId": ws.id, "dimension": "COLUMNS",
-                                                      "startIndex": i, "endIndex": i + 1},
-                                            "properties": {"pixelSize": w}, "fields": "pixelSize"}}
-             for i, w in enumerate(widths)]
-    sh.batch_update({"requests": reqs})
-    return ws
+        pass
+    return h
 
 
-def _note_keys(note_ws) -> set[str]:
-    return {k for k in note_ws.col_values(1)[1:] if k}
+def _compact_rows(sh, ws, nrows: int) -> None:
+    """Fixed 21px rows, text clipped and top-aligned (so the first line shows, not the last)."""
+    if nrows < 2:
+        return
+    sh.batch_update({"requests": [
+        {"repeatCell": {"range": {"sheetId": ws.id, "startRowIndex": 1, "endRowIndex": nrows},
+                        "cell": {"userEnteredFormat": {"wrapStrategy": "CLIP", "verticalAlignment": "TOP"}},
+                        "fields": "userEnteredFormat.wrapStrategy,userEnteredFormat.verticalAlignment"}},
+        {"updateDimensionProperties": {"range": {"sheetId": ws.id, "dimension": "ROWS",
+                                                 "startIndex": 1, "endIndex": nrows},
+                                       "properties": {"pixelSize": ROW_PX}, "fields": "pixelSize"}}]})
 
 
 def init() -> None:
@@ -296,22 +283,22 @@ def init() -> None:
     cand = _tab(sh, CAND_TAB, CAND_COLS)
     lens = _tab(sh, LENS_TAB, LENS_COLS)
     _tab(sh, LOG_TAB, LOG_COLS)
-    note_ws = _note_tab(sh)
     # new system columns are inserted physically (cells, dropdowns and formats shift with them)
-    h = cand.row_values(1)
+    h = _migrate_cand(sh, cand)
     for i, c in enumerate(CAND_COLS):
         if c not in h:
             pos = next((h.index(p) + 1 for p in reversed(CAND_COLS[:i]) if p in h), 0)
             cand.insert_cols([[c]], col=pos + 1, value_input_option="RAW")
             h.insert(pos, c)
-            if c in (SUMMARY, NOTE_LINK):
+            if c == BRIEF or c in NOTE_CAND_COLS:
                 sh.batch_update({"requests": [{"updateDimensionProperties": {
                     "range": {"sheetId": cand.id, "dimension": "COLUMNS", "startIndex": pos, "endIndex": pos + 1},
-                    "properties": {"pixelSize": 380 if c == SUMMARY else 80}, "fields": "pixelSize"}}]})
+                    "properties": {"pixelSize": 380 if c == BRIEF else 90 if c in ("조사일", "노트 상태") else 260},
+                    "fields": "pixelSize"}}]})
     grid = cand.get_all_values()
     filled = merge_candidates(grid, [], registration_dates())
     if filled != [list(r) + [""] * (len(filled[0]) - len(r)) for r in grid]:
-        cand.update(with_links(filled, note_ws.id, _note_keys(note_ws)), "A1", value_input_option="USER_ENTERED")
+        cand.update(filled, "A1", value_input_option="USER_ENTERED")
         print("init: 후보 등록일 backfilled")
     # dropdown for 상태; 이유 태그 is free text (comma-separated) listed in the note
     h = cand.row_values(1)
@@ -361,14 +348,10 @@ def pull() -> dict:
 
 def push() -> None:
     files = sorted(OUTBOX.glob("*.json")) if OUTBOX.exists() else []
-    if not files:
-        print("push: outbox empty")
-        return
     sh = _open()
     cand_ws = _tab(sh, CAND_TAB, CAND_COLS)
     lens_ws = _tab(sh, LENS_TAB, LENS_COLS)
     log_ws = _tab(sh, LOG_TAB, LOG_COLS)
-    note_ws = _note_tab(sh)
     upserts, lens_add, log_add, notes = [], [], [], []
     for f in files:
         box = json.loads(f.read_text(encoding="utf-8"))
@@ -376,35 +359,29 @@ def push() -> None:
         notes += box.get("notes", [])
         lens_add += [[r.get(c, "") for c in LENS_COLS] for r in box.get("lens", [])]
         log_add += box.get("log", [])
-    existing = cand_ws.get_all_values() if (upserts or notes) else []
-    if notes:
-        # 원본은 repo(data/notes)에 누적 저장, 시트 '심사 노트'에는 후보(A·B)와 이미 시트에 있는 회사만
-        in_cand = {r[existing[0].index(KEY)] for r in existing[1:]} if existing else set()
-        listed = {str(u.get(KEY)) for u in only_listable(existing, upserts)}
-        on_sheet = _note_keys(note_ws)
-        rows = []
-        for n in notes:
-            k = str(n.get(KEY) or "").strip()
-            if not k:
-                continue
-            path = note_path(k)
-            path.parent.mkdir(parents=True, exist_ok=True)
-            merged = merge_note(json.loads(path.read_text(encoding="utf-8")) if path.exists() else None, n)
-            path.write_text(json.dumps(merged, ensure_ascii=False, indent=1), encoding="utf-8")
-            if k in in_cand or k in listed or k in on_sheet or str(merged.get("등급", ""))[:1] in ("A", "B"):
-                rows.append({c: merged.get(c, "") for c in NOTE_COLS})
-                if merged.get(SUMMARY) and (k in in_cand or k in listed):
-                    upserts.append({KEY: k, SUMMARY: merged[SUMMARY]})
-        if rows:
-            ngrid = upsert_grid(note_ws.get_all_values(), NOTE_COLS, rows)
-            note_ws.resize(rows=max(len(ngrid) + 50, note_ws.row_count), cols=max(len(ngrid[0]), note_ws.col_count))
-            note_ws.update(ngrid, "A1", value_input_option="RAW")
-    if upserts:
-        today = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
-        grid = merge_candidates(existing, only_listable(existing, upserts), registration_dates(), today)
-        grid = with_links(grid, note_ws.id, _note_keys(note_ws))
-        cand_ws.resize(rows=max(len(grid) + 50, cand_ws.row_count), cols=max(len(grid[0]), cand_ws.col_count))
+    # 노트 원본은 판단한 회사 전부 repo(data/notes)에 누적 저장
+    for n in notes:
+        k = str(n.get(KEY) or "").strip()
+        if not k:
+            continue
+        path = note_path(k)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        merged = merge_note(json.loads(path.read_text(encoding="utf-8")) if path.exists() else None, n)
+        path.write_text(json.dumps(merged, ensure_ascii=False, indent=1), encoding="utf-8")
+    # 후보 탭: A·B 신규 행 + 기존 행 갱신, 그리고 노트가 있는 모든 후보 행에 노트 칸을 채운다
+    existing = cand_ws.get_all_values()
+    listable = only_listable(existing, upserts)
+    in_cand = {r[existing[0].index(KEY)] for r in existing[1:] if r} if existing and KEY in existing[0] else set()
+    targets = in_cand | {str(u.get(KEY)) for u in listable}
+    note_up = [note_to_cand(json.loads(note_path(k).read_text(encoding="utf-8")))
+               for k in sorted(targets) if note_path(k).exists()]
+    today = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
+    grid = merge_candidates(existing, listable + note_up, registration_dates(), today)
+    width = len(grid[0])
+    if grid != [list(r) + [""] * (width - len(r)) for r in existing] or len(existing[0] if existing else []) != width:
+        cand_ws.resize(rows=max(len(grid) + 50, cand_ws.row_count), cols=max(width, cand_ws.col_count))
         cand_ws.update(grid, "A1", value_input_option="USER_ENTERED")
+    _compact_rows(sh, cand_ws, len(grid))
     if lens_add:
         lens_ws.append_rows(lens_add, value_input_option="RAW")
     if log_add:
@@ -418,7 +395,8 @@ def push() -> None:
     done.mkdir(parents=True, exist_ok=True)
     for f in files:
         f.rename(done / f.name)
-    print(f"push ok: {len(upserts)} candidates, {len(notes)} notes, {len(lens_add)} lens, {len(log_add)} log rows")
+    print(f"push ok: {len(files)} outbox files, {len(listable)} candidates, {len(notes)} notes saved, "
+          f"{len(note_up)} 후보 rows with notes, {len(lens_add)} lens, {len(log_add)} log rows")
 
 
 if __name__ == "__main__":
