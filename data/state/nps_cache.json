@@ -7418,5 +7418,33 @@
   ],
   "bill_per_head": 379904,
   "_asof": "2026-11-24"
+ },
+ "loc:웰케이": {
+  "match": {
+   "seq": 2205851,
+   "name": "주식회사웰케이",
+   "bizno6": "317870",
+   "ym": "202602",
+   "match_score": 1.0
+  },
+  "headcount": 3,
+  "monthly_bill": 354700,
+  "industry": "수산동물 건조 및 염장품 제조업",
+  "adopted": "20220214",
+  "addr": "경상남도 창원시 마산합포구 3・15대로",
+  "series": [
+   {
+    "ym": "202602",
+    "headcount": 3
+   },
+   {
+    "ym": "202601",
+    "headcount": 4,
+    "acq": 0,
+    "lost": 1
+   }
+  ],
+  "bill_per_head": 118233,
+  "_asof": "2026-11-27"
  }
 }
